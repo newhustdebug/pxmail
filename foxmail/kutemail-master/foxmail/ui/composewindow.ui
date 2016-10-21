@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ComposeWindow</class>
+ <widget class="QMainWindow" name="ComposeWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>New Email</string>
+  </property>
+  <property name="windowIcon">
+   <iconset theme="kmail">
+    <normaloff/>
+   </iconset>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonTextBesideIcon</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label_receiver">
+          <property name="text">
+           <string>收件人：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="txtreceiver"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_subject">
+          <property name="text">
+           <string>  主题：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="txtsubject"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QTextEdit" name="textEdit"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionSend"/>
+   <addaction name="actionAttachment"/>
+  </widget>
+  <action name="actionSend">
+   <property name="icon">
+    <iconset>
+     <normaloff>send_email_128px_1187940_easyicon.net.ico</normaloff>send_email_128px_1187940_easyicon.net.ico</iconset>
+   </property>
+   <property name="text">
+    <string>发送</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::WindowShortcut</enum>
+   </property>
+  </action>
+  <action name="actionAttachment">
+   <property name="icon">
+    <iconset>
+     <normaloff>attachment_128px_1197577_easyicon.net.ico</normaloff>attachment_128px_1197577_easyicon.net.ico</iconset>
+   </property>
+   <property name="text">
+    <string>附件</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="composewindow.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionSend</sender>
+   <signal>triggered()</signal>
+   <receiver>ComposeWindow</receiver>
+   <slot>onSend()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAttachment</sender>
+   <signal>triggered()</signal>
+   <receiver>ComposeWindow</receiver>
+   <slot>onAttachment()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onSend()</slot>
+  <slot>onAttachment()</slot>
+ </slots>
+</ui>

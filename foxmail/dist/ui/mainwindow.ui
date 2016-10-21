@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1096</width>
+    <height>771</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Foxmail</string>
+  </property>
+  <property name="windowIcon">
+   <iconset theme="kmail">
+    <normaloff/>
+   </iconset>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonTextBesideIcon</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,2,3">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetMaximumSize</enum>
+      </property>
+      <item>
+       <widget class="QTreeWidget" name="treeMailWidget">
+        <attribute name="headerVisible">
+         <bool>true</bool>
+        </attribute>
+        <attribute name="headerHighlightSections">
+         <bool>true</bool>
+        </attribute>
+        <column>
+         <property name="text">
+          <string notr="true">常用文件夹</string>
+         </property>
+         <property name="font">
+          <font>
+           <family>Adobe 宋体 Std L</family>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>Folder_Open_128px_1072492_easyicon.net.ico</normaloff>Folder_Open_128px_1072492_easyicon.net.ico</iconset>
+         </property>
+        </column>
+        <item>
+         <property name="text">
+          <string>收件夹</string>
+         </property>
+         <property name="font">
+          <font>
+           <family>Lucida Fax</family>
+           <pointsize>13</pointsize>
+          </font>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>Receiving_in_mail_128px_1200029_easyicon.net.png</normaloff>Receiving_in_mail_128px_1200029_easyicon.net.png</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>草稿夹</string>
+         </property>
+         <property name="font">
+          <font>
+           <family>Lucida Fax</family>
+           <pointsize>13</pointsize>
+          </font>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>draft_128px_1150028_easyicon.net.png</normaloff>draft_128px_1150028_easyicon.net.png</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>已发送</string>
+         </property>
+         <property name="font">
+          <font>
+           <family>Lucida Fax</family>
+           <pointsize>13</pointsize>
+          </font>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>sent_2133px_1152650_easyicon.net.png</normaloff>sent_2133px_1152650_easyicon.net.png</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>垃圾邮件</string>
+         </property>
+         <property name="font">
+          <font>
+           <family>Lucida Fax</family>
+           <pointsize>13</pointsize>
+          </font>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>garbage_118px_1201094_easyicon.net.png</normaloff>garbage_118px_1201094_easyicon.net.png</iconset>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QListWidget" name="listEmails"/>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QPushButton" name="btnReply">
+            <property name="text">
+             <string>回复</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>1attachment_128px_1197577_easyicon.net.png</normaloff>1attachment_128px_1197577_easyicon.net.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnForward">
+            <property name="text">
+             <string>转发</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>forward_128px_1187868_easyicon.net.ico</normaloff>forward_128px_1187868_easyicon.net.ico</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnDelete">
+            <property name="text">
+             <string>删除</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>delete.png</normaloff>delete.png</iconset>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTextBrowser" name="emailPreview">
+          <property name="acceptDrops">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="acceptDrops">
+    <bool>true</bool>
+   </property>
+   <property name="windowTitle">
+    <string> 工具栏</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionCompose"/>
+   <addaction name="actionRefresh"/>
+   <addaction name="actionContactList"/>
+   <addaction name="actionSearch"/>
+  </widget>
+  <action name="actionQuit">
+   <property name="text">
+    <string>&amp;Quit</string>
+   </property>
+  </action>
+  <action name="actionCompose">
+   <property name="icon">
+    <iconset>
+     <normaloff>send.png</normaloff>send.png</iconset>
+   </property>
+   <property name="text">
+    <string>写邮件</string>
+   </property>
+   <property name="toolTip">
+    <string>Write new eMail</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+N</string>
+   </property>
+  </action>
+  <action name="actionRefresh">
+   <property name="icon">
+    <iconset>
+     <normaloff>1refresh_128px_1194515_easyicon.net.png</normaloff>1refresh_128px_1194515_easyicon.net.png</iconset>
+   </property>
+   <property name="text">
+    <string>刷新</string>
+   </property>
+   <property name="toolTip">
+    <string>Check for new eMails</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+R</string>
+   </property>
+  </action>
+  <action name="actionContactList">
+   <property name="icon">
+    <iconset>
+     <normaloff>1point_list_128px_1190662_easyicon.net.png</normaloff>1point_list_128px_1190662_easyicon.net.png</iconset>
+   </property>
+   <property name="text">
+    <string>通讯录</string>
+   </property>
+  </action>
+  <action name="actionSearch">
+   <property name="icon">
+    <iconset>
+     <normaloff>search.png</normaloff>search.png</iconset>
+   </property>
+   <property name="text">
+    <string>查找</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionQuit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>146</x>
+     <y>66</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCompose</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onComposeMail()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>547</x>
+     <y>385</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRefresh</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onRefresh()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>547</x>
+     <y>385</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>treeMailWidget</sender>
+   <signal>itemClicked(QTreeWidgetItem*,int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onFolderSelected()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>157</x>
+     <y>291</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>225</x>
+     <y>-8</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listEmails</sender>
+   <signal>itemClicked(QListWidgetItem*)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onMailSelected()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>264</x>
+     <y>238</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>421</x>
+     <y>-11</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionContactList</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onContactList()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>547</x>
+     <y>385</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSearch</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onSearch()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>547</x>
+     <y>385</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnReply</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onReply()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>641</x>
+     <y>68</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>547</x>
+     <y>385</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnForward</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onForward()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>819</x>
+     <y>68</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>547</x>
+     <y>385</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnDelete</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onDelete()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>996</x>
+     <y>68</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>547</x>
+     <y>385</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onComposeMail()</slot>
+  <slot>onRefresh()</slot>
+  <slot>onFolderSelected()</slot>
+  <slot>onMailSelected(item)</slot>
+  <slot>onContactList()</slot>
+  <slot>onSearch()</slot>
+  <slot>onReply()</slot>
+  <slot>onForward()</slot>
+  <slot>onDelete()</slot>
+ </slots>
+</ui>
