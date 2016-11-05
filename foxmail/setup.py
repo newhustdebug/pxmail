@@ -27,7 +27,7 @@
 from distutils.core import setup
 import py2exe
 import sys
- 
+import glob
 #this allows to run it with a simple double click.
 sys.argv.append('py2exe')
  
@@ -37,7 +37,8 @@ py2exe_options = {
         "compressed": 1,
         "optimize": 2,
         "ascii": 0,
-        "bundle_files": 1,  # 关于这个参数请看第三部分中的问题(2)
+        "bundle_files": 3, 
+      #  "bundle_files": 1,  # 关于这个参数请看第三部分中的问题(2)
         }
  
 setup(
@@ -47,7 +48,9 @@ setup(
        data_files=[("",
                     [r"C:\Python34\Lib\site-packages\PyQt5\libEGL.dll"]),
                    ("platforms",
-                    [r"C:\Python34\Lib\site-packages\PyQt5\plugins\platforms\qwindows.dll"])],
+                    [r"C:\Python34\Lib\site-packages\PyQt5\plugins\platforms\qwindows.dll"]),
+                   ("imageformats",glob.glob("C:\Python34\Lib\site-packages\PyQt5\plugins\imageformats\*.dll"))       #解决了不能正常显示gif 的问题
+                   ],
       zipfile = None,
        
     options = {'py2exe': py2exe_options},

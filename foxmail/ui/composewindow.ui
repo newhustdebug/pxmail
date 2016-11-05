@@ -14,9 +14,8 @@
    <string>New Email</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="kmail">
-    <normaloff/>
-   </iconset>
+   <iconset>
+    <normaloff>logo.png</normaloff>logo.png</iconset>
   </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -148,9 +147,26 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>txtreceiver</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>ComposeWindow</receiver>
+   <slot>ontextChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>324</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>796</x>
+     <y>92</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>onSend()</slot>
   <slot>onAttachment()</slot>
+  <slot>ontextChanged()</slot>
  </slots>
 </ui>

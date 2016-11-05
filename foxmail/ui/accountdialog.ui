@@ -26,7 +26,11 @@
    <bool>true</bool>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Pxmail</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>logo.png</normaloff>logo.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame">
@@ -103,9 +107,6 @@
      <property name="text">
       <string>登录</string>
      </property>
-     <property name="shortcut">
-      <string>Enter</string>
-     </property>
      <property name="autoRepeat">
       <bool>false</bool>
      </property>
@@ -130,6 +131,19 @@
      </property>
      <property name="shortcut">
       <string>Esc</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="processBar">
+     <property name="geometry">
+      <rect>
+       <x>1</x>
+       <y>50</y>
+       <width>611</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
      </property>
     </widget>
    </widget>
@@ -340,6 +354,54 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>checkSSLpop</sender>
+   <signal>clicked()</signal>
+   <receiver>AccountDialog</receiver>
+   <slot>onSSLpop()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>386</x>
+     <y>228</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>319</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkSSLsmtp</sender>
+   <signal>clicked()</signal>
+   <receiver>AccountDialog</receiver>
+   <slot>onSSLsmtp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>386</x>
+     <y>272</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>412</x>
+     <y>318</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>txtuser</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>AccountDialog</receiver>
+   <slot>ontextChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>307</x>
+     <y>129</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>67</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>onLogin()</slot>
@@ -348,5 +410,8 @@
   <slot>showManualSet()</slot>
   <slot>onSetpopSLL()</slot>
   <slot>onSetsmtpSSL()</slot>
+  <slot>onSSLpop()</slot>
+  <slot>onSSLsmtp()</slot>
+  <slot>ontextChanged()</slot>
  </slots>
 </ui>

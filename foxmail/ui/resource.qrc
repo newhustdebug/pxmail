@@ -1,8 +1,1 @@
-<RCC>
-  <qresource prefix="ui">
-    <file>search_128px_1195252_easyicon.net.ico</file>
-    <file>point_list_128px_1190662_easyicon.net.ico</file>
-    <file>refresh_128px_1194515_easyicon.net.ico</file>
-    <file>Send_128px_1191091_easyicon.net.ico</file>
-  </qresource>
-</RCC>
+<RCC/>
