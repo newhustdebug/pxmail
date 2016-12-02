@@ -1,84 +1,76 @@
-X-Mda-Received: from <mx-3-44.mail.sina.com.cn>([<202.108.248.124>])
- by <mda-113-94.mda.fmail.tg.sinanode.com> with LMTP id <5198>
- Sep 27 2016 12:49:25 +0800 (CST)
-X-Sina-MID: 0474DC5F961BBF5144BFAED66FBA8652ED00000000000001
+X-Mda-Received: from <mx-3-46.mail.sina.com.cn>([<202.108.248.121>])
+ by <mda-113-94.mda.fmail.tg.sinanode.com> with LMTP id <5409>
+ Oct 05 2016 15:20:32 +0800 (CST)
+X-Sina-MID: 044529FCD7E9D5C822EEAE44236BF52C4E00000000000001
 X-Sina-Attnum: 0
-Received: (qmail 14018 invoked by uid 555); 27 Sep 2016 12:49:25 +0800 (CST)
-X-SMAIL-SPAM-FILTER: 14011 OK; Tue, 27 Sep 2016 12:49:25 +0800 (CST)
-X-Spam-flag: YES_SMAIL
-Received: from smtpbg337.qq.com (HELO smtpbg337.qq.com)([14.17.44.32])
+Received: from mail115-79.sinamail.sina.com.cn (HELO smtp-2-33.mail.sina.com.cn)([218.30.115.79])
 	by sina.com with SMTP
-	27 Sep 2016 12:49:25 +0800 (CST)
-X-Sender: 406371648@qq.com
-Authentication-Results: sina.com; dkim=pass (Signature verified) header.i=qq.com
-Received-SPF: Pass (sina.com: SPF record at spf-b.mail.qq.com designates 14.17.44.32 as permitted sender) identity=from;
-	client-ip=14.17.44.32;
-	receiver=sina.com;
-	envelope-from=406371648@qq.com;
-	helo=smtpbg337.qq.com
-X-SMAIL-MID: 15456716253303
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
-	t=1474951743; bh=5CGb0Jzy3K/UDTDVk2ZZYTlHSIDoVaKkKVo3akMGROg=;
-	h=From:To:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding:Date:Message-ID;
-	b=i0tmmLkI5GOXnSz+/MYyVEDSb+d6+UCEbhoWkELxADYygww0s3ufXGzfDEubAWZYg
-	 JVlqsqsULlt9HVIZDgLeWGVRi6vTWpQzLaZl6kbb/xJp7SBpUIsP1nE+8ptQ6HWOIg
-	 CHLZBIOZMsR5Gxv5BWB2d9fpNLrznduGpyRC5msI=
-X-QQ-FEAT: TllwYEYhfwnhuR/SS1/MOjoENiVFLtHixRpM3zDZ+Q6+Ln8BjHbavgTSFVoGV
-	yP/Rs1WMKmoIJ3i302fWHWNBNtUrKdFAc3zNvBeVT8UrYp4mt1kK6s177r8kuJOul4eMCYs
-	AgNzfXJgKuQaSax5ATgLpBrPUNcILjAw5JYlri11MFR7AtQk/2nZBmABwTBcVM4Fv98yl0h
-	HkMGyDQj6vEQiJUPLutizxQRJYyRtpOsVUQl24WDq+FxxN33UMzg1QwM17FxZWmufRGyCrX
-	IKVg==
-X-QQ-SSF: 000100000000001000000000000000Z
-X-HAS-ATTACH: no
-X-QQ-BUSINESS-ORIGIN: 2
-X-Originating-IP: 222.20.22.124
-X-QQ-STYLE: 
-X-QQ-mid: webmail670t1474951742t6769761
-From: "=?gb18030?B?NDA2MzcxNjQ4?=" <406371648@qq.com>
-To: "=?gb18030?B?cGhhbnRvbTA1MDY=?=" <phantom0506@sina.com>
-Subject: =?gb18030?B?16q3oqO6UHl0aG9uIFNNVFAg08q8/rLiytQ=?=
-Mime-Version: 1.0
-Content-Type: multipart/alternative;
-	boundary="----=_NextPart_57E9FA3E_09FB33A0_2C4DCA54"
-Content-Transfer-Encoding: 8Bit
-Date: Tue, 27 Sep 2016 12:49:02 +0800
+	5 Oct 2016 15:20:31 +0800 (CST)
+X-Sender: phantom0506@sina.com
+X-SMAIL-MID: 96516325166166
+Received: from unknown (HELO Lenovo-PC)([115.156.193.202])
+	by sina.com with ESMTP
+	5 Oct 2016 15:20:31 +0800 (CST)
+X-Sender: phantom0506@sina.com
+X-Auth-ID: phantom0506@sina.com
+X-SMAIL-MID: 647427131864
+Date: Wed, 5 Oct 2016 15:16:50 +0800
+From: "phantom0506@sina.com" <phantom0506@sina.com>
+To: phantom0506 <phantom0506@sina.com>
+Subject: =?GB2312?B?u9i4tDogsuLK1NPKvP4=?=
+References: <201609291102174603021@sina.com>
 X-Priority: 3
-Message-ID: <tencent_6FB8437E24EA284C74A8F9C3@qq.com>
-X-QQ-MIME: TCMime 1.0 by Tencent
-X-Mailer: QQMail 2.x
-X-QQ-Mailer: QQMail 2.x
-X-QQ-SENDSIZE: 520
-Feedback-ID: webmail:qq.com:bgweb:bgweb139
+X-Has-Attach: no
+X-Mailer: Foxmail 7, 2, 7, 174[cn]
+Mime-Version: 1.0
+Message-ID: <201610051516493844870@sina.com>
+Content-Type: multipart/alternative;
+	boundary="----=_001_NextPart357826044018_=----"
+
 
 
 This is a multi-part message in MIME format.
 
-------=_NextPart_57E9FA3E_09FB33A0_2C4DCA54
+------=_001_NextPart357826044018_=----
 Content-Type: text/plain;
-	charset="gb18030"
+	charset="GB2312"
 Content-Transfer-Encoding: base64
 
-LS0tLS0tLS0tLS0tLS0tLS0tINStyrzTyrz+IC0tLS0tLS0tLS0tLS0tLS0tLQ0Kt6K8/sjL
-OiAicGhhbnRvbTA1MDYiOzxwaGFudG9tMDUwNkBzaW5hLmNvbT47DQq3osvNyrG85DogMjAx
-NsTqOdTCMjfI1SjQx8batv4pIMnPzuc5OjUzDQrK1bz+yMs6IA0KDQrW98ziOiBQeXRob24g
-U01UUCDTyrz+suLK1A0KDQoNCg0KUHl0aG9uINPKvP63osvNsuLK1C4uLg==
+NjY2DQoNCg0KDQpwaGFudG9tMDUwNkBzaW5hLmNvbQ0KIA0Kt6K8/sjLo7ogcGhhbnRvbTA1MDZA
+c2luYS5jb20NCreiy83Ksbzko7ogMjAxNi0wOS0yOSAxMTowMg0KytW8/sjLo7ogcGhhbnRvbTA1
+MDYNCtb3zOKjuiCy4srU08q8/g0KDQrE47rDsKG5/rn+uf65/rn+uf65/g0KDQoNCnBoYW50b20w
+NTA2QHNpbmEuY29tDQo=
 
-------=_NextPart_57E9FA3E_09FB33A0_2C4DCA54
+------=_001_NextPart357826044018_=----
 Content-Type: text/html;
-	charset="gb18030"
-Content-Transfer-Encoding: base64
+	charset="GB2312"
+Content-Transfer-Encoding: quoted-printable
 
-PGRpdj48YnI+PC9kaXY+PGRpdj48ZGl2Pjxicj48L2Rpdj48ZGl2Pjxicj48L2Rpdj48ZGl2
-IHN0eWxlPSJmb250LXNpemU6IDEycHg7Zm9udC1mYW1pbHk6IEFyaWFsIE5hcnJvdztwYWRk
-aW5nOjJweCAwIDJweCAwOyI+LS0tLS0tLS0tLS0tLS0tLS0tJm5ic3A71K3KvNPKvP4mbmJz
-cDstLS0tLS0tLS0tLS0tLS0tLS08L2Rpdj48ZGl2IHN0eWxlPSJmb250LXNpemU6IDEycHg7
-YmFja2dyb3VuZDojZWZlZmVmO3BhZGRpbmc6OHB4OyI+PGRpdj48Yj63orz+yMs6PC9iPiZu
-YnNwOyJwaGFudG9tMDUwNiI7Jmx0O3BoYW50b20wNTA2QHNpbmEuY29tJmd0Ozs8L2Rpdj48
-ZGl2PjxiPreiy83KsbzkOjwvYj4mbmJzcDsyMDE2xOo51MIyN8jVKNDHxtq2/ikgyc/O5zk6
-NTM8L2Rpdj48ZGl2PjxiPsrVvP7Iyzo8L2I+Jm5ic3A7PC9kaXY+PGRpdj48L2Rpdj48ZGl2
-PjxiPtb3zOI6PC9iPiZuYnNwO1B5dGhvbiBTTVRQINPKvP6y4srUPC9kaXY+PC9kaXY+PGRp
-dj48YnI+PC9kaXY+UHl0aG9uINPKvP63osvNsuLK1C4uLjwvZGl2Pg==
+<html><head><meta http-equiv=3D"content-type" content=3D"text/html; charse=
+t=3DGB2312"><style>body { line-height: 1.5; }blockquote { margin-top: 0px;=
+ margin-bottom: 0px; margin-left: 0.5em; }div.foxdiv20161005151642290220 {=
+ }body { font-size: 10.5pt; font-family: 'Microsoft YaHei UI'; color: rgb(=
+0, 0, 0); line-height: 1.5; }</style></head><body>=0A<div><span></span>666=
+</div>=0A<div><br></div><hr style=3D"width: 210px; height: 1px;" color=3D"=
+#b5c4df" size=3D"1" align=3D"left">=0A<div><span><div style=3D"MARGIN: 10p=
+x; FONT-FAMILY: verdana; FONT-SIZE: 10pt"><div>phantom0506@sina.com</div><=
+/div></span></div>=0A<blockquote style=3D"margin-top: 0px; margin-bottom: =
+0px; margin-left: 0.5em;"><div>&nbsp;</div><div style=3D"border:none;borde=
+r-top:solid #B5C4DF 1.0pt;padding:3.0pt 0cm 0cm 0cm"><div style=3D"PADDING=
+-RIGHT: 8px; PADDING-LEFT: 8px; FONT-SIZE: 12px;FONT-FAMILY:tahoma;COLOR:#=
+000000; BACKGROUND: #efefef; PADDING-BOTTOM: 8px; PADDING-TOP: 8px"><div><=
+b>=B7=A2=BC=FE=C8=CB=A3=BA</b>&nbsp;<a href=3D"mailto:phantom0506@sina.com=
+">phantom0506@sina.com</a></div><div><b>=B7=A2=CB=CD=CA=B1=BC=E4=A3=BA</b>=
+&nbsp;2016-09-29&nbsp;11:02</div><div><b>=CA=D5=BC=FE=C8=CB=A3=BA</b>&nbsp=
+;<a href=3D"mailto:phantom0506@sina.com">phantom0506</a></div><div><b>=D6=
+=F7=CC=E2=A3=BA</b>&nbsp;=B2=E2=CA=D4=D3=CA=BC=FE</div></div></div><div><d=
+iv class=3D"FoxDiv20161005151642290220">=0A<div><span></span><br></div>=0A=
+<div>=C4=E3=BA=C3=B0=A1=B9=FE=B9=FE=B9=FE=B9=FE=B9=FE=B9=FE=B9=FE</div><hr=
+ style=3D"width: 210px; height: 1px;" color=3D"#b5c4df" size=3D"1" align=
+=3D"left">=0A<div><span><div style=3D"MARGIN: 10px; FONT-FAMILY: verdana; =
+FONT-SIZE: 10pt"><div>phantom0506@sina.com</div></div></span></div>=0A</di=
+v></div></blockquote>=0A</body></html>
+------=_001_NextPart357826044018_=------
 
-------=_NextPart_57E9FA3E_09FB33A0_2C4DCA54--
 
 

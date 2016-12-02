@@ -1,92 +1,83 @@
-Received: from mail.hust.edu.cn (unknown [202.114.0.240])
-	by newmx62.qq.com (NewMx) with SMTP
-	id ; Fri, 21 Oct 2016 22:57:59 +0800
-X-QQ-FEAT: 7gCMjH1P5obI+egIi4ab1gLk+rjF/WB8orJgd5PkfPg0NOkmlO168rLeLh9pi
-	nzJRuj/RptYTSEbmiQEVRYHNanQJqWOLa9XgTtE0VahnPF5LyeK3zxm1n+IrHNYDO7c5DLg
-	R2ZIg/sILDdH9ySktIXVQm760440M/tQVzaVbYpVP/vsYNkGr6KvWVO1jH4XMYZcchgUhv2
-	SOqucTctRtgIGzyczy0Mnhk20VQ3c4pX5ArzWqLsRZyLjAfaMau61q9kWdZcKSglJ86KCHi
-	FxFOd6PIcLCZ+TUxK4xy1uIL8DjgEjVRoAnlyU3Hn1Qs/uE7r47RYBJlE=
-X-QQ-MAILINFO: NbUxUzKtP+7YXrl9LOzRFYERByjxRPRarQYSRbahKNPaIzUMcf2ip2aGi
-	k1COpy7nZKe6fBaLW5ORAGy86eV1CzPqebJhODs2r8N32asy4ViioeZPfCEne67+PaWZ1Ht
-	3BSE7WDIZSYrlCEJcCMihaGBIj9YjdGuW8ShgRhkULk1sxZVNcQ3zwflPsFRibl/yfRdfVz
-	OKsoR
-X-QQ-mid: mx62t1477061881tlshzupiu
-X-QQ-ORGSender: jqhuang@hust.edu.cn
-Received: by ajax-webmail-mailapp2 (Coremail) ; Fri, 21 Oct 2016 23:02:10
- +0800 (GMT+08:00)
-Date: Fri, 21 Oct 2016 23:02:10 +0800 (GMT+08:00)
-From: "Jiaqing Huang" <jqhuang@hust.edu.cn>
-To: =?UTF-8?B?5byg5piT5pif?= <769308694@qq.com>,
-	=?UTF-8?B?5pa9546y546y?= <1921776352@qq.com>,
-	=?UTF-8?B?6YOt6Z2S6Zye?= <1366602922@qq.com>,
-	=?UTF-8?B?5pu56LGG6LGG?= <963156251@qq.com>,
-	=?UTF-8?B?6ZmI55KQ?= <793492054@qq.com>,
-	=?UTF-8?B?6ZmI5pav55Cm?= <328356734@qq.com>,
-	=?UTF-8?B?5p2o5rWp?= <1131578064@qq.com>,
-	=?UTF-8?B?5r2Y6auY5a6B?= <406371648@qq.com>,
-	=?UTF-8?B?6ZKx5LmJ5rSL?= <1746954811@qq.com>,
-	=?UTF-8?B?5ZGo5qWa5bmz?= <1210418829@qq.com>,
-	=?UTF-8?B?5b6Q55Cm?= <2529195377@qq.com>,
-	=?UTF-8?B?6YCa5L+hMTQwMeePrSDogpbms5XpsoE=?= <245297262@qq.com>,
-	=?UTF-8?B?6LCi6YeR55qT?= <279327917@qq.com>,
-	=?UTF-8?B?5r2Y6b6Z5rGf?= <780793271@qq.com>,
-	=?UTF-8?B?5LiH5pS/?= <609311343@qq.com>,
-	=?UTF-8?B?5pa55p2w5rCR?= <337014476@qq.com>,
-	=?UTF-8?B?5LqO5Y2a?= <983763802@qq.com>,
-	=?UTF-8?B?6ZmI5YeM?= <439348988@qq.com>,
-	=?UTF-8?B?5aSP5qCR5rSL?= <1256921631@qq.com>,
-	=?UTF-8?B?6LS+6ZWH6L+c?= <1160434030@qq.com>,
-	=?UTF-8?B?6LS66ZGr?= <1435679023@qq.com>,
-	=?UTF-8?B?5ZSQ5qGi5qGB?= <956234606@qq.com>,
-	=?UTF-8?B?5p2o6b6Z6b6Z?= <2042305316@qq.com>,
-	=?UTF-8?B?5YiY5ZiJ55Cb?= <759313214@qq.com>,
-	=?UTF-8?B?6Z+p5YWJ6LWr?= <2244093452@qq.com>
-Message-ID: <17132ea.520.157e7c37cb3.Coremail.jqhuang@hust.edu.cn>
-Subject: =?UTF-8?B?IOOAkOmAmuS/oeeUteWtkOe6v+i3r+OAkSAg5a6e6aqM5pWZ5p2Q5LqL5a6c?=
-MIME-Version: 1.0
-Content-Type: multipart/alternative;
-	boundary="----=_Part_4659_2200362.1477062130867"
-X-Originating-IP: [218.199.17.54]
+Received: from mail3-184.sinamail.sina.com.cn (unknown [202.108.6.40])
+	by newmx61.qq.com (NewMx) with SMTP id
+	for <406371648@qq.com>; Sun, 23 Oct 2016 22:29:06 +0800
+X-QQ-FEAT: 0OZ4uWXw3C6oYtwtIYx5zwvUMa1TeSiRsET7ks8Mawoeb4fqAILnwJptlAzB+
+	ZtdrZXRJWxCgyYQOKUK0JkdwQcvLQlCNBHAa3uKz8L7MFrJpcj3BODM7CG3ikL7VkNp2eye
+	o99k13X5D7ZecBojQiLMXhYaDcs/UQkzpYCea/zaEO9jdQPfwGL3tDbtd/mssd4YOE1SM1g
+	yJZogL5rj3ZyZgQ3aEMnnhe3V5PppTYURO4AfwldG8iVdf1vFQGZNGejmVlketo18+cV7yp
+	yo68fKdL3Fs3kG0KlQMxtLGCY=
+X-QQ-MAILINFO: MfiUJyQXz1c0eiETuHT4GI1FYmZm0wJDjIRO5yuy/MnqOHgIZ6Uua7bpW
+	lX+ePm5NyUu0OTfxwOD5T4U9kgFoRneEPwiWKbjgywiLy0jQPvQ0dvam9yuhu0pXKvDuq8C
+	NWX6cNmaZ9gC
+X-QQ-mid: mx61t1477232946tzi0p0egp
+X-QQ-ORGSender: phantom0506@sina.com
+Received: from unknown (HELO Lenovo-PC)([222.20.35.209])
+	by sina.com with ESMTP
+	23 Oct 2016 22:29:06 +0800 (CST)
+X-Sender: phantom0506@sina.com
+X-Auth-ID: phantom0506@sina.com
+X-SMAIL-MID: 136985394832
+Date: Sun, 23 Oct 2016 22:25:03 +0800
+From: "phantom0506@sina.com" <phantom0506@sina.com>
+To: 406371648 <406371648@qq.com>
+Subject: =?GB18030?B?u9i4tDogu9i4tKO6dDEy?=
+References: <tencent_26E3E2474F1AD5BF7912417F@qq.com>
 X-Priority: 3
-X-Mailer: Coremail Webmail Server Version 4.0.8 dev build
- 20150107(58648.7033.6860) Copyright (c) 2002-2016 www.mailtech.cn hust
-X-SendMailWithSms: false
-X-CM-TRANSID: GAEQrJD7r7nyLQpYKGEBAA--.138W
-X-CM-SenderInfo: irzzliyrqrkmo6kx23oohg3hdfq/1tbiAQAPBVZtkuFOHgACsR
-X-Coremail-Antispam: 1Ur529EdanIXcx71UUUUU7IcSsGvfJ3iIAIbVAYjsxI4VWUJw
-	CS07vEb4IE77IF4wCS07vE1I0E4x80FVAKz4kxMIAIbVAFxVCaYxvI4VCIwcAKzIAtYxBI
-	daVFxhVjvjDU=
+X-Has-Attach: no
+X-Mailer: Foxmail 7, 2, 7, 174[cn]
+Mime-Version: 1.0
+Message-ID: <201610232224540512380@sina.com>
+Content-Type: multipart/alternative;
+	boundary="----=_001_NextPart626535015362_=----"
 
-------=_Part_4659_2200362.1477062130867
-Content-Type: text/plain; charset=UTF-8
+
+This is a multi-part message in MIME format.
+
+------=_001_NextPart626535015362_=----
+Content-Type: text/plain;
+	charset="GB18030"
 Content-Transfer-Encoding: base64
 
-IAoKIAoKCgrkuIvlkajlsLHopoHlrp7pqozkuobvvIzlrp7pqozmlZnmnZDnmoTkuovlrpwKCiAK
-Cuivt+ePremVv+aMieePrei0reS5sOe7n+S4gOi0reS5sO+8jDPlhYPkuIDmnKzjgIIgCgrml7bp
-l7TvvJrlkajlha3kuIvljYgy54K5LTXngrkgICAKCiAgICBvciAg5ZGo5pel5LiL5Y2IMueCuS01
-54K5CgrlnLDngrnvvJrvvIjljZfkuIDmpbw3MTLlrp7pqozlrqQg5YWw5Lyf5pifIDE4Ny03MTkz
-LTA5ODPvvIkgCgoKCgoKCgoK
-------=_Part_4659_2200362.1477062130867
-Content-Type: text/html; charset=UTF-8
-Content-Transfer-Encoding: base64
+u9i4tA0KDQoNCg0KcGhhbnRvbTA1MDZAc2luYS5jb20NCiANCreivP7Iy6O6IDQwNjM3MTY0OA0K
+t6LLzcqxvOSjuiAyMDE2LTEwLTIyIDE1OjI2DQrK1bz+yMujuiBwaGFudG9tMDUwNg0K1vfM4qO6
+ILvYuLSjunQxMg0K0LvQuw0Kt6LX1M7StcRpUGhvbmUNCg0KDQotLS0tLS0tLS0tLS0tLS0tLS0g
+1K3KvNPKvP4gLS0tLS0tLS0tLS0tLS0tLS0tDQq3orz+yMs6IHBoYW50b20wNTA2IDxwaGFudG9t
+MDUwNkBzaW5hLmNvbT4NCreiy83KsbzkOiAyMDE2xOoxMNTCMjDI1SAxNzo1OQ0K1vfM4jogdDEy
+DQoNCjEyMw0K
 
-Jm5ic3A7PGJyPjxicj4mbmJzcDs8YnI+PGJyPjxwPuS4i+WRqOWwseimgeWunumqjOS6hu+8jOWu
-numqjOaVmeadkOeahOS6i+WunCA8L3A+PHA+Jm5ic3A7PC9wPjxwPuivt+ePremVv+aMieePrei0
-reS5sDxzdHJvbmc+57uf5LiAPC9zdHJvbmc+6LSt5Lmw77yMM+WFg+S4gOacrOOAgiZuYnNwOzwv
-cD48cD7ml7bpl7TvvJrlkajlha3kuIvljYgy54K5LTXngrkmbmJzcDsmbmJzcDsmbmJzcDs8L3A+
-PHA+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7b3ImbmJzcDsg5ZGo5pel5LiL5Y2IMueCuS0154K5
-PC9wPjxwPuWcsOeCue+8mu+8iOWNl+S4gOalvDcxMuWunumqjOWupCDlhbDkvJ/mmJ8gMTg3LTcx
-OTMtMDk4M++8iSZuYnNwOzwvcD48cD48YnI+PC9wPjxwPjxicj48L3A+PGJsb2NrcXVvdGUgc3R5
-bGU9InBhZGRpbmctbGVmdDogNXB4OyBtYXJnaW4tcmlnaHQ6IDBweDsgbWFyZ2luLWxlZnQ6IDVw
-eDsgYm9yZGVyLWxlZnQtY29sb3I6IHJnYigxODIsIDE4MiwgMTgyKTsgYm9yZGVyLWxlZnQtd2lk
-dGg6IDJweDsgYm9yZGVyLWxlZnQtc3R5bGU6IHNvbGlkOyIgbmFtZT0icmVwbHlDb250ZW50Ij48
-YmxvY2txdW90ZSBzdHlsZT0icGFkZGluZy1sZWZ0OiA1cHg7IG1hcmdpbi1yaWdodDogMHB4OyBt
-YXJnaW4tbGVmdDogNXB4OyBib3JkZXItbGVmdC1jb2xvcjogcmdiKDE4MiwgMTgyLCAxODIpOyBi
-b3JkZXItbGVmdC13aWR0aDogMnB4OyBib3JkZXItbGVmdC1zdHlsZTogc29saWQ7IiBuYW1lPSJy
-ZXBseUNvbnRlbnQiPjxibG9ja3F1b3RlIHN0eWxlPSJwYWRkaW5nLWxlZnQ6IDVweDsgbWFyZ2lu
-LXJpZ2h0OiAwcHg7IG1hcmdpbi1sZWZ0OiA1cHg7IGJvcmRlci1sZWZ0LWNvbG9yOiByZ2IoMTgy
-LCAxODIsIDE4Mik7IGJvcmRlci1sZWZ0LXdpZHRoOiAycHg7IGJvcmRlci1sZWZ0LXN0eWxlOiBz
-b2xpZDsiIG5hbWU9InJlcGx5Q29udGVudCI+PHA+PGJyPjwvcD48L2Jsb2NrcXVvdGU+PC9ibG9j
-a3F1b3RlPjwvYmxvY2txdW90ZT4=
-------=_Part_4659_2200362.1477062130867--
+------=_001_NextPart626535015362_=----
+Content-Type: text/html;
+	charset="GB18030"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><meta http-equiv=3D"content-type" content=3D"text/html; charse=
+t=3DGB18030"><style>body { line-height: 1.5; }blockquote { margin-top: 0px=
+; margin-bottom: 0px; margin-left: 0.5em; }div.foxdiv20161023222438036602 =
+{ }body { font-size: 10.5pt; font-family: 'Microsoft YaHei UI'; color: rgb=
+(0, 0, 0); line-height: 1.5; }</style></head><body>=0A<div><span></span>=
+=BB=D8=B8=B4</div>=0A<div><br></div><hr style=3D"width: 210px; height: 1px=
+;" color=3D"#b5c4df" size=3D"1" align=3D"left">=0A<div><span><div style=3D=
+"MARGIN: 10px; FONT-FAMILY: verdana; FONT-SIZE: 10pt"><div>phantom0506@sin=
+a.com</div></div></span></div>=0A<blockquote style=3D"margin-top: 0px; mar=
+gin-bottom: 0px; margin-left: 0.5em;"><div>&nbsp;</div><div style=3D"borde=
+r:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0cm 0cm 0cm"><div styl=
+e=3D"PADDING-RIGHT: 8px; PADDING-LEFT: 8px; FONT-SIZE: 12px;FONT-FAMILY:ta=
+homa;COLOR:#000000; BACKGROUND: #efefef; PADDING-BOTTOM: 8px; PADDING-TOP:=
+ 8px"><div><b>=B7=A2=BC=FE=C8=CB=A3=BA</b>&nbsp;<a href=3D"mailto:40637164=
+8@qq.com">406371648</a></div><div><b>=B7=A2=CB=CD=CA=B1=BC=E4=A3=BA</b>&nb=
+sp;2016-10-22&nbsp;15:26</div><div><b>=CA=D5=BC=FE=C8=CB=A3=BA</b>&nbsp;<a=
+ href=3D"mailto:phantom0506@sina.com">phantom0506</a></div><div><b>=D6=F7=
+=CC=E2=A3=BA</b>&nbsp;=BB=D8=B8=B4=A3=BAt12</div></div></div><div><div cla=
+ss=3D"FoxDiv20161023222438036602"><div style=3D"min-height:22px">=D0=BB=D0=
+=BB</div><div style=3D"min-height:22px"></div><span class=3D"mail-footer">=
+=B7=A2=D7=D4=CE=D2=B5=C4iPhone</span><div id=3D"original-content"><br><br>=
+<div><div style=3D"font-size:70%;padding:2px 0;">------------------ =D4=AD=
+=CA=BC=D3=CA=BC=FE ------------------</div><div style=3D"font-size:70%;bac=
+kground:#f0f0f0;color:#212121;padding:8px;border-radius:4px"><div><b>=B7=
+=A2=BC=FE=C8=CB:</b> phantom0506 &lt;phantom0506@sina.com&gt;</div><div><b=
+>=B7=A2=CB=CD=CA=B1=BC=E4:</b> 2016=C4=EA10=D4=C220=C8=D5 17:59</div><div>=
+<b>=D6=F7=CC=E2:</b> t12</div></div></div><br>123</div></div></div></block=
+quote>=0A</body></html>
+------=_001_NextPart626535015362_=------
+
 

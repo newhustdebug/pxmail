@@ -4,20 +4,20 @@ import re
 import pickle
 import time
 import poplib
-from PyQt5 import QtCore
+import imaplib
+from PyQt5 import QtCore,QtWidgets
 from email.parser import Parser
 from email.header import decode_header
 from email.utils import parseaddr
 from email import message_from_file
 from threading import Thread
-import win32api
 import smtplib
 from pprint import pprint
 import string
 import email
 import parameter as gl
 
-
+APPNAME = 'PxMail v3.0'
 
 class sendingThread(QtCore.QThread):
 
@@ -34,16 +34,16 @@ class sendingThread(QtCore.QThread):
                 smtp_backend.starttls()
             smtp_backend.login(gl.username,gl.password)
         except:
-            win32api.MessageBox(0, u'smtp登陆失败', 'warning')
+            QtWidgets.QMessageBox.warning(self, APPNAME,"smtp登陆失败" )
             self.triggerFail.emit()
             return
         try:
             smtp_backend.sendmail(gl.username, gl.receivers, gl.message.as_string())
         except:
-            win32api.MessageBox(0, u'邮件发送失败', 'warning')
+            QtWidgets.QMessageBox.warning(self, APPNAME,"邮件发送失败" )
             self.triggerFail.emit()
             return
-        win32api.MessageBox(0, u'邮件发送成功', 'warning')
+        QtWidgets.QMessageBox.warning(self, APPNAME,"邮件发送成功" )
         self.triggerSuccess.emit()
 
 
@@ -66,7 +66,7 @@ class loadingThread(QtCore.QThread):
             self.trigger1.emit()
         except Exception as e:
             self.trigger2.emit()
-            win32api.MessageBox(0, str(e), 'warning')
+            QtWidgets.QMessageBox.warning(self, APPNAME,str(e) )
 
 
 class receiveThread(QtCore.QThread):
@@ -76,34 +76,37 @@ class receiveThread(QtCore.QThread):
         super(receiveThread, self).__init__(parent)
         self.cache=MailCache()
     def run(self):
-        self.folder_path = os.path.join(gl.cache_path, gl.folder_path)
+        gl.cathe_folder_path = os.path.join(gl.cache_path, gl.folder_path)
         if self.cache._is_stale(gl.folder_path) or gl.force_refresh == True :
             gl.force_refresh == False
             mails=[]
             for i in range(len(gl.mails_number)):
                 try:
                     resp, mailBody, octets = pop_backend.retr(len(gl.mails_number)-i) # 获取最新一封邮件, 注意索引号从1开始:
-                    msg_content = b'\r\n'.join(mailBody).decode('utf-8')
+                    msg_content = b'\r\n'.join(mailBody).decode()          #此处有BUG，收取部分邮件会UTF8解码出错
                     msg = Parser().parsestr(msg_content)          # 解析邮件:
+                    # msg = email.message_from_bytes(b'\n'.join(mailBody))
                     mails.append((i+1,msg))
                     gl.step=i+1
                     self.triggerNumber.emit()
-                except:
-                    pass
+                except Exception as e:
+                    print(e)
             for mail in mails:
-                with open(os.path.join(self.folder_path, str(mail[0]) + '.ml'), 'w') as mailcache:
+                with open(os.path.join(gl.cathe_folder_path, str(mail[0]) + '.ml'), 'w') as mailcache:
                     mailcache.write(mail[1].as_string())
+
             self.cache._renew_state(gl.folder_path)
         gl.emails = []
-        files = os.listdir(self.folder_path)                                                       #列出目录下的文件
+        files = os.listdir(gl.cathe_folder_path)                                                       #列出目录下的文件
         files.sort(key=lambda x:int(x[:-3]))                                                  #整理文件顺序
-        mail_files = [f for f in files if os.path.isfile(os.path.join(self.folder_path, f))]
+        mail_files = [f for f in files if os.path.isfile(os.path.join(gl.cathe_folder_path, f))]
         for mail_file in mail_files:
             try:
-                with open(os.path.join(self.folder_path, mail_file), 'r',encoding= 'utf-8') as mail_handle:
+                # with open(os.path.join(self.folder_path, mail_file), 'r',encoding= 'utf-8') as mail_handle:
+                with open(os.path.join(gl.cathe_folder_path, mail_file), 'r') as mail_handle:
                     gl.emails.append(message_from_file(mail_handle))        #带附件的邮件，在此处会有BUG,QQ邮箱
-            except:
-                pass
+            except Exception as e:
+                    print(e)
         gl.March_ID=gl.emails                                   #匹配到的邮件等于所有邮件
         self.cache._commit_state()
 
@@ -121,6 +124,12 @@ class searchThread(QtCore.QThread):
             info=get_info(email)
             if (gl.string in info["subject"]) or (gl.string in info["content"]) or (gl.string in info["addr"]):
                 gl.March_ID.append(email)
+                data=info["subject"]+info["content"]+info["addr"]
+                pattern = re.compile(gl.string)
+                dataMatched = re.findall(pattern, data)                        #匹配所有关键字，背景高亮
+                gl.highlight.setHighlightData(dataMatched)
+                gl.highlight.rehighlight()
+
         self.trigger.emit()
 
 
@@ -148,6 +157,7 @@ class MailCache():
 
     def __init__(self,):
         gl.cache_path = os.path.join('cache', gl.username)
+        gl.temp_path=os.path.join(gl.cache_path, 'temp')
         self.state_path = os.path.join(gl.cache_path, 'cache.state')
 
         if not os.path.isdir(gl.cache_path):                            #创建每个用户的目录
@@ -160,6 +170,8 @@ class MailCache():
             os.makedirs(os.path.join(gl.cache_path, '收件夹'))
         if not os.path.isdir(os.path.join(gl.cache_path, '已发送')):
             os.makedirs(os.path.join(gl.cache_path, '已发送'))
+        if not os.path.isdir(os.path.join(gl.cache_path, 'temp')):
+            os.makedirs(os.path.join(gl.cache_path, 'temp'))
         self._load_state()
 
 
@@ -213,6 +225,7 @@ def guess_charset(msg):                             #获得字符编码方法
         pos = content_type.find('charset=')
         if pos >= 0:
             charset = content_type[pos + 8:].strip()
+            charset=charset.split(';')[0]
     return charset
 def decode_str(s):                                      #字符编码转换方法
     value, charset = decode_header(s)[0]
@@ -225,6 +238,7 @@ def get_info(msg, indent = 0):
     content = ''
     date=''
     html=''
+    filename=''
     received=''
     if indent == 0:
         for header in ['From', 'Subject','Date','Received']:
@@ -238,39 +252,33 @@ def get_info(msg, indent = 0):
                     received = decode_str(value)
                 else:
                     hdr, addr = parseaddr(value)
-    if msg.is_multipart():
-        parts = msg.get_payload()
-        for n, part in enumerate(parts):
-            # content_value = self.get_info(part, indent + 1)[2]
-            # if content_value != '':
-            #     content = content_value
-            content_value = get_info(part, indent + 1)
-            if content_value["content"] != '':
-                content = content_value["content"]
-            elif content_value["html"] != '':
-                html = content_value["html"]
-    else:
-        content_type = msg.get_content_type()
-        if content_type=='text/plain':
-            content = msg.get_payload(decode=True)
-            charset = guess_charset(msg)
+    for part in msg.walk():
+        filename = part.get_filename()
+        content_type = part.get_content_type()
+        charset = guess_charset(part)
+        if filename:
+            filename = decode_str(filename)
+            gl.attachment = part.get_payload(decode = True)
+            gl.file_path=os.path.join(gl.temp_path, filename)
+            fEx = open(gl.file_path, 'wb')
+            fEx.write(gl.attachment)
+            fEx.close()
+
+
+        elif content_type == 'text/plain':
             if charset:
-                content = content.decode(charset)
-        else:
-            content = ''
-        if content_type=='text/html':
-            html = msg.get_payload(decode=True)
-            charset = guess_charset(msg)
+                # content = part.get_payload(decode=True).decode('unicode_escape')      #处理新浪邮箱附件邮件的中文字符
+                content = part.get_payload(decode=True).decode(charset)
+        elif content_type == 'text/html':
             if charset:
-                html = html.decode(charset)
-        else:
-            html = ''
-    # return (subject, addr, content,html,date)
+                html = part.get_payload(decode=True).decode(charset)
+
     return {
         "subject": subject,
         "addr": addr,
         "content": content,
         "html":html,
         "date":date,
-        "received":received
+        "received":received,
+        "filename":filename
         }

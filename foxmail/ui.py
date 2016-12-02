@@ -8,14 +8,17 @@ from PyQt5.QtWidgets import QFileDialog
 from email import utils
 import time
 from datetime import datetime
-import win32api
 import smtplib
+import re
+import sys
+import subprocess
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from mail import *
 import parameter as gl
+import syntax_pars
 
-
+APPNAME = 'PxMail v3.0'
 
 
 class ComposeWindow(QtWidgets.QMainWindow):
@@ -39,16 +42,16 @@ class ComposeWindow(QtWidgets.QMainWindow):
         if not "@" in getstring:
             self.model.setStringList([getstring+"@qq.com", getstring+"@sina.com",getstring+"@sina.cn",
                         getstring+ "@163.com",getstring+"@126.com", getstring+"@hust.edu.cn"])
-
+    #发送邮件
     def onSend(self):
         if not self.txtreceiver.text():
-            win32api.MessageBox(0, u'请填写收信人', 'warning')
+            QtWidgets.QMessageBox.warning(self, APPNAME,"请填写收信人" )
             return
         if not self.txtsubject.text():
-            win32api.MessageBox(0, u'请填邮件主题', 'warning')
+            QtWidgets.QMessageBox.warning(self, APPNAME,"请填邮件主题" )
             return
         if not self.textEdit.toPlainText():
-            win32api.MessageBox(0, u'请填写邮件正文', 'warning')
+            QtWidgets.QMessageBox.warning(self, APPNAME,"请填写邮件正文" )
             return
         if self.fileName:                                                    #如果有附件
             gl.message = MIMEMultipart('related')
@@ -70,7 +73,7 @@ class ComposeWindow(QtWidgets.QMainWindow):
         self.statusBar.showMessage("Sending...")
         self.send_thread.start()
         self.senddialog.exec_()
-
+    #添加附件
     def onAttachment(self):
 
         self.fileName, filetype = QFileDialog.getOpenFileName(self,
@@ -90,6 +93,7 @@ class ComposeWindow(QtWidgets.QMainWindow):
 class AccountDialog(QtWidgets.QMainWindow):
     def __init__(self, parent = None):
         super(AccountDialog, self).__init__()
+
         uic.loadUi('ui/accountdialog.ui', self)
         self.popportEdit.setText("110")
         self.smtpportEdit.setText("25")
@@ -184,7 +188,7 @@ class AccountDialog(QtWidgets.QMainWindow):
         gl.popssl=False
         gl.smtpssl=False
         if not (gl.username and gl.password):
-            win32api.MessageBox(0, u'请输入用户名密码', 'warning')
+            QtWidgets.QMessageBox.warning(self, APPNAME,"请输入用户名密码" )
         else:
             try:
                 if gl.username.split('@')[1]=="hust.edu.cn":
@@ -194,7 +198,7 @@ class AccountDialog(QtWidgets.QMainWindow):
                     gl.pophost='pop.'+gl.username.split('@')[1]
                     gl.smtphost='smtp.'+gl.username.split('@')[1]
             except:
-                win32api.MessageBox(0, u'请输入格式正确的用户名', 'warning')
+                QtWidgets.QMessageBox.warning(self, APPNAME,"请输入格式正确的用户名" )
                 return
             if self.txtpopserver.text():
                 gl.pophost=self.txtpopserver.text()
@@ -274,10 +278,18 @@ class MainWindow(QtWidgets.QMainWindow):
         self.search_thread = searchThread()
         self.search_thread.trigger.connect(self.mailDisplay)
 
+
         self.comboBox.insertSeparator(3)
         self.comboBox.insertItems(4,["√    升序","      降序"])
+        self.listEmails.customContextMenuRequested[QtCore.QPoint].connect(self.listmailMenu)
+        self.highlight = syntax_pars.PythonHighlighter(self.emailPreview.document())
 
+        self.attachdisplay.hide()                                           #隐藏附件标签
+        self.attachlabel.hide()
 
+        self.createContextMenu()                                                #为按钮创建菜单
+
+    #Combobox显示
     def OnActivated(self, row):
         if row==4 :
             self.comboBox.setItemText(4,"√    升序")
@@ -402,9 +414,40 @@ class MainWindow(QtWidgets.QMainWindow):
         self.listEmails.expandAll()                                     #全部展开
         self.receivedialog.close()
         self.statusbar.showMessage("")
+    #创建附件按钮菜单
+    def createContextMenu(self):
+        self.attachdisplay.customContextMenuRequested.connect(self.showContextMenu)
+        # 创建QMenu
+        self.contextMenu = QtWidgets.QMenu(self)
+        self.actionA = self.contextMenu.addAction(QtGui.QIcon("images/0.png"),u'|  默认程序打开')
+        self.actionB = self.contextMenu.addAction(QtGui.QIcon("images/0.png"),u'|  另存为')
+        # #添加二级菜单
+        # self.second = self.contextMenu.addMenu(QtGui.QIcon("images/0.png"),u"|  打开方式")
+        # self.actionD = self.second.addAction(QtGui.QIcon("images/0.png"),u'|  选择默认程序')
 
+        self.actionA.triggered.connect(self.openFile)
+        self.actionB.triggered.connect(self.save_binary_file)
 
+    #显示附件按钮菜单
+    def showContextMenu(self):
+        self.contextMenu.exec_(QtGui.QCursor.pos()) #在鼠标位置显示
+    #保存为二进制文件
+    def save_binary_file(self):
+        filename, filetype = QFileDialog.getSaveFileName(self,"另存为",
+                                        os.path.join("c：/", self.filename),'All Files (*)' )
 
+        if not filename:
+            return
+        qFile = QtCore.QFile(filename)
+        if not qFile.open(QtCore.QFile.WriteOnly | QtCore.QFile.ReadWrite):
+            QtWidgets.QMessageBox.warning(self, APPNAME,
+                    "无法创建文件: %s\n%s." % (filename, qFile.errorString()))
+            return
+        with open(filename, 'wb') as file_handle:
+            QtWidgets.QApplication.setOverrideCursor(QtCore.Qt.WaitCursor)
+            file_handle.write(gl.attachment)
+            QtWidgets.QApplication.restoreOverrideCursor()
+        self.statusBar().showMessage("Saved '%s'" % filename, 2000)
 
 
 
@@ -419,8 +462,6 @@ class MainWindow(QtWidgets.QMainWindow):
         self.receive_thread.start()
         self.receivedialog.reset()
         self.receivedialog.exec_()
-
-
 
     def onContactList(self):
         items=[]
@@ -479,25 +520,32 @@ class MainWindow(QtWidgets.QMainWindow):
     def txtsearchEdited(self):
         if self.searchEdit.text() and self.searchEdit.palette().color(QtGui.QPalette.Text).red() != 150:
             gl.string=self.searchEdit.text()
-            self.search_thread.start()
+
+            # self.search_thread.start()
+            QtWidgets.QApplication.setOverrideCursor(QtCore.Qt.WaitCursor)          #鼠标设置成忙等待状态
+            gl.March_ID=[]                                                  #匹配符合条件的邮件
+            for email in gl.emails:
+                info=get_info(email)
+                if (gl.string in info["subject"]) or (gl.string in info["content"]) or (gl.string in info["addr"]):
+                    gl.March_ID.append(email)
+                    self.data=info["subject"]+info["content"]+info["addr"]
+                    pattern = re.compile(gl.string)
+                    dataMatched = re.findall(pattern, self.data)                        #匹配所有关键字，背景高亮
+                    self.highlight.setHighlightData(dataMatched)
+                    self.highlight.rehighlight()
+            self.mailDisplay()
+            QtWidgets.QApplication.restoreOverrideCursor()
+
         else:
             gl.March_ID=gl.emails
             self.mailDisplay()
-
     #清空搜索框
     def cleartxt(self):
         if self.searchEdit.palette().color(QtGui.QPalette.Text).red() != 150:
             self.searchEdit.clear()
             gl.March_ID=gl.emails
             self.mailDisplay()
-    #展示搜索结果
-    # def searchDisplay(self):
-    #     subjects=[]
-    #     for email in gl.March_ID:
-    #         subject = decode_str(email.get('subject'))
-    #         subjects.append(subject)
-    #     self.listEmails.clear()
-    #     self.listEmails.addItems(subjects)
+
     #回复功能
     def onReply(self):
         email = gl.March_ID[self.index]
@@ -531,7 +579,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.compose.textEdit.setDocument(document)
 
     def onDelete(self):
-        win32api.MessageBox(0, u'该功能尚在开发中~~~~~~~', 'warning')
+        QtWidgets.QMessageBox.warning(self, APPNAME,"该功能尚在开发中~~~~~~~" )
         pass
 
     def onFolderSelected(self, folder):                                                 #folder:选中的目录
@@ -542,7 +590,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.receivedialog.reset()
             self.receivedialog.exec_()
         else:
-            win32api.MessageBox(0, u'该功能尚在开发中~~~~~~~', 'warning')
+            QtWidgets.QMessageBox.warning(self, APPNAME,"该功能尚在开发中~~~~~~~" )
 
 
     def onMailSelected(self, item):
@@ -550,7 +598,6 @@ class MainWindow(QtWidgets.QMainWindow):
             self.btnForward.setEnabled(True)                               #转发功能可用
             self.btnDelete.setEnabled(True)
             self.btnReply.setEnabled(True)
-            self.index=self.listEmails.currentIndex().row()
             self.index=item.treeWidget().currentItem().data(0,1)               #将Item中的行号提取出来
             email = gl.March_ID[self.index]
             self.document = QtGui.QTextDocument()
@@ -558,11 +605,26 @@ class MainWindow(QtWidgets.QMainWindow):
             try:
 
                 if info["content"] != '':
-                    self.document.setPlainText(info["content"])                          #显示纯文本
-                elif info["html"] != '':
-                    self.document.setHtml(info["html"])                                  #显示html文本
-                self.emailPreview.setDocument(self.document)                             #显示在文本框中
+                    # self.document.setPlainText(info["content"])                          #显示纯文本
+                    self.emailPreview.setPlainText(info["content"])
 
+                elif info["html"] != '':
+                    # self.document.setHtml(info["html"])
+                    self.emailPreview.setHtml(info["html"])#显示html文本
+                # self.emailPreview.setPlainText(info["content"])
+                # self.emailPreview.setDocument(self.document)                             #显示在文本框中
+
+                if info["filename"]:
+                    self.filename=info["filename"]
+                    self.attachdisplay.setText(self.filename)
+                    self.attachdisplay.show()
+                    self.attachlabel.show()
+                else:
+                    self.attachdisplay.hide()
+                    self.attachlabel.hide()
+
+                    # self.emailPreview.append(str("<html><head/><body><p><a href=\"https://www.baidu.com/\"><span style=\" text-decoration: underline; color:#0000ff;\">注册账号</span></a></p></body></html>"))
+                    # self.emailPreview.append(str("<html><p><a href=\"%1\">进入列表的设置页面</a></p></html>").arg(path.left(path.lastIndexOf('/'))))
                 self.subdisplay.setText(info["subject"])                    #显示主题，发信人，日期
                 self.fromdisplay.setText(info["addr"])
 
@@ -580,10 +642,45 @@ class MainWindow(QtWidgets.QMainWindow):
                               +' '+str(datetuple[3])+':'+str(datetuple[4])
                 self.datedisplay.setText(self.datestring)
 
-            except:
-                pass
+            except Exception as e:
+                print(e)
+
+    #跨平台打开文件，支持MAC OS，Linux，Windows
+    def openFile(self):
+        if sys.platform.startswith('darwin'):
+            subprocess.call(('open', gl.file_path))
+        elif os.name == 'nt':
+            os.startfile(gl.file_path)                          ## only available on windowses
+        elif os.name == 'posix':
+            subprocess.call(('xdg-open', gl.file_path))
+
+    def onshow(self):
+        print (1)
+        print (self.listEmails.currentItem().data(0,1) )
+        # os.remove("C:/Users/h/Desktop/myproject2/lab1/fuse.log")  #删除文件
+    #邮件邮件菜单管理
+    def listmailMenu(self,position):
+
+        removeAction = QtWidgets.QAction(u"删除", self, triggered=self.onshow)       # triggered 为右键菜单点击后的激活事件。这里slef.close调用的是系统自带的关闭事件。
 
 
+        addAction = QtWidgets.QAction(u"添加", self)       # 也可以指定自定义对象事件
+
+
+        level = 0
+        indexes = self.listEmails.selectedIndexes()
+        if len(indexes) > 0:
+            index = indexes[0]
+            while index.parent().isValid():
+                index = index.parent()
+                level += 1
+
+        menu = QtWidgets.QMenu(self.listEmails)
+        if level == 1:                                          #选中的是第一个子类
+            menu.addAction(removeAction)
+            menu.addAction(addAction)
+
+        menu.exec_(self.listEmails.viewport().mapToGlobal(position))
 
 
 
@@ -623,6 +720,7 @@ class SendDialog(QtWidgets.QDialog):
         self.processlabel.setMovie(self.movie)
         self.movie.start()
         self.processlabel.show()
+
 
 
 class Filter(QtCore.QObject):

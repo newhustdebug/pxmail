@@ -1,83 +1,56 @@
-X-Mda-Received: from <mx-3-46.mail.sina.com.cn>([<202.108.248.121>])
- by <mda-113-93.mda.fmail.tg.sinanode.com> with LMTP id <44061>
- Sep 29 2016 21:35:32 +0800 (CST)
-X-Sina-MID: 049A9BBC3EF5A89FA4FF5528B4C0937CB400000000000001
-X-Sina-Attnum: 0
-Received: from smtpbg11.qq.com (HELO smtpbg11.qq.com)([183.60.61.232])
+X-Mda-Received: from <mx-3-44.mail.sina.com.cn>([<202.108.248.124>])
+ by <mda-113-94.mda.fmail.tg.sinanode.com> with LMTP id <1031729>
+ Oct 29 2016 22:36:45 +0800 (CST)
+X-Sina-MID: 04454B4D9F6856647C0FF8F57AB10B602100000000000001
+X-Sina-Attnum: 1
+Received: from mail3-162.sinamail.sina.com.cn (HELO smtp-5-121.mail.sina.com.cn)([202.108.3.162])
 	by sina.com with SMTP
-	29 Sep 2016 21:35:32 +0800 (CST)
-X-Sender: 245297262@qq.com
-Authentication-Results: sina.com; dkim=pass (Signature verified) header.i=qq.com
-Received-SPF: Pass (sina.com: SPF record at spf-b.mail.qq.com designates 183.60.61.232 as permitted sender) identity=from;
-	client-ip=183.60.61.232;
-	receiver=sina.com;
-	envelope-from=245297262@qq.com;
-	helo=smtpbg11.qq.com
-X-SMAIL-MID: 68959625166247
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
-	t=1475156070; bh=3YMgwYX30FIMrhVJgHHQ3ZYhJw/FSVoytXsof+b4DWE=;
-	h=From:To:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding:Date:Message-ID;
-	b=pdItZbcmvOVojor2WALXIGSAJciOg6QScSiQ9BUS3ts2hMaTYVAYKLeE8KilJUjIb
-	 KDAs+h+GD+T1cPgLmifaGMkbzmBz8i8A4XNzWxvrhi485EzDsDYNoU/ip1odMpD5Br
-	 pzeUXOwmTn1zwNub30wIBsN/zvvd1aO+m12zBfN8=
-X-QQ-FEAT: cS8RqpSirXlFYNJHiugEauPV1LHu6jekmJDRf9KMbYepC94zjNA7DkAHWS5aW
-	3v7nEZ3N+2g5caFu3HzEAaDCSgo46G4fQJVTyARoPF1qpF/Qh+lX1Qc9LzAwJ8AYcaucsBP
-	mZrU6VQAtvzce7J/EWVfxLVAR3H6Es+ZPQJ7mVJ4XuvWxZ6vGTW3yTkjOyCr7uDTrlJ5KUy
-	bQAJpYNmk9JKQf7RgHCMvjJJTa6i+gG/DGsfPjPmJbtpwuRND0I3GfFh3vwYI5JbXkoHRHF
-	wHLkZ2yJv3cKgW
-X-QQ-SSF: 00000000000000F0
-X-QQ-WAPMAIL: 1
-X-QQ-BUSINESS-ORIGIN: 2
-X-Originating-IP: 122.205.98.12
-X-QQ-STYLE: 
-X-QQ-mid: riamail22t1475156069t1059100
-From: "=?gb18030?B?z6fUtV/Dt873?=" <245297262@qq.com>
-To: "=?gb18030?B?cGhhbnRvbTA1MDY=?=" <phantom0506@sina.com>
-Subject: =?gb18030?B?u9i4tKO6UHl0aG9uIFNNVFAg08q8/rLiytQ=?=
-Mime-Version: 1.0
-Content-Type: multipart/alternative;
-	boundary="----=_NextPart_57ED1865_08D36558_5C7283B6"
-Content-Transfer-Encoding: 8Bit
-Date: Thu, 29 Sep 2016 21:34:29 +0800
-X-Priority: 3
-Message-ID: <tencent_495718054346D6181C0250C5@qq.com>
-X-QQ-MIME: TCMime 1.0 by Tencent
-X-Mailer: QQMail 2.x
-X-QQ-Mailer: QQMail 2.x
-X-QQ-SENDSIZE: 520
-Feedback-ID: riamail:qq.com:bgweb:bgweb9
+	29 Oct 2016 22:36:44 +0800 (CST)
+X-SMAIL-MID: 89427216253222
+Received: (qmail 6846 invoked by uid 562); 29 Oct 2016 22:36:44 +0800 (CST)
+Date: 29 Oct 2016 22:36:44 +0800 (CST)
+From: MAILER-DAEMON@smtp-5-121.mail.sina.com.cn
+To: phantom0506@sina.com
+Subject: =?GB2312?B?z7XNs83L0MU=?=
+MIME-Version: 1.0 
+Content-type: multipart/mixed; boundary="Boundary(sinamail.sina.com.cn)" 
 
 
-This is a multi-part message in MIME format.
 
-------=_NextPart_57ED1865_08D36558_5C7283B6
-Content-Type: text/plain;
-	charset="gb18030"
-Content-Transfer-Encoding: base64
+--Boundary(sinamail.sina.com.cn)
+Content-type: text/plain; charset=UTF-8
+Content-transfer-encoding: 8BIT
 
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18NCtCkt6jCsw0Ku6rW0L/GvLy0
-89GntefQxdGn1LrNqNDFuaSzzDE0MDGw4A0KMTUxNzI0MzMyMjENCg0KDQotLS3Urcq808q8
-/i0tLQ0Kt6K8/sjLOiAicGhhbnRvbTA1MDYiPHBoYW50b20wNTA2QHNpbmEuY29tPg0Kt6LL
-zcqxvOQ6IDIwMTbE6jnUwjI5yNUgMjE6MzM6MzYNCsrVvP7IyzogDQrW98ziOiBQeXRob24g
-U01UUCDTyrz+suLK1A0KDQoNClB5dGhvbiDTyiYjeDRFRjY7t6LLzbLiytQuLi4=
+尊敬的用户，
 
-------=_NextPart_57ED1865_08D36558_5C7283B6
-Content-Type: text/html;
-	charset="gb18030"
-Content-Transfer-Encoding: base64
+我们很遗憾的通知您，您发的邮件中有一个或多个接收人没有投递成功。
 
-PGJyPjxicj48c3Bhbj5fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXzwvc3Bh
-bj48YnI+PHNwYW4+0KS3qMKzPC9zcGFuPjxicj48c3Bhbj67qtbQv8a8vLTz0ae159DF0afU
-us2o0MW5pLPMMTQwMbDgPC9zcGFuPjxicj48c3Bhbj4xNTE3MjQzMzIyMTwvc3Bhbj48YnI+
-PGJyPjxici8+PGRpdiBzdHlsZT0iZm9udC1zaXplOjEycHg7cGFkZGluZzoycHggMDsiPi0t
-LdStyrzTyrz+LS0tPC9kaXY+PGRpdiBzdHlsZT0iZm9udC1zaXplOjEycHg7YmFja2dyb3Vu
-ZDojZjBmMGYwO2NvbG9yOiMyMTIxMjE7cGFkZGluZzo4cHghaW1wb3J0YW50O2JvcmRlci1y
-YWRpdXM6NHB4O2xpbmUtaGVpZ2h0OjEuNTsiPjxkaXY+PGI+t6K8/sjLOjwvYj4gJnF1b3Q7
-cGhhbnRvbTA1MDYmcXVvdDsmbHQ7cGhhbnRvbTA1MDZAc2luYS5jb20mZ3Q7PC9kaXY+PGRp
-dj48Yj63osvNyrG85Do8L2I+IDIwMTbE6jnUwjI5yNUgMjE6MzM6MzY8L2Rpdj48ZGl2Pjxi
-PsrVvP7Iyzo8L2I+IDwvZGl2PjxkaXY+PGI+1vfM4jo8L2I+IFB5dGhvbiBTTVRQINPKvP6y
-4srUPC9kaXY+PC9kaXY+PGJyLz5QeXRob24g08omI3g0RUY2O7eiy82y4srULi4u
+退回的邮件在附件中，请查看附件了解详情。
 
-------=_NextPart_57ED1865_08D36558_5C7283B6--
+被退回邮件信息：
+
+服务器：112.90.83.115
+
+退信原因：550 Mailbox not found. http://service.mail.qq.com/cgi-bin/help?subtype=1&&id=20022&&no=1000728
+
+收件人：123@qq.com
+
+退信原因查询：http://help.sina.com.cn/i/90/152_2.html
+
+
+--Boundary(sinamail.sina.com.cn)
+Content-type: application/octet-stream; name="mail.eml"; charset=UTF-8
+Content-transfer-encoding: base64
+Content-disposition: attachment; filename="mail.eml"
+
+UmVjZWl2ZWQ6IGZyb20gdW5rbm93biAoSEVMTyBbMTkyLjE2OC4yNDQuMV0pKFsyMjIuMjAuMzUu
+MjA5XSkNCglieSBzaW5hLmNvbSB3aXRoIEVTTVRQDQoJMjkgT2N0IDIwMTYgMjI6MzY6NDQgKzA4
+MDAgKENTVCkNClgtU2VuZGVyOiBwaGFudG9tMDUwNkBzaW5hLmNvbQ0KWC1BdXRoLUlEOiBwaGFu
+dG9tMDUwNkBzaW5hLmNvbQ0KWC1TTUFJTC1NSUQ6IDU3OTgwODM5NDIxOA0KQ29udGVudC1UeXBl
+OiB0ZXh0L3BsYWluOyBjaGFyc2V0PSJ1dGYtOCINCk1JTUUtVmVyc2lvbjogMS4wDQpDb250ZW50
+LVRyYW5zZmVyLUVuY29kaW5nOiBiYXNlNjQNClN1YmplY3Q6IDEyMw0KZnJvbTogcGhhbnRvbTA1
+MDZAc2luYS5jb20NCg0KTVRJeg0K
+
+--Boundary(sinamail.sina.com.cn)--
 
 

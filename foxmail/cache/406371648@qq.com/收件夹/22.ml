@@ -1,100 +1,92 @@
-Received: from 192.30.252.197 (unknown [192.30.252.197])
-	by newmx13.qq.com (NewMx) with SMTP id
-	for <406371648@qq.com>; Fri, 21 Oct 2016 18:06:01 +0800
-X-QQ-FEAT: 6edceRBkca9ZX0XW2lXOSPm9BgkA/VFe2M7VFzlN0og=
-X-QQ-MAILINFO: M9mpTqh4QKvqk6c6A5sydV7ELfMbtXG1utb/rkpCV6xT2QAc6on79EwiY
-	wRdmpX58F0+GTOdpGvfm+mfjzLHwHKfKQTjDAujjLNyqZyhNE6bPU+v1DmiBZyDCDgFuXRB
-	47tw6hwv2nAU
-X-QQ-mid: usamxproxy16t1477044364tz0qrv4
-X-QQ-ORGSender: noreply@github.com
-X-KK-mid: usamxproxy16t1477044364tz0qrv4
-Date: Fri, 21 Oct 2016 03:06:00 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com;
-	s=pf2014; t=1477044361;
-	bh=tQCIa0hX7i6UhMqXQZi5MwTwykcOFHzPGHkxNcynB0o=;
-	h=From:To:Subject:From;
-	b=pi62SR21gAonm5iW9LIZwv6sHB1BUMpRn9F46qmxJzXCzVEq2kRmFIMxI80KkPzVj
-	 C6dVX0tjdNA1TG0Wp4QJP8OKoCCMiKXM5h4gdQaY3fr+c+bjyIoXoHVOt+axKtpBmw
-	 ox7Kz4+nLDkH8jtZDBhTiZXlz2KKnVg3d5P5fDQE=
-From: GitHub <noreply@github.com>
-To: newhustdebug <406371648@qq.com>
-Message-ID: <5809e888f072b_1c493f913e6372c03132@github-highworker1-cp1-prd.iad.github.net.mail>
-Subject: [GitHub] Please verify your email address.
-Mime-Version: 1.0
+Received: from mail.hust.edu.cn (unknown [202.114.0.240])
+	by newmx62.qq.com (NewMx) with SMTP
+	id ; Fri, 21 Oct 2016 22:57:59 +0800
+X-QQ-FEAT: 7gCMjH1P5obI+egIi4ab1gLk+rjF/WB8orJgd5PkfPg0NOkmlO168rLeLh9pi
+	nzJRuj/RptYTSEbmiQEVRYHNanQJqWOLa9XgTtE0VahnPF5LyeK3zxm1n+IrHNYDO7c5DLg
+	R2ZIg/sILDdH9ySktIXVQm760440M/tQVzaVbYpVP/vsYNkGr6KvWVO1jH4XMYZcchgUhv2
+	SOqucTctRtgIGzyczy0Mnhk20VQ3c4pX5ArzWqLsRZyLjAfaMau61q9kWdZcKSglJ86KCHi
+	FxFOd6PIcLCZ+TUxK4xy1uIL8DjgEjVRoAnlyU3Hn1Qs/uE7r47RYBJlE=
+X-QQ-MAILINFO: NbUxUzKtP+7YXrl9LOzRFYERByjxRPRarQYSRbahKNPaIzUMcf2ip2aGi
+	k1COpy7nZKe6fBaLW5ORAGy86eV1CzPqebJhODs2r8N32asy4ViioeZPfCEne67+PaWZ1Ht
+	3BSE7WDIZSYrlCEJcCMihaGBIj9YjdGuW8ShgRhkULk1sxZVNcQ3zwflPsFRibl/yfRdfVz
+	OKsoR
+X-QQ-mid: mx62t1477061881tlshzupiu
+X-QQ-ORGSender: jqhuang@hust.edu.cn
+Received: by ajax-webmail-mailapp2 (Coremail) ; Fri, 21 Oct 2016 23:02:10
+ +0800 (GMT+08:00)
+Date: Fri, 21 Oct 2016 23:02:10 +0800 (GMT+08:00)
+From: "Jiaqing Huang" <jqhuang@hust.edu.cn>
+To: =?UTF-8?B?5byg5piT5pif?= <769308694@qq.com>,
+	=?UTF-8?B?5pa9546y546y?= <1921776352@qq.com>,
+	=?UTF-8?B?6YOt6Z2S6Zye?= <1366602922@qq.com>,
+	=?UTF-8?B?5pu56LGG6LGG?= <963156251@qq.com>,
+	=?UTF-8?B?6ZmI55KQ?= <793492054@qq.com>,
+	=?UTF-8?B?6ZmI5pav55Cm?= <328356734@qq.com>,
+	=?UTF-8?B?5p2o5rWp?= <1131578064@qq.com>,
+	=?UTF-8?B?5r2Y6auY5a6B?= <406371648@qq.com>,
+	=?UTF-8?B?6ZKx5LmJ5rSL?= <1746954811@qq.com>,
+	=?UTF-8?B?5ZGo5qWa5bmz?= <1210418829@qq.com>,
+	=?UTF-8?B?5b6Q55Cm?= <2529195377@qq.com>,
+	=?UTF-8?B?6YCa5L+hMTQwMeePrSDogpbms5XpsoE=?= <245297262@qq.com>,
+	=?UTF-8?B?6LCi6YeR55qT?= <279327917@qq.com>,
+	=?UTF-8?B?5r2Y6b6Z5rGf?= <780793271@qq.com>,
+	=?UTF-8?B?5LiH5pS/?= <609311343@qq.com>,
+	=?UTF-8?B?5pa55p2w5rCR?= <337014476@qq.com>,
+	=?UTF-8?B?5LqO5Y2a?= <983763802@qq.com>,
+	=?UTF-8?B?6ZmI5YeM?= <439348988@qq.com>,
+	=?UTF-8?B?5aSP5qCR5rSL?= <1256921631@qq.com>,
+	=?UTF-8?B?6LS+6ZWH6L+c?= <1160434030@qq.com>,
+	=?UTF-8?B?6LS66ZGr?= <1435679023@qq.com>,
+	=?UTF-8?B?5ZSQ5qGi5qGB?= <956234606@qq.com>,
+	=?UTF-8?B?5p2o6b6Z6b6Z?= <2042305316@qq.com>,
+	=?UTF-8?B?5YiY5ZiJ55Cb?= <759313214@qq.com>,
+	=?UTF-8?B?6Z+p5YWJ6LWr?= <2244093452@qq.com>
+Message-ID: <17132ea.520.157e7c37cb3.Coremail.jqhuang@hust.edu.cn>
+Subject: =?UTF-8?B?IOOAkOmAmuS/oeeUteWtkOe6v+i3r+OAkSAg5a6e6aqM5pWZ5p2Q5LqL5a6c?=
+MIME-Version: 1.0
 Content-Type: multipart/alternative;
- boundary="--==_mimepart_5809e888efc77_1c493f913e6372c0312bc";
- charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Auto-Response-Suppress: All
+	boundary="----=_Part_4659_2200362.1477062130867"
+X-Originating-IP: [218.199.17.54]
+X-Priority: 3
+X-Mailer: Coremail Webmail Server Version 4.0.8 dev build
+ 20150107(58648.7033.6860) Copyright (c) 2002-2016 www.mailtech.cn hust
+X-SendMailWithSms: false
+X-CM-TRANSID: GAEQrJD7r7nyLQpYKGEBAA--.138W
+X-CM-SenderInfo: irzzliyrqrkmo6kx23oohg3hdfq/1tbiAQAPBVZtkuFOHgACsR
+X-Coremail-Antispam: 1Ur529EdanIXcx71UUUUU7IcSsGvfJ3iIAIbVAYjsxI4VWUJw
+	CS07vEb4IE77IF4wCS07vE1I0E4x80FVAKz4kxMIAIbVAFxVCaYxvI4VCIwcAKzIAtYxBI
+	daVFxhVjvjDU=
 
+------=_Part_4659_2200362.1477062130867
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: base64
 
-----==_mimepart_5809e888efc77_1c493f913e6372c0312bc
-Content-Type: text/plain;
- charset=UTF-8
-Content-Transfer-Encoding: quoted-printable
+IAoKIAoKCgrkuIvlkajlsLHopoHlrp7pqozkuobvvIzlrp7pqozmlZnmnZDnmoTkuovlrpwKCiAK
+Cuivt+ePremVv+aMieePrei0reS5sOe7n+S4gOi0reS5sO+8jDPlhYPkuIDmnKzjgIIgCgrml7bp
+l7TvvJrlkajlha3kuIvljYgy54K5LTXngrkgICAKCiAgICBvciAg5ZGo5pel5LiL5Y2IMueCuS01
+54K5CgrlnLDngrnvvJrvvIjljZfkuIDmpbw3MTLlrp7pqozlrqQg5YWw5Lyf5pifIDE4Ny03MTkz
+LTA5ODPvvIkgCgoKCgoKCgoK
+------=_Part_4659_2200362.1477062130867
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: base64
 
-Hi @newhustdebug!
+Jm5ic3A7PGJyPjxicj4mbmJzcDs8YnI+PGJyPjxwPuS4i+WRqOWwseimgeWunumqjOS6hu+8jOWu
+numqjOaVmeadkOeahOS6i+WunCA8L3A+PHA+Jm5ic3A7PC9wPjxwPuivt+ePremVv+aMieePrei0
+reS5sDxzdHJvbmc+57uf5LiAPC9zdHJvbmc+6LSt5Lmw77yMM+WFg+S4gOacrOOAgiZuYnNwOzwv
+cD48cD7ml7bpl7TvvJrlkajlha3kuIvljYgy54K5LTXngrkmbmJzcDsmbmJzcDsmbmJzcDs8L3A+
+PHA+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7b3ImbmJzcDsg5ZGo5pel5LiL5Y2IMueCuS0154K5
+PC9wPjxwPuWcsOeCue+8mu+8iOWNl+S4gOalvDcxMuWunumqjOWupCDlhbDkvJ/mmJ8gMTg3LTcx
+OTMtMDk4M++8iSZuYnNwOzwvcD48cD48YnI+PC9wPjxwPjxicj48L3A+PGJsb2NrcXVvdGUgc3R5
+bGU9InBhZGRpbmctbGVmdDogNXB4OyBtYXJnaW4tcmlnaHQ6IDBweDsgbWFyZ2luLWxlZnQ6IDVw
+eDsgYm9yZGVyLWxlZnQtY29sb3I6IHJnYigxODIsIDE4MiwgMTgyKTsgYm9yZGVyLWxlZnQtd2lk
+dGg6IDJweDsgYm9yZGVyLWxlZnQtc3R5bGU6IHNvbGlkOyIgbmFtZT0icmVwbHlDb250ZW50Ij48
+YmxvY2txdW90ZSBzdHlsZT0icGFkZGluZy1sZWZ0OiA1cHg7IG1hcmdpbi1yaWdodDogMHB4OyBt
+YXJnaW4tbGVmdDogNXB4OyBib3JkZXItbGVmdC1jb2xvcjogcmdiKDE4MiwgMTgyLCAxODIpOyBi
+b3JkZXItbGVmdC13aWR0aDogMnB4OyBib3JkZXItbGVmdC1zdHlsZTogc29saWQ7IiBuYW1lPSJy
+ZXBseUNvbnRlbnQiPjxibG9ja3F1b3RlIHN0eWxlPSJwYWRkaW5nLWxlZnQ6IDVweDsgbWFyZ2lu
+LXJpZ2h0OiAwcHg7IG1hcmdpbi1sZWZ0OiA1cHg7IGJvcmRlci1sZWZ0LWNvbG9yOiByZ2IoMTgy
+LCAxODIsIDE4Mik7IGJvcmRlci1sZWZ0LXdpZHRoOiAycHg7IGJvcmRlci1sZWZ0LXN0eWxlOiBz
+b2xpZDsiIG5hbWU9InJlcGx5Q29udGVudCI+PHA+PGJyPjwvcD48L2Jsb2NrcXVvdGU+PC9ibG9j
+a3F1b3RlPjwvYmxvY2txdW90ZT4=
+------=_Part_4659_2200362.1477062130867--
 
-Help us secure your GitHub account by verifying your email address (40637=
-1648@qq.com). This lets you access all of GitHub's features.
-
-Click the link below to verify your email address:
-https://github.com/users/newhustdebug/emails/25879902/confirm_verificatio=
-n/32ab8abb89bf7f388dda624888d35966b26ae712
-
-You=E2=80=99re receiving this email because you recently created a new Gi=
-tHub account or added a new email address. If this wasn=E2=80=99t you, pl=
-ease ignore this email.
-
----
-Sent with <3 by GitHub.
-GitHub, Inc. 88 Colin P Kelly Jr Street
-San Francisco, CA 94107
-
-----==_mimepart_5809e888efc77_1c493f913e6372c0312bc
-Content-Type: text/html;
- charset=UTF-8
-Content-Transfer-Encoding: 7bit
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
-<html><body>
-<p>
-  Hi <strong>@newhustdebug</strong>!
-</p>
-<p>
-  Help us secure your GitHub account by verifying your email address
-  (<a class="plaintext" href="mailto:406371648@qq.com">406371648@qq.com</a>).
-    This lets you access all of GitHub's features.
-</p>
-
-<!-- note: VML markup is fallback for Outlook 2007, 2010, and 2013; see http://buttons.cm/ -->
-<div class="cta-button-wrap cta-button-wrap-centered">
-<!--[if mso]>
-<p style="line-height:0px;height:0;font-size:1px;margin:0;padding:0;">&nbsp;</p>
-<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://github.com/users/newhustdebug/emails/25879902/confirm_verification/32ab8abb89bf7f388dda624888d35966b26ae712?utm_campaign=github-email-verification&amp;utm_content=html&amp;utm_medium=email&amp;utm_source=verification-email" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="8%" stroke="f" fillcolor="#4183C4">
-  <w:anchorlock/>
-  <center>
-<![endif]-->
-    <a class="cta-button" href="https://github.com/users/newhustdebug/emails/25879902/confirm_verification/32ab8abb89bf7f388dda624888d35966b26ae712?utm_campaign=github-email-verification&amp;utm_content=html&amp;utm_medium=email&amp;utm_source=verification-email">Verify email address</a>
-<!--[if mso]>
-  </center>
-</v:roundrect>
-<![endif]-->
-</div>
-
-
-<hr>
-
-<p class="email-text-small email-text-gray">
-  Button not working? Paste the following link into your browser:<br>
-  <a href="https://github.com/users/newhustdebug/emails/25879902/confirm_verification/32ab8abb89bf7f388dda624888d35966b26ae712?utm_campaign=github-email-verification&amp;utm_content=html&amp;utm_medium=email&amp;utm_source=verification-email">https://github.com/users/newhustdebug/emails/25879902/confirm_verification/32ab8abb89bf7f388dda624888d35966b26ae712</a>
-</p>
-
-<p class="email-text-small email-text-gray">
-  You&#8217;re receiving this email because you recently
-  created a new GitHub account or added a new email address.
-  If this wasn&#8217;t you, please ignore this email.
-</p>
-</body></html>
-
-----==_mimepart_5809e888efc77_1c493f913e6372c0312bc--

@@ -400,6 +400,9 @@ color: silver;</string>
         </item>
         <item>
          <widget class="QTreeWidget" name="listEmails">
+          <property name="contextMenuPolicy">
+           <enum>Qt::CustomContextMenu</enum>
+          </property>
           <property name="editTriggers">
            <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
           </property>
@@ -628,6 +631,47 @@ QPushButton:pressed, QPushButton:checked
              </item>
             </layout>
            </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="1,4">
+             <item>
+              <widget class="QLabel" name="attachlabel">
+               <property name="text">
+                <string>附件：</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="attachdisplay">
+               <property name="contextMenuPolicy">
+                <enum>Qt::CustomContextMenu</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+
+border: none;
+
+}
+QPushButton:hover{
+  background-color: qconicalgradient(cx:0.5, cy:0.522909, angle:179.9, stop:0.494318 rgba(181, 225, 250, 255), stop:0.5 rgba(222, 242, 251, 255));
+
+}
+QPushButton:pressed{
+  background-color: qconicalgradient(cx:0.5, cy:0.522909, angle:179.9, stop:0.494318 rgba(134, 198, 233, 255), stop:0.5 rgba(206, 234, 248, 255));
+ 
+}
+</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>attachicon1.png</normaloff>attachicon1.png</iconset>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
           </layout>
          </widget>
         </item>
@@ -635,6 +679,12 @@ QPushButton:pressed, QPushButton:checked
          <widget class="QTextBrowser" name="emailPreview">
           <property name="acceptDrops">
            <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QTextBrowser{
+	font-family:'Consolas'; 
+	color: #ccc; 
+	background-color: #2b2b2b;}</string>
           </property>
          </widget>
         </item>
@@ -879,6 +929,22 @@ QPushButton:pressed, QPushButton:checked
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>attachdisplay</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>openFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>849</x>
+     <y>234</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>636</x>
+     <y>92</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>onComposeMail()</slot>
@@ -893,5 +959,6 @@ QPushButton:pressed, QPushButton:checked
   <slot>ontextEdit()</slot>
   <slot>onMailSelected()</slot>
   <slot>OnActivated()</slot>
+  <slot>openFile()</slot>
  </slots>
 </ui>
