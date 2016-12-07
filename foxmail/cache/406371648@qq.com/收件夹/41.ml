@@ -1,119 +1,327 @@
-Received: from EXHUB-SZMAIL04.tencent.com (unknown [10.14.6.35])
-	by smtp.qq.com (ESMTP) with SMTP
-	id ; Thu, 13 Oct 2016 12:30:50 +0800 (CST)
-X-QQ-SPAM: false
-X-QQ-INNER-PENDING: 1
-X-QQ-ACTION: no-bounce
-X-QQ-mid: newapiserver2t1476333050t754
-Received: from EXHUB-SZSMTP01.tencent.com (10.123.118.211) by
- EXHUB-SZMail04.tencent.com (10.14.6.35) with Microsoft SMTP Server (TLS) id
- 14.3.123.3; Thu, 13 Oct 2016 12:30:50 +0800
-Received: from localhost.localhost (10.198.143.153) by tsmtp.tencent.com
- (10.123.118.211) with Microsoft SMTP Server id 14.3.123.3; Thu, 13 Oct 2016
- 12:30:49 +0800
-Date: Thu, 13 Oct 2016 12:30:49 +0800
-Return-Path: yun_noreply@tencent.com
-To: <406371648@qq.com>
-From: =?utf-8?B?6IW+6K6v5LqR?= <yun_noreply@tencent.com>
-Subject: =?UTF-8?B?6IW+6K6v5LqR5pyN5Yqh57ut6LS55o+Q6YaS?=
-Message-ID: <529bf11b882d2fb1cf3fcfa7883689ab@localhost.localhost>
-X-Priority: 3
-X-Mailer: PHPMailer 5.1 (phpmailer.sourceforge.net)
+Received: from mail.elecfans.net (unknown [183.62.107.196])
+	by newmx.qq.com (NewMx) with SMTP id
+	for <406371648@qq.com>; Mon, 21 Nov 2016 22:02:44 +0800
+X-QQ-FEAT: 7Vbrb0XooUMFyERoGGwmHYnfTKOmWA1rUzg6JJSPKUl4pdhJ4cKGGLqCvs3bP
+	rGldUa7AmqMbfe6zosBBZnVtIcNm48F7QkFsgjt628hHS1K4SIFm1tpDrhrcI2XgZkMYURh
+	aY3OGJRvITgMJG9z1cpLd7ZhWWCQa95oxVWAW5CSxi9SDzTAZn+lxPxpFk1c3YiHWsVuZpq
+	IftrakBQpIIkPW5NEKypKB8q0JBHUsTf1gW1xJYmrGl/unUnP1QEUcElo7nON/Wd8ZX6yM1
+	G+lJPvxoyj/WGJulXbX8TCn7yVGEAr9bpzhQ==
+X-QQ-MAILINFO: MHG2h55yn1lluZLTA6+KcINkX90srXSyc3PFxxp0FsakSyNc7Iyb1bTBp
+	92fiWia2hKhgf1rDu0Nm5WILFSDI3yss+fjIiEHnulnrvgOK5El++pkUCUlBEjDhJ76uu75
+	nY0CyDGOzxpWjs0lHFCG6ysdfJCyv1cIdo4tVWIAs+I+06xszn+HQHNhgWi0vmXlLeUd4le
+	ENvC/
+X-QQ-mid: mx122t1479736964tcl93q14h
+X-QQ-ORGSender: edm@elecfans.net
+Received: from edm.elecfans.com (unknown [211.149.226.137])
+	by mail.elecfans.net (Postfix) with ESMTPA id 8190BE369919
+	for <406371648@qq.com>; Mon, 21 Nov 2016 21:23:28 +0800 (CST)
+To: 406371648@qq.com
+Subject: =?UTF-8?B?54mp6IGU572R6K6+5aSH55qEMTHnp43lip/ogJfmtYvph4/mioDmnK/lpKfnm5jngrk=?=
+Message-ID: <efff4898fb06176c83c3a081e2239075@edm.elecfans.com>
+Date: Mon, 21 Nov 2016 22:01:35 +0800
+From: "=?UTF-8?B?55S15a2Q5Y+R54On5Y+L?=" <edm@elecfans.net>
+Reply-To: edm@elecfans.net
 MIME-Version: 1.0
-Content-Transfer-Encoding: base64
-Content-Type: text/html; charset="utf-8"
-X-Originating-IP: [10.198.143.153]
+X-Mailer-LID: 7952
+List-Unsubscribe: <http://edm.elecfans.com/unsubscribe.php?M=18947282&C=92ded883c0430d62bf7999f7cbcb662b&L=7952&N=10450>
+X-Mailer-RecptId: 18947282
+X-Mailer-SID: 10450
+X-Mailer-Sent-By: 3
+Content-Type: multipart/alternative; charset="UTF-8"; boundary="b1_7ec71650b7fde627b7c0ef44c4b7b9df"
+Content-Transfer-Encoding: 7bit
 
-PGRpdiBjbGFzcz0iYmxvY2siIHN0eWxlPSJsaW5lLWhlaWdodDogMjIuNHB4OyI+PHRhYmxlIHdp
-ZHRoPSIxMDAlIiBjZWxscGFkZGluZz0iMCIgY2VsbHNwYWNpbmc9IjAiIGJvcmRlcj0iMCIgaWQ9
-ImJhY2tncm91bmRUYWJsZSI+PHRib2R5Pjx0cj48dGQgd2lkdGg9IjEwMCUiPjx0YWJsZSB3aWR0
-aD0iNTgwIiBjZWxscGFkZGluZz0iMCIgY2VsbHNwYWNpbmc9IjAiIGJvcmRlcj0iMCIgYWxpZ249
-ImNlbnRlciIgY2xhc3M9ImRldmljZXdpZHRoIj48dGJvZHk+PHRyPjx0ZCB3aWR0aD0iMTAwJSIg
-aGVpZ2h0PSI1Ij48L3RkPjwvdHI+PC90Ym9keT48L3RhYmxlPjwvdGQ+PC90cj48L3Rib2R5Pjwv
-dGFibGU+PC9kaXY+PGRpdiBjbGFzcz0iYmxvY2siIHN0eWxlPSJsaW5lLWhlaWdodDogMjIuNHB4
-OyI+PHRhYmxlIHdpZHRoPSIxMDAlIiBjZWxscGFkZGluZz0iMCIgY2VsbHNwYWNpbmc9IjAiIGJv
-cmRlcj0iMCIgaWQ9ImJhY2tncm91bmRUYWJsZSI+PHRib2R5Pjx0cj48dGQgY2xhc3M9Im5ld3Mt
-dGV4dCIgc3R5bGU9ImZvbnQtZmFtaWx5OiBQaW5nRmFuZ1NDLUxpZ2h0LCAmcXVvdDtoZWx2ZXRp
-Y2EgbmV1ZSZxdW90OywgJnF1b3Q7aGlyYWdpbm8gc2FucyBnYiZxdW90OywgYXJpYWwsICZxdW90
-O21pY3Jvc29mdCB5YWhlaSB1aSZxdW90OywgJnF1b3Q7bWljcm9zb2Z0IHlhaGVpJnF1b3Q7LCBz
-aW1zdW4sIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogMTZweDsgcGFkZGluZy1ib3R0b206IDE1cHg7
-Ij7lsIrmlaznmoTohb7orq/kupHnlKjmiLfvvJo8L3RkPjwvdHI+PHRyPjx0ZCBzdHlsZT0iY29s
-b3I6IHJnYigxMDIsIDEwMiwgMTAyKTsgZm9udC1mYW1pbHk6IFBpbmdGYW5nU0MtTGlnaHQsICZx
-dW90O2hlbHZldGljYSBuZXVlJnF1b3Q7LCAmcXVvdDtoaXJhZ2lubyBzYW5zIGdiJnF1b3Q7LCBh
-cmlhbCwgJnF1b3Q7bWljcm9zb2Z0IHlhaGVpIHVpJnF1b3Q7LCAmcXVvdDttaWNyb3NvZnQgeWFo
-ZWkmcXVvdDssIHNpbXN1biwgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAxNnB4OyBwYWRkaW5nLWJv
-dHRvbTogNXB4OyBsaW5lLWhlaWdodDogMS41ZW07Ij48cCBzdHlsZT0idGV4dC1pbmRlbnQ6IDJl
-bTsiPuaCqOeahOi0puaIt++8iDQwNjM3MTY0OO+8ieacieS7peS4i+S6keacjeWKoeWNs+WwhuWI
-sOacn++8jOWIsOacn+iuvuWkh+Wwhueri+WNs+iiq+WbnuaUtu+8jOiiq+WbnuaUtueahO+8iOS6
-keacjeWKoeWZqOOAgeS6keaVsOaNruW6k++8ieiuvuWkh+WPr+S7peWcqOWbnuaUtuermei/m+ih
-jOaJvuWbnu+8jOivt+aCqOWPiuaXtue7rei0ueaIluWkh+S7veWlveaVsOaNruOAgiDpg6jliIbk
-uJrliqHlt7LmlK/mjIHoh6rliqjnu63otLnlip/og73vvIzmgqjlj6/liY3lvoDohb7orq/kupHl
-rpjnvZHmjqfliLblj7Dov5vooYzorr7nva7vvIzlubbkv53mjIHotKbmiLfkvZnpop3lhYXotrPv
-vIzku6Xkvr/miJHku6zlj4rml7bkuLrmgqjnmoTkupHmnI3liqHov5vooYznu63otLnjgII8L3A+
-PHA+5LqR5pyN5Yqh5Zmo77yaIDwvcD48dGFibGUgY2VsbHBhZGRpbmc9JzUnIGNlbGxzcGFjaW5n
-PScwJyBib3JkZXI9JzEnIGJvcmRlcmNvbG9yPScjQ0NDQ0NDJz48dHI+PHRoPuWunuS+i+WQjeen
-sDwvdGg+PHRoPuaJgOWcqOe9kee7nDwvdGg+PHRoPuWGhee9kUlQPC90aD48dGg+5aSW572RSVA8
-L3RoPjx0aD7liLDmnJ/ml7bpl7Q8L3RoPjx0aD7liLDmnJ/lgJLorqHml7Yo5aSpKTwvdGg+PHRo
-PuaYr+WQpuiuvue9ruiHquWKqOe7rei0uTwvdGg+PC90cj48dHIgPjx0ZD7mnKrlkb3lkI08L3Rk
-Pjx0ZD7ln7rnoYDnvZHnu5w8L3RkPjx0ZD4xMC4xMDQuNzAuMzY8L3RkPjx0ZD4xMTkuMjkuMTUz
-LjE3MTwvdGQ+PHRkPjIwMTYtMTAtMTYgMTY6MjY6Mjg8L3RkPjx0ZD4zPC90ZD48dGQ+5ZCmPC90
-ZD48L3RyPjwvdGFibGU+PHAgc3R5bGU9InRleHQtaW5kZW50OiAyZW07Ij7njrDlnKjljrvnu63o
-tLnvvJo8YSBocmVmPSJodHRwczovL2NvbnNvbGUucWNsb3VkLmNvbS9hY2NvdW50L3JlbmV3YWw/
-dXRtX2NhbXBhaWduPVlvdUppYW4iPmh0dHBzOi8vY29uc29sZS5xY2xvdWQuY29tL2FjY291bnQv
-cmVuZXdhbD91dG1fY2FtcGFpZ249WW91SmlhbjwvYT48L3A+PHAgc3R5bGU9InRleHQtaW5kZW50
-OiAyZW07Ij48c3Ryb25nPu+8iOS7heaciei0ouWKoeadg+mZkOeahOi0puWPt+WPr+i/m+ihjOe7
-rei0ue+8jOiLpeaCqOS4jeWFt+aciei0ouWKoeadg+mZkO+8jOivt+iBlOezu+acieadg+mZkOea
-hOi0puWPt+i/m+ihjOe7rei0ue+8iTwvc3Ryb25nPjwvcD48cCBzdHlsZT0idGV4dC1pbmRlbnQ6
-IDJlbTsiPuWIsOacn+WQjueahOW9seWTje+8mjxhIGhyZWY9Imh0dHBzOi8vd3d3LnFjbG91ZC5j
-b20vZG9jL3Byb2R1Y3QvMjg1LzQxMDg/dXRtX2NhbXBhaWduPVlvdUppYW4iPmh0dHBzOi8vd3d3
-LnFjbG91ZC5jb20vZG9jL3Byb2R1Y3QvMjg1LzQxMDg/dXRtX2NhbXBhaWduPVlvdUppYW48L2E+
-PC9wPjwvdGQ+PC90cj48dHI+PHRkPjx0YWJsZSB3aWR0aD0iODAlIiBhbGlnbj0ibGVmdCIgY2Vs
-bHNwYWNpbmc9IjAiIGNlbGxwYWRkaW5nPSIwIiBib3JkZXI9IjAiIGNsYXNzPSJsZWZ0LWJsYW5r
-Ij48dGJvZHk+PHRyPjx0ZD4mbmJzcDs8L3RkPjwvdHI+PC90Ym9keT48L3RhYmxlPjx0YWJsZSB3
-aWR0aD0iMjAlIiBhbGlnbj0icmlnaHQiIGNlbGxzcGFjaW5nPSIwIiBjZWxscGFkZGluZz0iMCIg
-Ym9yZGVyPSIwIiBjbGFzcz0icmlnaHQtc2lnbiI+PHRib2R5Pjx0cj48dGQgY2xhc3M9Im5ld3Mt
-dGV4dCIgc3R5bGU9ImZvbnQtZmFtaWx5OiBQaW5nRmFuZ1NDLUxpZ2h0LCAmcXVvdDtoZWx2ZXRp
-Y2EgbmV1ZSZxdW90OywgJnF1b3Q7aGlyYWdpbm8gc2FucyBnYiZxdW90OywgYXJpYWwsICZxdW90
-O21pY3Jvc29mdCB5YWhlaSB1aSZxdW90OywgJnF1b3Q7bWljcm9zb2Z0IHlhaGVpJnF1b3Q7LCBz
-aW1zdW4sIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogMTZweDsgcGFkZGluZy1ib3R0b206IDVweDsi
-PuatpOiHtDwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJuZXdzLXRleHQiIHN0eWxlPSJmb250LWZh
-bWlseTogUGluZ0ZhbmdTQy1MaWdodCwgJnF1b3Q7aGVsdmV0aWNhIG5ldWUmcXVvdDssICZxdW90
-O2hpcmFnaW5vIHNhbnMgZ2ImcXVvdDssIGFyaWFsLCAmcXVvdDttaWNyb3NvZnQgeWFoZWkgdWkm
-cXVvdDssICZxdW90O21pY3Jvc29mdCB5YWhlaSZxdW90Oywgc2ltc3VuLCBzYW5zLXNlcmlmOyBm
-b250LXNpemU6IDE2cHg7IHBhZGRpbmctYm90dG9tOiA1cHg7Ij7ohb7orq/kupHlm6LpmJ88L3Rk
-PjwvdHI+PHRyPjx0ZCBjbGFzcz0ibmV3cy10ZXh0IiBzdHlsZT0iZm9udC1mYW1pbHk6IFBpbmdG
-YW5nU0MtTGlnaHQsICZxdW90O2hlbHZldGljYSBuZXVlJnF1b3Q7LCAmcXVvdDtoaXJhZ2lubyBz
-YW5zIGdiJnF1b3Q7LCBhcmlhbCwgJnF1b3Q7bWljcm9zb2Z0IHlhaGVpIHVpJnF1b3Q7LCAmcXVv
-dDttaWNyb3NvZnQgeWFoZWkmcXVvdDssIHNpbXN1biwgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAx
-NnB4OyBwYWRkaW5nLWJvdHRvbTogNXB4OyI+MjAxNuW5tDEw5pyIMTPml6U8L3RkPjwvdHI+PC90
-Ym9keT48L3RhYmxlPjwvdGQ+PC90cj48L3Rib2R5PjwvdGFibGU+PC9kaXY+PGRpdiBjbGFzcz0i
-YmxvY2siIHN0eWxlPSJsaW5lLWhlaWdodDogMjIuNHB4OyI+PHRhYmxlIHdpZHRoPSIxMDAlIiBj
-ZWxscGFkZGluZz0iMCIgY2VsbHNwYWNpbmc9IjAiIGJvcmRlcj0iMCIgaWQ9ImJhY2tncm91bmRU
-YWJsZSI+PHRib2R5Pjx0cj48dGQgd2lkdGg9IjEwMCUiPjx0YWJsZSB3aWR0aD0iNTgwIiBjZWxs
-cGFkZGluZz0iMCIgY2VsbHNwYWNpbmc9IjAiIGJvcmRlcj0iMCIgYWxpZ249ImNlbnRlciIgY2xh
-c3M9ImRldmljZXdpZHRoIj48dGJvZHk+PHRyPjx0ZCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIyMCI+
-PC90ZD48L3RyPjx0cj48dGQgYWxpZ249ImNlbnRlciIgdmFsaWduPSJtaWRkbGUiIHN0LWNvbnRl
-bnQ9InByZWhlYWRlciIgc3R5bGU9ImZvbnQtZmFtaWx5OiBQaW5nRmFuZ1NDLUxpZ2h0LCAmcXVv
-dDtoZWx2ZXRpY2EgbmV1ZSZxdW90OywgJnF1b3Q7aGlyYWdpbm8gc2FucyBnYiZxdW90OywgYXJp
-YWwsICZxdW90O21pY3Jvc29mdCB5YWhlaSB1aSZxdW90OywgJnF1b3Q7bWljcm9zb2Z0IHlhaGVp
-JnF1b3Q7LCBzaW1zdW4sIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogMTBweDsgY29sb3I6IHJnYigx
-NTMsIDE1MywgMTUzKTsiPuatpOS4uuezu+e7n+mCruS7tu+8jOivt+WLv+WbnuWkjSDCqTIwMTMt
-MjAxNiBRY2xvdWQuY29t54mI5p2D5omA5pyJPC90ZD48L3RyPjx0cj48dGQgd2lkdGg9IjEwMCUi
-IGhlaWdodD0iNSI+PC90ZD48L3RyPjx0cj48dGQgYWxpZ249ImNlbnRlciIgdmFsaWduPSJtaWRk
-bGUiIHN0LWNvbnRlbnQ9InByZWhlYWRlciIgc3R5bGU9ImZvbnQtZmFtaWx5OiBQaW5nRmFuZ1ND
-LUxpZ2h0LCAmcXVvdDtoZWx2ZXRpY2EgbmV1ZSZxdW90OywgJnF1b3Q7aGlyYWdpbm8gc2FucyBn
-YiZxdW90OywgYXJpYWwsICZxdW90O21pY3Jvc29mdCB5YWhlaSB1aSZxdW90OywgJnF1b3Q7bWlj
-cm9zb2Z0IHlhaGVpJnF1b3Q7LCBzaW1zdW4sIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogMTBweDsg
-Y29sb3I6IHJnYigxNTMsIDE1MywgMTUzKTsiPuWinuWAvOeUteS/oeS4muWKoee7j+iQpeiuuOWP
-r+ivge+8mkIxLkIyLTIwMTMwMzI2PC90ZD48L3RyPjx0cj48dGQgd2lkdGg9IjEwMCUiIGhlaWdo
-dD0iMTUiPjwvdGQ+PC90cj48dHI+PHRkIGFsaWduPSJjZW50ZXIiIHZhbGlnbj0ibWlkZGxlIiBz
-dC1jb250ZW50PSJwcmVoZWFkZXIiIHN0eWxlPSJmb250LWZhbWlseTogUGluZ0ZhbmdTQy1MaWdo
-dCwgJnF1b3Q7aGVsdmV0aWNhIG5ldWUmcXVvdDssICZxdW90O2hpcmFnaW5vIHNhbnMgZ2ImcXVv
-dDssIGFyaWFsLCAmcXVvdDttaWNyb3NvZnQgeWFoZWkgdWkmcXVvdDssICZxdW90O21pY3Jvc29m
-dCB5YWhlaSZxdW90Oywgc2ltc3VuLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDEwcHg7IGNvbG9y
-OiByZ2IoMTUzLCAxNTMsIDE1Myk7Ij48aW1nIHNyYz0iaHR0cDovL2ltZ2NhY2hlLnFxLmNvbS9v
-cGVuX3Byb2ovcHJval9xY2xvdWRfdjIvcWNsb3VkXzIwMTUvZWRtL21haWwtY29tbW9uLXVzZS9x
-Y2xvdWQtcXIuZ2lmIiBjbGFzcz0icXItaW1nIj48L3RkPjwvdHI+PHRyPjx0ZCB3aWR0aD0iMTAw
-JSIgaGVpZ2h0PSI1MCI+PC90ZD48L3RyPjwvdGJvZHk+PC90YWJsZT48L3RkPjwvdHI+PC90Ym9k
-eT48L3RhYmxlPjwvZGl2Pg==
+--b1_7ec71650b7fde627b7c0ef44c4b7b9df
+Content-Type: text/plain; format=flowed; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Your email client cannot read this email.
+To view it online, please go here:
+http://edm.elecfans.com/display.php?M=3D18947282&C=3D92ded883c0430d62bf79=
+99f7cbcb662b&S=3D10450&L=3D7952&N=3D2987
+
+
+To stop receiving these
+emails:http://edm.elecfans.com/unsubscribe.php?M=3D18947282&C=3D92ded883c=
+0430d62bf7999f7cbcb662b&L=3D7952&N=3D10450
+
+--b1_7ec71650b7fde627b7c0ef44c4b7b9df
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head></head><body><meta http-equiv=3D"Content-Type"
+content=3D"text/html;charset=3DUTF-8" />
+<title>=E7=89=A9=E8=81=94=E7=BD=91=E8=AE=BE=E5=A4=87=E7=9A=8411=E7=A7=8D=E5=
+=8A=9F=E8=80=97=E6=B5=8B=E9=87=8F=E6=8A=80=E6=9C=AF=E5=A4=A7=E7=9B=98=E7=82=
+=B9</title>
+<base target=3D"_blank"></base>
+<div style=3D"width: 680px; padding: 0 50px 80px; margin: 0 auto; backgro=
+und:
+#717171;">
+<div align=3D"right" style=3D"width: 100%; line-height: 60px; font-size: =
+12px;
+color: #fff;">=E5=A6=82=E6=9E=9C=E4=BD=A0=E6=97=A0=E6=B3=95=E7=9C=8B=E5=88=
+=B0=E5=AE=8C=E6=95=B4=E6=96=87=E4=BB=B6=EF=BC=8C=E8=AF=B7<a style=3D"colo=
+r:
+#fff;" alt=3D"=E7=AB=8B=E5=8D=B3=E5=8F=82=E5=8A=A0"
+href=3D"http://edm.elecfans.com/link.php?M=3D18947282&N=3D10450&L=3D6757&=
+F=3DH">=E7=82=B9=E5=87=BB=E8=BF=99=E9=87=8C</a>=E3=80=82</div>
+<table cellpadding=3D"0" cellspacing=3D"0" style=3D"box-shadow: 5px 5px 1=
+0px
+#3e3e3e; width: 100%; background: #fff; border-radius: 12px;">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"background:
+url(http://www.elecfans.com/tt/images/edm_image.jpg) no-repeat;
+border-radius: 12px 12px 0 0;"><a alt=3D"=E7=AB=8B=E5=8D=B3=E5=8F=82=E5=8A=
+=A0" style=3D"display: block;
+width: 100%; height: 197px;"
+href=3D"http://edm.elecfans.com/link.php?M=3D18947282&N=3D10450&L=3D6757&=
+F=3DH"></a></td>
+</tr>
+<tr>
+<td style=3D"text-align: left; font-size: 14px; line-height: 30px;
+font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91; color: #333; padding: =
+4px 16px 0
+26px;">=E4=BA=B2=E7=88=B1=E7=9A=84=E5=B7=A5=E7=A8=8B=E5=B8=88=EF=BC=9A</t=
+d>
+</tr>
+<tr>
+<td style=3D"text-align: left; font-size: 14px; line-height: 30px;
+font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91; color: #333; padding-l=
+eft: 26px; text-indent:
+2em; padding-right: 16px;">=E6=82=A8=E5=A5=BD=EF=BC=81</td>
+</tr>
+<tr>
+<td style=3D"text-align: left; font-size: 14px; line-height: 30px;
+font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91; color: #333; padding-l=
+eft: 26px; text-indent:
+2em; padding-right:
+16px;">=E7=8E=B0=E6=8F=90=E4=BE=9B=E7=94=B5=E5=AD=90=E5=8F=91=E7=83=A7=E5=
+=8F=8B=E7=BD=91=E7=AB=99=E4=B8=8A=E6=B3=B0=E5=85=8B=E4=B8=93=E5=8C=BA=E6=9C=
+=80=E7=83=AD=E9=97=A8=E7=9A=84<a
+href=3D"http://edm.elecfans.com/link.php?M=3D18947282&N=3D10450&L=3D7887&=
+F=3DH"
+target=3D"_blank"><b>=E7=9B=B8=E5=85=B3=E6=96=B9=E6=A1=88=E6=8C=87=E5=8D=97=
+</b></a>=EF=BC=8C=E4=BE=9B=E6=82=A8=E5=85=8D=E8=B4=B9=E4=B8=8B=E8=BD=BD=E9=
+=98=85=E8=AF=BB=EF=BC=8C=E6=96=B9=E4=BE=BF=E6=82=A8=E5=B0=86=E6=89=80=E6=9C=
+=89=E7=BB=8F=E5=85=B8=E8=B5=84=E6=96=99=E4=B8=80=E7=BD=91=E6=89=93=E5=B0=BD=
+=EF=BC=81=E6=AD=A4=E5=A4=96=EF=BC=8C=E5=8F=82=E4=B8=8E=E6=B3=B0=E5=85=8B=E4=
+=B8=93=E5=8C=BA=E7=9A=84<a
+href=3D"http://edm.elecfans.com/link.php?M=3D18947282&N=3D10450&L=3D7709&=
+F=3DH"
+target=3D"_blank"><b>=E9=97=AE=E5=8D=B7=E8=B0=83=E6=9F=A5</b></a>=EF=BC=8C=
+5=E9=81=93=E9=80=89=E6=8B=A9=E9=A2=98=E8=BD=BB=E6=9D=BE=E7=AD=94=E5=AE=8C=
+=EF=BC=8C=E5=8D=B3=E6=9C=89=E6=9C=BA=E4=BC=9A=E8=B5=A2=E5=8F=96=E7=94=B1=E6=
+=B3=B0=E5=85=8B=E8=B5=A0=E9=80=81=E7=9A=84=E7=B2=BE=E7=BE=8E=E7=A4=BC=E5=93=
+=81=E3=80=82
+&nbsp;&nbsp;<br /> &nbsp;&nbsp;&nbsp;&nbsp;<b>=E7=99=BD=E7=9A=AE=E4=B9=A6=
+=E4=B8=80=EF=BC=9A<a
+href=3D"http://edm.elecfans.com/link.php?M=3D18947282&N=3D10450&L=3D8360&=
+F=3DH">=E3=80=90=E5=B5=8C=E5=85=A5=E5=BC=8F=E7=B3=BB=E7=BB=9F=E4=B8=B2=E8=
+=A1=8C=E6=80=BB=E7=BA=BF=E5=BA=94=E7=94=A8=E6=8C=87=E5=8D=97=E3=80=91</a>=
+</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+href=3D"http://edm.elecfans.com/link.php?M=3D18947282&N=3D10450&L=3D8360&=
+F=3DH"
+style=3D"color: #f00;">&gt;&gt;=E7=AB=8B=E5=8D=B3=E4=B8=8B=E8=BD=BD</a>
+<p>=E5=B5=8C=E5=85=A5=E5=BC=8F=E7=B3=BB=E7=BB=9F=E5=8C=85=E5=90=AB=E8=AE=B8=
+=E5=A4=9A=E4=B8=8D=E5=90=8C=E7=B1=BB=E5=9E=8B=E7=9A=84=E8=AE=BE=E5=A4=87=EF=
+=BC=8C=E5=8C=85=E6=8B=AC=E5=BE=AE=E5=A4=84=E7=90=86=E5=99=A8=E3=80=81=E5=BE=
+=AE=E6=8E=A7=E5=88=B6=E5=99=A8=E3=80=81DSP=E3=80=81RAM=E3=80=81EPROM=E3=80=
+=81FPGA=E3=80=81=E6=A8=A1=E6=95=B0=E8=BD=AC=E6=8D=A2=E5=99=A8=E3=80=81=E6=
+=95=B0=E6=A8=A1=E8=BD=AC=E6=8D=A2=E5=99=A8=E5=92=8C
+I/O=E3=80=82=E6=9C=AC=E6=8A=80=E6=9C=AF=E6=96=87=E6=A1=A3=E4=BB=8B=E7=BB=8D=
+=E4=BA=86=EF=BC=9A <br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1=E3=80=81=E5=B9=B6=E8=A1=8C=E7=BB=93=
+=E6=9E=84=E4=B8=8E=E4=B8=B2=E8=A1=8C=E7=BB=93=E6=9E=84=E6=AF=94=E8=BE=83<=
+br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2=E3=80=81=E6=B3=B0=E5=85=8B=E7=A4=BA=
+=E6=B3=A2=E5=99=A8 FlexRay
+=E8=A7=A6=E5=8F=91=E5=8A=9F=E8=83=BD <br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3=E3=80=81=E6=9E=81=E9=AB=98=E7=9A=84=
+=E6=95=88=E7=8E=87=E8=A7=A3=E5=86=B3=E5=B5=8C=E5=85=A5=E5=BC=8F=E7=B3=BB=E7=
+=BB=9F
+<br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4=E3=80=81CAN=E6=80=BB=E7=BA=BF=E9=87=
+=87=E9=9B=86=E6=90=9C=E7=B4=A2=E6=A0=87=E8=AF=86=E7=AC=A6=E5=92=8C=E6=95=B0=
+=E6=8D=AE
+<br /> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>=E7=99=BD=E7=9A=AE=E4=
+=B9=A6=E4=BA=8C=EF=BC=9A<a
+href=3D"http://edm.elecfans.com/link.php?M=3D18947282&N=3D10450&L=3D8361&=
+F=3DH">=E3=80=90=E7=89=A9=E8=81=94=E7=BD=91=E8=AE=BE=E5=A4=87=E7=9A=8411=E7=
+=A7=8D=E5=8A=9F=E8=80=97=E6=B5=8B=E9=87=8F=E6=8A=80=E6=9C=AF=E5=A4=A7=E7=9B=
+=98=E7=82=B9=E3=80=91</a></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+href=3D"http://edm.elecfans.com/link.php?M=3D18947282&N=3D10450&L=3D8361&=
+F=3DH"
+style=3D"color: #f00;">&gt;&gt;=E7=AB=8B=E5=8D=B3=E4=B8=8B=E8=BD=BD</a></=
+p>
+<p>=E5=8A=9F=E8=80=97=E7=AE=A1=E7=90=86=E6=98=AF=E7=89=A9=E8=81=94=E7=BD=91=
+=E8=AE=BE=E5=A4=87=E8=AE=BE=E8=AE=A1=E7=9A=84=E4=B8=80=E4=B8=AA=E4=B8=BB=E8=
+=A6=81=E9=97=AE=E9=A2=98=EF=BC=8C=E6=9C=AC=E7=94=B5=E5=AD=90=E6=8C=87=E5=BC=
+=95=E4=BB=8B=E7=BB=8D=E4=BA=86=E6=82=A8=E5=9C=A8=E8=AE=BE=E8=AE=A1=E3=80=81=
+=E9=AA=8C=E8=AF=81=E6=88=96=E6=B5=8B=E8=AF=95=E7=89=A9=E8=81=94=E7=BD=91=E8=
+=AE=BE=E5=A4=87=E6=97=B6=E5=8F=AF=E8=83=BD=E4=BC=9A=E9=9D=A2=E4=B8=B4=E7=9A=
+=84
+11
+=E4=B8=AA=E5=8A=9F=E7=8E=87=E7=AE=A1=E7=90=86=E6=8C=91=E6=88=98=EF=BC=8C=E4=
+=BB=8B=E7=BB=8D=E4=BA=86=E6=80=8E=E6=A0=B7=E7=AE=80=E5=8C=96=E6=B5=81=E7=A8=
+=8B=EF=BC=8C=E6=88=90=E5=8A=9F=E5=9C=B0=E5=AE=9E=E7=8E=B0=E7=89=A9=E8=81=94=
+=E7=BD=91=E8=AE=BE=E5=A4=87=E3=80=82=E4=B8=BB=E8=A6=81=E5=86=85=E5=AE=B9=E6=
+=9C=89=EF=BC=9A
+<br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1=E3=80=81=E6=B5=8B=E9=87=8F=E5=AE=BD=
+=E5=8A=A8=E6=80=81=E8=8C=83=E5=9B=B4=E3=80=81=E8=B6=85=E4=BD=8E=E6=B7=B1=E5=
+=BA=A6=E7=9D=A1=E7=9C=A0=E3=80=81=E5=8F=91=E9=80=81=E7=94=B5=E6=B5=81=E4=BB=
+=A5=E5=8F=8A=E6=8E=A5=E6=94=B6=E7=94=B5=E6=B5=81<br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2=E3=80=81=E6=8D=95=E8=8E=B7=E7=9F=AD=
+=E7=9E=AC=E6=80=81=E4=BA=8B=E4=BB=B6=E5=92=8C=E5=BF=AB=E9=80=9F=E8=B7=B3=E5=
+=8F=98
+<br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3=E3=80=81=E4=BF=9D=E8=AF=81=E4=B8=BA=
+=E9=87=87=E6=A0=B7=E7=8E=87=E6=8F=90=E4=BE=9B=E5=85=85=E8=B6=B3=E7=9A=84=E6=
+=B5=8B=E9=87=8F=E5=B8=A6=E5=AE=BD<br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4=E3=80=81=E5=9C=A8=E5=BB=B6=E9=95=BF=
+=E7=9A=84=E6=97=B6=E9=97=B4=E9=97=B4=E9=9A=94=E4=B8=8A=E8=AE=B0=E5=BD=95=E8=
+=AE=BE=E5=A4=87=E6=93=8D=E4=BD=9C
+<br /> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>=E7=99=BD=E7=9A=AE=E4=B9=A6=
+=E4=B8=89:<a
+href=3D"http://edm.elecfans.com/link.php?M=3D18947282&N=3D10450&L=3D7710&=
+F=3DH">=E3=80=90=E7=A4=BA=E6=B3=A2=E5=99=A8=E6=B5=8B=E9=87=8F=E7=94=B5=E6=
+=BA=90=E5=BC=80=E5=85=B3=E6=8D=9F=E8=80=97=E5=BA=94=E7=94=A8=E5=AE=9D=E5=85=
+=B8=E3=80=91</a>
+</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+href=3D"http://edm.elecfans.com/link.php?M=3D18947282&N=3D10450&L=3D7710&=
+F=3DH"
+style=3D"color: #f00;">&gt;&gt;=E7=AB=8B=E5=8D=B3=E4=B8=8B=E8=BD=BD</a></=
+p>
+<p>=E5=BC=80=E5=85=B3=E6=8D=9F=E8=80=97=E6=B5=8B=E9=87=8F=E6=98=AF=E4=BC=98=
+=E5=8C=96=E5=BC=80=E5=85=B3=E5=BC=8F=E7=94=B5=E6=BA=90=E6=95=88=E7=8E=87=E7=
+=9A=84=E5=85=B3=E9=94=AE=E9=83=A8=E5=88=86=E3=80=82=E9=80=9A=E8=BF=87=E4=BD=
+=BF=E7=94=A8=E4=BC=98=E7=A7=80=E7=9A=84=E6=B5=8B=E9=87=8F=E6=8A=80=E6=9C=AF=
+=E5=8F=8A=E8=87=AA=E5=8A=A8=E8=BF=9B=E8=A1=8C=E5=8A=9F=E7=8E=87=E6=B5=8B=E9=
+=87=8F=EF=BC=8C=E5=8F=AF=E4=BB=A5=E7=AE=80=E4=BE=BF=E3=80=81=E8=BF=85=E9=80=
+=9F=E3=80=81=E5=8F=AF=E9=87=8D=E5=A4=8D=E5=9C=B0=E8=BF=9B=E8=A1=8C=E4=B8=80=
+=E7=B3=BB=E5=88=97=E5=A4=8D=E6=9D=82=E7=9A=84=E5=BC=80=E5=85=B3=E6=8D=9F=E8=
+=80=97=E6=B5=8B=E9=87=8F=E3=80=82
+<br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1=E3=80=81=E6=8F=90=E4=BE=9B=E6=B5=8B=
+=E9=87=8F=E5=BC=80=E5=85=B3=E6=8D=9F=E8=80=97=E6=9C=89=E4=B8=A4=E7=A7=8D=E6=
+=96=B9=E6=B3=95<br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2=E3=80=81=E8=BF=9B=E8=A1=8C=E5=87=86=
+=E7=A1=AE=E7=9A=84=E3=80=81=E5=8F=AF=E9=87=8D=E5=A4=8D=E7=9A=84=E5=8A=9F=E7=
+=8E=87=E6=B5=8B=E9=87=8F=E5=85=AD=E4=B8=AA=E5=85=B3=E9=94=AE=E6=AD=A5=E9=AA=
+=A4
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3=E3=80=81=E6=B5=8B=E9=87=8F=E5=
+=BC=80=E5=85=B3=E6=8D=9F=E8=80=97
+=E7=9A=84=E6=89=8B=E5=8A=A8=E8=AE=BE=E7=BD=AE=E5=92=8C=E5=86=85=E7=BD=AE=E6=
+=B5=8B=E9=87=8F<br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4=E3=80=81=E4=BD=BF=E7=94=A8=E5=8A=9F=
+=E7=8E=87=E5=88=86=E6=9E=90=E8=BD=AF=E4=BB=B6=E8=87=AA=E5=8A=A8=E8=BF=9B=E8=
+=A1=8C=E6=B5=8B=E9=87=8F</p>
+</td>
+</tr>
+<tr>
+<th style=3D"text-align: left; font-size: 15px; line-height: 40px;
+padding-top: 16px; font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91; col=
+or: #222; padding-left:
+26px;">=E6=B4=BB=E5=8A=A8=E6=97=B6=E9=97=B4</th>
+</tr>
+<tr>
+<td valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding-left: 26px; padding-top: 8px;">
+<div align=3D"center" style=3D"padding: 0 6px; font-weight: bold; backgro=
+und:
+#def2ff; font-size: 14px; height: 28px; line-height: 28px; font-family:
+=E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91; color: #333;">2016=E5=B9=B411=E6=9C=
+=8815=E6=97=A5=EF=BC=8D12=E6=9C=8816=E6=97=A5</div>
+</td>
+<td style=3D"padding-left: 16px; padding-top: 8px;"><a style=3D"color: #2=
+22;
+text-decoration: none; font-size: 14px; line-height: 28px; font-family:
+=E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91;"
+href=3D"http://edm.elecfans.com/link.php?M=3D18947282&N=3D10450&L=3D6219&=
+F=3DH"></a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<th style=3D"text-align: left; font-size: 15px; line-height: 40px;
+padding-top: 16px; font-family: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91; col=
+or: #222; padding-left:
+26px;">=E6=B4=BB=E5=8A=A8=E5=A5=96=E5=93=81</th>
+</tr>
+<tr>
+<td valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" style=3D"text-align: center; m=
+argin:
+10px auto;">
+<tbody>
+<tr>
+<td width=3D"210"><a
+href=3D"http://edm.elecfans.com/link.php?M=3D18947282&N=3D10450&L=3D7713&=
+F=3DH"
+style=3D"text-decoration: none;"><img style=3D"width: 180px; height: 180p=
+x;
+border: 1px solid #e5e5e5;"
+src=3D"http://www.elecfans.com/tt/images/shenmiliping.jpg"
+title=3D"=E7=A5=9E=E7=A7=98=E5=A5=BD=E7=A4=BC" />
+<h3 style=3D"color: #666; font-size: 14px; font-weight:
+normal;">=E7=A5=9E=E7=A7=98=E5=A5=BD=E7=A4=BC</h3>
+</a></td>
+<td width=3D"210"><a
+href=3D"http://edm.elecfans.com/link.php?M=3D18947282&N=3D10450&L=3D7709&=
+F=3DH"
+style=3D"text-decoration: none;"><img style=3D"width: 180px; height: 180p=
+x;
+border: 1px solid #e5e5e5;"
+src=3D"http://www.elecfans.com/tt/images/shenmiliping.jpg"
+title=3D"=E7=A5=9E=E7=A7=98=E5=A5=BD=E7=A4=BC" />
+<h3 style=3D"color: #666; font-size: 14px; font-weight:
+normal;">=E7=A5=9E=E7=A7=98=E5=A5=BD=E7=A4=BC</h3>
+</a></td>
+<td width=3D"210"><a
+href=3D"http://edm.elecfans.com/link.php?M=3D18947282&N=3D10450&L=3D7713&=
+F=3DH"
+style=3D"text-decoration: none;"><img style=3D"width: 180px; height: 180p=
+x;
+border: 1px solid #e5e5e5;"
+src=3D"http://www.elecfans.com/tt/images/shenmiliping.jpg"
+title=3D"=E7=A5=9E=E7=A7=98=E5=A5=BD=E7=A4=BC" />
+<h3 style=3D"color: #666; font-size: 14px; font-weight:
+normal;">=E7=A5=9E=E7=A7=98=E5=A5=BD=E7=A4=BC</h3>
+</a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan=3D"8" style=3D"padding-top: 50px;"><a alt=3D"=E7=AB=8B=E5=8D=B3=
+=E5=8F=82=E5=8A=A0"
+style=3D"display: block; width: 212px; height: 34px; text-align: center;
+font-size: 16px; line-height: 34px; margin: 0 auto; background: #e22b3d;
+border-radius: 6px; color: #fff; text-decoration: none;"
+href=3D"http://edm.elecfans.com/link.php?M=3D18947282&N=3D10450&L=3D7709&=
+F=3DH">=E7=AB=8B=E5=8D=B3=E5=8F=82=E5=8A=A0</a></td>
+</tr>
+<tr>
+<td colspan=3D"8" style=3D"padding-bottom: 70px;">
+<div style=3D"width: 212px; height: 30px; background:
+url(http://www.elecfans.com/topic/metz/images/edm_bg.png); margin: 0
+auto;"></div>
+</td>
+</tr>
+</tbody>
+</table>
+</div><img
+src=3D"http://edm.elecfans.com/open.php?M=3D18947282&L=3D7952&N=3D10450&F=
+=3DH&image=3D.jpg"
+height=3D"1" width=3D"10"></body></html>
+
+--b1_7ec71650b7fde627b7c0ef44c4b7b9df--
+
 

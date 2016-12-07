@@ -3,7 +3,7 @@ import os
 from PyQt5 import QtWidgets
 from PyQt5 import QtGui
 from PyQt5 import uic
-from PyQt5 import QtCore
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QFileDialog
 from email import utils
 import time
@@ -17,6 +17,7 @@ from email.mime.multipart import MIMEMultipart
 from mail import *
 import parameter as gl
 import syntax_pars
+from backend import *
 
 APPNAME = 'PxMail v3.0'
 
@@ -26,6 +27,9 @@ class ComposeWindow(QtWidgets.QMainWindow):
         super(ComposeWindow, self).__init__()
         uic.loadUi('ui/composewindow.ui', self)
         self.fileName=''
+        self.setupRichText()
+
+
 
         self.send_thread = sendingThread()                               #加载发送线程
         self.send_thread.triggerSuccess.connect(self.onSuccess)
@@ -39,9 +43,85 @@ class ComposeWindow(QtWidgets.QMainWindow):
 
     def ontextChanged(self):
         getstring=self.txtreceiver.text()
-        if not "@" in getstring:
-            self.model.setStringList([getstring+"@qq.com", getstring+"@sina.com",getstring+"@sina.cn",
-                        getstring+ "@163.com",getstring+"@126.com", getstring+"@hust.edu.cn"])
+        #从联系人中筛选
+        # if not "@" in getstring:
+        #     self.model.setStringList([getstring+"@qq.com", getstring+"@sina.com",getstring+"@sina.cn",
+        #                 getstring+ "@163.com",getstring+"@126.com", getstring+"@hust.edu.cn"])
+
+    def setupRichText(self):
+        pix = QtGui.QPixmap(16, 16)                                     #填充颜色按钮
+        pix.fill(Qt.black)
+        self.ButtonTextColor.setIcon(QtGui.QIcon(pix))
+
+        db = QtGui.QFontDatabase()                                      #字库里的字体大小
+        for size in db.standardSizes():
+            self.comboSize.addItem("%s" % (size))
+        self.comboSize.setCurrentIndex(                                         #当前字体索引设置为选中文字的大小
+                self.comboSize.findText(
+                        "%s" % (QtWidgets.QApplication.font().pointSize())))
+
+
+        self.fontChanged(self.textEdit.font())
+        self.colorChanged(self.textEdit.textColor())
+        self.alignmentChanged(self.textEdit.alignment())
+        # self.textEdit.document().modificationChanged.connect(
+        #         self.actionSave.setEnabled)
+        # self.textEdit.document().modificationChanged.connect(
+        #         self.setWindowModified)
+        # self.textEdit.document().undoAvailable.connect(
+        #         self.actionUndo.setEnabled)
+        # self.textEdit.document().redoAvailable.connect(
+        #         self.actionRedo.setEnabled)
+
+    # #当前文字格式改变
+    def onCurrentCharFormatChanged(self, format):
+        pass
+        # self.fontChanged(format.font())
+        # self.colorChanged(format.foreground().color())
+    #光标位置改变
+    def onCursorPositionChanged(self):
+        pass
+        # self.alignmentChanged(self.textEdit.alignment())
+    # def fontChanged(self, font):
+    #     self.comboFont.setCurrentIndex(
+    #             self.comboFont.findText(QFontInfo(font).family()))
+    #     self.comboSize.setCurrentIndex(
+    #             self.comboSize.findText("%s" % font.pointSize()))
+    #     self.actionTextBold.setChecked(font.bold())
+    #     self.actionTextItalic.setChecked(font.italic())
+    #     self.actionTextUnderline.setChecked(font.underline())
+
+    def onTextBold(self):
+        pass
+    def onTextItalic(self):
+        pass
+    def onTextUnderline(self):
+        pass
+    def onTextColor(self):
+        pass
+    def onTextFamily(self):
+        pass
+    def onTextSize(self):
+        pass
+    def onTextAlign(self,button):
+        if button == self.ButtonAlignLeft:
+            self.textEdit.setAlignment(Qt.AlignLeft | Qt.AlignAbsolute)
+        elif button == self.ButtonAlignCenter:
+            self.textEdit.setAlignment(Qt.AlignHCenter)
+        elif button == self.ButtonAlignRight:
+            self.textEdit.setAlignment(Qt.AlignRight | Qt.AlignAbsolute)
+        elif button == self.ButtonAlignJustify:
+            self.textEdit.setAlignment(Qt.AlignJustify)
+    def fontChanged(self, font):
+        self.comboFont.setCurrentIndex(
+                self.comboFont.findText(QtGui.QFontInfo(font).family()))
+        self.comboSize.setCurrentIndex(
+                self.comboSize.findText("%s" % font.pointSize()))
+        self.actionTextBold.setChecked(font.bold())
+        self.actionTextItalic.setChecked(font.italic())
+        self.actionTextUnderline.setChecked(font.underline())
+
+
     #发送邮件
     def onSend(self):
         if not self.txtreceiver.text():
@@ -69,7 +149,7 @@ class ComposeWindow(QtWidgets.QMainWindow):
             gl.message['Subject'] = self.txtsubject.text()
             gl.message['from'] = gl.username
             gl.message['date']=time.strftime('%a, %d %b %Y %H:%M:%S %z')
-        gl.receivers=self.txtreceiver.text()
+        gl.receivers=self.txtreceiver.text().split(';')
         self.statusBar.showMessage("Sending...")
         self.send_thread.start()
         self.senddialog.exec_()
@@ -84,16 +164,18 @@ class ComposeWindow(QtWidgets.QMainWindow):
         self.statusBar.showMessage(str("附件："+self.fileName))
 
     def onSuccess(self):
+        QtWidgets.QMessageBox.warning(self, APPNAME,"邮件发送成功" )
         self.senddialog.close()
         self.close()
 
     def onFail(self):
+        QtWidgets.QMessageBox.warning(self, APPNAME,gl.error )
         self.senddialog.close()
 
 class AccountDialog(QtWidgets.QMainWindow):
     def __init__(self, parent = None):
         super(AccountDialog, self).__init__()
-
+        self.setWindowFlags(Qt.FramelessWindowHint|Qt.WindowStaysOnTopHint)  #去边框
         uic.loadUi('ui/accountdialog.ui', self)
         self.popportEdit.setText("110")
         self.smtpportEdit.setText("25")
@@ -106,6 +188,24 @@ class AccountDialog(QtWidgets.QMainWindow):
         completer.setModel(self.model)
 
 
+
+        self.in_thread = In()
+        self.in_thread.trigger.connect(self.trans)
+        self.trans_thread = Trans()                                     #文字淡入淡出
+        self.trans_thread.trigger.connect(self.trans)
+        self.trans()
+
+        self.closefilter = Filter()                                                 #关闭
+        self.labelclose.installEventFilter(self.closefilter)
+        self.closefilter.trigger4.connect(self.onCancel)
+
+        self.minfilter = Filter()                                                 #最小化
+        self.labelmin.installEventFilter(self.minfilter)
+        self.minfilter.trigger4.connect(self.onMinimum)
+        desktop = QtWidgets.QApplication.desktop()
+        self.dwidth = desktop.width()    # 获取桌面宽度
+        self.dheight = desktop.height()    # 获取桌面高度
+        self.globalPos = None
 
 
         self.hideManualSet()
@@ -146,7 +246,7 @@ class AccountDialog(QtWidgets.QMainWindow):
         self.SetButton.hide()
     #设置回车快捷键
     def keyPressEvent(self, event):
-        if event.key() ==QtCore.Qt.Key_Enter or event.key() ==QtCore.Qt.Key_Return:
+        if event.key() ==Qt.Key_Enter or event.key() ==Qt.Key_Return:
             self.onLogin()
     #文本编辑完成自动显示服务器文本
     def txtuserEdited(self):
@@ -161,6 +261,9 @@ class AccountDialog(QtWidgets.QMainWindow):
             return
         self.txtpopserver.setText(pophost)
         self.txtsmtpserver.setText(smtphost)
+
+
+
     #登陆成功
     def successed(self):
         self.mainwindow = MainWindow()
@@ -168,11 +271,17 @@ class AccountDialog(QtWidgets.QMainWindow):
         self.close()
     #登陆失败
     def failed(self):
-        self.processBar.hide()
+        self.label_prompt.setText(u'<p align=right style="font-family:Microsoft YaHei;font:13px;'
+			u'color:#DE5347">服务器连接失败！%s</p>'%gl.error)
+        gl.new_trans = True
+        time.sleep(0.01)
+        self.trans_thread.start()
+
         self.SetButton.setEnabled(True)                        #按钮可用
         self.ReturnButton.setEnabled(True)
         self.cancelButton.setEnabled(True)
         self.loginButton.setEnabled(True)
+
     #文本框自动补全
     def ontextChanged(self):
         getstring=self.txtuser.text()
@@ -188,7 +297,13 @@ class AccountDialog(QtWidgets.QMainWindow):
         gl.popssl=False
         gl.smtpssl=False
         if not (gl.username and gl.password):
-            QtWidgets.QMessageBox.warning(self, APPNAME,"请输入用户名密码" )
+
+            self.label_prompt.setText(u'<p align=right style="font-family:Microsoft YaHei;font:13px;'
+                u'color:#4C8BF5">请完整填写用户名密码信息</p>')
+            gl.new_trans = True
+            time.sleep(0.01)
+            self.in_thread.start()
+
         else:
             try:
                 if gl.username.split('@')[1]=="hust.edu.cn":
@@ -198,7 +313,11 @@ class AccountDialog(QtWidgets.QMainWindow):
                     gl.pophost='pop.'+gl.username.split('@')[1]
                     gl.smtphost='smtp.'+gl.username.split('@')[1]
             except:
-                QtWidgets.QMessageBox.warning(self, APPNAME,"请输入格式正确的用户名" )
+                self.label_prompt.setText(u'<p align=right style="font-family:Microsoft YaHei;font:13px;'
+                    u'color:#DE5347">请输入格式正确的用户名！</p>')
+                gl.new_trans = True
+                time.sleep(0.01)
+                self.trans_thread.start()
                 return
             if self.txtpopserver.text():
                 gl.pophost=self.txtpopserver.text()
@@ -217,19 +336,51 @@ class AccountDialog(QtWidgets.QMainWindow):
                 gl.smtpport='465'
                 gl.popssl=True
                 gl.smtpssl=True
+            self.label_prompt.setText(u'<p align=right style="font-family:Microsoft YaHei;font:13px;'
+			u'color:#4C8BF5">正在连接邮箱服务器...</p>')
+            gl.new_trans = True
+            time.sleep(0.01)
+            self.in_thread.start()
             self.loading_thread.start()                             #登陆线程
 
-            self.movie = QtGui.QMovie("ui/process1.gif")            #显示进度条
-            self.processBar.setMovie(self.movie)
-            self.movie.start()
-            self.processBar.show()
+
             self.SetButton.setEnabled(False)                        #按钮不可用
             self.ReturnButton.setEnabled(False)
             self.cancelButton.setEnabled(False)
             self.loginButton.setEnabled(False)
+
     #关闭窗口
     def onCancel(self):
         self.close()
+    def onMinimum(self):
+        self.showMinimized()
+
+    # 鼠标按下事件
+    def mousePressEvent(self, event):
+        # 鼠标点击事件
+        if event.button() == Qt.LeftButton:
+            self.dragPosition = event.globalPos() - self.frameGeometry().topLeft()
+            event.accept()
+
+    # 鼠标移动事件
+    def mouseMoveEvent(self, event):
+        if event.buttons() == Qt.LeftButton:
+            self.globalPos = event.globalPos() - self.dragPosition
+            self.move(self.globalPos)
+            event.accept()
+
+    # 鼠标释放事件
+    def mouseReleaseEvent(self, event):
+        if self.y() < 1:    # 上边
+            self.move(self.x(), 1 - self.height())
+        elif self.x() < 1:    # 左边
+            self.move(1 - self.width(), self.y())
+        elif self.x() > (self.dwidth - self.width()):    # 右边
+            self.move(self.dwidth - 1 , self.y())
+        event.accept()
+
+
+
     #SSL按钮事件
     def onSSLpop(self):
         if self.checkSSLpop.isChecked():
@@ -242,11 +393,17 @@ class AccountDialog(QtWidgets.QMainWindow):
             self.smtpportEdit.setText("465")
         else:
             self.smtpportEdit.setText("25")
+
     # def showEvent(self, *args, **kwargs):
     #     splash=QtWidgets.QSplashScreen(QtGui.QPixmap("taiyan.jpg"))             #做启动画面
     #     splash.show()
     #     QtCore.QThread.sleep(5)
     #     splash.hide()
+
+    #改变透明度,提示文字淡入淡出，用于更新画面
+    def trans(self):
+        self.label_opacity.setStyleSheet(u'QLabel{background:rgba(14, 33, 45, ' + str(gl.opacity) + '%)}')
+        self.update()
 
 
 
@@ -259,9 +416,9 @@ class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         uic.loadUi('ui/mainwindow.ui', self)
-        # with open("ui/ui.qss","r") as fh:                             #加载qss文件
-        #     self.setStyleSheet(fh.read())
-        # self.setWindowFlags(QtCore.Qt.FramelessWindowHint|QtCore.Qt.WindowStaysOnTopHint)     #去边框
+        with open("ui/myUI.qss","r") as fh:                             #加载qss文件
+            self.setStyleSheet(fh.read())
+        # self.setWindowFlags(Qt.FramelessWindowHint|Qt.WindowStaysOnTopHint)     #去边框
 
         self.receive_thread = receiveThread()                               #加载登陆线程
         self.receive_thread.triggerFinish.connect(self.mailDisplay)
@@ -282,7 +439,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.comboBox.insertSeparator(3)
         self.comboBox.insertItems(4,["√    升序","      降序"])
         self.listEmails.customContextMenuRequested[QtCore.QPoint].connect(self.listmailMenu)
-        self.highlight = syntax_pars.PythonHighlighter(self.emailPreview.document())
+        # self.highlight = syntax_pars.PythonHighlighter(self.emailPreview.document())
 
         self.attachdisplay.hide()                                           #隐藏附件标签
         self.attachlabel.hide()
@@ -331,7 +488,6 @@ class MainWindow(QtWidgets.QMainWindow):
                 else:
                     date=info["received"][-31:]
                 datetuple=utils.parsedate(date)                                 #发送邮件日期
-
                 if datetuple[0]<year or datetuple[1]<month-1 :
                     childItem = QtWidgets.QTreeWidgetItem(Itemslist[6])
                     childItem.setText(0,info["subject"])
@@ -444,7 +600,7 @@ class MainWindow(QtWidgets.QMainWindow):
                     "无法创建文件: %s\n%s." % (filename, qFile.errorString()))
             return
         with open(filename, 'wb') as file_handle:
-            QtWidgets.QApplication.setOverrideCursor(QtCore.Qt.WaitCursor)
+            QtWidgets.QApplication.setOverrideCursor(Qt.WaitCursor)
             file_handle.write(gl.attachment)
             QtWidgets.QApplication.restoreOverrideCursor()
         self.statusBar().showMessage("Saved '%s'" % filename, 2000)
@@ -495,34 +651,19 @@ class MainWindow(QtWidgets.QMainWindow):
         self.Xlabel.installEventFilter(self.labelfilter)
         self.labelfilter.trigger3.connect(self.cleartxt)
 
-        self.font = QtGui.QFont("verdana, thoma", 8)
-        self.font.setItalic(True)
-        self.searchEdit.setFont(self.font)
-        self.color = QtGui.QPalette()
-        self.color.setColor(QtGui.QPalette.Text, QtGui.QColor(150, 150, 150, 255))
-        self.searchEdit.setPalette(self.color)
     def FocusIn(self):
-        if self.searchEdit.palette().color(QtGui.QPalette.Text).red() == 150:
-            self.color.setColor(QtGui.QPalette.Text, QtGui.QColor(0, 0, 0, 255))
-            self.font.setItalic(False)
-            self.searchEdit.setPalette(self.color)
-            self.searchEdit.setFont(self.font)
-            self.searchEdit.clear()
-            self.Xlabel.setText("x")
+        self.Xlabel.setText("x")
+
     def FocusOut(self):
         if not self.searchEdit.text():
-            self.color.setColor(QtGui.QPalette.Text, QtGui.QColor(150, 150, 150, 255))
-            self.font.setItalic(True)
-            self.searchEdit.setPalette(self.color)
-            self.searchEdit.setFont(self.font)
-            self.searchEdit.setText("搜素邮件")
+
             self.Xlabel.setText("")
     def txtsearchEdited(self):
-        if self.searchEdit.text() and self.searchEdit.palette().color(QtGui.QPalette.Text).red() != 150:
+        if self.searchEdit.text():
             gl.string=self.searchEdit.text()
 
             # self.search_thread.start()
-            QtWidgets.QApplication.setOverrideCursor(QtCore.Qt.WaitCursor)          #鼠标设置成忙等待状态
+            QtWidgets.QApplication.setOverrideCursor(Qt.WaitCursor)          #鼠标设置成忙等待状态
             gl.March_ID=[]                                                  #匹配符合条件的邮件
             for email in gl.emails:
                 info=get_info(email)
@@ -531,8 +672,8 @@ class MainWindow(QtWidgets.QMainWindow):
                     self.data=info["subject"]+info["content"]+info["addr"]
                     pattern = re.compile(gl.string)
                     dataMatched = re.findall(pattern, self.data)                        #匹配所有关键字，背景高亮
-                    self.highlight.setHighlightData(dataMatched)
-                    self.highlight.rehighlight()
+                    # self.highlight.setHighlightData(dataMatched)
+                    # self.highlight.rehighlight()
             self.mailDisplay()
             QtWidgets.QApplication.restoreOverrideCursor()
 
@@ -541,10 +682,9 @@ class MainWindow(QtWidgets.QMainWindow):
             self.mailDisplay()
     #清空搜索框
     def cleartxt(self):
-        if self.searchEdit.palette().color(QtGui.QPalette.Text).red() != 150:
-            self.searchEdit.clear()
-            gl.March_ID=gl.emails
-            self.mailDisplay()
+        self.searchEdit.clear()
+        gl.March_ID=gl.emails
+        self.mailDisplay()
 
     #回复功能
     def onReply(self):
@@ -562,6 +702,10 @@ class MainWindow(QtWidgets.QMainWindow):
         self.compose.txtsubject.setText('回复：'+info["subject"])                    #显示主题，发信人，日期
         self.compose.txtreceiver.setText(info["addr"])
         self.compose.textEdit.setDocument(document)
+        self.compose.textEdit.setFocus()
+
+
+
     #转发功能
     def onForward(self):
         email = gl.March_ID[self.index]
@@ -577,6 +721,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.compose.show()
         self.compose.txtsubject.setText('转发：'+info["subject"])                    #显示主题，发信人，日期
         self.compose.textEdit.setDocument(document)
+        self.compose.textEdit.setFocus()
 
     def onDelete(self):
         QtWidgets.QMessageBox.warning(self, APPNAME,"该功能尚在开发中~~~~~~~" )
@@ -600,19 +745,15 @@ class MainWindow(QtWidgets.QMainWindow):
             self.btnReply.setEnabled(True)
             self.index=item.treeWidget().currentItem().data(0,1)               #将Item中的行号提取出来
             email = gl.March_ID[self.index]
-            self.document = QtGui.QTextDocument()
+
             info=get_info(email)
             try:
 
-                if info["content"] != '':
-                    # self.document.setPlainText(info["content"])                          #显示纯文本
-                    self.emailPreview.setPlainText(info["content"])
-
+                if info["content"] != '':                                    #显示纯文本
+                    self.emailPreview.setHtml(info["content"].replace('\n','<br>'))
                 elif info["html"] != '':
-                    # self.document.setHtml(info["html"])
-                    self.emailPreview.setHtml(info["html"])#显示html文本
-                # self.emailPreview.setPlainText(info["content"])
-                # self.emailPreview.setDocument(self.document)                             #显示在文本框中
+                    self.emailPreview.setHtml(info["html"])                 #显示html文本
+
 
                 if info["filename"]:
                     self.filename=info["filename"]
@@ -727,6 +868,7 @@ class Filter(QtCore.QObject):
     trigger1= QtCore.pyqtSignal()
     trigger2= QtCore.pyqtSignal()
     trigger3= QtCore.pyqtSignal()
+    trigger4= QtCore.pyqtSignal()
     def eventFilter(self, widget, event):
         if event.type() == QtCore.QEvent.FocusIn:
             self.trigger1.emit()
@@ -736,6 +878,9 @@ class Filter(QtCore.QObject):
             return False
         elif event.type() == QtCore.QEvent.MouseButtonPress:
             self.trigger3.emit()
+            return False
+        elif event.type() == QtCore.QEvent.MouseButtonRelease:
+            self.trigger4.emit()
             return False
         else:
             return False

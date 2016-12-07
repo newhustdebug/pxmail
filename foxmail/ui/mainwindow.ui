@@ -17,6 +17,9 @@
    <iconset>
     <normaloff>logo.png</normaloff>logo.png</iconset>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonTextBesideIcon</enum>
   </property>
@@ -42,7 +45,7 @@
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton{
+            <string notr="true">/*QPushButton{
 
 border: none;
 
@@ -55,7 +58,7 @@ QPushButton:pressed{
   background-color: qconicalgradient(cx:0.5, cy:0.522909, angle:179.9, stop:0.494318 rgba(134, 198, 233, 255), stop:0.5 rgba(206, 234, 248, 255));
  
 }
-</string>
+*/</string>
            </property>
            <property name="text">
             <string>写邮件</string>
@@ -81,7 +84,7 @@ QPushButton:pressed{
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton{
+            <string notr="true">/*QPushButton{
 
 border: none;
 
@@ -93,7 +96,7 @@ QPushButton:hover{
 QPushButton:pressed{
   background-color: qconicalgradient(cx:0.5, cy:0.522909, angle:179.9, stop:0.494318 rgba(134, 198, 233, 255), stop:0.5 rgba(206, 234, 248, 255));
  
-}
+}*/
 </string>
            </property>
            <property name="text">
@@ -120,7 +123,7 @@ QPushButton:pressed{
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton{
+            <string notr="true">/*QPushButton{
 
 border: none;
 
@@ -133,7 +136,7 @@ QPushButton:pressed{
   background-color: qconicalgradient(cx:0.5, cy:0.522909, angle:179.9, stop:0.494318 rgba(134, 198, 233, 255), stop:0.5 rgba(206, 234, 248, 255));
  
 }
-</string>
+*/</string>
            </property>
            <property name="text">
             <string>通讯录</string>
@@ -198,13 +201,16 @@ QPushButton:pressed{
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: white;
+             <string notr="true">
 border:2px solid gray;
 border-top-left-radius:10px;
 border-bottom-left-radius:10px;
 padding:2px 2px;
 border-right: none; 
-border-color:silver;</string>
+border-color:silver;
+
+background-color: #AAA;
+color: #000;</string>
             </property>
             <property name="text">
              <string/>
@@ -238,9 +244,16 @@ border-left: 0px;
 border-right:0px;
 border-color:silver;
 
+background-color: #AAA;
+    color: #000;
+   /*border: 2px solid #555;*/
+
 </string>
             </property>
             <property name="text">
+             <string/>
+            </property>
+            <property name="placeholderText">
              <string>搜索邮件</string>
             </property>
            </widget>
@@ -260,14 +273,19 @@ border-color:silver;
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: white;
+             <string notr="true">
 border:2px solid gray;
 border-top-right-radius:10px;
 border-bottom-right-radius:10px;
 padding:2px 2px;
 border-color:silver;
 border-left:none;
-color: silver;</string>
+
+
+background-color: #AAA;
+color: #000;
+
+</string>
             </property>
             <property name="text">
              <string/>
@@ -403,11 +421,14 @@ color: silver;</string>
           <property name="contextMenuPolicy">
            <enum>Qt::CustomContextMenu</enum>
           </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
           <property name="editTriggers">
            <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
           </property>
           <property name="alternatingRowColors">
-           <bool>true</bool>
+           <bool>false</bool>
           </property>
           <property name="autoExpandDelay">
            <number>-1</number>
@@ -431,11 +452,23 @@ color: silver;</string>
        </layout>
       </item>
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,4,20">
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
            <widget class="QPushButton" name="btnReply">
+            <property name="minimumSize">
+             <size>
+              <width>170</width>
+              <height>26</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>170</width>
+              <height>26</height>
+             </size>
+            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton
 {
@@ -478,6 +511,18 @@ QPushButton:pressed, QPushButton:checked
           </item>
           <item>
            <widget class="QPushButton" name="btnForward">
+            <property name="minimumSize">
+             <size>
+              <width>171</width>
+              <height>26</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>171</width>
+              <height>26</height>
+             </size>
+            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton
 {
@@ -520,6 +565,18 @@ QPushButton:pressed, QPushButton:checked
           </item>
           <item>
            <widget class="QPushButton" name="btnDelete">
+            <property name="minimumSize">
+             <size>
+              <width>170</width>
+              <height>26</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>170</width>
+              <height>26</height>
+             </size>
+            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton
 {
@@ -581,6 +638,18 @@ QPushButton:pressed, QPushButton:checked
             <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,2">
              <item>
               <widget class="QLabel" name="sublabel">
+               <property name="minimumSize">
+                <size>
+                 <width>165</width>
+                 <height>17</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>165</width>
+                 <height>17</height>
+                </size>
+               </property>
                <property name="text">
                 <string>主题：</string>
                </property>
@@ -588,6 +657,18 @@ QPushButton:pressed, QPushButton:checked
              </item>
              <item>
               <widget class="QLabel" name="subdisplay">
+               <property name="minimumSize">
+                <size>
+                 <width>329</width>
+                 <height>17</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>329</width>
+                 <height>17</height>
+                </size>
+               </property>
                <property name="text">
                 <string/>
                </property>
@@ -599,6 +680,18 @@ QPushButton:pressed, QPushButton:checked
             <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,2">
              <item>
               <widget class="QLabel" name="fromlabel">
+               <property name="minimumSize">
+                <size>
+                 <width>165</width>
+                 <height>17</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>165</width>
+                 <height>17</height>
+                </size>
+               </property>
                <property name="text">
                 <string>发信人：</string>
                </property>
@@ -606,6 +699,18 @@ QPushButton:pressed, QPushButton:checked
              </item>
              <item>
               <widget class="QLabel" name="fromdisplay">
+               <property name="minimumSize">
+                <size>
+                 <width>329</width>
+                 <height>17</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>329</width>
+                 <height>17</height>
+                </size>
+               </property>
                <property name="text">
                 <string/>
                </property>
@@ -617,6 +722,18 @@ QPushButton:pressed, QPushButton:checked
             <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,2">
              <item>
               <widget class="QLabel" name="datelabel">
+               <property name="minimumSize">
+                <size>
+                 <width>165</width>
+                 <height>17</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>165</width>
+                 <height>17</height>
+                </size>
+               </property>
                <property name="text">
                 <string>日期：</string>
                </property>
@@ -624,6 +741,18 @@ QPushButton:pressed, QPushButton:checked
              </item>
              <item>
               <widget class="QLabel" name="datedisplay">
+               <property name="minimumSize">
+                <size>
+                 <width>329</width>
+                 <height>17</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>329</width>
+                 <height>17</height>
+                </size>
+               </property>
                <property name="text">
                 <string/>
                </property>
@@ -635,6 +764,18 @@ QPushButton:pressed, QPushButton:checked
             <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="1,4">
              <item>
               <widget class="QLabel" name="attachlabel">
+               <property name="minimumSize">
+                <size>
+                 <width>99</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>99</width>
+                 <height>20</height>
+                </size>
+               </property>
                <property name="text">
                 <string>附件：</string>
                </property>
@@ -642,6 +783,18 @@ QPushButton:pressed, QPushButton:checked
              </item>
              <item>
               <widget class="QPushButton" name="attachdisplay">
+               <property name="minimumSize">
+                <size>
+                 <width>395</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>395</width>
+                 <height>20</height>
+                </size>
+               </property>
                <property name="contextMenuPolicy">
                 <enum>Qt::CustomContextMenu</enum>
                </property>
@@ -676,15 +829,23 @@ QPushButton:pressed{
          </widget>
         </item>
         <item>
-         <widget class="QTextBrowser" name="emailPreview">
-          <property name="acceptDrops">
-           <bool>false</bool>
+         <widget class="QWebView" name="emailPreview">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>470</height>
+           </size>
           </property>
-          <property name="styleSheet">
-           <string notr="true">QTextBrowser{
-	font-family:'Consolas'; 
-	color: #ccc; 
-	background-color: #2b2b2b;}</string>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="url">
+           <url>
+            <string>about:blank</string>
+           </url>
           </property>
          </widget>
         </item>
@@ -764,6 +925,13 @@ QPushButton:pressed{
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header>QtWebKit/QWebView</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="resource.qrc"/>
   <include location="styles/style.qrc"/>

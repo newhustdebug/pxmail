@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>920</width>
+    <height>658</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,12 +17,15 @@
    <iconset>
     <normaloff>logo.png</normaloff>logo.png</iconset>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonTextBesideIcon</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <item>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout">
@@ -53,21 +56,878 @@
        </layout>
       </item>
       <item>
+       <widget class="QWidget" name="widget" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <widget class="QPushButton" name="ButtonUndo">
+         <property name="geometry">
+          <rect>
+           <x>4</x>
+           <y>1</y>
+           <width>40</width>
+           <height>40</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>撤销</string>
+         </property>
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;撤销&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    border: 0px solid rgb(124, 124, 124);
+    
+    border-radius:5px;
+}
+QPushButton:hover{
+    border: 1px solid #3C80B1;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(181, 225, 250, 255), stop:0.50001 rgba(222, 242, 251, 255));
+   
+}
+QPushButton:pressed{
+    border: 1px solid #5F92B2;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(134, 198, 233, 255), stop:0.50001 rgba(206, 234, 248, 255));
+ 
+}</string>
+         </property>
+         <property name="text">
+          <string extracomment="撤销"/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>textedit/editundo.png</normaloff>textedit/editundo.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="ButtonRedo">
+         <property name="geometry">
+          <rect>
+           <x>47</x>
+           <y>1</y>
+           <width>40</width>
+           <height>40</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>恢复</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    border: 0px solid rgb(124, 124, 124);
+    
+    border-radius:5px;
+}
+QPushButton:hover{
+    border: 1px solid #3C80B1;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(181, 225, 250, 255), stop:0.50001 rgba(222, 242, 251, 255));
+   
+}
+QPushButton:pressed{
+    border: 1px solid #5F92B2;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(134, 198, 233, 255), stop:0.50001 rgba(206, 234, 248, 255));
+ 
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>textedit/editredo.png</normaloff>textedit/editredo.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="ButtonCut">
+         <property name="geometry">
+          <rect>
+           <x>90</x>
+           <y>1</y>
+           <width>40</width>
+           <height>40</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>剪切</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    border: 0px solid rgb(124, 124, 124);
+    
+    border-radius:5px;
+}
+QPushButton:hover{
+    border: 1px solid #3C80B1;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(181, 225, 250, 255), stop:0.50001 rgba(222, 242, 251, 255));
+   
+}
+QPushButton:pressed{
+    border: 1px solid #5F92B2;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(134, 198, 233, 255), stop:0.50001 rgba(206, 234, 248, 255));
+ 
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>textedit/editcut.png</normaloff>textedit/editcut.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="ButtonCopy">
+         <property name="geometry">
+          <rect>
+           <x>140</x>
+           <y>0</y>
+           <width>40</width>
+           <height>40</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>复制</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    border: 0px solid rgb(124, 124, 124);
+    
+    border-radius:5px;
+}
+QPushButton:hover{
+    border: 1px solid #3C80B1;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(181, 225, 250, 255), stop:0.50001 rgba(222, 242, 251, 255));
+   
+}
+QPushButton:pressed{
+    border: 1px solid #5F92B2;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(134, 198, 233, 255), stop:0.50001 rgba(206, 234, 248, 255));
+ 
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>textedit/editcopy.png</normaloff>textedit/editcopy.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="ButtonPaste">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>0</y>
+           <width>40</width>
+           <height>40</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>粘贴</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    border: 0px solid rgb(124, 124, 124);
+    
+    border-radius:5px;
+}
+QPushButton:hover{
+    border: 1px solid #3C80B1;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(181, 225, 250, 255), stop:0.50001 rgba(222, 242, 251, 255));
+   
+}
+QPushButton:pressed{
+    border: 1px solid #5F92B2;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(134, 198, 233, 255), stop:0.50001 rgba(206, 234, 248, 255));
+ 
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>textedit/editpaste.png</normaloff>textedit/editpaste.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+        </widget>
+        <widget class="Line" name="line">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>0</y>
+           <width>3</width>
+           <height>61</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="ButtonTextBold">
+         <property name="geometry">
+          <rect>
+           <x>230</x>
+           <y>0</y>
+           <width>40</width>
+           <height>40</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>粗体</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    border: 0px solid rgb(124, 124, 124);
+    
+    border-radius:5px;
+}
+QPushButton:hover{
+    border: 1px solid #3C80B1;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(181, 225, 250, 255), stop:0.50001 rgba(222, 242, 251, 255));
+   
+}
+QPushButton:pressed{
+    border: 1px solid #5F92B2;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(134, 198, 233, 255), stop:0.50001 rgba(206, 234, 248, 255));
+ 
+}
+QPushButton:checked{
+       border: 1px solid #5F92B2;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(134, 198, 233, 255), stop:0.50001 rgba(206, 234, 248, 255));
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>textedit/textbold.png</normaloff>textedit/textbold.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>Ctrl+B</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="ButtonTextItalic">
+         <property name="geometry">
+          <rect>
+           <x>270</x>
+           <y>0</y>
+           <width>40</width>
+           <height>40</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>斜体</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    border: 0px solid rgb(124, 124, 124);
+    
+    border-radius:5px;
+}
+QPushButton:hover{
+    border: 1px solid #3C80B1;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(181, 225, 250, 255), stop:0.50001 rgba(222, 242, 251, 255));
+   
+}
+QPushButton:pressed{
+    border: 1px solid #5F92B2;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(134, 198, 233, 255), stop:0.50001 rgba(206, 234, 248, 255));
+ 
+}
+QPushButton:checked{
+       border: 1px solid #5F92B2;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(134, 198, 233, 255), stop:0.50001 rgba(206, 234, 248, 255));
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>textedit/textitalic.png</normaloff>textedit/textitalic.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>F4</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="ButtonTextUnderline">
+         <property name="geometry">
+          <rect>
+           <x>310</x>
+           <y>0</y>
+           <width>40</width>
+           <height>40</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>下划线</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    border: 0px solid rgb(124, 124, 124);
+    
+    border-radius:5px;
+}
+QPushButton:hover{
+    border: 1px solid #3C80B1;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(181, 225, 250, 255), stop:0.50001 rgba(222, 242, 251, 255));
+   
+}
+QPushButton:pressed{
+    border: 1px solid #5F92B2;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(134, 198, 233, 255), stop:0.50001 rgba(206, 234, 248, 255));
+ 
+}
+QPushButton:checked{
+       border: 1px solid #5F92B2;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(134, 198, 233, 255), stop:0.50001 rgba(206, 234, 248, 255));
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>textedit/textunder.png</normaloff>textedit/textunder.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>Ctrl+U</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="ButtonAlignLeft">
+         <property name="geometry">
+          <rect>
+           <x>350</x>
+           <y>0</y>
+           <width>40</width>
+           <height>40</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>左对齐</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    border: 0px solid rgb(124, 124, 124);
+    
+    border-radius:5px;
+}
+QPushButton:hover{
+    border: 1px solid #3C80B1;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(181, 225, 250, 255), stop:0.50001 rgba(222, 242, 251, 255));
+   
+}
+QPushButton:pressed{
+    border: 1px solid #5F92B2;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(134, 198, 233, 255), stop:0.50001 rgba(206, 234, 248, 255));
+ 
+}
+QPushButton:checked{
+       border: 1px solid #5F92B2;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(134, 198, 233, 255), stop:0.50001 rgba(206, 234, 248, 255));
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>textedit/textleft.png</normaloff>textedit/textleft.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>Ctrl+L</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">buttonGroup</string>
+         </attribute>
+        </widget>
+        <widget class="QFontComboBox" name="comboFont">
+         <property name="geometry">
+          <rect>
+           <x>610</x>
+           <y>10</y>
+           <width>279</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="ButtonAlignCenter">
+         <property name="geometry">
+          <rect>
+           <x>390</x>
+           <y>0</y>
+           <width>40</width>
+           <height>40</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>居中对齐</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    border: 0px solid rgb(124, 124, 124);
+    
+    border-radius:5px;
+}
+QPushButton:hover{
+    border: 1px solid #3C80B1;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(181, 225, 250, 255), stop:0.50001 rgba(222, 242, 251, 255));
+   
+}
+QPushButton:pressed{
+    border: 1px solid #5F92B2;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(134, 198, 233, 255), stop:0.50001 rgba(206, 234, 248, 255));
+ 
+}
+QPushButton:checked{
+       border: 1px solid #5F92B2;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(134, 198, 233, 255), stop:0.50001 rgba(206, 234, 248, 255));
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>textedit/textcenter.png</normaloff>textedit/textcenter.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>Ctrl+E</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">buttonGroup</string>
+         </attribute>
+        </widget>
+        <widget class="QPushButton" name="ButtonAlignRight">
+         <property name="geometry">
+          <rect>
+           <x>430</x>
+           <y>0</y>
+           <width>40</width>
+           <height>40</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>右对齐</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    border: 0px solid rgb(124, 124, 124);
+    
+    border-radius:5px;
+}
+QPushButton:hover{
+    border: 1px solid #3C80B1;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(181, 225, 250, 255), stop:0.50001 rgba(222, 242, 251, 255));
+   
+}
+QPushButton:pressed{
+    border: 1px solid #5F92B2;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(134, 198, 233, 255), stop:0.50001 rgba(206, 234, 248, 255));
+ 
+}
+QPushButton:checked{
+       border: 1px solid #5F92B2;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(134, 198, 233, 255), stop:0.50001 rgba(206, 234, 248, 255));
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>textedit/textright.png</normaloff>textedit/textright.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>Ctrl+R</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">buttonGroup</string>
+         </attribute>
+        </widget>
+        <widget class="QPushButton" name="ButtonAlignJustify">
+         <property name="geometry">
+          <rect>
+           <x>470</x>
+           <y>0</y>
+           <width>40</width>
+           <height>40</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>文本对其</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    border: 0px solid rgb(124, 124, 124);
+    
+    border-radius:5px;
+}
+QPushButton:hover{
+    border: 1px solid #3C80B1;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(181, 225, 250, 255), stop:0.50001 rgba(222, 242, 251, 255));
+   
+}
+QPushButton:pressed{
+    border: 1px solid #5F92B2;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(134, 198, 233, 255), stop:0.50001 rgba(206, 234, 248, 255));
+ 
+}
+QPushButton:checked{
+       border: 1px solid #5F92B2;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(134, 198, 233, 255), stop:0.50001 rgba(206, 234, 248, 255));
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>textedit/textjustify.png</normaloff>textedit/textjustify.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>Ctrl+J</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">buttonGroup</string>
+         </attribute>
+        </widget>
+        <widget class="QPushButton" name="ButtonTextColor">
+         <property name="geometry">
+          <rect>
+           <x>520</x>
+           <y>0</y>
+           <width>40</width>
+           <height>40</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>颜色</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    border: 0px solid rgb(124, 124, 124);
+    
+    border-radius:5px;
+}
+QPushButton:hover{
+    border: 1px solid #3C80B1;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(181, 225, 250, 255), stop:0.50001 rgba(222, 242, 251, 255));
+   
+}
+QPushButton:pressed{
+    border: 1px solid #5F92B2;
+    background-color: qconicalgradient(cx:0.5, cy:0.5, angle:180, stop:0.49999 rgba(134, 198, 233, 255), stop:0.50001 rgba(206, 234, 248, 255));
+ 
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>Ctrl+U</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="comboSize">
+         <property name="geometry">
+          <rect>
+           <x>566</x>
+           <y>10</y>
+           <width>41</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="editable">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <zorder>ButtonUndo</zorder>
+        <zorder>ButtonRedo</zorder>
+        <zorder>ButtonCut</zorder>
+        <zorder>ButtonCopy</zorder>
+        <zorder>ButtonPaste</zorder>
+        <zorder>line</zorder>
+        <zorder>ButtonTextBold</zorder>
+        <zorder>ButtonTextItalic</zorder>
+        <zorder>ButtonTextUnderline</zorder>
+        <zorder>comboFont</zorder>
+        <zorder>ButtonAlignLeft</zorder>
+        <zorder>ButtonAlignCenter</zorder>
+        <zorder>ButtonAlignRight</zorder>
+        <zorder>ButtonAlignJustify</zorder>
+        <zorder>ButtonTextColor</zorder>
+        <zorder>comboSize</zorder>
+       </widget>
+      </item>
+      <item>
        <widget class="QTextEdit" name="textEdit"/>
       </item>
      </layout>
     </item>
    </layout>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>26</height>
-    </rect>
-   </property>
   </widget>
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">
@@ -87,6 +947,9 @@
    </attribute>
    <addaction name="actionSend"/>
    <addaction name="actionAttachment"/>
+   <addaction name="actionSave"/>
+   <addaction name="actionPicture"/>
+   <addaction name="actionScreenCut"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionSend">
@@ -110,9 +973,87 @@
     <string>附件</string>
    </property>
   </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset>
+     <normaloff>textedit/filesave.png</normaloff>textedit/filesave.png</iconset>
+   </property>
+   <property name="text">
+    <string>保存</string>
+   </property>
+   <property name="visible">
+    <bool>true</bool>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::TextHeuristicRole</enum>
+   </property>
+  </action>
+  <action name="actionPicture">
+   <property name="icon">
+    <iconset>
+     <normaloff>textedit/picture.png</normaloff>textedit/picture.png</iconset>
+   </property>
+   <property name="text">
+    <string>图片</string>
+   </property>
+  </action>
+  <action name="actionScreenCut">
+   <property name="icon">
+    <iconset>
+     <normaloff>textedit/screen.png</normaloff>textedit/screen.png</iconset>
+   </property>
+   <property name="text">
+    <string>截屏</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="icon">
+    <iconset>
+     <normaloff>textedit/editundo.png</normaloff>textedit/editundo.png</iconset>
+   </property>
+   <property name="text">
+    <string>撤销</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="icon">
+    <iconset>
+     <normaloff>textedit/editredo.png</normaloff>textedit/editredo.png</iconset>
+   </property>
+   <property name="text">
+    <string>恢复</string>
+   </property>
+  </action>
+  <action name="actionCut">
+   <property name="icon">
+    <iconset>
+     <normaloff>textedit/editcut.png</normaloff>textedit/editcut.png</iconset>
+   </property>
+   <property name="text">
+    <string>剪切</string>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="icon">
+    <iconset>
+     <normaloff>textedit/editcopy.png</normaloff>textedit/editcopy.png</iconset>
+   </property>
+   <property name="text">
+    <string>复制</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="icon">
+    <iconset>
+     <normaloff>textedit/editpaste.png</normaloff>textedit/editpaste.png</iconset>
+   </property>
+   <property name="text">
+    <string>粘贴</string>
+   </property>
+  </action>
  </widget>
  <resources>
-  <include location="composewindow.qrc"/>
+  <include location="resource.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -154,12 +1095,156 @@
    <slot>ontextChanged()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>324</x>
-     <y>89</y>
+     <x>404</x>
+     <y>73</y>
     </hint>
     <hint type="destinationlabel">
      <x>796</x>
      <y>92</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>textEdit</sender>
+   <signal>currentCharFormatChanged(QTextCharFormat)</signal>
+   <receiver>ComposeWindow</receiver>
+   <slot>onCurrentCharFormatChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>257</x>
+     <y>335</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>337</x>
+     <y>574</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>textEdit</sender>
+   <signal>cursorPositionChanged()</signal>
+   <receiver>ComposeWindow</receiver>
+   <slot>onCursorPositionChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>166</x>
+     <y>447</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>104</x>
+     <y>568</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonTextBold</sender>
+   <signal>clicked()</signal>
+   <receiver>ComposeWindow</receiver>
+   <slot>onTextBold()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>263</x>
+     <y>136</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>263</x>
+     <y>597</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonTextItalic</sender>
+   <signal>clicked()</signal>
+   <receiver>ComposeWindow</receiver>
+   <slot>onTextItalic()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>309</x>
+     <y>129</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>591</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonTextUnderline</sender>
+   <signal>clicked()</signal>
+   <receiver>ComposeWindow</receiver>
+   <slot>onTextUnderline()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>348</x>
+     <y>132</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>302</x>
+     <y>591</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonTextColor</sender>
+   <signal>clicked()</signal>
+   <receiver>ComposeWindow</receiver>
+   <slot>onTextColor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>551</x>
+     <y>138</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>524</x>
+     <y>629</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboFont</sender>
+   <signal>activated(QString)</signal>
+   <receiver>ComposeWindow</receiver>
+   <slot>onTextFamily()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>712</x>
+     <y>136</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>714</x>
+     <y>626</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboSize</sender>
+   <signal>activated(QString)</signal>
+   <receiver>ComposeWindow</receiver>
+   <slot>onTextSize()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>592</x>
+     <y>131</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>613</x>
+     <y>632</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonGroup</sender>
+   <signal>buttonClicked(QAbstractButton*)</signal>
+   <receiver>ComposeWindow</receiver>
+   <slot>onTextAlign(QAbstractButton*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>459</x>
+     <y>328</y>
     </hint>
    </hints>
   </connection>
@@ -168,5 +1253,17 @@
   <slot>onSend()</slot>
   <slot>onAttachment()</slot>
   <slot>ontextChanged()</slot>
+  <slot>onCurrentCharFormatChanged()</slot>
+  <slot>onCursorPositionChanged()</slot>
+  <slot>onTextBold()</slot>
+  <slot>onTextItalic()</slot>
+  <slot>onTextUnderline()</slot>
+  <slot>onTextColor()</slot>
+  <slot>onTextFamily()</slot>
+  <slot>onTextSize()</slot>
+  <slot>onTextAlign(QAbstractButton*)</slot>
  </slots>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
 </ui>

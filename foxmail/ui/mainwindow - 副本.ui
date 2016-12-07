@@ -10,15 +10,15 @@
     <height>771</height>
    </rect>
   </property>
-  <property name="contextMenuPolicy">
-   <enum>Qt::CustomContextMenu</enum>
-  </property>
   <property name="windowTitle">
    <string>Foxmail</string>
   </property>
   <property name="windowIcon">
    <iconset>
     <normaloff>logo.png</normaloff>logo.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
   </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -45,7 +45,7 @@
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton{
+            <string notr="true">/*QPushButton{
 
 border: none;
 
@@ -58,7 +58,7 @@ QPushButton:pressed{
   background-color: qconicalgradient(cx:0.5, cy:0.522909, angle:179.9, stop:0.494318 rgba(134, 198, 233, 255), stop:0.5 rgba(206, 234, 248, 255));
  
 }
-</string>
+*/</string>
            </property>
            <property name="text">
             <string>写邮件</string>
@@ -84,7 +84,7 @@ QPushButton:pressed{
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton{
+            <string notr="true">/*QPushButton{
 
 border: none;
 
@@ -96,7 +96,7 @@ QPushButton:hover{
 QPushButton:pressed{
   background-color: qconicalgradient(cx:0.5, cy:0.522909, angle:179.9, stop:0.494318 rgba(134, 198, 233, 255), stop:0.5 rgba(206, 234, 248, 255));
  
-}
+}*/
 </string>
            </property>
            <property name="text">
@@ -123,7 +123,7 @@ QPushButton:pressed{
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton{
+            <string notr="true">/*QPushButton{
 
 border: none;
 
@@ -136,7 +136,7 @@ QPushButton:pressed{
   background-color: qconicalgradient(cx:0.5, cy:0.522909, angle:179.9, stop:0.494318 rgba(134, 198, 233, 255), stop:0.5 rgba(206, 234, 248, 255));
  
 }
-</string>
+*/</string>
            </property>
            <property name="text">
             <string>通讯录</string>
@@ -201,13 +201,16 @@ QPushButton:pressed{
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: white;
+             <string notr="true">
 border:2px solid gray;
 border-top-left-radius:10px;
 border-bottom-left-radius:10px;
 padding:2px 2px;
 border-right: none; 
-border-color:silver;</string>
+border-color:silver;
+
+background-color: #AAA;
+color: #000;</string>
             </property>
             <property name="text">
              <string/>
@@ -241,9 +244,16 @@ border-left: 0px;
 border-right:0px;
 border-color:silver;
 
+background-color: #AAA;
+    color: #000;
+   /*border: 2px solid #555;*/
+
 </string>
             </property>
             <property name="text">
+             <string/>
+            </property>
+            <property name="placeholderText">
              <string>搜索邮件</string>
             </property>
            </widget>
@@ -263,14 +273,19 @@ border-color:silver;
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: white;
+             <string notr="true">
 border:2px solid gray;
 border-top-right-radius:10px;
 border-bottom-right-radius:10px;
 padding:2px 2px;
 border-color:silver;
 border-left:none;
-color: silver;</string>
+
+
+background-color: #AAA;
+color: #000;
+
+</string>
             </property>
             <property name="text">
              <string/>
@@ -287,7 +302,7 @@ color: silver;</string>
      </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,2,0">
+     <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,2,3">
       <item>
        <widget class="QTreeWidget" name="treeMailWidget">
         <attribute name="headerVisible">
@@ -378,13 +393,60 @@ color: silver;</string>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
-         <widget class="QComboBox" name="comboBox"/>
+         <widget class="QComboBox" name="comboBox">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <item>
+           <property name="text">
+            <string>排序：日期</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>排序：发信人</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>排序：主题</string>
+           </property>
+          </item>
+         </widget>
         </item>
         <item>
-         <widget class="QListWidget" name="listEmails">
+         <widget class="QTreeWidget" name="listEmails">
           <property name="contextMenuPolicy">
            <enum>Qt::CustomContextMenu</enum>
           </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>false</bool>
+          </property>
+          <property name="autoExpandDelay">
+           <number>-1</number>
+          </property>
+          <property name="expandsOnDoubleClick">
+           <bool>true</bool>
+          </property>
+          <property name="columnCount">
+           <number>1</number>
+          </property>
+          <attribute name="headerVisible">
+           <bool>false</bool>
+          </attribute>
+          <column>
+           <property name="text">
+            <string notr="true">1</string>
+           </property>
+          </column>
          </widget>
         </item>
        </layout>
@@ -590,16 +652,60 @@ QPushButton:pressed, QPushButton:checked
              </item>
             </layout>
            </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="1,4">
+             <item>
+              <widget class="QLabel" name="attachlabel">
+               <property name="text">
+                <string>附件：</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="attachdisplay">
+               <property name="contextMenuPolicy">
+                <enum>Qt::CustomContextMenu</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+
+border: none;
+
+}
+QPushButton:hover{
+  background-color: qconicalgradient(cx:0.5, cy:0.522909, angle:179.9, stop:0.494318 rgba(181, 225, 250, 255), stop:0.5 rgba(222, 242, 251, 255));
+
+}
+QPushButton:pressed{
+  background-color: qconicalgradient(cx:0.5, cy:0.522909, angle:179.9, stop:0.494318 rgba(134, 198, 233, 255), stop:0.5 rgba(206, 234, 248, 255));
+ 
+}
+</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>attachicon1.png</normaloff>attachicon1.png</iconset>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
           </layout>
          </widget>
-        </item>
-        <item>
-         <widget class="QWidget" name="widget" native="true"/>
         </item>
         <item>
          <widget class="QTextBrowser" name="emailPreview">
           <property name="acceptDrops">
            <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QTextBrowser{
+	font-family:'Consolas'; 
+	color: #ccc; 
+	background-color: #2b2b2b;}</string>
           </property>
          </widget>
         </item>
@@ -814,17 +920,49 @@ QPushButton:pressed, QPushButton:checked
   </connection>
   <connection>
    <sender>listEmails</sender>
-   <signal>itemClicked(QListWidgetItem*)</signal>
+   <signal>itemClicked(QTreeWidgetItem*,int)</signal>
    <receiver>MainWindow</receiver>
    <slot>onMailSelected()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>421</x>
-     <y>518</y>
+     <x>351</x>
+     <y>600</y>
     </hint>
     <hint type="destinationlabel">
-     <x>415</x>
-     <y>737</y>
+     <x>377</x>
+     <y>738</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox</sender>
+   <signal>activated(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>OnActivated()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>434</x>
+     <y>104</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>486</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>attachdisplay</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>openFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>849</x>
+     <y>234</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>636</x>
+     <y>92</y>
     </hint>
    </hints>
   </connection>
@@ -841,5 +979,7 @@ QPushButton:pressed, QPushButton:checked
   <slot>onDelete()</slot>
   <slot>ontextEdit()</slot>
   <slot>onMailSelected()</slot>
+  <slot>OnActivated()</slot>
+  <slot>openFile()</slot>
  </slots>
 </ui>

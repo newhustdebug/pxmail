@@ -1,74 +1,68 @@
-X-Mda-Received: from <mx-3-39.mail.sina.com.cn>([<202.108.248.119>])
- by <mda-113-93.mda.fmail.tg.sinanode.com> with LMTP id <9195>
- Nov 12 2016 23:48:18 +0800 (CST)
-X-Sina-MID: 0400F7CD17D7A69B78BCAAECA557CFB1FA00000000000001
+X-Mda-Received: from <mx-3-45.mail.sina.com.cn>([<202.108.248.125>])
+ by <mda-113-93.mda.fmail.tg.sinanode.com> with LMTP id <22012>
+ Nov 12 2016 23:59:01 +0800 (CST)
+X-Sina-MID: 04BDE74D4921019E0EAB2166E479C71FA400000000000001
 X-Sina-Attnum: 0
-Received: from hust.edu.cn (HELO mail.hust.edu.cn)([202.114.0.240])
+Received: from smtpbg7.qq.com (HELO smtpbg7.qq.com)([183.60.61.200])
 	by sina.com with SMTP
-	12 Nov 2016 23:48:18 +0800 (CST)
-X-Sender: u201413426@hust.edu.cn
-Received-SPF: Pass (sina.com: SPF record at hust.edu.cn designates 202.114.0.240 as permitted sender) identity=from;
-	client-ip=202.114.0.240;
+	12 Nov 2016 23:59:01 +0800 (CST)
+X-Sender: 406371648@qq.com
+Authentication-Results: sina.com; dkim=pass (Signature verified) header.i=qq.com
+Received-SPF: Pass (sina.com: SPF record at spf-b.mail.qq.com designates 183.60.61.200 as permitted sender) identity=from;
+	client-ip=183.60.61.200;
 	receiver=sina.com;
-	envelope-from=u201413426@hust.edu.cn;
-	helo=mail.hust.edu.cn
-X-SMAIL-MID: 6333743932453
-Received: from Lenovo-PC (unknown [222.20.35.209])
-	by mailapp2 (Coremail) with SMTP id GAEQrJBrDpzpOidYkC5MAA--.24918S2;
-	Sat, 12 Nov 2016 23:53:13 +0800 (CST)
-Date: Sat, 12 Nov 2016 23:47:58 +0800
-From: "U201413426@hust.edu.cn" <U201413426@hust.edu.cn>
-To: phantom0506 <phantom0506@sina.com>
-Subject: screen
-X-Priority: 3
-X-Has-Attach: no
-X-Mailer: Foxmail 7, 2, 7, 174[cn]
+	envelope-from=406371648@qq.com;
+	helo=smtpbg7.qq.com
+X-SMAIL-MID: 99974498697544
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
+	t=1478966281; bh=1TrelQxglze9ajsUOJ6KWGeYRGtRYOtkS+p796pdSFE=;
+	h=From:To:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding:Date:Message-ID;
+	b=pWSbqvymzR7bztx4ktN5eTiF60f+HuR9wGNabNx4ajXT54dtN8wQA8WHGCGGNjbsd
+	 il1TFqsARlMfWnxMUdpV6Z2HMxrS3sTY/VtHnJSnhIJGXIAXU/0SA7yUz0iVGuEHgx
+	 0McYXAJY0QPdB40PPVPUKJYw6PVQmqQjbrXTsFiw=
+X-QQ-FEAT: D2wf+OxrlqFZJI7DA0Z30EXlikNwbL/dHoOjp9tl+R/cNL6UNEzPfhtau7iPB
+	ppx/xKFR3fncUyE8OxW75n0gIhHq/p9gIm279Ondys48samDl0szH4z7KWDDO8Sjh0ACj54
+	DZItO9l02jLFOgBPJEw7mJpl0Q25zX7DnkHxC12zVH0xLetap0sYFwbJAjAe/sBsj98guxA
+	Bp1w/xZ5AqM4vzKhBL/yb
+X-QQ-SSF: 000000000000001000000000000000Z
+X-HAS-ATTACH: no
+X-QQ-BUSINESS-ORIGIN: 2
+X-Originating-IP: 222.20.22.124
+X-QQ-STYLE: 
+X-QQ-mid: webmail670t1478966280t153810
+From: "=?ISO-8859-1?B?NDA2MzcxNjQ4?=" <406371648@qq.com>
+To: "=?ISO-8859-1?B?cGhhbnRvbTA1MDY=?=" <phantom0506@sina.com>
+Subject: #screen
 Mime-Version: 1.0
-Message-ID: <201611122347580848240@hust.edu.cn>
 Content-Type: multipart/alternative;
-	boundary="----=_001_NextPart356536006542_=----"
-X-CM-TRANSID: GAEQrJBrDpzpOidYkC5MAA--.24918S2
-X-Coremail-Antispam: 1UD129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73
-	VFW2AGmfu7bjvjm3AaLaJ3UjIYCTnIWjp_UUUYX7k0a2IF6F1UM7kC6x804xWl14x267AK
-	xVWUJVW8JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0rVWrJVCq3wAFIxvE14AKwVWUJVWUGw
-	A2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK021l84ACjcxK6xIIjxv20xvE14v26r1I
-	6r4UM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r1j6r4UM28EF7xvwVC2z280aVAFwI0_Cr
-	1j6rxdM28EF7xvwVC2z280aVCY1x0267AKxVW0oVCq3wAac4AC62xK8xCEY4vEwIxC4wAS
-	0I0E0xvYzxvE52x082IY62kv0487McIj6xIIjxv20xvE14v26r1j6r18McIj6I8E87Iv67
-	AKxVWUJVW8JwAm72CE4IkC6x0Yz7v_Jr0_Gr1lF7xvr2IYc2Ij64vIr41lFcxC0VAYjxAx
-	ZF0Ew4CEw7xC0wACY4xI67k04243AVC20s07MxkIecxEwVAFwVW5WwCF04k20xvY0x0EwI
-	xGrwCFx2IqxVCFs4IE7xkEbVWUJVW8JwC20s026c02F40E14v26r106r1rMI8I3I0E7480
-	Y4vE14v26r106r1rMI8E67AF67kF1VAFwI0_Jr0_JrylIxkGc2Ij64vIr41lIxAIcVC0I7
-	IYx2IY67AKxVWUJVWUCwCI42IY6xIIjxv20xvEc7CjxVAFwI0_Jr0_Gr1lIxAIcVCF04k2
-	6cxKx2IYs7xG6rW3Jr0E3s1lIxAIcVC2z280aVAFwI0_Jr0_Gr1lIxAIcVC2z280aVCY1x
-	0267AKxVWUJVW8JwCE64xvF2IEb7IF0Fy7YxBIdaVFxhVjvjDU0xZFpf9x0b03JH7UUUUU
-	=
-X-CM-SenderInfo: jxsqikartujlo6kx23oohg3hdfq/
+	boundary="----=_NextPart_58273C08_0B8DAB38_28897D75"
+Content-Transfer-Encoding: 8Bit
+Date: Sat, 12 Nov 2016 23:58:00 +0800
+X-Priority: 3
+Message-ID: <tencent_2C3C2466666DE54E57FB93FF@qq.com>
+X-QQ-MIME: TCMime 1.0 by Tencent
+X-Mailer: QQMail 2.x
+X-QQ-Mailer: QQMail 2.x
+X-QQ-SENDSIZE: 520
+Feedback-ID: webmail:qq.com:bgweb:bgweb6
 
 
 This is a multi-part message in MIME format.
 
-------=_001_NextPart356536006542_=----
+------=_NextPart_58273C08_0B8DAB38_28897D75
 Content-Type: text/plain;
-	charset="us-ascii"
+	charset="ISO-8859-1"
 Content-Transfer-Encoding: base64
 
-DQoNCg0KDQpVMjAxNDEzNDI2QGh1c3QuZWR1LmNuDQo=
 
-------=_001_NextPart356536006542_=----
+
+------=_NextPart_58273C08_0B8DAB38_28897D75
 Content-Type: text/html;
-	charset="us-ascii"
-Content-Transfer-Encoding: quoted-printable
+	charset="ISO-8859-1"
+Content-Transfer-Encoding: base64
 
-<html><head><meta http-equiv=3D"content-type" content=3D"text/html; charse=
-t=3Dus-ascii"><style>body { line-height: 1.5; }body { font-size: 10.5pt; f=
-ont-family: 'Microsoft YaHei UI'; color: rgb(0, 0, 0); line-height: 1.5; }=
-</style></head><body>=0A<div><span></span><br></div>=0A<div><br></div><hr =
-style=3D"width: 210px; height: 1px;" color=3D"#b5c4df" size=3D"1" align=3D=
-"left">=0A<div><span><div style=3D"MARGIN: 10px; FONT-FAMILY: verdana; FON=
-T-SIZE: 10pt"><div>U201413426@hust.edu.cn</div></div></span></div>=0A</bod=
-y></html>
-------=_001_NextPart356536006542_=------
+PGRpdj48YnI+PC9kaXY+
 
+------=_NextPart_58273C08_0B8DAB38_28897D75--
 
 

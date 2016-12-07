@@ -1,56 +1,56 @@
-X-Mda-Received: from <mx-3-40.mail.sina.com.cn>([<202.108.248.120>])
- by <mda-113-94.mda.fmail.tg.sinanode.com> with LMTP id <17168>
- Sep 27 2016 12:57:10 +0800 (CST)
-X-Sina-MID: 042E1D10D4FAA2A42A95F3459DBE2C6A7F00000000000001
+X-Mda-Received: from <mx-3-44.mail.sina.com.cn>([<202.108.248.124>])
+ by <mda-113-94.mda.fmail.tg.sinanode.com> with LMTP id <3915>
+ Sep 29 2016 11:05:54 +0800 (CST)
+X-Sina-MID: 04C6B86441F5E55397DDBABBBA641009CB00000000000001
 X-Sina-Attnum: 0
-Received: from mail228-180.sinamail.sina.com.cn (HELO smtp-11-209.mail.sina.com.cn)([60.28.228.180])
+Received: from mail3-163.sinamail.sina.com.cn (HELO smtp-5-121.mail.sina.com.cn)([202.108.3.163])
 	by sina.com with SMTP
-	27 Sep 2016 12:57:10 +0800 (CST)
+	29 Sep 2016 11:05:54 +0800 (CST)
 X-Sender: phantom0506@sina.com
-X-SMAIL-MID: 47187613894000
-Received: from unknown (HELO webmail.sinamail.sina.com.cn)([172.16.201.149])
-	by sina.com with SMTP
-	27 Sep 2016 12:57:10 +0800 (CST)
+X-SMAIL-MID: 42633116253331
+Received: from unknown (HELO Lenovo-PC)([122.205.7.66])
+	by sina.com with ESMTP
+	29 Sep 2016 11:05:54 +0800 (CST)
 X-Sender: phantom0506@sina.com
-X-SMAIL-MID: 282976320011
-Received: by webmail.sinamail.sina.com.cn (Postfix, from userid 496)
-	id 3EFF6700090; Tue, 27 Sep 2016 12:57:10 +0800 (CST)
-Date: Tue, 27 Sep 2016 12:57:10 +0800
-Received: from phantom0506@sina.com([222.20.35.209]) by m0.mail.sina.com.cn via HTTP;
- Tue, 27 Sep 2016 12:57:10 +0800 (CST)
-Reply-To: phantom0506@sina.com
-From: <phantom0506@sina.com>
-To: "phantom0506" <phantom0506@sina.com>
-Subject: 
-MIME-Version: 1.0
+X-Auth-ID: phantom0506@sina.com
+X-SMAIL-MID: 393995394045
+Date: Thu, 29 Sep 2016 11:02:19 +0800
+From: "phantom0506@sina.com" <phantom0506@sina.com>
+To: phantom0506 <phantom0506@sina.com>
+Subject: =?GB2312?B?suLK1NPKvP4=?=
 X-Priority: 3
-X-MessageID: 57e9fc26833588
-X-Originating-IP: [172.16.201.149]
-X-Mailer: Sina WebMail 4.0
+X-Has-Attach: no
+X-Mailer: Foxmail 7, 2, 7, 174[cn]
+Mime-Version: 1.0
+Message-ID: <201609291102174603021@sina.com>
 Content-Type: multipart/alternative;
-	 boundary="=-sinamail_alt_5769fdbca7b4dced40c115c0df370c1d"
-Message-Id: <20160927045710.3EFF6700090@webmail.sinamail.sina.com.cn>
+	boundary="----=_001_NextPart278562427658_=----"
 
 
 
---=-sinamail_alt_5769fdbca7b4dced40c115c0df370c1d
+This is a multi-part message in MIME format.
+
+------=_001_NextPart278562427658_=----
 Content-Type: text/plain;
-	charset=GBK
+	charset="GB2312"
 Content-Transfer-Encoding: base64
-Content-Disposition: inline
 
-xOO6w7ChsKGwobChsKGwobChsKGwoeyq7Kq088qmtcQg
+DQrE47rDsKG5/rn+uf65/rn+uf65/g0KDQoNCnBoYW50b20wNTA2QHNpbmEuY29tDQo=
 
-
---=-sinamail_alt_5769fdbca7b4dced40c115c0df370c1d
+------=_001_NextPart278562427658_=----
 Content-Type: text/html;
-	charset=GBK
-Content-Transfer-Encoding: base64
-Content-Disposition: inline
+	charset="GB2312"
+Content-Transfer-Encoding: quoted-printable
 
-xOO6w7ChsKGwobChsKGwobChsKGwoeyq7Kq088qmtcQ8cD4gPC9wPg==
+<html><head><meta http-equiv=3D"content-type" content=3D"text/html; charse=
+t=3DGB2312"><style>body { line-height: 1.5; }body { font-size: 10.5pt; fon=
+t-family: 'Microsoft YaHei UI'; color: rgb(0, 0, 0); line-height: 1.5; }</=
+style></head><body>=0A<div><span></span><br></div>=0A<div>=C4=E3=BA=C3=B0=
+=A1=B9=FE=B9=FE=B9=FE=B9=FE=B9=FE=B9=FE=B9=FE</div><hr style=3D"width: 210=
+px; height: 1px;" color=3D"#b5c4df" size=3D"1" align=3D"left">=0A<div><spa=
+n><div style=3D"MARGIN: 10px; FONT-FAMILY: verdana; FONT-SIZE: 10pt"><div>=
+phantom0506@sina.com</div></div></span></div>=0A</body></html>
+------=_001_NextPart278562427658_=------
 
-
---=-sinamail_alt_5769fdbca7b4dced40c115c0df370c1d--
 
 
