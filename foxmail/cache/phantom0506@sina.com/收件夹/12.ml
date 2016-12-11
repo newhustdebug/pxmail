@@ -1,81 +1,74 @@
-X-Mda-Received: from <mx-3-45.mail.sina.com.cn>([<202.108.248.125>])
- by <mda-113-64.mda.fmail.tg.sinanode.com> with LMTP id <17515>
- Oct 22 2016 15:27:16 +0800 (CST)
-X-Sina-MID: 04B4FFB43045951E3841F7DE15FDC5B25400000000000001
+X-Mda-Received: from <mx-3-46.mail.sina.com.cn>([<202.108.248.121>])
+ by <mda-113-94.mda.fmail.tg.sinanode.com> with LMTP id <44952>
+ Nov 12 2016 23:50:26 +0800 (CST)
+X-Sina-MID: 040021AD1662609251A6A9A78A45A1E0ED00000000000001
 X-Sina-Attnum: 0
-Received: from smtpbg7.qq.com (HELO smtpbg7.qq.com)([183.60.61.200])
+Received: from unknown (HELO mail.hust.edu.cn)([202.114.0.240])
 	by sina.com with SMTP
-	22 Oct 2016 15:27:20 +0800 (CST)
-X-Sender: 406371648@qq.com
-Authentication-Results: sina.com; dkim=pass (Signature verified) header.i=qq.com
-Received-SPF: Pass (sina.com: SPF record at spf-b.mail.qq.com designates 183.60.61.200 as permitted sender) identity=from;
-	client-ip=183.60.61.200;
+	12 Nov 2016 23:50:26 +0800 (CST)
+X-Sender: u201413426@hust.edu.cn
+Received-SPF: Pass (sina.com: SPF record at hust.edu.cn designates 202.114.0.240 as permitted sender) identity=from;
+	client-ip=202.114.0.240;
 	receiver=sina.com;
-	envelope-from=406371648@qq.com;
-	helo=smtpbg7.qq.com
-X-SMAIL-MID: 1030398697583
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
-	t=1477121179; bh=FylibDZdeOOQXWY+B63Fi5yBlOdg8zv+qIhRVLq/QA0=;
-	h=From:To:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding:Date:Message-ID;
-	b=fvbMm22P+9b/J7OVJbD8RXie7p2XTze6wM5Zag5xO/PkFqDKrEkuXrQ4o96SCkQ1w
-	 ppRS+Zx/Q817fx2f1gkrFfLeI6UfqqRk6sn0f3U5c2OOQ7cO3JBZ1dvDGJjVDvNq3T
-	 nCuiaqjzbsr4UZhRHxjlUDajpJwHO/EoWQA24RxI=
-X-QQ-FEAT: q5j0c1uPu0vPdOoXRUwBBRY0CMxuScbIzPgoJY4q6Ey4Dmd7cgRcA7LLKMTPB
-	A/D78yc8xmsM0wOU4Wj/+cuosR34OkOfuW3OIO7v624KLWS9nZ/MFMBorySdG7ATIkjpD/2
-	lYGInw1RFE9o976GBAWrWM+jvnFZg5fFy013T4tMtl07kCiQJVkEqm72ShXOAT0Cuy13xBY
-	EF7ya8shCe/WYbOsE8sZ86HkaSwOzbc3/LweNCJO+ZXI7PwlZzzxV1gFuRMrgFfQKxzSKoc
-	Ln5A==
-X-QQ-SSF: 0001000000000010
-X-QQ-WAPMAIL: 1
-X-QQ-BUSINESS-ORIGIN: 2
-X-Originating-IP: 171.82.216.194
-X-QQ-STYLE: 
-X-QQ-mid: riamail99t1477121178t8385331
-From: "=?gb18030?B?NDA2MzcxNjQ4?=" <406371648@qq.com>
-To: "=?gb18030?B?cGhhbnRvbTA1MDY=?=" <phantom0506@sina.com>
-Subject: =?gb18030?B?u9i4tKO6dDEy?=
-Mime-Version: 1.0
-Content-Type: multipart/alternative;
-	boundary="----=_NextPart_580B149A_08EE5210_05088130"
-Content-Transfer-Encoding: 8Bit
-Date: Sat, 22 Oct 2016 15:26:18 +0800
+	envelope-from=u201413426@hust.edu.cn;
+	helo=mail.hust.edu.cn
+X-SMAIL-MID: 36458925166186
+Received: from Lenovo-PC (unknown [222.20.35.209])
+	by mailapp2 (Coremail) with SMTP id GAEQrJBb_ptlOydYhy9MAA--.26681S2;
+	Sat, 12 Nov 2016 23:55:17 +0800 (CST)
+Date: Sat, 12 Nov 2016 23:50:01 +0800
+From: "U201413426@hust.edu.cn" <U201413426@hust.edu.cn>
+To: phantom0506 <phantom0506@sina.com>
+Subject: #screen
 X-Priority: 3
-Message-ID: <tencent_26E3E2474F1AD5BF7912417F@qq.com>
-X-QQ-MIME: TCMime 1.0 by Tencent
-X-Mailer: QQMail 2.x
-X-QQ-Mailer: QQMail 2.x
-X-QQ-SENDSIZE: 520
-Feedback-ID: riamail:qq.com:bgweb:bgweb6
+X-Has-Attach: no
+X-Mailer: Foxmail 7, 2, 7, 174[cn]
+Mime-Version: 1.0
+Message-ID: <201611122350019316501@hust.edu.cn>
+Content-Type: multipart/alternative;
+	boundary="----=_001_NextPart417202622455_=----"
+X-CM-TRANSID: GAEQrJBb_ptlOydYhy9MAA--.26681S2
+X-Coremail-Antispam: 1UD129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73
+	VFW2AGmfu7bjvjm3AaLaJ3UjIYCTnIWjp_UUUYG7k0a2IF6F1UM7kC6x804xWl14x267AK
+	xVWUJVW8JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0rVWrJVCq3wAFIxvE14AKwVWUJVWUGw
+	A2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK021l84ACjcxK6xIIjxv20xvE14v26r4j
+	6ryUM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4j6F4UM28EF7xvwVC2z280aVAFwI0_Cr
+	1j6rxdM28EF7xvwVC2z280aVCY1x0267AKxVW0oVCq3wAac4AC62xK8xCEY4vEwIxC4wAS
+	0I0E0xvYzxvE52x082IY62kv0487McIj6xIIjxv20xvE14v26r106r15McIj6I8E87Iv67
+	AKxVWUJVW8JwAm72CE4IkC6x0Yz7v_Jr0_Gr1lF7xvr2IYc2Ij64vIr41lFcxC0VAYjxAx
+	ZF0Ew4CEw7xC0wACY4xI67k04243AVC20s07MxkIecxEwVAFwVW5WwCF04k20xvY0x0EwI
+	xGrwCFx2IqxVCFs4IE7xkEbVWUJVW8JwC20s026c02F40E14v26r106r1rMI8I3I0E7480
+	Y4vE14v26r106r1rMI8E67AF67kF1VAFwI0_Jr0_JrylIxkGc2Ij64vIr41lIxAIcVC0I7
+	IYx2IY67AKxVWUJVWUCwCI42IY6xIIjxv20xvEc7CjxVAFwI0_Jr0_Gr1lIxAIcVCF04k2
+	6cxKx2IYs7xG6Fyj6rWUJwCI42IY6I8E87Iv67AKxVWUJVW8JwCI42IY6I8E87Iv6xkF7I
+	0E14v26r1j6r4UMVCEFcxC0VAYjxAxZFUvcSsGvfC2KfnxnUUI43ZEXa7x5IyblUUUUUU=
+	=
+X-CM-SenderInfo: jxsqikartujlo6kx23oohg3hdfq/
 
 
 This is a multi-part message in MIME format.
 
-------=_NextPart_580B149A_08EE5210_05088130
+------=_001_NextPart417202622455_=----
 Content-Type: text/plain;
-	charset="gb18030"
+	charset="us-ascii"
 Content-Transfer-Encoding: base64
 
-0LvQuw0KDQq3otfUztK1xGlQaG9uZQ0KDQotLS0tLS0tLS0tLS0tLS0tLS0g1K3KvNPKvP4g
-LS0tLS0tLS0tLS0tLS0tLS0tDQq3orz+yMs6IHBoYW50b20wNTA2IDxwaGFudG9tMDUwNkBz
-aW5hLmNvbT4NCreiy83KsbzkOiAyMDE2xOoxMNTCMjDI1SAxNzo1OQ0K1vfM4jogdDEyDQoN
-Cg0KDQoxMjM=
+DQoNCg0KDQpVMjAxNDEzNDI2QGh1c3QuZWR1LmNuDQo=
 
-------=_NextPart_580B149A_08EE5210_05088130
+------=_001_NextPart417202622455_=----
 Content-Type: text/html;
-	charset="gb18030"
-Content-Transfer-Encoding: base64
+	charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
 
-PGRpdiBzdHlsZT0ibWluLWhlaWdodDoyMnB4Ij7Qu9C7PC9kaXY+PGRpdiBzdHlsZT0ibWlu
-LWhlaWdodDoyMnB4Ij48L2Rpdj48c3BhbiBjbGFzcz0ibWFpbC1mb290ZXIiPrei19TO0rXE
-aVBob25lPC9zcGFuPjxkaXYgaWQ9Im9yaWdpbmFsLWNvbnRlbnQiPjxicj48YnI+PGRpdj48
-ZGl2IHN0eWxlPSJmb250LXNpemU6NzAlO3BhZGRpbmc6MnB4IDA7Ij4tLS0tLS0tLS0tLS0t
-LS0tLS0g1K3KvNPKvP4gLS0tLS0tLS0tLS0tLS0tLS0tPC9kaXY+PGRpdiBzdHlsZT0iZm9u
-dC1zaXplOjcwJTtiYWNrZ3JvdW5kOiNmMGYwZjA7Y29sb3I6IzIxMjEyMTtwYWRkaW5nOjhw
-eDtib3JkZXItcmFkaXVzOjRweCI+PGRpdj48Yj63orz+yMs6PC9iPiBwaGFudG9tMDUwNiAm
-bHQ7cGhhbnRvbTA1MDZAc2luYS5jb20mZ3Q7PC9kaXY+PGRpdj48Yj63osvNyrG85Do8L2I+
-IDIwMTbE6jEw1MIyMMjVIDE3OjU5PC9kaXY+PGRpdj48Yj7W98ziOjwvYj4gdDEyPC9kaXY+
-PC9kaXY+PC9kaXY+PGJyPjEyMzwvZGl2Pg==
+<html><head><meta http-equiv=3D"content-type" content=3D"text/html; charse=
+t=3Dus-ascii"><style>body { line-height: 1.5; }body { font-size: 10.5pt; f=
+ont-family: 'Microsoft YaHei UI'; color: rgb(0, 0, 0); line-height: 1.5; }=
+</style></head><body>=0A<div><span></span><br></div>=0A<div><br></div><hr =
+style=3D"width: 210px; height: 1px;" color=3D"#b5c4df" size=3D"1" align=3D=
+"left">=0A<div><span><div style=3D"MARGIN: 10px; FONT-FAMILY: verdana; FON=
+T-SIZE: 10pt"><div>U201413426@hust.edu.cn</div></div></span></div>=0A</bod=
+y></html>
+------=_001_NextPart417202622455_=------
 
-------=_NextPart_580B149A_08EE5210_05088130--
 
 

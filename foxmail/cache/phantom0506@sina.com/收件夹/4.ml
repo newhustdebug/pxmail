@@ -1,74 +1,43 @@
 X-Mda-Received: from <mx-3-46.mail.sina.com.cn>([<202.108.248.121>])
- by <mda-113-94.mda.fmail.tg.sinanode.com> with LMTP id <44952>
- Nov 12 2016 23:50:26 +0800 (CST)
-X-Sina-MID: 040021AD1662609251A6A9A78A45A1E0ED00000000000001
+ by <mda-113-64.mda.fmail.tg.sinanode.com> with LMTP id <2307676>
+ Dec 10 2016 17:07:49 +0800 (CST)
+X-Sina-MID: 04065E8EF34AEE9C8DBEDE278BADD08F5B00000000000001
 X-Sina-Attnum: 0
-Received: from unknown (HELO mail.hust.edu.cn)([202.114.0.240])
+Received: from smtpbg333.qq.com (HELO smtpbg333.qq.com)([14.17.43.228])
 	by sina.com with SMTP
-	12 Nov 2016 23:50:26 +0800 (CST)
-X-Sender: u201413426@hust.edu.cn
-Received-SPF: Pass (sina.com: SPF record at hust.edu.cn designates 202.114.0.240 as permitted sender) identity=from;
-	client-ip=202.114.0.240;
+	10 Dec 2016 17:07:49 +0800 (CST)
+X-Sender: 406371648@qq.com
+Authentication-Results: sina.com; dkim=permerror (Bad signature) header.i=qq.com
+Received-SPF: Pass (sina.com: SPF record at spf-b.mail.qq.com designates 14.17.43.228 as permitted sender) identity=from;
+	client-ip=14.17.43.228;
 	receiver=sina.com;
-	envelope-from=u201413426@hust.edu.cn;
-	helo=mail.hust.edu.cn
-X-SMAIL-MID: 36458925166186
-Received: from Lenovo-PC (unknown [222.20.35.209])
-	by mailapp2 (Coremail) with SMTP id GAEQrJBb_ptlOydYhy9MAA--.26681S2;
-	Sat, 12 Nov 2016 23:55:17 +0800 (CST)
-Date: Sat, 12 Nov 2016 23:50:01 +0800
-From: "U201413426@hust.edu.cn" <U201413426@hust.edu.cn>
-To: phantom0506 <phantom0506@sina.com>
-Subject: #screen
-X-Priority: 3
-X-Has-Attach: no
-X-Mailer: Foxmail 7, 2, 7, 174[cn]
-Mime-Version: 1.0
-Message-ID: <201611122350019316501@hust.edu.cn>
-Content-Type: multipart/alternative;
-	boundary="----=_001_NextPart417202622455_=----"
-X-CM-TRANSID: GAEQrJBb_ptlOydYhy9MAA--.26681S2
-X-Coremail-Antispam: 1UD129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73
-	VFW2AGmfu7bjvjm3AaLaJ3UjIYCTnIWjp_UUUYG7k0a2IF6F1UM7kC6x804xWl14x267AK
-	xVWUJVW8JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0rVWrJVCq3wAFIxvE14AKwVWUJVWUGw
-	A2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK021l84ACjcxK6xIIjxv20xvE14v26r4j
-	6ryUM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4j6F4UM28EF7xvwVC2z280aVAFwI0_Cr
-	1j6rxdM28EF7xvwVC2z280aVCY1x0267AKxVW0oVCq3wAac4AC62xK8xCEY4vEwIxC4wAS
-	0I0E0xvYzxvE52x082IY62kv0487McIj6xIIjxv20xvE14v26r106r15McIj6I8E87Iv67
-	AKxVWUJVW8JwAm72CE4IkC6x0Yz7v_Jr0_Gr1lF7xvr2IYc2Ij64vIr41lFcxC0VAYjxAx
-	ZF0Ew4CEw7xC0wACY4xI67k04243AVC20s07MxkIecxEwVAFwVW5WwCF04k20xvY0x0EwI
-	xGrwCFx2IqxVCFs4IE7xkEbVWUJVW8JwC20s026c02F40E14v26r106r1rMI8I3I0E7480
-	Y4vE14v26r106r1rMI8E67AF67kF1VAFwI0_Jr0_JrylIxkGc2Ij64vIr41lIxAIcVC0I7
-	IYx2IY67AKxVWUJVWUCwCI42IY6xIIjxv20xvEc7CjxVAFwI0_Jr0_Gr1lIxAIcVCF04k2
-	6cxKx2IYs7xG6Fyj6rWUJwCI42IY6I8E87Iv67AKxVWUJVW8JwCI42IY6I8E87Iv6xkF7I
-	0E14v26r1j6r4UMVCEFcxC0VAYjxAxZFUvcSsGvfC2KfnxnUUI43ZEXa7x5IyblUUUUUU=
-	=
-X-CM-SenderInfo: jxsqikartujlo6kx23oohg3hdfq/
-
-
-This is a multi-part message in MIME format.
-
-------=_001_NextPart417202622455_=----
-Content-Type: text/plain;
-	charset="us-ascii"
+	envelope-from=406371648@qq.com;
+	helo=smtpbg333.qq.com
+X-SMAIL-MID: 16410525166175
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
+	t=1481360847; bh=TP6Cc7GM2X5O9Rt5me99/i+emqGTzC0YFRK2k655bME=;
+	h=Content-Type:MIME-Version:Content-Transfer-Encoding:Subject:from;
+	b=lzMGAzuC3ntPb8u0TwcKosVkRXuaF+Y6I5vAll/hJBkSwO00+XpyVATpHFhjLdi43
+	 cNmVRpxI9H7pt7N/iCIvdc3olFDchGWMsO9Emsk9nvTo5aIlQGQfA0U/5PHo3PKWx3
+	 /jpaYIm+fF9uD+0VxqPcNjFuQZb6ihECQ72ARUPU=
+X-QQ-mid: esmtp28t1481360846tc2yb56p3
+Received: from [192.168.244.1] (unknown [122.205.8.156])
+	by esmtp4.qq.com (ESMTP) with SMTP id 0
+	for <phantom0506@sina.com>; Sat, 10 Dec 2016 17:07:25 +0800 (CST)
+X-QQ-SSF: 000000000000000055100F00000000Z
+X-QQ-FEAT: G7zn5EVW03JuEvFhfQjPsbBPYCdThQekPiHzz0WQgtA/hXHiQWCcFa4m4hkUt
+	bdoPn/2GPfyB1FvlxmvU8KBzeV5voFmjt/cCPJ4SYj+wclC08VftgVJyWE15p3fA2s6jS+3
+	Wvm0iLSFterwD1+dBZJ5I6rGfohB93ynsAT/NRfJKqB8jnBUeyx7ZkOqOzuTXC7hi/E52ui
+	vGCXyazcAO9R6FOX11TSw3HKIF3CnGO8=
+X-QQ-GoodBg: 0
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
 Content-Transfer-Encoding: base64
-
-DQoNCg0KDQpVMjAxNDEzNDI2QGh1c3QuZWR1LmNuDQo=
-
-------=_001_NextPart417202622455_=----
-Content-Type: text/html;
-	charset="us-ascii"
-Content-Transfer-Encoding: quoted-printable
-
-<html><head><meta http-equiv=3D"content-type" content=3D"text/html; charse=
-t=3Dus-ascii"><style>body { line-height: 1.5; }body { font-size: 10.5pt; f=
-ont-family: 'Microsoft YaHei UI'; color: rgb(0, 0, 0); line-height: 1.5; }=
-</style></head><body>=0A<div><span></span><br></div>=0A<div><br></div><hr =
-style=3D"width: 210px; height: 1px;" color=3D"#b5c4df" size=3D"1" align=3D=
-"left">=0A<div><span><div style=3D"MARGIN: 10px; FONT-FAMILY: verdana; FON=
-T-SIZE: 10pt"><div>U201413426@hust.edu.cn</div></div></span></div>=0A</bod=
-y></html>
-------=_001_NextPart417202622455_=------
+Subject: =?utf-8?b?UHl0aG9uIFNNVFAg6YKu5Lu25rWL6K+V?=
+from: 406371648@qq.com
+X-QQ-SENDSIZE: 520
+Feedback-ID: esmtp:qq.com:bgweb:bgweb135
 
 
+UHl0aG9uIOmCruS7tuWPkemAgea1i+ivlS4uLg==
 

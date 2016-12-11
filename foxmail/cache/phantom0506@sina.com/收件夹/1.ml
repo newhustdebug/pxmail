@@ -1,61 +1,51 @@
 X-Mda-Received: from <mx-3-42.mail.sina.com.cn>([<202.108.248.122>])
- by <mda-113-94.mda.fmail.tg.sinanode.com> with LMTP id <45382>
- Dec 06 2016 22:59:54 +0800 (CST)
-X-Sina-MID: 04A7A1A1EB12C7FE2EB91EA063A427452300000000000001
+ by <mda-113-94.mda.fmail.tg.sinanode.com> with LMTP id <2445456>
+ Dec 10 2016 19:07:26 +0800 (CST)
+X-Sina-MID: 04C89C24C058D0973B7D31A096EE804EB400000000000001
 X-Sina-Attnum: 0
-Received: from hust.edu.cn (HELO mail.hust.edu.cn)([202.114.0.240])
+Received: from smtpbg354.qq.com (HELO smtpbg.qq.com)([59.37.110.87])
 	by sina.com with SMTP
-	6 Dec 2016 22:59:54 +0800 (CST)
-X-Sender: u201413426@hust.edu.cn
-Received-SPF: Pass (sina.com: SPF record at hust.edu.cn designates 202.114.0.240 as permitted sender) identity=from;
-	client-ip=202.114.0.240;
+	10 Dec 2016 19:07:26 +0800 (CST)
+X-Sender: 406371648@qq.com
+Authentication-Results: sina.com; dkim=permerror (Bad signature) header.i=qq.com
+Received-SPF: Pass (sina.com: SPF record at spf-c.mail.qq.com designates 59.37.110.87 as permitted sender) identity=from;
+	client-ip=59.37.110.87;
 	receiver=sina.com;
-	envelope-from=u201413426@hust.edu.cn;
-	helo=mail.hust.edu.cn
-X-SMAIL-MID: 3100214718614
-Received: from [192.168.244.1] (unknown [111.175.187.167])
-	by mailapp1 (Coremail) with SMTP id FQEQrJDL7+am1EZYFiksAA--.39382S2;
-	Tue, 06 Dec 2016 23:09:26 +0800 (CST)
-Content-Type: text/plain; charset="utf-8"
+	envelope-from=406371648@qq.com;
+	helo=smtpbg.qq.com
+X-SMAIL-MID: 4136814718623
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
+	t=1481368044; bh=prEf+MYiYZn6OE/P0NXy6WeZUOkxeJbvluG1VQ+f9M8=;
+	h=Content-Type:MIME-Version:Content-Transfer-Encoding:Subject:from:date;
+	b=HoS3DSsUt32p+XF+dVFAA0iFoCLEKErx8IWkYcA8whln0bz30nPEB+7gCFAnCfNhE
+	 /LuCjnWkLBW3S0Vo4G2yiZPoj4WKjOZyUMrt19BvUbzaGqajX4OuUY345iSMDNtum2
+	 jOTV8ImowDPCj94iJvCGFqyuFVIPBjK8vhhHMOuM=
+X-QQ-mid: esmtp28t1481368043tvwzhgp8y
+Received: from [192.168.244.1] (unknown [115.156.193.41])
+	by esmtp4.qq.com (ESMTP) with SMTP id 0
+	for <phantom0506@sina.com>; Sat, 10 Dec 2016 19:07:19 +0800 (CST)
+X-QQ-SSF: 010000000000000055100F00000000Z
+X-QQ-FEAT: WH7siGv02xLD2RuTDaign/lecF7XeamKh+sgRX5hg9aYrp/+QvTp8GLg3iH22
+	ePoXRQHdpcivyo3njDGm9J01Nnon4qjweAOWFKNXoJvZXsyL89jhtCbY53U5wZvSW20OXE9
+	ek5F5t3yv9vyba2wivyCbKEEYA/vGSb9g62mdUwklZxwKNy3lt1CahM81A1Nt4doqEdMPm8
+	6uQeAV8+E7nmW23Sf6OQ8xdyRlLS7B+8=
+X-QQ-GoodBg: 0
+Content-Type: text/html; charset="utf-8"
 MIME-Version: 1.0
 Content-Transfer-Encoding: base64
-Subject: =?utf-8?b?6L2s5Y+R77ya5p2l6Ieq6Iqd6bq75L+h55So55qE6YKu566x6aqM6K+B6YKu5Lu2?=
-from: U201413426@hust.edu.cn
-date: =?utf-8?b?VHVlLCAwNiBEZWMgMjAxNiAyMjo1OTowNSDDlsOQwrnDusKxw6rDl8K8w4rCscK8w6Q=?=
-X-CM-TRANSID: FQEQrJDL7+am1EZYFiksAA--.39382S2
-Message-Id: <5846D4A6.029C04.08054@mail.hust.edu.cn>
-X-Coremail-Antispam: 1UD129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73
-	VFW2AGmfu7bjvjm3AaLaJ3UjIYCTnIWjp_UUUOA7k0a2IF6F1UM7kC6x804xWl14x267AK
-	xVWUJVW8JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0rVWrJVCq3wAFIxvE14AKwVWUJVWUGw
-	A2jI8I6cxK6x804I0_KFvE3s1l8cAvFVAK0II2c7xJM28CjxkF64kEwVA0rcxSw2x7M28E
-	F7xvwVC0I7IYx2IY67AKxVW5JVW7JwA2z4x0Y4vE2Ix0cI8IcVCY1x0267AKxVW8JVWxJw
-	A2z4x0Y4vEx4A2jsIE14v26rxl6s0DM28EF7xvwVC2z280aVCY1x0267AKxVW0oVCq3wAa
-	c4AC62xK8xCEY4vEwIxC4wAS0I0E0xvYzxvE52x082IY62kv0487Mc02F40EFcxC0VAKzV
-	Aqx4xG6I80ewAvwIk0rcx26280x24lYx0E2Ix0cI8IcVAFwI0_Jr0_Jr4lYx0Ex4A2jsIE
-	14v26r1j6r4UMcvjeVCFs4IE7xkEbVWUJVW8JwACjcxG0xvEwIxGrwACY4xI67k04243AV
-	AKzVAKj4xxM4kE64xI4xA0e2IEY21lw4CEc2x0rVAKj4xxMxkF7I0Ew4C26cxK6c8Ij28I
-	cwCF04k20xvY0x0EwIxGrwCFx2IqxVCFs4IE7xkEbVWUJVW8JwC20s026c02F40E14v26r
-	1j6r18MI8I3I0E7480Y4vE14v26r106r1rMI8E67AF67kF1VAFwI0_Jr0_JrylIxkGc2Ij
-	64vIr41lIxAIcVC0I7IYx2IY67AKxVWUJVWUCwCI42IY6xIIjxv20xvEc7CjxVAFwI0_Jr
-	0_Gr1lIxAIcVCF04k26cxKx2IYs7xG6rW3Jr0E3s1lIxAIcVC2z280aVAFwI0_Jr0_Gr1l
-	IxAIcVC2z280aVCY1x0267AKxVWUJVW8JwCE64xvF2IEb7IF0Fy7YxBIdaVFxhVjvjDU0x
-	ZFpf9x07UWmhUUUU87=
-X-CM-SenderInfo: jxsqikartujlo6kx23oohg3hdfq/
+Subject: 123
+from: 406371648@qq.com
+date: =?utf-8?b?U2F0LCAxMCBEZWMgMjAxNiAxOTowNjoyNyDDlsOQwrnDusKxw6rDl8K8w4rCscK8w6Q=?=
+X-QQ-SENDSIZE: 520
+Feedback-ID: esmtp:qq.com:bgweb:bgweb154
 
 
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAK77+8IArkurLniLHnmoQg
-VTIwMTQxMzQyNkBodXN0LmVkdS5jbiAK5oKo55qE5Y2V5L2N6YKu566x6aqM6K+B56CB5pivICA4
-OTI3NDIgCuivt+i+k+WFpemqjOivgeegge+8jOWujOaIkOmqjOivgSAK5oCO5qC36L6T5YWl6aqM
-6K+B56CBIAoxLuaJk+W8gOaUr+S7mOWune+8jOi/m+WFpeiKnem6u+S/oeeUqOWIhiAKMi7ov5vl
-haXigJzkv6HnlKjnrqHnkIbigJ3vvIzngrnlh7vigJzkuKrkurrkv6Hmga8gLSDljZXkvY3pgq7n
-rrHigJ0gCjMu6YCJ5oup4oCc5Y2V5L2N6YKu566x4oCd77yM5aGr5YaZ6aqM6K+B56CBIArkuLrk
-u4DkuYjmiJHkvJrmlLbliLDov5nlsIHpgq7ku7YgCuaCqOWcqOiKnem6u+S/oeeUqOS4reeahCAi
-5L+h5oGv6KGl5YWoLeWNleS9jemCrueusSIg5Lit5aGr5YaZ5LqG5q2k55S15a2Q6YKu566x5L2c
-5Li65oKo55qE5Y2V5L2N6YKu566x77yMIOaIkeS7rOWPkemAgei/meWwgemCruS7tu+8jOS7peeh
-ruiupOaCqOeahOehruaYr+acrOWNleS9jemCrueuseeahOS4u+S6uuOAguWmguaenOaCqOayoeac
-ieS9v+eUqOiKnem6u+S/oeeUqO+8jOivt+W/veeVpeatpCDpgq7ku7bvvIzlj6/og73mmK/mnInk
-urrloavlhpnplJnkuoboh6rlt7HnmoTpgq7nrrHjgIIgCuatpOS4uuezu+e7n+mCruS7tu+8jOiv
-t+WLv+WbnuWkjSBDb3B5cmlnaHQg6Iqd6bq75L+h55SoIDIwMTYgQWxsIFJpZ2h0cyBSZXNlcnZl
-ZCA=
-
+PCFET0NUWVBFIEhUTUwgUFVCTElDICItLy9XM0MvL0RURCBIVE1MIDQuMC8vRU4iICJodHRwOi8v
+d3d3LnczLm9yZy9UUi9SRUMtaHRtbDQwL3N0cmljdC5kdGQiPgo8aHRtbD48aGVhZD48bWV0YSBu
+YW1lPSJxcmljaHRleHQiIGNvbnRlbnQ9IjEiIC8+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4KcCwg
+bGkgeyB3aGl0ZS1zcGFjZTogcHJlLXdyYXA7IH0KPC9zdHlsZT48L2hlYWQ+PGJvZHkgc3R5bGU9
+IiBmb250LWZhbWlseTonU2ltU3VuJzsgZm9udC1zaXplOjlwdDsgZm9udC13ZWlnaHQ6NDAwOyBm
+b250LXN0eWxlOm5vcm1hbDsiPgo8cCBzdHlsZT0iIG1hcmdpbi10b3A6MHB4OyBtYXJnaW4tYm90
+dG9tOjBweDsgbWFyZ2luLWxlZnQ6MHB4OyBtYXJnaW4tcmlnaHQ6MHB4OyAtcXQtYmxvY2staW5k
+ZW50OjA7IHRleHQtaW5kZW50OjBweDsiPjEyMzwvcD48L2JvZHk+PC9odG1sPg==
 

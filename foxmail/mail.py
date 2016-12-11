@@ -30,8 +30,8 @@ class sendingThread(QtCore.QThread):
 
     def run(self):
         try:
-            smtp_backend = smtplib.SMTP()
-            smtp_backend.connect(gl.smtphost, gl.smtpport)    # 25 为 SMTP 端口号
+            smtp_backend = smtplib.SMTP(gl.smtphost, 25)
+            # smtp_backend.connect(gl.smtphost, gl.smtpport)    # 25 为 SMTP 端口号
             if gl.smtpssl:
                 smtp_backend.starttls()
             smtp_backend.login(gl.username,gl.password)
@@ -60,9 +60,12 @@ class loadingThread(QtCore.QThread):
             pop_backend.user(gl.username)
             pop_backend.pass_(gl.password)
             resp, gl.mails_number, octets = pop_backend.list()
+
             self.trigger1.emit()
+
         except Exception as e:
             gl.error=str(e)
+            print (e)
             self.trigger2.emit()
 
 
@@ -117,6 +120,28 @@ class receiveThread(QtCore.QThread):
         self.triggerFinish.emit()
 
 
+class readFileThread(QtCore.QThread):
+    triggerFinish = QtCore.pyqtSignal()
+    def __init__(self,parent=None):
+        super(readFileThread, self).__init__(parent)
+
+    def run(self):
+
+        gl.emails = []
+        files = os.listdir(gl.read_path)                                                       #列出目录下的文件
+        files.sort()                                                  #整理文件顺序
+        mail_files = [f for f in files if os.path.isfile(os.path.join(gl.read_path, f))]
+        for mail_file in mail_files:
+            try:
+                # with open(os.path.join(self.folder_path, mail_file), 'r',encoding= 'utf-8') as mail_handle:
+                with open(os.path.join(gl.read_path, mail_file), 'r') as mail_handle:
+                    gl.emails.append(message_from_file(mail_handle))        #带附件的邮件，在此处会有BUG,QQ邮箱
+            except Exception as e:
+                    print(e)
+        gl.March_ID=gl.emails                                   #匹配到的邮件等于所有邮件
+        self.triggerFinish.emit()
+
+
 class searchThread(QtCore.QThread):
     trigger = QtCore.pyqtSignal()
     def __init__(self, parent=None):
@@ -162,6 +187,7 @@ class MailCache():
     def __init__(self,):
         gl.cache_path = os.path.join('cache', gl.username)
         gl.temp_path=os.path.join(gl.cache_path, 'temp')
+        gl.draft_path=os.path.join(gl.cache_path, '草稿夹')
         self.state_path = os.path.join(gl.cache_path, 'cache.state')
 
         if not os.path.isdir(gl.cache_path):                            #创建每个用户的目录

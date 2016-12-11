@@ -1,83 +1,138 @@
-X-Mda-Received: from <mx-3-44.mail.sina.com.cn>([<202.108.248.124>])
- by <mda-113-93.mda.fmail.tg.sinanode.com> with LMTP id <2853>
- Nov 11 2016 18:35:50 +0800 (CST)
-X-Sina-MID: 04B30BE2082A53A4C586D759DC14A64E5400000000000001
+X-Mda-Received: from <mx-3-43.mail.sina.com.cn>([<202.108.248.123>])
+ by <mda-113-66.mda.fmail.tg.sinanode.com> with LMTP id <508665>
+ Dec 09 2016 17:14:02 +0800 (CST)
+X-Sina-MID: 04F2F7BE7A38B342C24CF7277835E3CB1500000000000001
 X-Sina-Attnum: 0
-Received: from smtpbg332.qq.com (HELO smtpbg332.qq.com)([14.17.43.227])
+Received: (qmail 20553 invoked by uid 554); 9 Dec 2016 17:14:02 +0800 (CST)
+X-SMAIL-SPAM-FILTER: 20549 OK; Fri,  9 Dec 2016 17:14:02 +0800 (CST)
+X-SGroup: ow
+Received: from unknown (HELO spacemail-5-161.sinamail.sina.com.cn)([10.54.5.161])
 	by sina.com with SMTP
-	11 Nov 2016 18:35:49 +0800 (CST)
-X-Sender: 406371648@qq.com
-Authentication-Results: sina.com; dkim=pass (Signature verified) header.i=qq.com
-Received-SPF: Pass (sina.com: SPF record at spf-b.mail.qq.com designates 14.17.43.227 as permitted sender) identity=from;
-	client-ip=14.17.43.227;
-	receiver=sina.com;
-	envelope-from=406371648@qq.com;
-	helo=smtpbg332.qq.com
-X-SMAIL-MID: 82533816253298
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
-	t=1478860528; bh=/T/3efYsbyD2411okpVPjdb5WSZIyHuMHzs+OdtWBuA=;
-	h=In-Reply-To:References:From:To:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding:Date:Message-ID;
-	b=fQpK2pEbmA3zGkmKrYVkuFS2I/Jvgn+r8YNtrNsnEf0K/NJo0Ii0oy9sR7GlpAjsG
-	 7U4sJTkGObEkfcK/7X0kuHU2M7S158WrB3jBuV21PXSXX5/qvewENoGVxSKa4sDe5t
-	 DwxzEIiDyO9OpPO1vMIJ4OKNOFRiTOP1ti95+/5w=
-X-QQ-FEAT: mo1k4QclioTq6Ot3brj/IoR//hg918Gd0U719aQVU+wWLDXibG7EtQov+zwxo
-	PLg2s3Q/auTp8VpnPZIi6FG55TVaSJqMli1hI2/v5ab+t3efk+ru+AxkLyLPIbQdQO1C8sD
-	gvUWW+WRfe0kAuCpAeICCH/WMkKMbCWm51XKYcn2X44qtd0LIF8jncFWLUVzpUsQZ8JelXt
-	seA3m4y+3y6yJlIXM6MCYx1Oo68ixYpJooYEWQb/WwSkCxEhcUenoX/0Mj09TqRs=
-X-QQ-SSF: 000000000000001000000000000000Z
-X-HAS-ATTACH: no
-X-QQ-BUSINESS-ORIGIN: 2
-X-Originating-IP: 115.156.87.179
-In-Reply-To: <20161111103442.22A6B4C008A@webmail.sinamail.sina.com.cn>
-References: <20161111103442.22A6B4C008A@webmail.sinamail.sina.com.cn>
-X-QQ-STYLE: 
-X-QQ-mid: webmail670t1478860527t9169133
-From: "=?gb18030?B?NDA2MzcxNjQ4?=" <406371648@qq.com>
-To: "=?gb18030?B?cGhhbnRvbTA1MDY=?=" <phantom0506@sina.com>
-Subject: =?gb18030?B?u9i4tKO6uL28/g==?=
-Mime-Version: 1.0
-Content-Type: multipart/alternative;
-	boundary="----=_NextPart_58259EEF_0826A358_0A714E2B"
-Content-Transfer-Encoding: 8Bit
-Date: Fri, 11 Nov 2016 18:35:27 +0800
-X-Priority: 3
-Message-ID: <tencent_74E3289659292C302982EEFD@qq.com>
-X-QQ-MIME: TCMime 1.0 by Tencent
-X-Mailer: QQMail 2.x
-X-QQ-Mailer: QQMail 2.x
-X-QQ-ReplyHash: 3151002563
-X-QQ-SENDSIZE: 520
-Feedback-ID: webmail:qq.com:bgweb:bgweb134
+	9 Dec 2016 17:14:02 +0800 (CST)
+X-Sender: noreply@service.weibo.com
+X-SMAIL-MID: 1732102359589
+Received: from localhost (unknown [10.13.0.65])
+	by spacemail-5-161.sinamail.sina.com.cn (Postfix) with ESMTP id 7817631E6BE
+	for <phantom0506@sina.com>; Fri,  9 Dec 2016 17:14:01 +0800 (CST)
+From: =?UTF-8?B?5paw5rWq6LSm5oi35a6J5YWo5Zui6Zif?= <noreply@service.weibo.com>
+To: phantom0506@sina.com
+Message-ID: <410556921.50312.1481274842223.JavaMail.root@localhost.localdomain>
+Subject: =?UTF-8?B?5paw5rWq6YKu566x6LSm5Y+35byC5bi45o+Q6YaS?=
+MIME-Version: 1.0
+Content-Type: text/html;charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Date: Fri,  9 Dec 2016 17:14:01 +0800 (CST)
 
 
-This is a multi-part message in MIME format.
+<!DOCTYPE html>
+<html>
 
-------=_NextPart_58259EEF_0826A358_0A714E2B
-Content-Type: text/plain;
-	charset="gb18030"
-Content-Transfer-Encoding: base64
+<head>
+    <meta charset=3D"utf-8">
+    <title></title>
+</head>
 
-uL28/g0KDQoNCg0KDQotLS0tLS0tLS0tLS0tLS0tLS0g1K3KvNPKvP4gLS0tLS0tLS0tLS0t
-LS0tLS0tDQq3orz+yMs6ICJwaGFudG9tMDUwNiI7PHBoYW50b20wNTA2QHNpbmEuY29tPjsN
-Creiy83KsbzkOiAyMDE2xOoxMdTCMTHI1SjQx8bazuUpIM3tyc82OjM0DQrK1bz+yMs6ICI0
-MDYzNzE2NDgiPDQwNjM3MTY0OEBxcS5jb20+OyANCg0K1vfM4joguL28/g==
+<body>
 
-------=_NextPart_58259EEF_0826A358_0A714E2B
-Content-Type: text/html;
-	charset="gb18030"
-Content-Transfer-Encoding: base64
+<div style=3D"margin:0;padding:0;">
+    <div style=3D"margin:0;padding:0;">
+        <div style=3D"width:850px;height:1100px;margin:0;padding:0;">
+            <div style=3D"width:850px;height:105px;background-color:#B3E3EB=
+;margin:0;padding:0;">
+                <span style=3D"background-color:#B3E3EB;">
+                    <a href=3D"#"><font size=3D"1" color=3D"#80C1E5">
+                        <span style=3D"font-size:12px;display:block;">
+                            <img style=3D"margin-left:110px;margin-top:20px=
+;width:200px;"
+                                 src=3D"http://img.t.sinajs.cn/t5/style/ima=
+ges/staticlogo/download/Brand_Group/PNG/Cn_En_Group/Sina_Weibo_Logo_RGB_C_E=
+.png?version=3D435c617438033454"
+                                 alt=3D""/>
+                        </span>
+                    </font> </a>
+                </span>
+            </div>
+            <div style=3D"width:850px;height:915px;background-color:#B3E3EB=
+;margin:0;padding:0;">
+      <span style=3D"background-color:#B3E3EB;">
+       <div style=3D"background-color: white;width:630px;height:712px;margi=
+n:0 0 0 105px;padding:0;box-shadow: 0 0 3px #000;">
+        <div style=3D"width:580px;margin:0 0 0 30px;padding:0 30px 0 0;">
+         <div style=3D"width:565px;margin:0;padding:0 0 25px 0;border-botto=
+m:1px dashed #CCCCCC;">
+          <div style=3D"margin:0;padding-top:25px;">
+                        <font face=3D"=E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91,=
+=E5=AE=8B=E4=BD=93" size=3D"2" color=3D"#F98100">
+                          <span style=3D"font-size:18px;font-variant:normal=
+;">
+                            <b style=3D"">Hi=EF=BC=8Cphantom0506@sina.com
+</b>                          </span>
+                        </font>
+        </div>
+        <div style=3D"margin:0;padding:30px 0;">
+          <div style=3D"margin:10px 0 0 0;padding:0;">
+            <font size=3D"2"><span style=3D"font-size:14px;">=E6=82=A8=E7=
+=9A=84=E6=96=B0=E6=B5=AA=E9=82=AE=E7=AE=B1=E5=B8=90=E5=8F=B7=E4=BA=8E2016-1=
+2-09 15:23:56=E5=9C=A8=E6=B9=96=E5=8C=97-=E6=AD=A6=E6=B1=89 =EF=BC=88111.17=
+5.187*=EF=BC=89=E9=80=9A=E8=BF=87weibo=E7=99=BB=E5=BD=95=EF=BC=8C=E7=B3=BB=
+=E7=BB=9F=E6=A3=80=E6=B5=8B=E6=AD=A4=E6=AC=A1=E7=99=BB=E5=BD=95=E5=AD=98=E5=
+=9C=A8=E9=AB=98=E5=8D=B1=E9=A3=8E=E9=99=A9=EF=BC=8C=E4=B8=BA=E4=BF=9D=E6=8A=
+=A4=E6=82=A8=E7=9A=84=E5=B8=90=E5=8F=B7=E5=AE=89=E5=85=A8=EF=BC=8C=E7=B3=BB=
+=E7=BB=9F=E6=9A=82=E6=97=B6=E9=94=81=E5=AE=9A=E4=BA=86=E9=83=A8=E5=88=86=E5=
+=8A=9F=E8=83=BD=E3=80=82=E8=AF=B7=E6=82=A8=E5=89=8D=E5=BE=80<br>
+                            <a href=3D"https://security.sina.com.cn/account=
+/security?option=3Dchgpwd" target=3D"_blank">
+                              <font color=3D"#0081CB">
+                                <font color=3D"#333333"><b>https://security=
+.sina.com.cn/account/security?option=3Dchgpwd</b>
+                                </font>
+                              </font>
+                            </a>
+                            </span></font>
+          </div>
+          <div style=3D"margin:10px 0 0 0;padding:0;">
+            <font size=3D"2"><span style=3D"font-size:14px;">=E8=A7=A3=E9=
+=99=A4=E5=B8=90=E5=8F=B7=E5=BC=82=E5=B8=B8=EF=BC=8C=E4=BB=A5=E4=BE=BF=E6=AD=
+=A3=E5=B8=B8=E4=BD=BF=E7=94=A8=E9=82=AE=E7=AE=B1=E3=80=82<br> <br> =E5=BD=
+=93=E6=82=A8=E7=9A=84=E5=B8=90=E5=8F=B7=E5=AD=98=E5=9C=A8=E9=A3=8E=E9=99=A9=
+=E6=97=B6=EF=BC=8C=E8=AF=B7=E6=82=A8=E5=8F=8A=E6=97=B6=E4=BF=AE=E6=94=B9=E5=
+=AF=86=E7=A0=81=E3=80=81=E7=BB=91=E5=AE=9A=E4=B8=AA=E4=BA=BA=E4=BF=A1=E6=81=
+=AF=EF=BC=8C=E6=84=9F=E8=B0=A2=E6=82=A8=E7=9A=84=E6=94=AF=E6=8C=81=E3=80=82
+</span></font>
+          </div>
+        </div>
+      </div>
+      <div style=3D"margin:0;padding:0;">
+        <div style=3D"margin:20px 0 0 0;padding:0;">
+          <div style=3D"margin:15px 0;padding:0;">
+            <font face=3D"=E5=AE=8B=E4=BD=93" size=3D"1" color=3D"#656565">=
+<span
+                    style=3D"font-size:12px;font-weight:normal;font-variant=
+:normal;">=E5=A6=82=E6=9E=9C=E4=BD=A0=E9=94=99=E8=AF=AF=E7=9A=84=E6=94=B6=
+=E5=88=B0=E4=BA=86=E6=9C=AC=E7=94=B5=E5=AD=90=E9=82=AE=E4=BB=B6=EF=BC=8C=E8=
+=AF=B7=E6=82=A8=E5=BF=BD=E7=95=A5=E4=B8=8A=E8=BF=B0=E5=86=85=E5=AE=B9</span=
+></font>
+          </div>
+        </div>
+      </div>
+      <div align=3D"right" style=3D"margin:40px 0 0 0;padding:0;">
+        <font color=3D"#656565">=E6=96=B0=E6=B5=AA=E8=B4=A6=E6=88=B7=E5=AE=
+=89=E5=85=A8=E5=9B=A2=E9=98=9F<br> 2016-12-09 17:14:02</font>
+      </div>
+    </div>
+    <div align=3D"center" style=3D"text-align:center;margin:240px 0 0 0;pad=
+ding:0;">
+      <font color=3D"#656565">=E6=9C=AC=E9=82=AE=E4=BB=B6=E6=98=AF=E7=B3=BB=
+=E7=BB=9F=E5=8F=91=E5=87=BA=E7=9A=84=E9=82=AE=E4=BB=B6=EF=BC=8C=E8=AF=B7=E5=
+=8B=BF=E7=9B=B4=E6=8E=A5=E5=9B=9E=E5=A4=8D=E3=80=82</font>
+    </div>
+  </div>
+  </span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
 
-PGRpdj64vbz+PC9kaXY+PGRpdj48ZGl2Pjxicj48L2Rpdj48ZGl2Pjxicj48L2Rpdj48ZGl2
-IHN0eWxlPSJmb250LXNpemU6IDEycHg7Zm9udC1mYW1pbHk6IEFyaWFsIE5hcnJvdztwYWRk
-aW5nOjJweCAwIDJweCAwOyI+LS0tLS0tLS0tLS0tLS0tLS0tJm5ic3A71K3KvNPKvP4mbmJz
-cDstLS0tLS0tLS0tLS0tLS0tLS08L2Rpdj48ZGl2IHN0eWxlPSJmb250LXNpemU6IDEycHg7
-YmFja2dyb3VuZDojZWZlZmVmO3BhZGRpbmc6OHB4OyI+PGRpdj48Yj63orz+yMs6PC9iPiZu
-YnNwOyJwaGFudG9tMDUwNiI7Jmx0O3BoYW50b20wNTA2QHNpbmEuY29tJmd0Ozs8L2Rpdj48
-ZGl2PjxiPreiy83KsbzkOjwvYj4mbmJzcDsyMDE2xOoxMdTCMTHI1SjQx8bazuUpIM3tyc82
-OjM0PC9kaXY+PGRpdj48Yj7K1bz+yMs6PC9iPiZuYnNwOyI0MDYzNzE2NDgiJmx0OzQwNjM3
-MTY0OEBxcS5jb20mZ3Q7OyA8d2JyPjwvZGl2PjxkaXY+PC9kaXY+PGRpdj48Yj7W98ziOjwv
-Yj4mbmJzcDu4vbz+PC9kaXY+PC9kaXY+PGRpdj48YnI+PC9kaXY+Jm5ic3A7PC9kaXY+
-
-------=_NextPart_58259EEF_0826A358_0A714E2B--
-
+</html>
 

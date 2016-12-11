@@ -240,9 +240,9 @@ QPushButton:enabled:pressed{
     <widget class="QLabel" name="label_prompt">
      <property name="geometry">
       <rect>
-       <x>90</x>
+       <x>0</x>
        <y>40</y>
-       <width>501</width>
+       <width>591</width>
        <height>31</height>
       </rect>
      </property>
@@ -261,9 +261,9 @@ font:13px
     <widget class="QLabel" name="label_opacity">
      <property name="geometry">
       <rect>
-       <x>100</x>
+       <x>0</x>
        <y>40</y>
-       <width>501</width>
+       <width>601</width>
        <height>31</height>
       </rect>
      </property>

@@ -3,8 +3,8 @@ import os
 from PyQt5 import QtWidgets
 from PyQt5 import QtGui
 from PyQt5 import uic
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QFileDialog
+from PyQt5.QtCore import Qt,QTranslator
+from PyQt5.QtWidgets import QFileDialog,QMessageBox
 from email import utils
 import time
 from datetime import datetime
@@ -27,7 +27,9 @@ class ComposeWindow(QtWidgets.QMainWindow):
         super(ComposeWindow, self).__init__()
         uic.loadUi('ui/composewindow.ui', self)
         self.fileName=''
-        self.setupRichText()
+        self.filepath=os.path.join(gl.draft_path, 'temp')
+        self.InitRichText()
+
 
 
 
@@ -48,7 +50,49 @@ class ComposeWindow(QtWidgets.QMainWindow):
         #     self.model.setStringList([getstring+"@qq.com", getstring+"@sina.com",getstring+"@sina.cn",
         #                 getstring+ "@163.com",getstring+"@126.com", getstring+"@hust.edu.cn"])
 
-    def setupRichText(self):
+    def closeEvent(self, e):
+
+
+
+        if self.maybeSave():
+            e.accept()
+        else:
+            e.ignore()
+
+    def maybeSave(self):
+        if not self.textEdit.document().isModified():
+            return True
+
+
+
+        # if ret==QMessageBox.AcceptRole
+
+        ret = QMessageBox.warning(self, "Application",
+                "邮件内容已修改，是否需要保存草稿？",
+                QMessageBox.Save | QMessageBox.Discard | QMessageBox.Cancel)
+
+        if ret == QMessageBox.Save:
+            return self.fileSave()
+
+        if ret == QMessageBox.Cancel:
+            return False
+
+        return True
+
+    #保存邮件到草稿箱
+    def fileSave(self):
+
+        try:
+            with open(self.filepath, 'w') as draftmail:
+                draftmail.write(self.textEdit.document().toHtml())
+        except:
+            return False
+        return True
+
+
+
+    #初始化富文本编辑器
+    def InitRichText(self):
         pix = QtGui.QPixmap(16, 16)                                     #填充颜色按钮
         pix.fill(Qt.black)
         self.ButtonTextColor.setIcon(QtGui.QIcon(pix))
@@ -60,49 +104,87 @@ class ComposeWindow(QtWidgets.QMainWindow):
                 self.comboSize.findText(
                         "%s" % (QtWidgets.QApplication.font().pointSize())))
 
-
+        self.textEdit.document().setModified(False)
         self.fontChanged(self.textEdit.font())
         self.colorChanged(self.textEdit.textColor())
         self.alignmentChanged(self.textEdit.alignment())
-        # self.textEdit.document().modificationChanged.connect(
-        #         self.actionSave.setEnabled)
-        # self.textEdit.document().modificationChanged.connect(
-        #         self.setWindowModified)
-        # self.textEdit.document().undoAvailable.connect(
-        #         self.actionUndo.setEnabled)
-        # self.textEdit.document().redoAvailable.connect(
-        #         self.actionRedo.setEnabled)
 
-    # #当前文字格式改变
+        self.textEdit.document().modificationChanged.connect(
+                self.actionSave.setEnabled)
+        # self.textEdit.document().modificationChanged.connect(                   #文件改动-->窗口标题 *
+        #         self.setWindowModified)
+        self.textEdit.document().undoAvailable.connect(
+                self.ButtonUndo.setEnabled)
+        self.textEdit.document().redoAvailable.connect(
+                self.ButtonRedo.setEnabled)
+
+        self.setWindowModified(self.textEdit.document().isModified())
+        self.actionSave.setEnabled(self.textEdit.document().isModified())
+        self.ButtonUndo.setEnabled(self.textEdit.document().isUndoAvailable())
+        self.ButtonRedo.setEnabled(self.textEdit.document().isRedoAvailable())
+        self.textEdit.copyAvailable.connect(self.ButtonCut.setEnabled)
+        self.textEdit.copyAvailable.connect(self.ButtonCopy.setEnabled)
+        QtWidgets.QApplication.clipboard().dataChanged.connect(self.clipboardDataChanged)
+
+    def onSetCurrentFileName(self,filename):
+        self.filepath=os.path.join(gl.draft_path, filename)
+
+        self.setWindowTitle(self.tr("%s[*] - %s" % (filename, "写邮件")))
+        self.setWindowModified(False)
+
+    # 当前文字格式改变
     def onCurrentCharFormatChanged(self, format):
-        pass
-        # self.fontChanged(format.font())
-        # self.colorChanged(format.foreground().color())
+        self.fontChanged(format.font())
+        self.colorChanged(format.foreground().color())
     #光标位置改变
     def onCursorPositionChanged(self):
-        pass
-        # self.alignmentChanged(self.textEdit.alignment())
-    # def fontChanged(self, font):
-    #     self.comboFont.setCurrentIndex(
-    #             self.comboFont.findText(QFontInfo(font).family()))
-    #     self.comboSize.setCurrentIndex(
-    #             self.comboSize.findText("%s" % font.pointSize()))
-    #     self.actionTextBold.setChecked(font.bold())
-    #     self.actionTextItalic.setChecked(font.italic())
-    #     self.actionTextUnderline.setChecked(font.underline())
-
+        self.alignmentChanged(self.textEdit.alignment())
+    #字体改变
+    def fontChanged(self, font):
+        self.comboFont.setCurrentIndex(
+                self.comboFont.findText(QtGui.QFontInfo(font).family()))
+        self.comboSize.setCurrentIndex(
+                self.comboSize.findText("%s" % font.pointSize()))
+        self.BuutonTextBold.setChecked(font.bold())
+        self.BuutonTextItalic.setChecked(font.italic())
+        self.BuutonTextUnderline.setChecked(font.underline())
+    #字体加粗
     def onTextBold(self):
-        pass
+        fmt = QtGui.QTextCharFormat()
+        fmt.setFontWeight(self.ButtonTextBold.isChecked() and QtGui.QFont.Bold or QtGui.QFont.Normal)
+        self.mergeFormatOnWordOrSelection(fmt)
+    #斜体显示
     def onTextItalic(self):
-        pass
+        fmt = QtGui.QTextCharFormat()
+        fmt.setFontItalic(self.ButtonTextItalic.isChecked())
+        self.mergeFormatOnWordOrSelection(fmt)
+    #下划线
     def onTextUnderline(self):
-        pass
+        fmt = QtGui.QTextCharFormat()
+        fmt.setFontUnderline(self.ButtonTextUnderline.isChecked())
+        self.mergeFormatOnWordOrSelection(fmt)
+    #字体颜色
     def onTextColor(self):
-        pass
-    def onTextFamily(self):
-        pass
-    def onTextSize(self):
-        pass
+        col = QtWidgets.QColorDialog.getColor(self.textEdit.textColor(), self)
+        if not col.isValid():
+            return
+        fmt = QtGui.QTextCharFormat()
+        fmt.setForeground(col)
+        self.mergeFormatOnWordOrSelection(fmt)
+        self.colorChanged(col)
+    #文字字体
+    def onTextFamily(self,family):
+        fmt = QtGui.QTextCharFormat()
+        fmt.setFontFamily(family)
+        self.mergeFormatOnWordOrSelection(fmt)
+    #文字大小
+    def onTextSize(self,pointSize):
+        pointSize = float(pointSize)
+        if pointSize > 0:
+            fmt = QtGui.QTextCharFormat()
+            fmt.setFontPointSize(pointSize)
+            self.mergeFormatOnWordOrSelection(fmt)
+    #文字对齐
     def onTextAlign(self,button):
         if button == self.ButtonAlignLeft:
             self.textEdit.setAlignment(Qt.AlignLeft | Qt.AlignAbsolute)
@@ -112,15 +194,44 @@ class ComposeWindow(QtWidgets.QMainWindow):
             self.textEdit.setAlignment(Qt.AlignRight | Qt.AlignAbsolute)
         elif button == self.ButtonAlignJustify:
             self.textEdit.setAlignment(Qt.AlignJustify)
+    #改变字体
     def fontChanged(self, font):
         self.comboFont.setCurrentIndex(
                 self.comboFont.findText(QtGui.QFontInfo(font).family()))
         self.comboSize.setCurrentIndex(
                 self.comboSize.findText("%s" % font.pointSize()))
-        self.actionTextBold.setChecked(font.bold())
-        self.actionTextItalic.setChecked(font.italic())
-        self.actionTextUnderline.setChecked(font.underline())
+        self.ButtonTextBold.setChecked(font.bold())
+        self.ButtonTextItalic.setChecked(font.italic())
+        self.ButtonTextUnderline.setChecked(font.underline())
+    #改变颜色
+    def colorChanged(self, color):
+        pix = QtGui.QPixmap(16, 16)
+        pix.fill(color)
+        self.ButtonTextColor.setIcon(QtGui.QIcon(pix))
+    #改变对齐
+    def alignmentChanged(self, alignment):
+        if alignment & Qt.AlignLeft:
+            self.ButtonAlignLeft.setChecked(True)
+        elif alignment & Qt.AlignHCenter:
+            self.ButtonAlignCenter.setChecked(True)
+        elif alignment & Qt.AlignRight:
+            self.ButtonAlignRight.setChecked(True)
+        elif alignment & Qt.AlignJustify:
+            self.ButtonAlignJustify.setChecked(True)
+    #剪贴板变换
+    def clipboardDataChanged(self):
+        self.ButtonPaste.setEnabled(len(QtWidgets.QApplication.clipboard().text()) != 0)
+    #选中词汇合并格式
+    def mergeFormatOnWordOrSelection(self, format):
+        cursor = self.textEdit.textCursor()
+        if not cursor.hasSelection():
+            cursor.select(QtGui.QTextCursor.WordUnderCursor)
 
+        cursor.mergeCharFormat(format)
+        self.textEdit.mergeCurrentCharFormat(format)
+
+    def onScreenCut(self):
+        print(self.textEdit.document().toPlainText())
 
     #发送邮件
     def onSend(self):
@@ -136,7 +247,8 @@ class ComposeWindow(QtWidgets.QMainWindow):
         if self.fileName:                                                    #如果有附件
             gl.message = MIMEMultipart('related')
             gl.message['Subject'] = self.txtsubject.text()
-            gl.message.attach(MIMEText(self.textEdit.toPlainText(), 'plain', 'utf-8'))
+            # gl.message.attach(MIMEText(self.textEdit.toPlainText(), 'plain', 'utf-8'))
+            gl.message.attach(MIMEText(self.textEdit.document().toHtml(), 'html', 'utf-8'))
             gl.message['from'] = gl.username
             gl.message['date']=time.strftime('%a, %d %b %Y %H:%M:%S %z')
             #构造附件
@@ -145,7 +257,8 @@ class ComposeWindow(QtWidgets.QMainWindow):
             att["Content-Disposition"] = 'attachment; filename="1.jpg"'
             gl.message.attach(att)
         else:
-            gl.message = MIMEText(self.textEdit.toPlainText(), 'plain', 'utf-8')
+            # gl.message = MIMEText(self.textEdit.toPlainText(), 'plain', 'utf-8')
+            gl.message = MIMEText(self.textEdit.document().toHtml(), 'html', 'utf-8')
             gl.message['Subject'] = self.txtsubject.text()
             gl.message['from'] = gl.username
             gl.message['date']=time.strftime('%a, %d %b %Y %H:%M:%S %z')
@@ -165,6 +278,7 @@ class ComposeWindow(QtWidgets.QMainWindow):
 
     def onSuccess(self):
         QtWidgets.QMessageBox.warning(self, APPNAME,"邮件发送成功" )
+        self.textEdit.document().setModified(False)
         self.senddialog.close()
         self.close()
 
@@ -333,7 +447,7 @@ class AccountDialog(QtWidgets.QMainWindow):
                 gl.smtpssl=True
             if gl.username.split('@')[1]=="qq.com":
                 gl.popport='995'
-                gl.smtpport='465'
+                gl.smtpport='25'
                 gl.popssl=True
                 gl.smtpssl=True
             self.label_prompt.setText(u'<p align=right style="font-family:Microsoft YaHei;font:13px;'
@@ -425,6 +539,9 @@ class MainWindow(QtWidgets.QMainWindow):
         self.receivedialog=ReceiveDialog()
         self.receive_thread.triggerNumber.connect(self.receivedialog.updateProcess)
 
+        self.read_thread = readFileThread()                               #加载登陆线程
+        self.read_thread.triggerFinish.connect(self.mailDisplay)
+
         self.btnForward.setEnabled(False)                               #转发功能不可用
         self.btnDelete.setEnabled(False)
         self.btnReply.setEnabled(False)
@@ -439,6 +556,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.comboBox.insertSeparator(3)
         self.comboBox.insertItems(4,["√    升序","      降序"])
         self.listEmails.customContextMenuRequested[QtCore.QPoint].connect(self.listmailMenu)
+
         # self.highlight = syntax_pars.PythonHighlighter(self.emailPreview.document())
 
         self.attachdisplay.hide()                                           #隐藏附件标签
@@ -672,6 +790,8 @@ class MainWindow(QtWidgets.QMainWindow):
                     self.data=info["subject"]+info["content"]+info["addr"]
                     pattern = re.compile(gl.string)
                     dataMatched = re.findall(pattern, self.data)                        #匹配所有关键字，背景高亮
+                    gl.search=True
+
                     # self.highlight.setHighlightData(dataMatched)
                     # self.highlight.rehighlight()
             self.mailDisplay()
@@ -684,6 +804,8 @@ class MainWindow(QtWidgets.QMainWindow):
     def cleartxt(self):
         self.searchEdit.clear()
         gl.March_ID=gl.emails
+        gl.string=''
+        gl.search=False
         self.mailDisplay()
 
     #回复功能
@@ -701,7 +823,10 @@ class MainWindow(QtWidgets.QMainWindow):
         self.compose.show()
         self.compose.txtsubject.setText('回复：'+info["subject"])                    #显示主题，发信人，日期
         self.compose.txtreceiver.setText(info["addr"])
-        self.compose.textEdit.setDocument(document)
+
+        # self.compose.textEdit.setDocument(document)
+        self.compose.textEdit.append(str(document.toHtml()))
+
         self.compose.textEdit.setFocus()
 
 
@@ -734,6 +859,10 @@ class MainWindow(QtWidgets.QMainWindow):
             self.receive_thread.start()
             self.receivedialog.reset()
             self.receivedialog.exec_()
+        elif txt ==u"草稿夹":
+            gl.read_path=gl.draft_path
+            self.read_thread.start()
+
         else:
             QtWidgets.QMessageBox.warning(self, APPNAME,"该功能尚在开发中~~~~~~~" )
 
@@ -750,9 +879,17 @@ class MainWindow(QtWidgets.QMainWindow):
             try:
 
                 if info["content"] != '':                                    #显示纯文本
+                    if gl.search:
+
+                        info["content"]=info["content"].replace(gl.string,"<strong><font color='#e87400'>"+gl.string+"</font></strong>")
+
                     self.emailPreview.setHtml(info["content"].replace('\n','<br>'))
                 elif info["html"] != '':
+                    if gl.search:
+                        info["html"]=info["html"].replace(gl.string,"<strong><font color='#e87400'>"+gl.string+"</font></strong>")
                     self.emailPreview.setHtml(info["html"])                 #显示html文本
+
+
 
 
                 if info["filename"]:

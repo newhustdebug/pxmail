@@ -1,56 +1,68 @@
-X-Mda-Received: from <mx-3-44.mail.sina.com.cn>([<202.108.248.124>])
- by <mda-113-94.mda.fmail.tg.sinanode.com> with LMTP id <1031729>
- Oct 29 2016 22:36:45 +0800 (CST)
-X-Sina-MID: 04454B4D9F6856647C0FF8F57AB10B602100000000000001
-X-Sina-Attnum: 1
-Received: from mail3-162.sinamail.sina.com.cn (HELO smtp-5-121.mail.sina.com.cn)([202.108.3.162])
+X-Mda-Received: from <mx-3-45.mail.sina.com.cn>([<202.108.248.125>])
+ by <mda-113-93.mda.fmail.tg.sinanode.com> with LMTP id <22012>
+ Nov 12 2016 23:59:01 +0800 (CST)
+X-Sina-MID: 04BDE74D4921019E0EAB2166E479C71FA400000000000001
+X-Sina-Attnum: 0
+Received: from smtpbg7.qq.com (HELO smtpbg7.qq.com)([183.60.61.200])
 	by sina.com with SMTP
-	29 Oct 2016 22:36:44 +0800 (CST)
-X-SMAIL-MID: 89427216253222
-Received: (qmail 6846 invoked by uid 562); 29 Oct 2016 22:36:44 +0800 (CST)
-Date: 29 Oct 2016 22:36:44 +0800 (CST)
-From: MAILER-DAEMON@smtp-5-121.mail.sina.com.cn
-To: phantom0506@sina.com
-Subject: =?GB2312?B?z7XNs83L0MU=?=
-MIME-Version: 1.0 
-Content-type: multipart/mixed; boundary="Boundary(sinamail.sina.com.cn)" 
+	12 Nov 2016 23:59:01 +0800 (CST)
+X-Sender: 406371648@qq.com
+Authentication-Results: sina.com; dkim=pass (Signature verified) header.i=qq.com
+Received-SPF: Pass (sina.com: SPF record at spf-b.mail.qq.com designates 183.60.61.200 as permitted sender) identity=from;
+	client-ip=183.60.61.200;
+	receiver=sina.com;
+	envelope-from=406371648@qq.com;
+	helo=smtpbg7.qq.com
+X-SMAIL-MID: 99974498697544
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
+	t=1478966281; bh=1TrelQxglze9ajsUOJ6KWGeYRGtRYOtkS+p796pdSFE=;
+	h=From:To:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding:Date:Message-ID;
+	b=pWSbqvymzR7bztx4ktN5eTiF60f+HuR9wGNabNx4ajXT54dtN8wQA8WHGCGGNjbsd
+	 il1TFqsARlMfWnxMUdpV6Z2HMxrS3sTY/VtHnJSnhIJGXIAXU/0SA7yUz0iVGuEHgx
+	 0McYXAJY0QPdB40PPVPUKJYw6PVQmqQjbrXTsFiw=
+X-QQ-FEAT: D2wf+OxrlqFZJI7DA0Z30EXlikNwbL/dHoOjp9tl+R/cNL6UNEzPfhtau7iPB
+	ppx/xKFR3fncUyE8OxW75n0gIhHq/p9gIm279Ondys48samDl0szH4z7KWDDO8Sjh0ACj54
+	DZItO9l02jLFOgBPJEw7mJpl0Q25zX7DnkHxC12zVH0xLetap0sYFwbJAjAe/sBsj98guxA
+	Bp1w/xZ5AqM4vzKhBL/yb
+X-QQ-SSF: 000000000000001000000000000000Z
+X-HAS-ATTACH: no
+X-QQ-BUSINESS-ORIGIN: 2
+X-Originating-IP: 222.20.22.124
+X-QQ-STYLE: 
+X-QQ-mid: webmail670t1478966280t153810
+From: "=?ISO-8859-1?B?NDA2MzcxNjQ4?=" <406371648@qq.com>
+To: "=?ISO-8859-1?B?cGhhbnRvbTA1MDY=?=" <phantom0506@sina.com>
+Subject: #screen
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_58273C08_0B8DAB38_28897D75"
+Content-Transfer-Encoding: 8Bit
+Date: Sat, 12 Nov 2016 23:58:00 +0800
+X-Priority: 3
+Message-ID: <tencent_2C3C2466666DE54E57FB93FF@qq.com>
+X-QQ-MIME: TCMime 1.0 by Tencent
+X-Mailer: QQMail 2.x
+X-QQ-Mailer: QQMail 2.x
+X-QQ-SENDSIZE: 520
+Feedback-ID: webmail:qq.com:bgweb:bgweb6
+
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_58273C08_0B8DAB38_28897D75
+Content-Type: text/plain;
+	charset="ISO-8859-1"
+Content-Transfer-Encoding: base64
 
 
 
---Boundary(sinamail.sina.com.cn)
-Content-type: text/plain; charset=UTF-8
-Content-transfer-encoding: 8BIT
+------=_NextPart_58273C08_0B8DAB38_28897D75
+Content-Type: text/html;
+	charset="ISO-8859-1"
+Content-Transfer-Encoding: base64
 
-尊敬的用户，
+PGRpdj48YnI+PC9kaXY+
 
-我们很遗憾的通知您，您发的邮件中有一个或多个接收人没有投递成功。
-
-退回的邮件在附件中，请查看附件了解详情。
-
-被退回邮件信息：
-
-服务器：112.90.83.115
-
-退信原因：550 Mailbox not found. http://service.mail.qq.com/cgi-bin/help?subtype=1&&id=20022&&no=1000728
-
-收件人：123@qq.com
-
-退信原因查询：http://help.sina.com.cn/i/90/152_2.html
-
-
---Boundary(sinamail.sina.com.cn)
-Content-type: application/octet-stream; name="mail.eml"; charset=UTF-8
-Content-transfer-encoding: base64
-Content-disposition: attachment; filename="mail.eml"
-
-UmVjZWl2ZWQ6IGZyb20gdW5rbm93biAoSEVMTyBbMTkyLjE2OC4yNDQuMV0pKFsyMjIuMjAuMzUu
-MjA5XSkNCglieSBzaW5hLmNvbSB3aXRoIEVTTVRQDQoJMjkgT2N0IDIwMTYgMjI6MzY6NDQgKzA4
-MDAgKENTVCkNClgtU2VuZGVyOiBwaGFudG9tMDUwNkBzaW5hLmNvbQ0KWC1BdXRoLUlEOiBwaGFu
-dG9tMDUwNkBzaW5hLmNvbQ0KWC1TTUFJTC1NSUQ6IDU3OTgwODM5NDIxOA0KQ29udGVudC1UeXBl
-OiB0ZXh0L3BsYWluOyBjaGFyc2V0PSJ1dGYtOCINCk1JTUUtVmVyc2lvbjogMS4wDQpDb250ZW50
-LVRyYW5zZmVyLUVuY29kaW5nOiBiYXNlNjQNClN1YmplY3Q6IDEyMw0KZnJvbTogcGhhbnRvbTA1
-MDZAc2luYS5jb20NCg0KTVRJeg0K
-
---Boundary(sinamail.sina.com.cn)--
+------=_NextPart_58273C08_0B8DAB38_28897D75--
 
 
