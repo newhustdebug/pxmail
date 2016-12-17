@@ -452,23 +452,11 @@ color: #000;
        </layout>
       </item>
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,4,20">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
            <widget class="QPushButton" name="btnReply">
-            <property name="minimumSize">
-             <size>
-              <width>170</width>
-              <height>26</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>170</width>
-              <height>26</height>
-             </size>
-            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton
 {
@@ -511,18 +499,6 @@ QPushButton:pressed, QPushButton:checked
           </item>
           <item>
            <widget class="QPushButton" name="btnForward">
-            <property name="minimumSize">
-             <size>
-              <width>171</width>
-              <height>26</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>171</width>
-              <height>26</height>
-             </size>
-            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton
 {
@@ -565,18 +541,6 @@ QPushButton:pressed, QPushButton:checked
           </item>
           <item>
            <widget class="QPushButton" name="btnDelete">
-            <property name="minimumSize">
-             <size>
-              <width>170</width>
-              <height>26</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>170</width>
-              <height>26</height>
-             </size>
-            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton
 {
@@ -638,18 +602,6 @@ QPushButton:pressed, QPushButton:checked
             <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,2">
              <item>
               <widget class="QLabel" name="sublabel">
-               <property name="minimumSize">
-                <size>
-                 <width>165</width>
-                 <height>17</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>165</width>
-                 <height>17</height>
-                </size>
-               </property>
                <property name="text">
                 <string>主题：</string>
                </property>
@@ -657,18 +609,6 @@ QPushButton:pressed, QPushButton:checked
              </item>
              <item>
               <widget class="QLabel" name="subdisplay">
-               <property name="minimumSize">
-                <size>
-                 <width>329</width>
-                 <height>17</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>329</width>
-                 <height>17</height>
-                </size>
-               </property>
                <property name="text">
                 <string/>
                </property>
@@ -680,18 +620,6 @@ QPushButton:pressed, QPushButton:checked
             <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,2">
              <item>
               <widget class="QLabel" name="fromlabel">
-               <property name="minimumSize">
-                <size>
-                 <width>165</width>
-                 <height>17</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>165</width>
-                 <height>17</height>
-                </size>
-               </property>
                <property name="text">
                 <string>发信人：</string>
                </property>
@@ -699,18 +627,6 @@ QPushButton:pressed, QPushButton:checked
              </item>
              <item>
               <widget class="QLabel" name="fromdisplay">
-               <property name="minimumSize">
-                <size>
-                 <width>329</width>
-                 <height>17</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>329</width>
-                 <height>17</height>
-                </size>
-               </property>
                <property name="text">
                 <string/>
                </property>
@@ -722,18 +638,6 @@ QPushButton:pressed, QPushButton:checked
             <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,2">
              <item>
               <widget class="QLabel" name="datelabel">
-               <property name="minimumSize">
-                <size>
-                 <width>165</width>
-                 <height>17</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>165</width>
-                 <height>17</height>
-                </size>
-               </property>
                <property name="text">
                 <string>日期：</string>
                </property>
@@ -741,18 +645,6 @@ QPushButton:pressed, QPushButton:checked
              </item>
              <item>
               <widget class="QLabel" name="datedisplay">
-               <property name="minimumSize">
-                <size>
-                 <width>329</width>
-                 <height>17</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>329</width>
-                 <height>17</height>
-                </size>
-               </property>
                <property name="text">
                 <string/>
                </property>
@@ -764,18 +656,6 @@ QPushButton:pressed, QPushButton:checked
             <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="1,4">
              <item>
               <widget class="QLabel" name="attachlabel">
-               <property name="minimumSize">
-                <size>
-                 <width>99</width>
-                 <height>20</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>99</width>
-                 <height>20</height>
-                </size>
-               </property>
                <property name="text">
                 <string>附件：</string>
                </property>
@@ -783,18 +663,6 @@ QPushButton:pressed, QPushButton:checked
              </item>
              <item>
               <widget class="QPushButton" name="attachdisplay">
-               <property name="minimumSize">
-                <size>
-                 <width>395</width>
-                 <height>20</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>395</width>
-                 <height>20</height>
-                </size>
-               </property>
                <property name="contextMenuPolicy">
                 <enum>Qt::CustomContextMenu</enum>
                </property>
@@ -829,23 +697,15 @@ QPushButton:pressed{
          </widget>
         </item>
         <item>
-         <widget class="QWebView" name="emailPreview">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>470</height>
-           </size>
+         <widget class="QTextBrowser" name="emailPreview">
+          <property name="acceptDrops">
+           <bool>false</bool>
           </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="url">
-           <url>
-            <string>about:blank</string>
-           </url>
+          <property name="styleSheet">
+           <string notr="true">QTextBrowser{
+	font-family:'Consolas'; 
+	color: #ccc; 
+	background-color: #2b2b2b;}</string>
           </property>
          </widget>
         </item>
@@ -925,13 +785,6 @@ QPushButton:pressed{
    </property>
   </action>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>QWebView</class>
-   <extends>QWidget</extends>
-   <header>QtWebKit/QWebView</header>
-  </customwidget>
- </customwidgets>
  <resources>
   <include location="resource.qrc"/>
   <include location="styles/style.qrc"/>

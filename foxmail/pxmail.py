@@ -2,13 +2,14 @@
 
 import sys
 from PyQt5 import QtWidgets, QtCore, QtGui
-import ui
+import gui
 
 app = QtWidgets.QApplication(sys.argv)
 
 
 
-my_mainWindow = ui.AccountDialog()
+# my_mainWindow = gui.AccountDialog()
+my_mainWindow = gui.Contact()
 
 my_mainWindow.show()
 

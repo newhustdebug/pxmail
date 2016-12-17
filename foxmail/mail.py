@@ -119,7 +119,7 @@ class receiveThread(QtCore.QThread):
 
         self.triggerFinish.emit()
 
-
+#草稿文件夹读取线程
 class readFileThread(QtCore.QThread):
     triggerFinish = QtCore.pyqtSignal()
     def __init__(self,parent=None):
@@ -141,7 +141,7 @@ class readFileThread(QtCore.QThread):
         gl.March_ID=gl.emails                                   #匹配到的邮件等于所有邮件
         self.triggerFinish.emit()
 
-
+#搜索线程
 class searchThread(QtCore.QThread):
     trigger = QtCore.pyqtSignal()
     def __init__(self, parent=None):
@@ -188,6 +188,7 @@ class MailCache():
         gl.cache_path = os.path.join('cache', gl.username)
         gl.temp_path=os.path.join(gl.cache_path, 'temp')
         gl.draft_path=os.path.join(gl.cache_path, '草稿夹')
+        gl.contact_path=os.path.join(gl.cache_path, 'contact.csv')
         self.state_path = os.path.join(gl.cache_path, 'cache.state')
 
         if not os.path.isdir(gl.cache_path):                            #创建每个用户的目录
