@@ -8,8 +8,9 @@ app = QtWidgets.QApplication(sys.argv)
 
 
 
-# my_mainWindow = gui.AccountDialog()
-my_mainWindow = gui.Contact()
+my_mainWindow = gui.AccountDialog()
+# my_mainWindow = gui.Contact()
+# my_mainWindow = gui.MainWindow()
 
 my_mainWindow.show()
 

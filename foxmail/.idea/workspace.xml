@@ -18,7 +18,8 @@
     <SUITE FILE_PATH="coverage/foxmail$server.coverage" NAME="server Coverage Results" MODIFIED="1477808674459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Chatroom-socket-master" />
     <SUITE FILE_PATH="coverage/foxmail$poplib.coverage" NAME="poplib Coverage Results" MODIFIED="1481350760406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/Python34/Lib" />
     <SUITE FILE_PATH="coverage/foxmail$main.coverage" NAME="main Coverage Results" MODIFIED="1481873613728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui2" />
-    <SUITE FILE_PATH="coverage/foxmail$foxmail.coverage" NAME="foxmail Coverage Results" MODIFIED="1478528191444" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/foxmail$pxmail.coverage" NAME="pxmail Coverage Results" MODIFIED="1482300121638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/foxmail$foxmail.coverage" NAME="foxmail Coverage Results" MODIFIED="1482299870618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -29,13 +30,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="pxmail.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pxmail.py">
+      <file leaf-file-name="gui.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5175936">
+              <caret line="976" column="21" selection-start-line="976" selection-start-column="21" selection-end-line="976" selection-end-column="21" />
               <folding>
-                <element signature="e#24#34#0" expanded="true" />
+                <element signature="e#23#32#0" expanded="true" />
+                <element signature="e#759#14693#0" expanded="false" />
+                <element signature="e#1901#2548#0" expanded="false" />
+                <element signature="e#3108#3188#0" expanded="false" />
+                <element signature="e#7357#7405#0" expanded="false" />
+                <element signature="e#7457#7837#0" expanded="false" />
+                <element signature="e#7882#8060#0" expanded="false" />
+                <element signature="e#8107#8244#0" expanded="false" />
+                <element signature="e#8293#8436#0" expanded="false" />
+                <element signature="e#8802#8912#0" expanded="false" />
+                <element signature="e#8967#9163#0" expanded="false" />
+                <element signature="e#9211#9648#0" expanded="false" />
+                <element signature="e#9695#10075#0" expanded="false" />
+                <element signature="e#10129#10235#0" expanded="false" />
+                <element signature="e#10297#10660#0" expanded="false" />
+                <element signature="e#10711#10791#0" expanded="false" />
+                <element signature="e#10866#11093#0" expanded="false" />
+                <element signature="e#11130#11554#0" expanded="false" />
+                <element signature="e#14743#24675#0" expanded="false" />
+                <element signature="e#17103#17480#0" expanded="false" />
+                <element signature="e#17530#17907#0" expanded="false" />
+                <element signature="e#24705#35634#0" expanded="false" />
+                <element signature="e#28486#29047#0" expanded="false" />
+                <element signature="e#29629#31038#0" expanded="false" />
+                <element signature="e#31070#31709#0" expanded="false" />
+                <element signature="e#31749#32097#0" expanded="false" />
+                <element signature="e#38384#38956#0" expanded="false" />
+                <element signature="e#39003#44509#0" expanded="false" />
+                <element signature="e#44568#45204#0" expanded="false" />
+                <element signature="e#47467#50172#0" expanded="false" />
+                <element signature="e#50211#50336#0" expanded="false" />
+                <element signature="e#52227#52478#0" expanded="false" />
+                <element signature="e#54568#55528#0" expanded="false" />
+                <element signature="e#63322#64082#0" expanded="false" />
+                <element signature="e#65282#67190#0" expanded="false" />
+                <element signature="e#67234#67715#0" expanded="false" />
+                <element signature="e#67753#68424#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -44,91 +81,15 @@
       <file leaf-file-name="mail.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mail.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.942029">
-              <caret line="106" column="12" selection-start-line="106" selection-start-column="8" selection-end-line="106" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
               <folding>
                 <element signature="e#23#32#0" expanded="true" />
-                <element signature="e#507#1198#0" expanded="false" />
-                <element signature="e#1242#1950#0" expanded="false" />
-                <element signature="e#4483#5449#0" expanded="false" />
-                <element signature="e#5495#6272#0" expanded="false" />
+                <element signature="e#567#1258#0" expanded="false" />
+                <element signature="e#6007#6784#0" expanded="false" />
+                <element signature="e#7115#10300#0" expanded="false" />
+                <element signature="e#12361#14532#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gui.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gui.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47457626">
-              <caret line="639" column="42" selection-start-line="639" selection-start-column="42" selection-end-line="639" selection-end-column="42" />
-              <folding>
-                <element signature="e#23#32#0" expanded="true" />
-                <element signature="e#749#11002#0" expanded="false" />
-                <element signature="e#12869#13246#0" expanded="false" />
-                <element signature="e#13296#13673#0" expanded="false" />
-                <element signature="e#13731#13824#0" expanded="false" />
-                <element signature="e#13878#14353#0" expanded="false" />
-                <element signature="e#14400#14482#0" expanded="false" />
-                <element signature="e#14523#14943#0" expanded="false" />
-                <element signature="e#14995#15260#0" expanded="false" />
-                <element signature="e#15297#17716#0" expanded="false" />
-                <element signature="e#20787#21171#0" expanded="false" />
-                <element signature="e#21217#22398#0" expanded="false" />
-                <element signature="e#22439#22766#0" expanded="false" />
-                <element signature="e#22807#23049#0" expanded="false" />
-                <element signature="e#23091#23652#0" expanded="false" />
-                <element signature="e#23696#23868#0" expanded="false" />
-                <element signature="e#23916#23985#0" expanded="false" />
-                <element signature="e#24033#25442#0" expanded="false" />
-                <element signature="e#25474#26113#0" expanded="false" />
-                <element signature="e#26153#26501#0" expanded="false" />
-                <element signature="e#26551#26700#0" expanded="false" />
-                <element signature="e#27743#28301#0" expanded="false" />
-                <element signature="e#28334#28358#0" expanded="false" />
-                <element signature="e#28392#28459#0" expanded="false" />
-                <element signature="e#28499#29083#0" expanded="false" />
-                <element signature="e#29122#29247#0" expanded="false" />
-                <element signature="e#29418#29586#0" expanded="false" />
-                <element signature="e#29640#29814#0" expanded="false" />
-                <element signature="e#29871#30166#0" expanded="false" />
-                <element signature="e#32111#32683#0" expanded="false" />
-                <element signature="e#32730#38236#0" expanded="false" />
-                <element signature="e#43928#44630#0" expanded="false" />
-                <element signature="e#49881#52108#0" expanded="false" />
-                <element signature="e#52152#52624#0" expanded="false" />
-                <element signature="e#52662#53333#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QFileDialog.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QFileDialog.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="153" column="8" selection-start-line="153" selection-start-column="8" selection-end-line="153" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QWidget.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QWidget.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="652" column="15" selection-start-line="652" selection-start-column="13" selection-end-line="652" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QAction.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QAction.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="279" column="8" selection-start-line="279" selection-start-column="8" selection-end-line="279" selection-end-column="8" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -137,7 +98,7 @@
         <entry file="file://$PROJECT_DIR$/parameter.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+              <caret line="1" column="120" selection-start-line="1" selection-start-column="109" selection-end-line="1" selection-end-column="120" />
               <folding />
             </state>
           </provider>
@@ -166,12 +127,14 @@
         <option value="$PROJECT_DIR$/../计网实验/server.py" />
         <option value="$PROJECT_DIR$/../计网实验/client.py" />
         <option value="$PROJECT_DIR$/backend.py" />
-        <option value="$PROJECT_DIR$/parameter.py" />
-        <option value="$PROJECT_DIR$/mail.py" />
         <option value="$PROJECT_DIR$/ui2/main.py" />
         <option value="$PROJECT_DIR$/ui.py" />
+        <option value="$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/__init__.py" />
         <option value="$PROJECT_DIR$/pxmail.py" />
+        <option value="$USER_HOME$/Documents/Tencent Files/406371648/FileRecv/ui/ui/ui.py" />
+        <option value="$PROJECT_DIR$/parameter.py" />
         <option value="$PROJECT_DIR$/gui.py" />
+        <option value="$PROJECT_DIR$/mail.py" />
       </list>
     </option>
   </component>
@@ -305,11 +268,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PPlayer-master" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Python.foxmail">
+  <component name="RunManager" selected="Python.pxmail">
     <configuration default="false" name="foxmail" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -324,24 +287,6 @@
       <module name="foxmail" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/foxmail.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="mail" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="foxmail" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mail.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -396,6 +341,24 @@
       <module name="foxmail" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ui2/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="pxmail" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="foxmail" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pxmail.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -595,18 +558,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.foxmail" />
-      <item index="1" class="java.lang.String" itemvalue="Python.mail" />
-      <item index="2" class="java.lang.String" itemvalue="Python.server" />
-      <item index="3" class="java.lang.String" itemvalue="Python.poplib" />
-      <item index="4" class="java.lang.String" itemvalue="Python.main" />
+      <item index="1" class="java.lang.String" itemvalue="Python.server" />
+      <item index="2" class="java.lang.String" itemvalue="Python.poplib" />
+      <item index="3" class="java.lang.String" itemvalue="Python.main" />
+      <item index="4" class="java.lang.String" itemvalue="Python.pxmail" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.main" />
-        <item index="1" class="java.lang.String" itemvalue="Python.poplib" />
-        <item index="2" class="java.lang.String" itemvalue="Python.foxmail" />
-        <item index="3" class="java.lang.String" itemvalue="Python.server" />
-        <item index="4" class="java.lang.String" itemvalue="Python.mail" />
+        <item index="0" class="java.lang.String" itemvalue="Python.pxmail" />
+        <item index="1" class="java.lang.String" itemvalue="Python.foxmail" />
+        <item index="2" class="java.lang.String" itemvalue="Python.main" />
+        <item index="3" class="java.lang.String" itemvalue="Python.poplib" />
+        <item index="4" class="java.lang.String" itemvalue="Python.server" />
       </list>
     </recent_temporary>
   </component>
@@ -624,7 +587,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21354167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -687,7 +650,14 @@
           <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="54" />
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+      <option name="time" value="69" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -696,292 +666,15 @@
         <watch expression="charset" />
         <watch expression="content" />
         <watch expression="part" />
+        <watch expression="mails_number" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/parameter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-762174762/PyQt4/QtGui/QTreeWidgetItem.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="12" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtCore/pyqtSignal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48474577">
-          <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QTextBrowser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-89.73913">
-          <caret line="301" column="27" selection-start-line="301" selection-start-column="24" selection-end-line="301" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtGui/QSyntaxHighlighter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="20" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtGui/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69796956">
-          <caret line="215" column="8" selection-start-line="215" selection-start-column="6" selection-end-line="215" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python34/Lib/re.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.027939465">
-          <caret line="201" column="4" selection-start-line="201" selection-start-column="4" selection-end-line="201" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python34/Lib/site-packages/PyQt5/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python34/Lib/imaplib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33248731">
-          <caret line="70" column="14" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python34/Lib/site-packages/future/backports/email/message.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.8237288">
-          <caret line="142" column="8" selection-start-line="142" selection-start-column="8" selection-end-line="142" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="124.284744">
-          <caret line="4583" column="36" selection-start-line="4583" selection-start-column="31" selection-end-line="4583" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtQml.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="632" column="8" selection-start-line="632" selection-start-column="8" selection-end-line="632" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QLabel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.027118644">
-          <caret line="258" column="17" selection-start-line="258" selection-start-column="8" selection-end-line="258" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python34/Lib/email/mime/text.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13220339">
-          <caret line="15" column="62" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtCore/QEvent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="131" column="22" selection-start-line="131" selection-start-column="4" selection-end-line="131" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtCore/QStringListModel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21694915">
-          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python34/Lib/email/message.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2519774">
-          <caret line="137" column="8" selection-start-line="137" selection-start-column="8" selection-end-line="137" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python34/Lib/site-packages/astroid/bases.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="608" column="8" selection-start-line="608" selection-start-column="8" selection-end-line="608" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/syntax_pars.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QPushButton.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QAbstractButton.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtCore/Qt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="210" column="24" selection-start-line="210" selection-start-column="4" selection-end-line="210" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QDialog.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38531074">
-          <caret line="40" column="27" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QMessageBox.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="233" column="11" selection-start-line="233" selection-start-column="8" selection-end-line="233" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtGui/QTextDocument.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.942029">
-          <caret line="361" column="73" selection-start-line="361" selection-start-column="70" selection-end-line="361" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46101695">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python34/Lib/poplib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtCore/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7745098">
-          <caret line="73" column="7" selection-start-line="73" selection-start-column="6" selection-end-line="73" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python34/Lib/smtplib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="293" column="8" selection-start-line="293" selection-start-column="8" selection-end-line="293" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWebKitWidgets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1328" column="14" selection-start-line="1328" selection-start-column="6" selection-end-line="1328" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWebKit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70508474">
-          <caret line="26" column="18" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtNetwork/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6474576">
-          <caret line="53" column="34" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QFrame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.1304348">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtCore/QObject.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38531074">
-          <caret line="68" column="103" selection-start-line="68" selection-start-column="102" selection-end-line="68" selection-end-column="103" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/sip.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.027118644">
-          <caret line="84" column="13" selection-start-line="84" selection-start-column="6" selection-end-line="84" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python34/Lib/csv.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2753624">
-          <caret line="83" column="69" selection-start-line="83" selection-start-column="66" selection-end-line="83" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QMainWindow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38531074">
-          <caret line="237" column="22" selection-start-line="237" selection-start-column="19" selection-end-line="237" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QLineEdit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="434" column="12" selection-start-line="434" selection-start-column="8" selection-end-line="434" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QComboBox.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.3333335">
           <caret line="331" column="22" selection-start-line="331" selection-start-column="8" selection-end-line="331" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QTextEdit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.15942">
-          <caret line="462" column="20" selection-start-line="462" selection-start-column="8" selection-end-line="462" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1006,10 +699,164 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parameter.py">
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QFileDialog.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <caret line="153" column="8" selection-start-line="153" selection-start-column="8" selection-end-line="153" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QListView.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QListWidget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="76" column="18" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtGui/QPainterPath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="43" column="16" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/Tencent Files/406371648/FileRecv/ui/ui/ui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18983051">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6233766">
+          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python34/Lib/tokenize.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09902597">
+          <caret line="447" column="0" selection-start-line="447" selection-start-column="0" selection-end-line="447" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtCore/QThread.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-44.52174">
+          <caret line="131" column="42" selection-start-line="131" selection-start-column="42" selection-end-line="131" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtGui/QTextDocument.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22485876">
+          <caret line="360" column="14" selection-start-line="360" selection-start-column="8" selection-end-line="360" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python34/Lib/re.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="171" column="4" selection-start-line="171" selection-start-column="4" selection-end-line="171" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python34/Lib/email/message.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="588" column="20" selection-start-line="588" selection-start-column="12" selection-end-line="588" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QAction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="77" column="16" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QLineEdit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="434" column="12" selection-start-line="434" selection-start-column="8" selection-end-line="434" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python34/Lib/configparser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43954802">
+          <caret line="1167" column="19" selection-start-line="1167" selection-start-column="8" selection-end-line="1167" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtGui/QPixmap.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.935593">
+          <caret line="185" column="8" selection-start-line="185" selection-start-column="8" selection-end-line="185" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QTextEdit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.027118644">
+          <caret line="486" column="20" selection-start-line="486" selection-start-column="8" selection-end-line="486" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python34/Lib/email/_parseaddr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="173" column="4" selection-start-line="173" selection-start-column="4" selection-end-line="173" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QHBoxLayout.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.1304348">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QBoxLayout.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.1304348">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QLayout.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python34/Lib/os.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="211" column="4" selection-start-line="211" selection-start-column="4" selection-end-line="211" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/os/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="742" column="4" selection-start-line="742" selection-start-column="4" selection-end-line="742" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="365" column="4" selection-start-line="365" selection-start-column="4" selection-end-line="365" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1017,98 +864,215 @@
     <entry file="file://$PROJECT_DIR$/pxmail.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#34#0" expanded="true" />
-          </folding>
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/__init__.py">
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/nt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.942029">
-          <caret line="75" column="25" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="529" column="33" selection-start-line="529" selection-start-column="32" selection-end-line="529" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QAction.py">
+    <entry file="file://C:/Python34/Lib/poplib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3325766">
+          <caret line="249" column="8" selection-start-line="249" selection-start-column="8" selection-end-line="249" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python34/Lib/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3325766">
+          <caret line="103" column="4" selection-start-line="103" selection-start-column="4" selection-end-line="103" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QFileSystemModel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.3561645">
+          <caret line="237" column="16" selection-start-line="237" selection-start-column="8" selection-end-line="237" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtCore/QModelIndex.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="279" column="8" selection-start-line="279" selection-start-column="8" selection-end-line="279" selection-end-column="8" />
-          <folding />
+          <caret line="52" column="11" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QTreeWidgetItem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2908416">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QTreeWidget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QTreeView.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QAbstractItemView.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QFrame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QWidget.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="652" column="15" selection-start-line="652" selection-start-column="13" selection-end-line="652" selection-end-column="15" />
+          <caret line="486" column="24" selection-start-line="486" selection-start-column="19" selection-end-line="486" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtCore/Qt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39273554">
+          <caret line="842" column="17" selection-start-line="842" selection-start-column="17" selection-end-line="842" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QAbstractScrollArea.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.02724177">
+          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QMenu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3325766">
+          <caret line="139" column="8" selection-start-line="139" selection-start-column="8" selection-end-line="139" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38819525">
+          <caret line="120" column="25" selection-start-line="120" selection-start-column="24" selection-end-line="120" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtGui/QWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3325766">
+          <caret line="188" column="8" selection-start-line="188" selection-start-column="8" selection-end-line="188" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtPositioning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.6849315">
+          <caret line="837" column="19" selection-start-line="837" selection-start-column="8" selection-end-line="837" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python34/Lib/shutil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="492" column="0" selection-start-line="492" selection-start-column="0" selection-end-line="492" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWebKit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38819525">
+          <caret line="212" column="16" selection-start-line="212" selection-start-column="13" selection-end-line="212" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parameter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="120" selection-start-line="1" selection-start-column="109" selection-end-line="1" selection-end-column="120" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWebKitWidgets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1550" column="20" selection-start-line="1550" selection-start-column="8" selection-end-line="1550" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mail.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.942029">
-          <caret line="106" column="12" selection-start-line="106" selection-start-column="8" selection-end-line="106" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
           <folding>
             <element signature="e#23#32#0" expanded="true" />
-            <element signature="e#507#1198#0" expanded="false" />
-            <element signature="e#1242#1950#0" expanded="false" />
-            <element signature="e#4483#5449#0" expanded="false" />
-            <element signature="e#5495#6272#0" expanded="false" />
+            <element signature="e#567#1258#0" expanded="false" />
+            <element signature="e#6007#6784#0" expanded="false" />
+            <element signature="e#7115#10300#0" expanded="false" />
+            <element signature="e#12361#14532#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-1442825926/PyQt5/QtWidgets/QFileDialog.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="153" column="8" selection-start-line="153" selection-start-column="8" selection-end-line="153" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47457626">
-          <caret line="639" column="42" selection-start-line="639" selection-start-column="42" selection-end-line="639" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.5175936">
+          <caret line="976" column="21" selection-start-line="976" selection-start-column="21" selection-end-line="976" selection-end-column="21" />
           <folding>
             <element signature="e#23#32#0" expanded="true" />
-            <element signature="e#749#11002#0" expanded="false" />
-            <element signature="e#12869#13246#0" expanded="false" />
-            <element signature="e#13296#13673#0" expanded="false" />
-            <element signature="e#13731#13824#0" expanded="false" />
-            <element signature="e#13878#14353#0" expanded="false" />
-            <element signature="e#14400#14482#0" expanded="false" />
-            <element signature="e#14523#14943#0" expanded="false" />
-            <element signature="e#14995#15260#0" expanded="false" />
-            <element signature="e#15297#17716#0" expanded="false" />
-            <element signature="e#20787#21171#0" expanded="false" />
-            <element signature="e#21217#22398#0" expanded="false" />
-            <element signature="e#22439#22766#0" expanded="false" />
-            <element signature="e#22807#23049#0" expanded="false" />
-            <element signature="e#23091#23652#0" expanded="false" />
-            <element signature="e#23696#23868#0" expanded="false" />
-            <element signature="e#23916#23985#0" expanded="false" />
-            <element signature="e#24033#25442#0" expanded="false" />
-            <element signature="e#25474#26113#0" expanded="false" />
-            <element signature="e#26153#26501#0" expanded="false" />
-            <element signature="e#26551#26700#0" expanded="false" />
-            <element signature="e#27743#28301#0" expanded="false" />
-            <element signature="e#28334#28358#0" expanded="false" />
-            <element signature="e#28392#28459#0" expanded="false" />
-            <element signature="e#28499#29083#0" expanded="false" />
-            <element signature="e#29122#29247#0" expanded="false" />
-            <element signature="e#29418#29586#0" expanded="false" />
-            <element signature="e#29640#29814#0" expanded="false" />
-            <element signature="e#29871#30166#0" expanded="false" />
-            <element signature="e#32111#32683#0" expanded="false" />
-            <element signature="e#32730#38236#0" expanded="false" />
-            <element signature="e#43928#44630#0" expanded="false" />
-            <element signature="e#49881#52108#0" expanded="false" />
-            <element signature="e#52152#52624#0" expanded="false" />
-            <element signature="e#52662#53333#0" expanded="false" />
+            <element signature="e#759#14693#0" expanded="false" />
+            <element signature="e#1901#2548#0" expanded="false" />
+            <element signature="e#3108#3188#0" expanded="false" />
+            <element signature="e#7357#7405#0" expanded="false" />
+            <element signature="e#7457#7837#0" expanded="false" />
+            <element signature="e#7882#8060#0" expanded="false" />
+            <element signature="e#8107#8244#0" expanded="false" />
+            <element signature="e#8293#8436#0" expanded="false" />
+            <element signature="e#8802#8912#0" expanded="false" />
+            <element signature="e#8967#9163#0" expanded="false" />
+            <element signature="e#9211#9648#0" expanded="false" />
+            <element signature="e#9695#10075#0" expanded="false" />
+            <element signature="e#10129#10235#0" expanded="false" />
+            <element signature="e#10297#10660#0" expanded="false" />
+            <element signature="e#10711#10791#0" expanded="false" />
+            <element signature="e#10866#11093#0" expanded="false" />
+            <element signature="e#11130#11554#0" expanded="false" />
+            <element signature="e#14743#24675#0" expanded="false" />
+            <element signature="e#17103#17480#0" expanded="false" />
+            <element signature="e#17530#17907#0" expanded="false" />
+            <element signature="e#24705#35634#0" expanded="false" />
+            <element signature="e#28486#29047#0" expanded="false" />
+            <element signature="e#29629#31038#0" expanded="false" />
+            <element signature="e#31070#31709#0" expanded="false" />
+            <element signature="e#31749#32097#0" expanded="false" />
+            <element signature="e#38384#38956#0" expanded="false" />
+            <element signature="e#39003#44509#0" expanded="false" />
+            <element signature="e#44568#45204#0" expanded="false" />
+            <element signature="e#47467#50172#0" expanded="false" />
+            <element signature="e#50211#50336#0" expanded="false" />
+            <element signature="e#52227#52478#0" expanded="false" />
+            <element signature="e#54568#55528#0" expanded="false" />
+            <element signature="e#63322#64082#0" expanded="false" />
+            <element signature="e#65282#67190#0" expanded="false" />
+            <element signature="e#67234#67715#0" expanded="false" />
+            <element signature="e#67753#68424#0" expanded="false" />
           </folding>
         </state>
       </provider>

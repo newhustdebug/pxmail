@@ -1,10 +1,18 @@
 global username,password,pophost,smtphost,popport,smtpport,popssl,smtpssl
-global emails,cache_path,folder_path,temp_path,file_path,cathe_folder_path,draft_path,read_path,contact_path
+global emails,cache_path,folder_path,temp_path,file_path,cathe_folder_path,draft_path,send_path,contact_path,delete_path
+global read_files,read_path
 global mails_number,force_refresh,step,message,receivers
 global error,opacity, new_trans
 global string,search,March_ID,attachment
 cache_path='cache'
 folder_path="收件夹"
+send_path=''
+username=''
+password=''
+popport='110'
+smtpport='25'
+popssl=False
+smtpssl=False
 contact_path='contact.csv'
 force_refresh = False
 emails=[]

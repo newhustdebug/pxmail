@@ -3,43 +3,50 @@ import os
 from PyQt5 import QtWidgets
 from PyQt5 import QtGui
 from PyQt5 import uic
-from PyQt5.QtCore import Qt,QTranslator,QUrl
+from PyQt5.QtCore import Qt,QTranslator,QUrl,QPoint
 from PyQt5.QtWidgets import QFileDialog,QMessageBox
-
+from PyQt5 import QtWebKitWidgets
 from PyQt5.QtWidgets import *
-from PyQt5.QtWebKitWidgets import *
-import PyQt5.QtNetwork
-import PyQt5.QtPrintSupport
-import sip
+import configparser
 from email import utils
 import time
 from datetime import datetime
 import smtplib
 import re
 import sys
+import shutil
 import csv
 import subprocess
 from email.mime.text import MIMEText
+from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 from mail import *
 import parameter as gl
 import syntax_pars
 from backend import *
-# from ui.mainwindow import  Ui_MainWindow
+from mainwindow import  Ui_MainWindow
 
 APPNAME = 'PxMail v3.0'
 
 
 class ComposeWindow(QtWidgets.QMainWindow):
+    myMenu=[]
+    receivestring=''
     def __init__(self):
         super(ComposeWindow, self).__init__()
         uic.loadUi('ui/composewindow.ui', self)
+        with open("ui/ui.qss","r") as fh:                             #加载qss文件
+            self.setStyleSheet(fh.read())
+        # self.setWindowFlags(Qt.FramelessWindowHint)     #去边框
         self.fileName=''
-        self.filepath=os.path.join(gl.draft_path, 'temp')
+        self.HavePicture=False
+        self.filepath=os.path.join(gl.draft_path, 'temp.ini')
         self.InitRichText()
 
+        self.InitToolButton()                       #初始化添加联系人按钮
 
-
+        self.config=configparser.ConfigParser()
+        self.config.add_section('mail')
 
         self.send_thread = sendingThread()                               #加载发送线程
         self.send_thread.triggerSuccess.connect(self.onSuccess)
@@ -51,16 +58,44 @@ class ComposeWindow(QtWidgets.QMainWindow):
         self.model=QtCore.QStringListModel()
         completer.setModel(self.model)
 
+
+    #初始化工具按钮
+    def InitToolButton(self):
+        self.myMenu=[]
+        contact_table=[]
+        with open(gl.contact_path,"r") as csvfile:
+                csv_reader = csv.DictReader(csvfile)
+                for row in csv_reader:
+                    contact_table.append(row)
+
+        for person in contact_table:
+            self.myMenu.append(person["姓名"]+'|'+ person["电子邮件地址"])
+
+        self.ToolMenu = QMenu(self)
+        self.ToolMenu.hovered.connect(self.hoverAction)
+        for person in self.myMenu:
+            action = QAction(person,self)
+            action.triggered.connect(self.addPerson)
+            self.ToolMenu.addAction(action)
+
+        self.addButton.setMenu(self.ToolMenu)
+
+    def hoverAction(self,row):
+        self.index=row.text()
+
+    def addPerson(self):
+        address=self.index.split('|')[1]
+        self.txtreceiver.setText(self.txtreceiver.text()+address+';')
+
+
     def ontextChanged(self):
         getstring=self.txtreceiver.text()
         #从联系人中筛选
-        # if not "@" in getstring:
-        #     self.model.setStringList([getstring+"@qq.com", getstring+"@sina.com",getstring+"@sina.cn",
-        #                 getstring+ "@163.com",getstring+"@126.com", getstring+"@hust.edu.cn"])
+        if not "@" in getstring:
+            self.model.setStringList([getstring+"@qq.com", getstring+"@sina.com",getstring+"@sina.cn",
+                        getstring+ "@163.com",getstring+"@126.com", getstring+"@hust.edu.cn"])
 
     def closeEvent(self, e):
-
-
 
         if self.maybeSave():
             e.accept()
@@ -91,19 +126,49 @@ class ComposeWindow(QtWidgets.QMainWindow):
     def fileSave(self):
 
         try:
-            with open(self.filepath, 'w') as draftmail:
-                draftmail.write(self.textEdit.document().toHtml())
-        except:
+
+            self.config.set('mail', 'receiver', self.txtreceiver.text())
+            self.config.set('mail', 'subject', self.txtsubject.text())
+            self.config.set('mail', 'text', self.textEdit.document().toHtml())
+
+            ISOTIMEFORMAT='%Y-%m-%d %X'
+            self.config.set('mail', 'time',time.strftime( ISOTIMEFORMAT, time.localtime()))
+            self.config.write(open(self.filepath, 'w'))
+
+            self.textEdit.document().setModified(False)
+        except Exception as e:
+            print(e)
             return False
         return True
 
+    def insertImage(self):
+
+        filename = QtWidgets.QFileDialog.getOpenFileName(self, 'Insert image',".","Images (*.png *.xpm *.jpg *.bmp *.gif)")[0]
+
+        if filename:
+
+            image = QtGui.QImage(filename)
+            if image.isNull():
+                popup = QtWidgets.QMessageBox(QtWidgets.QMessageBox.Critical,
+                                          "Image load error",
+                                          "Could not load image file!",
+                                          QtWidgets.QMessageBox.Ok,
+                                          self)
+                popup.show()
+            else:
+                self.HavePicture=True
+                cursor = self.textEdit.textCursor()
+                cursor.insertImage(image,filename)
+
+                fp = open(filename, 'rb')
+                self.msgImage = MIMEImage(fp.read())
+                fp.close()
+                self.msgImage.add_header('Content-ID', '<image1>')
 
 
     #初始化富文本编辑器
     def InitRichText(self):
-        pix = QtGui.QPixmap(16, 16)                                     #填充颜色按钮
-        pix.fill(Qt.black)
-        self.ButtonTextColor.setIcon(QtGui.QIcon(pix))
+        self.textEdit.setTextColor(Qt.white)
 
         db = QtGui.QFontDatabase()                                      #字库里的字体大小
         for size in db.standardSizes():
@@ -135,7 +200,7 @@ class ComposeWindow(QtWidgets.QMainWindow):
         QtWidgets.QApplication.clipboard().dataChanged.connect(self.clipboardDataChanged)
 
     def onSetCurrentFileName(self,filename):
-        self.filepath=os.path.join(gl.draft_path, filename)
+        self.filepath=os.path.join(gl.draft_path, filename)+'.ini'
 
         self.setWindowTitle(self.tr("%s[*] - %s" % (filename, "写邮件")))
         self.setWindowModified(False)
@@ -239,7 +304,19 @@ class ComposeWindow(QtWidgets.QMainWindow):
         self.textEdit.mergeCurrentCharFormat(format)
 
     def onScreenCut(self):
-        print(self.textEdit.document().toPlainText())
+        format = 'png'
+        screen = QApplication.primaryScreen()
+        if screen is not None:
+            self.originalPixmap = screen.grabWindow(0)
+        else:
+            self.originalPixmap = QtGui.QPixmap()
+
+        self.originalPixmap.save('utitled.png', format)
+        filename='utitled.png'
+        image = QtGui.QImage(filename)
+        cursor = self.textEdit.textCursor()
+        cursor.insertImage(image,filename)
+
 
     #发送邮件
     def onSend(self):
@@ -252,18 +329,25 @@ class ComposeWindow(QtWidgets.QMainWindow):
         if not self.textEdit.toPlainText():
             QtWidgets.QMessageBox.warning(self, APPNAME,"请填写邮件正文" )
             return
-        if self.fileName:                                                    #如果有附件
+        if self.fileName or self.HavePicture:                                                    #如果有附件
             gl.message = MIMEMultipart('related')
             gl.message['Subject'] = self.txtsubject.text()
-            # gl.message.attach(MIMEText(self.textEdit.toPlainText(), 'plain', 'utf-8'))
-            gl.message.attach(MIMEText(self.textEdit.document().toHtml(), 'html', 'utf-8'))
             gl.message['from'] = gl.username
             gl.message['date']=time.strftime('%a, %d %b %Y %H:%M:%S %z')
-            #构造附件
-            att = MIMEText(open(self.fileName, 'rb').read(), 'base64', 'utf-8')
-            att["Content-Type"] = 'application/octet-stream'
-            att["Content-Disposition"] = 'attachment; filename="1.jpg"'
-            gl.message.attach(att)
+            if self.HavePicture:
+                html=self.textEdit.document().toHtml()
+                html=re.sub("<img src=(.*?)>",'''<img src=cid:image1>''',html)
+                gl.message.attach(self.msgImage)
+
+                gl.message.attach(MIMEText(html, 'html', 'utf-8'))
+            else:
+                gl.message.attach(MIMEText(self.textEdit.document().toHtml(), 'html', 'utf-8'))
+            if self.fileName:
+                #构造附件
+                att = MIMEText(open(self.fileName, 'rb').read(), 'base64', 'utf-8')
+                att["Content-Type"] = 'application/octet-stream'
+                att["Content-Disposition"] = 'attachment; filename='+self.fileName
+                gl.message.attach(att)
         else:
             # gl.message = MIMEText(self.textEdit.toPlainText(), 'plain', 'utf-8')
             gl.message = MIMEText(self.textEdit.document().toHtml(), 'html', 'utf-8')
@@ -285,6 +369,19 @@ class ComposeWindow(QtWidgets.QMainWindow):
         self.statusBar.showMessage(str("附件："+self.fileName))
 
     def onSuccess(self):
+        #保存到已发送
+        self.config.set('mail', 'receiver', self.txtreceiver.text())
+        self.config.set('mail', 'subject', self.txtsubject.text())
+        self.config.set('mail', 'text', self.textEdit.document().toHtml())
+
+        ISOTIMEFORMAT='%Y-%m-%d %X'
+        self.config.set('mail', 'time',time.strftime( ISOTIMEFORMAT, time.localtime()))
+
+        filepath=os.path.join(gl.send_path, self.txtsubject.text())+'.ini'
+        self.config.write(open(filepath, 'w'))
+
+
+
         QtWidgets.QMessageBox.warning(self, APPNAME,"邮件发送成功" )
         self.textEdit.document().setModified(False)
         self.senddialog.close()
@@ -299,10 +396,23 @@ class AccountDialog(QtWidgets.QMainWindow):
         super(AccountDialog, self).__init__()
         self.setWindowFlags(Qt.FramelessWindowHint|Qt.WindowStaysOnTopHint)  #去边框
         uic.loadUi('ui/accountdialog.ui', self)
-        self.popportEdit.setText("110")
-        self.smtpportEdit.setText("25")
 
-        self.txtuser.editingFinished.connect(self.txtuserEdited)        #文本编辑完成自动显示服务器
+        self.config=configparser.ConfigParser()
+        self.config.read('config.ini')
+        gl.smtpport = self.config.get('mail', 'smtpport')
+        gl.popport = self.config.get('mail', 'popport')
+        # gl.smtphost = self.config.get('mail', 'smtpserver')
+        # gl.pophost = self.config.get('mail', 'popserver')
+        # gl.popssl = self.config.get('mail', 'popssl') == "True"
+        # gl.smtpssl = self.config.get('mail', 'smtpssl') == "True"
+        secret_user = self.config.get('mail', 'user')
+        secret_passwd = self.config.get('mail', 'passwd')
+
+        for i in range(0,len(secret_user)):
+            gl.username += chr(ord(secret_user[i]) ^ 7)
+        for i in range(0,len(secret_passwd)):
+            gl.password += chr(ord(secret_passwd[i]) ^ 5)
+        self.Initlogin()
 
         completer = QtWidgets.QCompleter()                              #文本框自动补全
         self.txtuser.setCompleter(completer)
@@ -323,10 +433,6 @@ class AccountDialog(QtWidgets.QMainWindow):
         self.minfilter = Filter()                                                 #最小化
         self.labelmin.installEventFilter(self.minfilter)
         self.minfilter.trigger4.connect(self.onMinimum)
-        desktop = QtWidgets.QApplication.desktop()
-        self.dwidth = desktop.width()    # 获取桌面宽度
-        self.dheight = desktop.height()    # 获取桌面高度
-        self.globalPos = None
 
 
         self.hideManualSet()
@@ -334,9 +440,14 @@ class AccountDialog(QtWidgets.QMainWindow):
         self.loading_thread.trigger1.connect(self.successed)
         self.loading_thread.trigger2.connect(self.failed)
 
-        #调试方便
-        self.txtuser.setText('phantom0506@sina.com')
-        self.txtpassword.setText('txyb123456')
+    def Initlogin(self):
+        self.txtuser.setText(gl.username)
+        self.txtpassword.setText(gl.password)
+        self.popportEdit.setText(gl.popport)
+        self.smtpportEdit.setText(gl.smtpport)
+
+
+
     #隐藏手动设置
     def hideManualSet(self):
         self.ReturnButton.hide()
@@ -371,18 +482,42 @@ class AccountDialog(QtWidgets.QMainWindow):
             self.onLogin()
     #文本编辑完成自动显示服务器文本
     def txtuserEdited(self):
-        try:
-            if self.txtuser.text().split('@')[1]=="hust.edu.cn":
-                pophost='mail.'+self.txtuser.text().split('@')[1]
-                smtphost='mail.'+self.txtuser.text().split('@')[1]
-            else:
-                pophost='pop.'+self.txtuser.text().split('@')[1]
-                smtphost='smtp.'+self.txtuser.text().split('@')[1]
-        except:
-            return
-        self.txtpopserver.setText(pophost)
-        self.txtsmtpserver.setText(smtphost)
+        if gl.username!=self.txtuser.text() :
+            try:
+                if self.txtuser.text().split('@')[1]=="hust.edu.cn":
+                    pophost='mail.'+self.txtuser.text().split('@')[1]
+                    smtphost='mail.'+self.txtuser.text().split('@')[1]
+                else:
+                    pophost='pop.'+self.txtuser.text().split('@')[1]
+                    smtphost='smtp.'+self.txtuser.text().split('@')[1]
+            except:
+                return
+            self.txtpopserver.setText(pophost)
+            self.txtsmtpserver.setText(smtphost)
 
+            gl.username=self.txtuser.text()
+            secret_user = ''
+            for i in range(0,len(gl.username)):
+                secret_user += chr(ord(gl.username[i]) ^ 7)
+            self.config.set('mail', 'user', secret_user)
+            self.save()
+
+    def txtpassEdited(self):
+        if gl.password!=self.txtpassword.text():
+            gl.password=self.txtpassword.text()
+            secret_passwd = ''
+            for i in range(0,len(gl.password)):
+                secret_passwd += chr(ord(gl.password[i]) ^ 5)
+            self.config.set('mail', 'passwd', secret_passwd)
+            self.save()
+
+
+    def popportEdited(self):
+        pass
+        # if gl.smtpport != str(unicode(self.lineedit1_2_a.text(), 'utf-8', 'ignore')):
+        #     smtpport = str(unicode(self.lineedit1_2_a.text(), 'utf-8', 'ignore'))
+        #     config.set('mail', 'smtpport', smtpport)
+        #     self.save()
 
 
     #登陆成功
@@ -413,10 +548,7 @@ class AccountDialog(QtWidgets.QMainWindow):
     def onLogin(self):
         gl.username=self.txtuser.text().strip()
         gl.password=self.txtpassword.text()
-        gl.popport='110'
-        gl.smtpport='25'
-        gl.popssl=False
-        gl.smtpssl=False
+
         if not (gl.username and gl.password):
 
             self.label_prompt.setText(u'<p align=right style="font-family:Microsoft YaHei;font:13px;'
@@ -470,34 +602,38 @@ class AccountDialog(QtWidgets.QMainWindow):
             self.cancelButton.setEnabled(False)
             self.loginButton.setEnabled(False)
 
+    #保存设置到config.ini
+    def save(self):
+        self.config.write(open('config.ini', 'w'))
+        self.label_prompt.setText(u'<p align=right style="font-family:Microsoft YaHei;font:13px;color:'
+            u'#7DFF00">更改已保存<img src="ui/images/saved.png"></p>')
+        gl.new_trans = True
+        time.sleep(0.01)
+        self.trans_thread.start()
+
+
     #关闭窗口
     def onCancel(self):
         self.close()
     def onMinimum(self):
         self.showMinimized()
 
-    # 鼠标按下事件
+    #鼠标按下事件
     def mousePressEvent(self, event):
-        # 鼠标点击事件
         if event.button() == Qt.LeftButton:
-            self.dragPosition = event.globalPos() - self.frameGeometry().topLeft()
+            self.dragPosition = event.globalPos()-self.frameGeometry().topLeft()
             event.accept()
 
-    # 鼠标移动事件
+    #鼠标移动事件
     def mouseMoveEvent(self, event):
-        if event.buttons() == Qt.LeftButton:
-            self.globalPos = event.globalPos() - self.dragPosition
-            self.move(self.globalPos)
-            event.accept()
+        if event.buttons() & Qt.LeftButton:
+            if self.dragPosition != None:
+                self.move(event.globalPos() - self.dragPosition)
+                event.accept()
 
-    # 鼠标释放事件
+    #鼠标弹起事件
     def mouseReleaseEvent(self, event):
-        if self.y() < 1:    # 上边
-            self.move(self.x(), 1 - self.height())
-        elif self.x() < 1:    # 左边
-            self.move(1 - self.width(), self.y())
-        elif self.x() > (self.dwidth - self.width()):    # 右边
-            self.move(self.dwidth - 1 , self.y())
+        self.dragPosition = QtCore.QPoint(0, 100)
         event.accept()
 
 
@@ -508,6 +644,8 @@ class AccountDialog(QtWidgets.QMainWindow):
             self.popportEdit.setText("995")
         else:
             self.popportEdit.setText("110")
+        print(self.checkSSLpop.isChecked())
+
     #SSL按钮事件
     def onSSLsmtp(self):
         if self.checkSSLsmtp.isChecked():
@@ -526,12 +664,11 @@ class AccountDialog(QtWidgets.QMainWindow):
         self.label_opacity.setStyleSheet(u'QLabel{background:rgba(14, 33, 45, ' + str(gl.opacity) + '%)}')
         self.update()
 
-
 class Contact(QWidget):
-    contact_table=[]
-    March_ID=[]
     def __init__(self, parent=None):
         super(Contact, self).__init__(parent)
+        self.contact_table=[]
+        self.March_ID=[]
         uic.loadUi('ui/Contact.ui', self)
         with open("ui/ui.qss","r") as fh:                             #加载qss文件
             self.setStyleSheet(fh.read())
@@ -550,24 +687,35 @@ class Contact(QWidget):
         self.minfilter = Filter()                                                 #最小化
         self.labelmin.installEventFilter(self.minfilter)
         self.minfilter.trigger4.connect(self.onMinimum)
-        desktop = QtWidgets.QApplication.desktop()
-        self.dwidth = desktop.width()    # 获取桌面宽度
-        self.dheight = desktop.height()    # 获取桌面高度
-        self.globalPos = None
+
 
         # self.InitSearchEdit()                                           #初始化搜索框
+
+
+
 
 
     #初始化工具按钮
     def InitToolButton(self):
         self.actionA = QAction(u'导出通讯录 (*.csv)',self)
         self.actionB = QAction(u'导入通讯录 (*.csv)',self)
+
         self.actionA.triggered.connect(self.exportCsv)
         self.actionB.triggered.connect(self.importCsv)
         self.ToolMenu = QMenu(self)
         self.ToolMenu.addAction(self.actionA)
         self.ToolMenu.addAction(self.actionB)
+
+        self.ToolMenu.hovered.connect(self.hoverAction)
         self.toolButton.setMenu(self.ToolMenu)
+
+    def hoverAction(self,row):
+        print(row)
+        print(row.text())
+    def test(self,row):
+        print(self.ToolMenu.menuAction().text())
+        print(self.ToolMenu.activeAction())
+        print(row)
 
     #导出通讯录
     def exportCsv(self):
@@ -631,7 +779,7 @@ class Contact(QWidget):
                 csvwriter.writerow([person["姓名"],person["电子邮件地址"],person["性别"],person["生日"],person["手机"],person["QQ"],
                         person["家庭住址"],person["公司"],person["部门"],person["职位"],person["公司地址"]])
 
-    #显示联系人
+    #显示联系人列表
     def PersonDisplay(self):
         subjects = []
         for person in self.contact_table:
@@ -639,10 +787,17 @@ class Contact(QWidget):
         self.listpeople.clear()
         self.listpeople.addItems(subjects)
 
+        self.deleteButton.setEnabled(False)
+        self.contactlistButton.setEnabled(False)
+
+    #显示联系人内容
     def onPeopleSelected(self, item):
         self.index = item.listWidget().row(item)
 
         self.contentFlash()
+
+        self.deleteButton.setEnabled(True)
+        self.contactlistButton.setEnabled(True)
 
     #刷新内容
     def contentFlash(self):
@@ -716,12 +871,14 @@ class Contact(QWidget):
         self.PersonDisplay()
     #删除联系人
     def onDeleteperson(self):
-        self.contact_table.pop(self.index)
-        self.PersonDisplay()
-        self.widgetShow.hide()
-        self.widgetEdit.hide()
-        self.WriteCsv()
-
+        try:
+            self.contact_table.pop(self.index)
+            self.PersonDisplay()
+            self.widgetShow.hide()
+            self.widgetEdit.hide()
+            self.WriteCsv()
+        except:
+            pass
     #保存联系人
     def onPeopleSaved(self):
         self.contact_table[self.index]["姓名"]=self.Editname.text()
@@ -797,61 +954,60 @@ class Contact(QWidget):
     def onMinimum(self):
         self.showMinimized()
 
-    # 鼠标按下事件
+    #鼠标按下事件
     def mousePressEvent(self, event):
-        # 鼠标点击事件
         if event.button() == Qt.LeftButton:
-            self.dragPosition = event.globalPos() - self.frameGeometry().topLeft()
+            self.dragPosition = event.globalPos()-self.frameGeometry().topLeft()
             event.accept()
 
-    # 鼠标移动事件
+    #鼠标移动事件
     def mouseMoveEvent(self, event):
-        if event.buttons() == Qt.LeftButton:
-            self.globalPos = event.globalPos() - self.dragPosition
-            self.move(self.globalPos)
-            event.accept()
+        if event.buttons() & Qt.LeftButton:
+            if self.dragPosition != None:
+                if self.dragPosition.y() < 30:
+                    self.move(event.globalPos() - self.dragPosition)
+                    event.accept()
 
-    # 鼠标释放事件
+    #鼠标弹起事件
     def mouseReleaseEvent(self, event):
-        if self.y() < 1:    # 上边
-            self.move(self.x(), 1 - self.height())
-        elif self.x() < 1:    # 左边
-            self.move(1 - self.width(), self.y())
-        elif self.x() > (self.dwidth - self.width()):    # 右边
-            self.move(self.dwidth - 1 , self.y())
+        self.dragPosition = QtCore.QPoint(0, 100)
         event.accept()
 
-# class MainWindow(QtWidgets.QMainWindow,Ui_MainWindow):
-class MainWindow(QtWidgets.QMainWindow):
+class MainWindow(QtWidgets.QMainWindow,Ui_MainWindow):
+# class MainWindow(QtWidgets.QMainWindow):
     folders = []
     emails = []
+    currentPath=''
+    ReadFiles=[]
     row=0
     lastrow=0
     Ascending=True
+    background=True
     def __init__(self):
         super(MainWindow, self).__init__()
-        # self.setupUi(self)
-        uic.loadUi('mainwindow1.ui', self)
+        self.setupUi(self)
+        # uic.loadUi('mainwindow1.ui', self)
         with open("ui/ui.qss","r") as fh:                             #加载qss文件
             self.setStyleSheet(fh.read())
 
 
 
-
-        # self.setWindowFlags(Qt.FramelessWindowHint|Qt.WindowStaysOnTopHint)     #去边框
+        self.isMaxShow = 0
+        self.setWindowFlags(Qt.FramelessWindowHint)     #去边框
 
         self.receive_thread = receiveThread()                               #加载登陆线程
         self.receive_thread.triggerFinish.connect(self.mailDisplay)
         self.receivedialog=ReceiveDialog()
+        self.receivedialog.triggerclose.connect(self.stopReceive)
         self.receive_thread.triggerNumber.connect(self.receivedialog.updateProcess)
 
-        self.read_thread = readFileThread()                               #加载登陆线程
-        self.read_thread.triggerFinish.connect(self.mailDisplay)
 
         self.btnForward.setEnabled(False)                               #转发功能不可用
         self.btnDelete.setEnabled(False)
         self.btnReply.setEnabled(False)
 
+        self.config=configparser.ConfigParser()
+        self.config.add_section('mail')
 
         self.InitSearchEdit()                                           #初始化搜索框
         self.searchEdit.editingFinished.connect(self.txtsearchEdited)        #文本编辑完成自动显示服务器
@@ -862,13 +1018,27 @@ class MainWindow(QtWidgets.QMainWindow):
         self.comboBox.insertSeparator(3)
         self.comboBox.insertItems(4,["√    升序","      降序"])
         self.listEmails.customContextMenuRequested[QtCore.QPoint].connect(self.listmailMenu)
-
+        self.treeMailWidget.customContextMenuRequested[QtCore.QPoint].connect(self.folderMenu)
+        self.emailPreview.customContextMenuRequested[QtCore.QPoint].connect(self.webviewMenu)
         # self.highlight = syntax_pars.PythonHighlighter(self.emailPreview.document())
 
         self.attachdisplay.hide()                                           #隐藏附件标签
         self.attachlabel.hide()
 
         self.createContextMenu()                                                #为按钮创建菜单
+
+
+        self.closefilter = Filter()                                                 #关闭
+        self.labelclose.installEventFilter(self.closefilter)
+        self.closefilter.trigger4.connect(self.onCancel)
+
+        self.minfilter = Filter()                                                 #最小化
+        self.labelmin.installEventFilter(self.minfilter)
+        self.minfilter.trigger4.connect(self.onMinimum)
+
+        self.maxfilter=Filter()
+        self.labelmax.installEventFilter(self.maxfilter)
+        self.maxfilter.trigger4.connect(self.onMaxmum)
 
     #Combobox显示
     def OnActivated(self, row):
@@ -1000,6 +1170,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.receivedialog.close()
         self.statusbar.showMessage("")
 
+
+
     #创建附件按钮菜单
     def createContextMenu(self):
         self.attachdisplay.customContextMenuRequested.connect(self.showContextMenu)
@@ -1041,38 +1213,11 @@ class MainWindow(QtWidgets.QMainWindow):
     def onComposeMail(self):
         self.compose = ComposeWindow()
         self.compose.show()
-    #刷新邮件
-    def onRefresh(self):
-        gl.force_refresh=True
-        refresh_mail()
-        self.statusbar.showMessage("Refreshing...")
-        self.receive_thread.start()
-        self.receivedialog.reset()
-        self.receivedialog.exec_()
+
     #联系人列表
     def onContactList(self):
-        items=[]
-        folder_item= QtWidgets.QTreeWidgetItem()
-        folder_item.setText(0,'root')
-        folder_item.setData(0,1,23)
-        items.insert(0,folder_item)
-
-        print(folder_item.child(0))
-
-        child2 = QtWidgets.QTreeWidgetItem(folder_item)
-        child2.setText(0,'child')
-        print(folder_item.child(0))
-        folder2_item = QtWidgets.QTreeWidgetItem()
-        folder2_item.setText(0,'hahahaha')
-
-        # items.insert(0,folder2_item)                                #插入
-
-        self.listEmails.clear()                                         #清空
-        self.listEmails.insertTopLevelItems(0, items)                   #添加项目
-        self.listEmails.expandAll()                                     #全部展开
-
-        self.senddialog=SendDialog()
-        # self.senddialog.exec_()
+        self.contact = Contact()
+        self.contact.show()
 
     #初始化搜索框
     def InitSearchEdit(self):
@@ -1085,6 +1230,12 @@ class MainWindow(QtWidgets.QMainWindow):
         self.Xlabel.installEventFilter(self.labelfilter)
         self.labelfilter.trigger3.connect(self.cleartxt)
 
+        completer = QtWidgets.QCompleter()                              #文本框自动补全
+        self.searchEdit.setCompleter(completer)
+        self.model=QtCore.QStringListModel()
+        completer.setModel(self.model)
+
+
     def FocusIn(self):
         self.Xlabel.setText("x")
 
@@ -1092,24 +1243,62 @@ class MainWindow(QtWidgets.QMainWindow):
         if not self.searchEdit.text():
 
             self.Xlabel.setText("")
+
+    def ontextChanged(self):
+
+        getstring=self.searchEdit.text()
+        print(getstring)
+
+        self.model.setStringList([getstring+" |发件人", getstring+" |主题",getstring+" |内容",getstring+" |全文"])
+
     def txtsearchEdited(self):
         if self.searchEdit.text():
-            gl.string=self.searchEdit.text()
-
-            # self.search_thread.start()
+            gl.string=self.searchEdit.text().split('|')[0]
             QtWidgets.QApplication.setOverrideCursor(Qt.WaitCursor)          #鼠标设置成忙等待状态
             gl.March_ID=[]                                                  #匹配符合条件的邮件
-            for email in gl.emails:
-                info=get_info(email)
-                if (gl.string in info["subject"]) or (gl.string in info["content"]) or (gl.string in info["addr"]):
-                    gl.March_ID.append(email)
-                    self.data=info["subject"]+info["content"]+info["addr"]
-                    pattern = re.compile(gl.string)
-                    dataMatched = re.findall(pattern, self.data)                        #匹配所有关键字，背景高亮
-                    gl.search=True
+
+            if len(self.searchEdit.text().split('|')) ==1:                  #默认条件
+                for email in gl.emails:
+                    info=get_info(email)
+                    if (gl.string in info["subject"]) or (gl.string in info["content"]) or (gl.string in info["addr"]):
+                        gl.March_ID.append(email)
+                        self.data=info["subject"]+info["content"]+info["addr"]
+                        pattern = re.compile(gl.string)
+                        dataMatched = re.findall(pattern, self.data)                        #匹配所有关键字，背景高亮
+                        gl.search=True
 
                     # self.highlight.setHighlightData(dataMatched)
                     # self.highlight.rehighlight()
+            elif self.searchEdit.text().split('|')[1] =="全文" :
+                for email in gl.emails:
+                    info=get_info(email)
+                    if (gl.string in info["subject"]) or (gl.string in info["content"]) or (gl.string in info["addr"]):
+                        gl.March_ID.append(email)
+                        self.data=info["subject"]+info["content"]+info["addr"]
+                        gl.search=True
+            elif self.searchEdit.text().split('|')[1] =="发件人" :
+                for email in gl.emails:
+                    info=get_info(email)
+                    if (gl.string in  info["addr"]):
+                        gl.March_ID.append(email)
+                        self.data=info["subject"]+info["content"]+info["addr"]
+                        gl.search=True
+            elif self.searchEdit.text().split('|')[1] =="主题" :
+                for email in gl.emails:
+                    info=get_info(email)
+                    if (gl.string in  info["subject"]):
+                        gl.March_ID.append(email)
+                        self.data=info["subject"]+info["content"]+info["addr"]
+                        gl.search=True
+            elif self.searchEdit.text().split('|')[1] =="内容" :
+                for email in gl.emails:
+                    info=get_info(email)
+                    if (gl.string in  info["content"]):
+                        gl.March_ID.append(email)
+                        self.data=info["subject"]+info["content"]+info["addr"]
+                        gl.search=True
+
+
             self.mailDisplay()
             QtWidgets.QApplication.restoreOverrideCursor()
 
@@ -1124,28 +1313,43 @@ class MainWindow(QtWidgets.QMainWindow):
         gl.search=False
         self.mailDisplay()
 
+
+
+
+
+    def changeBackground(self):
+        if self.background:
+            self.emailPreview.setStyleSheet(u'background-color: rgb(255, 255, 255);')
+            self.background=False
+        else :
+            self.emailPreview.setStyleSheet('')
+            self.background=True
+
+
+    #webview的右键菜单
+    def webviewMenu(self,position):
+        changeAction = QtWidgets.QAction(u"更换背景", self,triggered=self.changeBackground)
+
+
+        menu = QtWidgets.QMenu(self.emailPreview)
+        menu.addAction(changeAction)
+
+        menu.exec_(self.pos())
+
+
+
     #回复功能
     def onReply(self):
-        email = gl.March_ID[self.index]
-        document = QtGui.QTextDocument()
-        info=get_info(email)
         splitline="----------------------------------------"
-        if info["content"] != '':
-            document.setPlainText('\n\n\n'+splitline+'\n'+info["content"])                          #显示纯文本
-        elif info["html"] != '':
-            document.setHtml('\n\n\n'+splitline+'\n'+info["html"])                                  #显示html文本
-
         self.compose = ComposeWindow()
         self.compose.show()
-        self.compose.txtsubject.setText('回复：'+info["subject"])                    #显示主题，发信人，日期
-        self.compose.txtreceiver.setText(info["addr"])
+        self.compose.txtsubject.setText('回复：'+self.subdisplay.text())        #显示主题，发信人，日期
+        self.compose.txtreceiver.setText(self.fromdisplay.text())
 
-        # self.compose.textEdit.setDocument(document)
-        self.compose.textEdit.append(str(document.toHtml()))
-
+        document = QtGui.QTextDocument()
+        document.setHtml('\r\n\r\n\r\n'+splitline+'\n'+str(self.emailPreview.page().mainFrame().toHtml()))
+        self.compose.textEdit.setDocument(document)
         self.compose.textEdit.setFocus()
-
-
 
     #转发功能
     def onForward(self):
@@ -1164,51 +1368,142 @@ class MainWindow(QtWidgets.QMainWindow):
         self.compose.textEdit.setDocument(document)
         self.compose.textEdit.setFocus()
 
-    def onDelete(self):
-        QtWidgets.QMessageBox.warning(self, APPNAME,"该功能尚在开发中~~~~~~~" )
-        pass
+    def makeFolder(self):
+        item= QtWidgets.QTreeWidgetItem()
+        item.setText(0,'新建文件夹')
+        icon=QtGui.QIcon("ui/manwindow/新建文件夹.png")
+        item.setIcon(0,icon)
 
+        item.setFlags(item.flags()| Qt.ItemIsEditable)
+        self.treeMailWidget.addTopLevelItem(item)
+
+    #文件夹的菜单
+    def folderMenu(self,position):
+        removeAction = QtWidgets.QAction(u"删除文件夹", self)
+        addAction = QtWidgets.QAction(u"新建文件夹", self,triggered=self.makeFolder)       # 也可以指定自定义对象事件
+
+
+        indexes = self.treeMailWidget.selectedIndexes()
+
+        menu = QtWidgets.QMenu(self.treeMailWidget)
+        menu.addAction(addAction)
+
+        if len(indexes) > 0 :                           #有选中文件夹
+            if indexes[0].row()>2:                      #选中的是第三行以上
+                menu.addAction(removeAction)
+
+
+        menu.exec_(self.treeMailWidget.viewport().mapToGlobal(position))
+
+
+    #选择文件夹
     def onFolderSelected(self, folder):                                                 #folder:选中的目录
         txt = self.treeMailWidget.currentItem().text(0)
         if txt ==u"收件夹":
+            self.listEmails.clear()
+            self.comboBox.show()
+            self.btnReply.setText("回复")
+            self.btnForward.show()
+            self.fromlabel.setText("发信人：")
             gl.folder_path = self._folder_to_path(folder).strip('/')                                      #存放文件的路径
             self.receive_thread.start()
             self.receivedialog.reset()
             self.receivedialog.exec_()
         elif txt ==u"草稿夹":
-            gl.read_path=gl.draft_path
-            self.read_thread.start()
+            self.listEmails.clear()
+            self.btnReply.setText("编辑")
+            self.btnForward.hide()
+            self.fromlabel.setText("收信人：")
+            self.comboBox.hide()
+            self.currentPath=gl.draft_path
+            self.readFiles(gl.draft_path)
+        elif txt ==u"已发送":
+            self.listEmails.clear()
+            self.btnReply.setText("编辑")
+            self.btnForward.hide()
+            self.fromlabel.setText("收信人：")
+            self.comboBox.hide()
+            self.readFiles(gl.send_path)
+        elif txt ==u"已删除":
+            self.listEmails.clear()
+            self.btnReply.setText("编辑")
+            self.btnForward.hide()
+            self.fromlabel.setText("收信人：")
+            self.comboBox.hide()
+            self.readFiles(gl.delete_path)
 
-        else:
-            QtWidgets.QMessageBox.warning(self, APPNAME,"该功能尚在开发中~~~~~~~" )
+    #读取其他文件夹的邮件到列表
+    def readFiles(self,path):
+
+        files = os.listdir(path)                                                       #列出目录下的文件
+        files.sort()                                                                     #整理文件顺序
+        mail_files = [f for f in files if os.path.isfile(os.path.join(path, f))]
+
+        items=[]
+        self.ReadFiles=[]
+        for mail_file in mail_files:
+            self.config.read(os.path.join(path, mail_file))
+
+            subject = self.config.get('mail', 'subject')
+            draft={
+                'subject':subject,
+                'receiver':self.config.get('mail', 'receiver'),
+                'text':self.config.get('mail', 'text'),
+                'time':self.config.get('mail', 'time')
+            }
+
+            self.ReadFiles.append(draft)
+            item= QtWidgets.QTreeWidgetItem()
+            item.setText(0,subject)
+            items.append(item)
+        self.listEmails.clear()
+        self.listEmails.insertTopLevelItems(0, items)
+
+   #刷新邮件
+    def onRefresh(self):
+        try:
+            self.receive_thread.wait()                          #等待线程退出，再执行下面代码，否则list和retr同时执行会崩溃
+            gl.force_refresh=True
+            refresh_mail()
+            self.statusbar.showMessage("Refreshing...")
+            self.receive_thread.running=True
+            self.receive_thread.start()
+            self.receivedialog.reset()
+            self.receivedialog.exec_()
+        except:
+            pass
+    #停止接收邮件
+    def stopReceive(self):
+        self.receive_thread.stop()
 
 
+    #显示邮件正文
     def onMailSelected(self, item):
+        self.btnForward.setEnabled(True)                               #转发功能可用
+        self.btnDelete.setEnabled(True)
+        self.btnReply.setEnabled(True)
         if  item.treeWidget().currentItem().parent():                        #假如有父亲节点，则选中相应邮件
-            self.btnForward.setEnabled(True)                               #转发功能可用
-            self.btnDelete.setEnabled(True)
-            self.btnReply.setEnabled(True)
+
             self.index=item.treeWidget().currentItem().data(0,1)               #将Item中的行号提取出来
             email = gl.March_ID[self.index]
 
             info=get_info(email)
             try:
 
-                if info["content"] != '':                                    #显示纯文本
+                if info["html"] != '':
+                    if gl.search:
+                        info["html"]=info["html"].replace(gl.string,"<strong><font color='#e87400'>"+gl.string+"</font></strong>")
+
+
+                    self.emailPreview.setHtml(info["html"])                 #显示html文本
+                    # print(info["html"])
+                elif info["content"] != '':                                    #显示纯文本
+                    info["content"]="<strong><font color='#ffffff'>"+info["content"]+"</font></strong>"
                     if gl.search:
 
                         info["content"]=info["content"].replace(gl.string,"<strong><font color='#e87400'>"+gl.string+"</font></strong>")
 
-
-                    # self.emailPreview.insertHtml('''<img src="http://www.cyberhome.cn/images/girl/PLMM_A.jpg">''')
                     self.emailPreview.setHtml(info["content"].replace('\n','<br>'))
-                elif info["html"] != '':
-                    if gl.search:
-                        info["html"]=info["html"].replace(gl.string,"<strong><font color='#e87400'>"+gl.string+"</font></strong>")
-                    self.emailPreview.setHtml(info["html"])                 #显示html文本
-
-
-
 
                 if info["filename"]:
                     self.filename=info["filename"]
@@ -1219,8 +1514,6 @@ class MainWindow(QtWidgets.QMainWindow):
                     self.attachdisplay.hide()
                     self.attachlabel.hide()
 
-                    # self.emailPreview.append(str("<html><head/><body><p><a href=\"https://www.baidu.com/\"><span style=\" text-decoration: underline; color:#0000ff;\">注册账号</span></a></p></body></html>"))
-                    # self.emailPreview.append(str("<html><p><a href=\"%1\">进入列表的设置页面</a></p></html>").arg(path.left(path.lastIndexOf('/'))))
                 self.subdisplay.setText(info["subject"])                    #显示主题，发信人，日期
                 self.fromdisplay.setText(info["addr"])
 
@@ -1241,6 +1534,17 @@ class MainWindow(QtWidgets.QMainWindow):
             except Exception as e:
                 print(e)
 
+        elif self.treeMailWidget.currentItem().text(0) != u"收件夹" :
+
+            for each in self.ReadFiles:
+                if each["subject"] == item.treeWidget().currentItem().text(0):
+                    self.subdisplay.setText(each["subject"])                    #显示主题，发信人，日期
+                    self.fromdisplay.setText(each["receiver"])
+                    self.emailPreview.setHtml(each["text"])
+                    self.datedisplay.setText(each["time"])
+
+
+
     #跨平台打开文件，支持MAC OS，Linux，Windows
     def openFile(self):
         if sys.platform.startswith('darwin'):
@@ -1250,34 +1554,156 @@ class MainWindow(QtWidgets.QMainWindow):
         elif os.name == 'posix':
             subprocess.call(('xdg-open', gl.file_path))
 
-    def onshow(self):
-        print (1)
-        print (self.listEmails.currentItem().data(0,1) )
-        # os.remove("C:/Users/h/Desktop/myproject2/lab1/fuse.log")  #删除文件
+    #收的邮件的内容
+    def ReceivemailContent(self,index):
+        content=''
+        subject=''
+        addr=''
+        datestring=''
+        try:
+            email = gl.March_ID[index]
+            info=get_info(email)
+            if info["html"] != '':
+                content=info["html"]           #显示html文本
+
+            elif info["content"] != '':                                    #显示纯文本
+                content=info["content"].replace('\n','<br>')
+            subject=info["subject"]                    #显示主题，发信人，日期
+            addr=info["addr"]
+            date=""
+
+            if info["date"]:                                                #从邮件提取日期
+                date=info["date"]
+            else:
+                date=info["received"][-31:]
+            datetuple=utils.parsedate(date)
+            if(len(str(datetuple[4]))==1):                                  #如果分钟是个位数，前面填充一个0
+                datestring=str(datetuple[0])+'-'+str(datetuple[1])+'-'+str(datetuple[2])\
+                      +' '+str(datetuple[3])+':0'+str(datetuple[4])
+            else:
+                datestring=str(datetuple[0])+'-'+str(datetuple[1])+'-'+str(datetuple[2])\
+                          +' '+str(datetuple[3])+':'+str(datetuple[4])
+            return content,subject,addr,datestring
+        except:
+            pass
+
+    #删除邮件
+    def onDelete(self):
+        if self.treeMailWidget.currentItem().text(0) ==u"收件夹":
+            index = self.listEmails.currentItem().data(0,1)
+
+            path=os.path.join(gl.cathe_folder_path,str(index)) +'.ml'
+
+
+            ret = QMessageBox.warning(self, "warning",
+                    "确定删除邮件？",
+                    QMessageBox.Yes | QMessageBox.No)
+
+            if ret == QMessageBox.No:
+                return False
+            elif ret == QMessageBox.Yes:
+                os.remove(path)                     #删邮件
+                delete_mail(index)
+
+                content,subject,addr,datestring=self.ReceivemailContent(index)      #并保存到已删除
+                self.config.set('mail', 'receiver', addr)
+                self.config.set('mail', 'subject', subject)
+                self.config.set('mail', 'text', content)
+                self.config.set('mail', 'time',datestring)
+                self.config.write(open(gl.delete_path, 'w'))
+
+                #删除完成以后重新加载一遍列表邮件
+                gl.emails = []
+                files = os.listdir(gl.cathe_folder_path)
+                files.sort(key=lambda x:int(x[:-3]))
+                mail_files = [f for f in files if os.path.isfile(os.path.join(gl.cathe_folder_path, f))]
+                for mail_file in mail_files:
+                    try:
+                        with open(os.path.join(gl.cathe_folder_path, mail_file), 'r') as mail_handle:
+                            gl.emails.append(message_from_file(mail_handle))
+                    except Exception as e:
+                            print(e)+'save'
+                gl.March_ID=gl.emails                                   #匹配到的邮件等于所有邮件
+                self.mailDisplay()
+        else :
+            text = self.listEmails.currentItem().text(0)
+            path = os.path.join(gl.cache_path,self.treeMailWidget.currentItem().text(0),text)+'.ini'
+            print(path)
+            ret = QMessageBox.warning(self, "warning",
+                    "确定删除邮件？",
+                    QMessageBox.Yes | QMessageBox.No)
+
+            if ret == QMessageBox.No:
+                return False
+            elif ret == QMessageBox.Yes:
+                try:
+                    shutil.move(path,os.path.join(gl.delete_path,text)+'.ini')          #先移动
+                except:
+                    os.remove(path)                                                     #失败了则强行删除
+                self.readFiles(self.currentPath)
+
+
+
+
+
     #邮件邮件菜单管理
     def listmailMenu(self,position):
 
-        removeAction = QtWidgets.QAction(u"删除", self, triggered=self.onshow)       # triggered 为右键菜单点击后的激活事件。这里slef.close调用的是系统自带的关闭事件。
-
+        removeAction = QtWidgets.QAction(u"删除", self, triggered=self.onDelete)       # triggered 为右键菜单点击后的激活事件。这里slef.close调用的是系统自带的关闭事件。
 
         addAction = QtWidgets.QAction(u"添加", self)       # 也可以指定自定义对象事件
 
 
-        level = 0
+        isChild=False
         indexes = self.listEmails.selectedIndexes()
+
         if len(indexes) > 0:
             index = indexes[0]
             while index.parent().isValid():
                 index = index.parent()
-                level += 1
+                isChild=True
 
         menu = QtWidgets.QMenu(self.listEmails)
-        if level == 1:                                          #选中的是第一个子类
+        if isChild or (self.treeMailWidget.currentItem().text(0) != u"收件夹" and len(indexes) > 0):   #选中的是第一个子类
             menu.addAction(removeAction)
             menu.addAction(addAction)
 
         menu.exec_(self.listEmails.viewport().mapToGlobal(position))
 
+
+    #鼠标按下事件
+    def mousePressEvent(self, event):
+        if event.button() == Qt.LeftButton:
+            self.dragPosition = event.globalPos()-self.frameGeometry().topLeft()
+            event.accept()
+
+    #鼠标移动事件
+    def mouseMoveEvent(self, event):
+        if event.buttons() & Qt.LeftButton:
+            if self.dragPosition != None:
+                if self.dragPosition.y() < 30:
+                    self.move(event.globalPos() - self.dragPosition)
+                    event.accept()
+
+    #鼠标弹起事件
+    def mouseReleaseEvent(self, event):
+        self.dragPosition = QtCore.QPoint(0, 100)
+        event.accept()
+
+        #关闭窗口
+    def onCancel(self):
+        self.close()
+    #最小化
+    def onMinimum(self):
+        self.showMinimized()
+    #最大化
+    def onMaxmum(self):
+        if self.isMaxShow:
+            self.showNormal()
+            self.isMaxShow = 0
+        else:
+            self.showMaximized()
+            self.isMaxShow = 1
 
 
 
@@ -1290,6 +1716,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
 
 class ReceiveDialog(QtWidgets.QDialog):
+    triggerclose = QtCore.pyqtSignal()
     def __init__(self):
         super(ReceiveDialog, self).__init__()
         uic.loadUi('ui/receivingDialog.ui', self)
@@ -1307,10 +1734,9 @@ class ReceiveDialog(QtWidgets.QDialog):
         self.minfilter = Filter()                                                 #最小化
         self.labelmin.installEventFilter(self.minfilter)
         self.minfilter.trigger4.connect(self.onMinimum)
-        desktop = QtWidgets.QApplication.desktop()
-        self.dwidth = desktop.width()    # 获取桌面宽度
-        self.dheight = desktop.height()    # 获取桌面高度
-        self.globalPos = None
+
+    def closeEvent(self, QCloseEvent):
+        self.triggerclose.emit()
 
     def reset(self):
         self.progressBar.setValue(0)
@@ -1326,28 +1752,22 @@ class ReceiveDialog(QtWidgets.QDialog):
     def onMinimum(self):
         self.showMinimized()
 
-    # 鼠标按下事件
+    #鼠标按下事件
     def mousePressEvent(self, event):
-        # 鼠标点击事件
         if event.button() == Qt.LeftButton:
-            self.dragPosition = event.globalPos() - self.frameGeometry().topLeft()
+            self.dragPosition = event.globalPos()-self.frameGeometry().topLeft()
             event.accept()
 
-    # 鼠标移动事件
+    #鼠标移动事件
     def mouseMoveEvent(self, event):
-        if event.buttons() == Qt.LeftButton:
-            self.globalPos = event.globalPos() - self.dragPosition
-            self.move(self.globalPos)
-            event.accept()
+        if event.buttons() & Qt.LeftButton:
+            if self.dragPosition != None:
+                self.move(event.globalPos() - self.dragPosition)
+                event.accept()
 
-    # 鼠标释放事件
+    #鼠标弹起事件
     def mouseReleaseEvent(self, event):
-        if self.y() < 1:    # 上边
-            self.move(self.x(), 1 - self.height())
-        elif self.x() < 1:    # 左边
-            self.move(1 - self.width(), self.y())
-        elif self.x() > (self.dwidth - self.width()):    # 右边
-            self.move(self.dwidth - 1 , self.y())
+        self.dragPosition = QtCore.QPoint(0, 100)
         event.accept()
 
 
@@ -1359,10 +1779,11 @@ class SendDialog(QtWidgets.QDialog):
         self.gifLabel.setMovie(self.movie)
         self.movie.start()
         self.userLabel.setText(gl.username)
-        self.movie = QtGui.QMovie("ui/process1.gif")            #显示进度条
-        self.processlabel.setMovie(self.movie)
-        self.movie.start()
-        self.processlabel.show()
+
+        # self.movie = QtGui.QMovie("ui/process1.gif")            #显示进度条
+        # self.processlabel.setMovie(self.movie)
+        # self.movie.start()
+        # self.processlabel.show()
 
 
 

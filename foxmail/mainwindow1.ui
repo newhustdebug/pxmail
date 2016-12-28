@@ -70,7 +70,7 @@
           </size>
          </property>
          <property name="pixmap">
-          <pixmap>logo.png</pixmap>
+          <pixmap>ui/logo.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -98,7 +98,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QLabel" name="labelmin_2">
+        <widget class="QLabel" name="labelmin">
          <property name="minimumSize">
           <size>
            <width>30</width>
@@ -134,7 +134,7 @@ QLabel:hover{
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="labelmin">
+        <widget class="QLabel" name="labelmax">
          <property name="minimumSize">
           <size>
            <width>30</width>
@@ -253,7 +253,7 @@ QPushButton:pressed{
            </property>
            <property name="icon">
             <iconset>
-             <normaloff>send.png</normaloff>send.png</iconset>
+             <normaloff>ui/manwindow/file.png</normaloff>ui/manwindow/file.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -282,7 +282,7 @@ QPushButton:pressed{
            </property>
            <property name="icon">
             <iconset>
-             <normaloff>1refresh_128px_1194515_easyicon.net.png</normaloff>1refresh_128px_1194515_easyicon.net.png</iconset>
+             <normaloff>ui/manwindow/刷新.png</normaloff>ui/manwindow/刷新.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -311,7 +311,7 @@ QPushButton:pressed{
            </property>
            <property name="icon">
             <iconset>
-             <normaloff>1point_list_128px_1190662_easyicon.net.png</normaloff>1point_list_128px_1190662_easyicon.net.png</iconset>
+             <normaloff>ui/manwindow/通讯录.png</normaloff>ui/manwindow/通讯录.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -414,7 +414,7 @@ border-color:silver;
 
 background-color: #AAA;
     color: #000;
-   /*border: 2px solid #555;*/
+
 
 </string>
             </property>
@@ -464,6 +464,9 @@ color: #000;
            </widget>
           </item>
          </layout>
+         <zorder>searchlabel</zorder>
+         <zorder>Xlabel</zorder>
+         <zorder>searchEdit</zorder>
         </widget>
        </item>
       </layout>
@@ -476,6 +479,15 @@ color: #000;
       </property>
       <item>
        <widget class="QTreeWidget" name="treeMailWidget">
+        <property name="font">
+         <font>
+          <family>Lucida Fax</family>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="contextMenuPolicy">
+         <enum>Qt::CustomContextMenu</enum>
+        </property>
         <attribute name="headerVisible">
          <bool>false</bool>
         </attribute>
@@ -549,7 +561,7 @@ color: #000;
         </item>
         <item>
          <property name="text">
-          <string>垃圾邮件</string>
+          <string>已删除</string>
          </property>
          <property name="font">
           <font>
@@ -559,7 +571,7 @@ color: #000;
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>ui/manwindow/delete.png</normaloff>ui/manwindow/delete.png</iconset>
+           <normaloff>ui/manwindow/删除 (1).png</normaloff>ui/manwindow/删除 (1).png</iconset>
          </property>
         </item>
        </widget>
@@ -607,6 +619,11 @@ color: #000;
         </item>
         <item>
          <widget class="QTreeWidget" name="listEmails">
+          <property name="font">
+           <font>
+            <pointsize>13</pointsize>
+           </font>
+          </property>
           <property name="contextMenuPolicy">
            <enum>Qt::CustomContextMenu</enum>
           </property>
@@ -672,7 +689,7 @@ color: #000;
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>reply.png</normaloff>reply.png</iconset>
+              <normaloff>ui/manwindow/回复.png</normaloff>ui/manwindow/回复.png</iconset>
             </property>
            </widget>
           </item>
@@ -701,7 +718,7 @@ color: #000;
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>forward.png</normaloff>forward.png</iconset>
+              <normaloff>ui/manwindow/转发.png</normaloff>ui/manwindow/转发.png</iconset>
             </property>
            </widget>
           </item>
@@ -730,7 +747,7 @@ color: #000;
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>delete.png</normaloff>delete.png</iconset>
+              <normaloff>ui/manwindow/删除.png</normaloff>ui/manwindow/删除.png</iconset>
             </property>
            </widget>
           </item>
@@ -959,6 +976,12 @@ QPushButton:pressed{
             <height>16777215</height>
            </size>
           </property>
+          <property name="contextMenuPolicy">
+           <enum>Qt::CustomContextMenu</enum>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
           <property name="url">
            <url>
             <string>about:blank</string>
@@ -1077,8 +1100,8 @@ QPushButton:pressed{
    <slot>onDelete()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1081</x>
-     <y>98</y>
+     <x>1090</x>
+     <y>153</y>
     </hint>
     <hint type="destinationlabel">
      <x>547</x>
@@ -1093,8 +1116,8 @@ QPushButton:pressed{
    <slot>onReply()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>659</x>
-     <y>98</y>
+     <x>740</x>
+     <y>153</y>
     </hint>
     <hint type="destinationlabel">
      <x>547</x>
@@ -1109,8 +1132,8 @@ QPushButton:pressed{
    <slot>onForward()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>904</x>
-     <y>98</y>
+     <x>915</x>
+     <y>153</y>
     </hint>
     <hint type="destinationlabel">
      <x>547</x>
@@ -1173,8 +1196,8 @@ QPushButton:pressed{
    <slot>onContactList()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>372</x>
-     <y>49</y>
+     <x>432</x>
+     <y>99</y>
     </hint>
     <hint type="destinationlabel">
      <x>733</x>
@@ -1205,8 +1228,8 @@ QPushButton:pressed{
    <slot>OnActivated()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>434</x>
-     <y>104</y>
+     <x>562</x>
+     <y>152</y>
     </hint>
     <hint type="destinationlabel">
      <x>486</x>
@@ -1221,12 +1244,28 @@ QPushButton:pressed{
    <slot>openFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>849</x>
-     <y>234</y>
+     <x>1078</x>
+     <y>260</y>
     </hint>
     <hint type="destinationlabel">
      <x>636</x>
      <y>92</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>searchEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>ontextChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>908</x>
+     <y>71</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>919</x>
+     <y>-9</y>
     </hint>
    </hints>
   </connection>
@@ -1245,5 +1284,6 @@ QPushButton:pressed{
   <slot>onMailSelected()</slot>
   <slot>OnActivated()</slot>
   <slot>openFile()</slot>
+  <slot>ontextChanged()</slot>
  </slots>
 </ui>
