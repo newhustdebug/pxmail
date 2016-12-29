@@ -1,63 +1,56 @@
-X-Mda-Received: from <mx-3-46.mail.sina.com.cn>([<202.108.248.121>])
- by <mda-113-93.mda.fmail.tg.sinanode.com> with LMTP id <35605>
- Sep 27 2016 12:58:44 +0800 (CST)
-X-Sina-MID: 0425C91DB74B23DCFC4A75B64E7246E5D900000000000001
+X-Mda-Received: from <mx-3-44.mail.sina.com.cn>([<202.108.248.124>])
+ by <mda-113-94.mda.fmail.tg.sinanode.com> with LMTP id <3915>
+ Sep 29 2016 11:05:54 +0800 (CST)
+X-Sina-MID: 04C6B86441F5E55397DDBABBBA641009CB00000000000001
 X-Sina-Attnum: 0
-Received: from mail228-180.sinamail.sina.com.cn (HELO smtp-11-209.mail.sina.com.cn)([60.28.228.180])
+Received: from mail3-163.sinamail.sina.com.cn (HELO smtp-5-121.mail.sina.com.cn)([202.108.3.163])
 	by sina.com with SMTP
-	27 Sep 2016 12:58:43 +0800 (CST)
+	29 Sep 2016 11:05:54 +0800 (CST)
 X-Sender: phantom0506@sina.com
-X-SMAIL-MID: 93521625166193
-Received: from unknown (HELO webmail.sinamail.sina.com.cn)([172.16.201.149])
-	by sina.com with SMTP
-	27 Sep 2016 12:58:43 +0800 (CST)
+X-SMAIL-MID: 42633116253331
+Received: from unknown (HELO Lenovo-PC)([122.205.7.66])
+	by sina.com with ESMTP
+	29 Sep 2016 11:05:54 +0800 (CST)
 X-Sender: phantom0506@sina.com
-X-SMAIL-MID: 753616320808
-Received: by webmail.sinamail.sina.com.cn (Postfix, from userid 496)
-	id B2C7470008F; Tue, 27 Sep 2016 12:58:43 +0800 (CST)
-Date: Tue, 27 Sep 2016 12:58:43 +0800
-Received: from phantom0506@sina.com([222.20.35.209]) by m0.mail.sina.com.cn via HTTP;
- Tue, 27 Sep 2016 12:58:43 +0800 (CST)
-Reply-To: phantom0506@sina.com
-From: <phantom0506@sina.com>
-To: "phantom0506" <phantom0506@sina.com>
-Subject: =?GBK?B?16q3oqO6o6jO3tb3zOKjqQ==?=
-MIME-Version: 1.0
+X-Auth-ID: phantom0506@sina.com
+X-SMAIL-MID: 393995394045
+Date: Thu, 29 Sep 2016 11:02:19 +0800
+From: "phantom0506@sina.com" <phantom0506@sina.com>
+To: phantom0506 <phantom0506@sina.com>
+Subject: =?GB2312?B?suLK1NPKvP4=?=
 X-Priority: 3
-X-MessageID: 57e9fc831afc3b6b
-X-Originating-IP: [172.16.201.149]
-X-Mailer: Sina WebMail 4.0
+X-Has-Attach: no
+X-Mailer: Foxmail 7, 2, 7, 174[cn]
+Mime-Version: 1.0
+Message-ID: <201609291102174603021@sina.com>
 Content-Type: multipart/alternative;
-	 boundary="=-sinamail_alt_7ec53613cbd9f47160b15f413623dd11"
-Message-Id: <20160927045843.B2C7470008F@webmail.sinamail.sina.com.cn>
+	boundary="----=_001_NextPart278562427658_=----"
 
 
 
---=-sinamail_alt_7ec53613cbd9f47160b15f413623dd11
+This is a multi-part message in MIME format.
+
+------=_001_NextPart278562427658_=----
 Content-Type: text/plain;
-	charset=GBK
+	charset="GB2312"
 Content-Transfer-Encoding: base64
-Content-Disposition: inline
 
-Ci0tLS0tINStyrzTyrz+IC0tLS0tCreivP7Iy6O6PHBoYW50b20wNTA2QHNpbmEuY29tPgrK1bz+
-yMujuiJwaGFudG9tMDUwNiIgPHBoYW50b20wNTA2QHNpbmEuY29tPgrW98zio7qjqM7e1vfM4qOp
-CsjVxtqjujIwMTbE6jA51MIyN8jVIDEyteM1N7fWCgrE47rDsKGwobChsKGwobChsKGwobCh7Krs
-qrTzyqa1xCA=
+DQrE47rDsKG5/rn+uf65/rn+uf65/g0KDQoNCnBoYW50b20wNTA2QHNpbmEuY29tDQo=
 
-
---=-sinamail_alt_7ec53613cbd9f47160b15f413623dd11
+------=_001_NextPart278562427658_=----
 Content-Type: text/html;
-	charset=GBK
-Content-Transfer-Encoding: base64
-Content-Disposition: inline
+	charset="GB2312"
+Content-Transfer-Encoding: quoted-printable
 
-PGJyPjxkaXYgaWQ9Im9yaWdib2R5Ij48ZGl2IHN0eWxlPSJiYWNrZ3JvdW5kOiAjZjJmMmYyOyI+
-LS0tLS0g1K3KvNPKvP4gLS0tLS08YnI+t6K8/sjLo7ombHQ7cGhhbnRvbTA1MDZAc2luYS5jb20m
-Z3Q7PGJyPsrVvP7Iy6O6InBoYW50b20wNTA2IiAmbHQ7cGhhbnRvbTA1MDZAc2luYS5jb20mZ3Q7
-PGJyPtb3zOKjuqOozt7W98zio6k8YnI+yNXG2qO6MjAxNsTqMDnUwjI3yNUgMTK14zU3t9Y8YnI+
-PC9kaXY+PGJyPsTjusOwobChsKGwobChsKGwobChsKHsquyqtPPKprXEPHA+IDwvcD48L2Rpdj4=
+<html><head><meta http-equiv=3D"content-type" content=3D"text/html; charse=
+t=3DGB2312"><style>body { line-height: 1.5; }body { font-size: 10.5pt; fon=
+t-family: 'Microsoft YaHei UI'; color: rgb(0, 0, 0); line-height: 1.5; }</=
+style></head><body>=0A<div><span></span><br></div>=0A<div>=C4=E3=BA=C3=B0=
+=A1=B9=FE=B9=FE=B9=FE=B9=FE=B9=FE=B9=FE=B9=FE</div><hr style=3D"width: 210=
+px; height: 1px;" color=3D"#b5c4df" size=3D"1" align=3D"left">=0A<div><spa=
+n><div style=3D"MARGIN: 10px; FONT-FAMILY: verdana; FONT-SIZE: 10pt"><div>=
+phantom0506@sina.com</div></div></span></div>=0A</body></html>
+------=_001_NextPart278562427658_=------
 
-
---=-sinamail_alt_7ec53613cbd9f47160b15f413623dd11--
 
 

@@ -1,134 +1,61 @@
-X-Mda-Received: from <i0.mail.sina.com.cn>([<172.16.201.96>])
- by <mda-113-64.mda.fmail.tg.sinanode.com> with LMTP id <36059>
- Dec 05 2016 10:22:30 +0800 (CST)
-X-Sina-MID: 043D015E40D880638A367DBA1D058D295F00000000000006
+X-Mda-Received: from <mx-3-42.mail.sina.com.cn>([<202.108.248.122>])
+ by <mda-113-94.mda.fmail.tg.sinanode.com> with LMTP id <45382>
+ Dec 06 2016 22:59:54 +0800 (CST)
+X-Sina-MID: 04A7A1A1EB12C7FE2EB91EA063A427452300000000000001
 X-Sina-Attnum: 0
-Date: Mon, 05 Dec 2016 10:22:30 +0800 
-From: =?UTF-8?B?5paw5rWq6YKu566x5Zui6Zif?= <sinamail@sina.com>
-Subject: =?UTF-8?B?6YKu566x6LSm5Y+3c210cOWPkeS/oeWKn+iDveWGu+e7k+aPkOmGkg==?=
-To: _USERMAIL_
-Mime-Version: 1.0
-Content-type: text/html; charset=utf-8
-Content-transfer-encoding: 8BIT
-X-Mailer: SinaMail 3.0
+Received: from hust.edu.cn (HELO mail.hust.edu.cn)([202.114.0.240])
+	by sina.com with SMTP
+	6 Dec 2016 22:59:54 +0800 (CST)
+X-Sender: u201413426@hust.edu.cn
+Received-SPF: Pass (sina.com: SPF record at hust.edu.cn designates 202.114.0.240 as permitted sender) identity=from;
+	client-ip=202.114.0.240;
+	receiver=sina.com;
+	envelope-from=u201413426@hust.edu.cn;
+	helo=mail.hust.edu.cn
+X-SMAIL-MID: 3100214718614
+Received: from [192.168.244.1] (unknown [111.175.187.167])
+	by mailapp1 (Coremail) with SMTP id FQEQrJDL7+am1EZYFiksAA--.39382S2;
+	Tue, 06 Dec 2016 23:09:26 +0800 (CST)
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: base64
+Subject: =?utf-8?b?6L2s5Y+R77ya5p2l6Ieq6Iqd6bq75L+h55So55qE6YKu566x6aqM6K+B6YKu5Lu2?=
+from: U201413426@hust.edu.cn
+date: =?utf-8?b?VHVlLCAwNiBEZWMgMjAxNiAyMjo1OTowNSDDlsOQwrnDusKxw6rDl8K8w4rCscK8w6Q=?=
+X-CM-TRANSID: FQEQrJDL7+am1EZYFiksAA--.39382S2
+Message-Id: <5846D4A6.029C04.08054@mail.hust.edu.cn>
+X-Coremail-Antispam: 1UD129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73
+	VFW2AGmfu7bjvjm3AaLaJ3UjIYCTnIWjp_UUUOA7k0a2IF6F1UM7kC6x804xWl14x267AK
+	xVWUJVW8JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0rVWrJVCq3wAFIxvE14AKwVWUJVWUGw
+	A2jI8I6cxK6x804I0_KFvE3s1l8cAvFVAK0II2c7xJM28CjxkF64kEwVA0rcxSw2x7M28E
+	F7xvwVC0I7IYx2IY67AKxVW5JVW7JwA2z4x0Y4vE2Ix0cI8IcVCY1x0267AKxVW8JVWxJw
+	A2z4x0Y4vEx4A2jsIE14v26rxl6s0DM28EF7xvwVC2z280aVCY1x0267AKxVW0oVCq3wAa
+	c4AC62xK8xCEY4vEwIxC4wAS0I0E0xvYzxvE52x082IY62kv0487Mc02F40EFcxC0VAKzV
+	Aqx4xG6I80ewAvwIk0rcx26280x24lYx0E2Ix0cI8IcVAFwI0_Jr0_Jr4lYx0Ex4A2jsIE
+	14v26r1j6r4UMcvjeVCFs4IE7xkEbVWUJVW8JwACjcxG0xvEwIxGrwACY4xI67k04243AV
+	AKzVAKj4xxM4kE64xI4xA0e2IEY21lw4CEc2x0rVAKj4xxMxkF7I0Ew4C26cxK6c8Ij28I
+	cwCF04k20xvY0x0EwIxGrwCFx2IqxVCFs4IE7xkEbVWUJVW8JwC20s026c02F40E14v26r
+	1j6r18MI8I3I0E7480Y4vE14v26r106r1rMI8E67AF67kF1VAFwI0_Jr0_JrylIxkGc2Ij
+	64vIr41lIxAIcVC0I7IYx2IY67AKxVWUJVWUCwCI42IY6xIIjxv20xvEc7CjxVAFwI0_Jr
+	0_Gr1lIxAIcVCF04k26cxKx2IYs7xG6rW3Jr0E3s1lIxAIcVC2z280aVAFwI0_Jr0_Gr1l
+	IxAIcVC2z280aVCY1x0267AKxVWUJVW8JwCE64xvF2IEb7IF0Fy7YxBIdaVFxhVjvjDU0x
+	ZFpf9x07UWmhUUUU87=
+X-CM-SenderInfo: jxsqikartujlo6kx23oohg3hdfq/
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>邮箱账号smtp发信功能冻结提醒</title>
-</head>
-<body>
-<table width="614" border="0" align="center" cellpadding="0" cellspacing="0" background="http://www.sinaimg.cn/rny/webface/emailPicture/templateMid.jpg" style="font-size:12px;line-height:24px;color:#333;">
-  <tr>
-    <td align="left" valign="top"><img src="http://www.sinaimg.cn/rny/webface/emailPicture/templateFreeLogo.jpg" alt="新浪邮箱"/></td>
-  </tr>
-  <tr>
-    <td align="left" valign="top"><img src="http://www.sinaimg.cn/rny/webface/emailPicture/templateArrowTop.jpg" width="614" height="83" /></td>
-  </tr>
-  <tr>
-    <td align="center" valign="top">
-    <table width="80%" border="0" cellspacing="0" cellpadding="0" style="font-family:Arial, Helvetica, sans-serif;">
-      <tr>
-        <td align="left" valign="top" style="font-weight:bold;font-size:14px;font-family:'微软雅黑';">
-        	尊敬的用户，您好！
-        </td>
-      </tr>
-      <tr>
-        <td height="10" align="left" valign="top"></td>
-      </tr>
-      <tr>
-        <td height="10" align="left" valign="top" style="font-size:14px;line-height:24px;color:#333333;font-family:'微软雅黑';">新浪邮箱一直在保护您的账号安全，"反盗号安全检测系统"一直在后台工作以便及时发现异常行为。当我们发现某个账号的不良行为时（比如某个账号忽然开始对外发送垃圾邮件），我们就会把该账号标记为异常账号。这就像当银行发现您的信用卡有可疑操作时，就会对其进行暂时封锁加以保护。</td>
-      </tr>
-      <tr>
-        <td height="10" align="left" valign="top"></td>
-      </tr>
-      <tr>
-        <td height="10" align="left" valign="top" style="font-size:14px;line-height:24px;color:#333333;font-family:'微软雅黑';" >您的账号目前发现了异常发信行为，异常发信记录：</td>
-      </tr>
-      <tr>
-        <td height="10" align="left" valign="top"></td>
-      </tr>
-      <tr>
-        <td height="10" align="left" valign="top" bgcolor="#e5e5e5"><table width="100%" border="0" cellspacing="1" cellpadding="0">
-          <tr>
-            <td width="160" align="center" valign="middle" bgcolor="#f7f7f7" style="font-size:14px;line-height:24px;color:#333333;font-family:'微软雅黑';"><strong>时间</strong></td>
-            <td width="160" align="center" valign="middle" bgcolor="#f7f7f7" style="font-size:14px;line-height:24px;color:#333333;font-family:'微软雅黑';"><strong>收件人</strong></td>
-            <td width="160" align="center" valign="middle" bgcolor="#f7f7f7" style="font-size:14px;line-height:24px;color:#333333;font-family:'微软雅黑';"><strong>邮件主题</strong></td>
-          </tr>
-          <tr>
-            <td align="center" bgcolor="#ffffff" style="font-size:14px;line-height:20px;color:#333333;font-family:'微软雅黑';padding:4px;">
-            	2016-12-04 15:12:28
-            </td>
-            <td align="center" bgcolor="#ffffff" style="font-size:14px;line-height:20px;color:#333333;font-family:'微软雅黑';padding:4px;">
-            	1@163.com
-            </td>
-            <td align="center" bgcolor="#ffffff" style="font-size:14px;line-height:20px;color:#333333;font-family:'微软雅黑';padding:4px;">
-            	123
-            </td>
-          </tr>
-          <tr>
-            <td align="center" bgcolor="#ffffff">&nbsp;</td>
-            <td align="center" bgcolor="#ffffff">&nbsp;</td>
-            <td align="center" bgcolor="#ffffff">&nbsp;</td>
-          </tr>
-          <tr>
-            <td align="center" bgcolor="#ffffff">&nbsp;</td>
-            <td align="center" bgcolor="#ffffff">&nbsp;</td>
-            <td align="center" bgcolor="#ffffff">&nbsp;</td>
-          </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td height="10" align="left" valign="top"></td>
-      </tr>
-      <tr>
-        <td height="10" align="left" valign="top" style="font-size:14px;line-height:24px;color:#333333;font-family:'微软雅黑';">
-        	现在smtp发信功能被暂停，请尽快从网页方式登录邮箱修改密码，然后从以下链接恢复smtp发信功能：<a href="http://mail.sina.com.cn/cgi-bin/safe.php?s=sendspam_notice&t=http%3A%2F%2Fmail.sina.com.cn%2F%3Frt%3Dhttp%3A%2F%2Fmail.sina.com.cn%2Fcgi-bin%2Fvalidate.php" style="color:blue;">http://mail.sina.com.cn/?rt=http%3A%2F%2Fmail.sina.com.cn%2Fcgi-bin%2Fvalidate.php</a>
-        </td>
-      </tr>
-      <tr>
-        <td height="10" align="left" valign="top"></td>
-      </tr>
-      <tr>
-        <td height="10" align="left" valign="top" style="font-size:14px;line-height:24px;font-family:'微软雅黑';">为了维护您的账号安全，建议您同时完善安全信息以确保账号安全，包括绑定手机（以便必要的时候我们短信联系您）、绑定安全邮箱、绑定安全证件、设置安全问题等。</td>
-      </tr>
-      <tr>
-        <td height="10" align="left" valign="top"></td>
-      </tr>
-      <tr>
-        <td height="10" align="left" valign="top" style="font-size:14px;line-height:24px;font-family:'微软雅黑';">新浪邮箱开发团队一直竭尽所能保证您的账号安全以免受到黑客及垃圾邮件的骚扰，我们将会继续努力和不断创新。现在，您也可以参与进来，和我们一起保障您的账号安全。</td>
-      </tr>
-      <tr>
-        <td height="20" align="left" valign="top"></td>
-      </tr>      
-    </table>
-    </td>
-  </tr>
-  <tr>
-    <td height="10" align="left" valign="top"></td>
-  </tr>
-  <tr>
-    <td height="10" align="center" valign="top" background="http://www.sinaimg.cn/rny/webface/emailPicture/templateArrowBot.jpg"><table width="80%" border="0" cellspacing="0" cellpadding="0" style="border-top:1px solid #E0E0DE;padding:7px 20px 24px;line-height:20px;">
-      <tr>
-        <td align="right" style="font-size:14px;line-height:24px;font-family:'微软雅黑';">
-        	2016年12月05日<br />
-		新浪邮箱开发团队
-        </td>
-      </tr>
-    </table>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" valign="top" background="http://www.sinaimg.cn/rny/webface/emailPicture/templateCenter.jpg" style="padding:0px;font-family:Arial, Helvetica, sans-serif;color:#929292;">
-        如有任何疑问，可发送邮件至：webcn@staff.sina.com.cn<br />
-或者拨打全国统一客服热线：4006-900-000，我们的客服人员将会在第一时间为您解答
-    </td>
-  </tr>
-  <tr>
-    <td align="left" valign="top"><img src="http://www.sinaimg.cn/rny/webface/emailPicture/templateBot.jpg" width="614" height="17" /></td>
-  </tr>
-</table>
-</body>
-</html>
+
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAK77+8IArkurLniLHnmoQg
+VTIwMTQxMzQyNkBodXN0LmVkdS5jbiAK5oKo55qE5Y2V5L2N6YKu566x6aqM6K+B56CB5pivICA4
+OTI3NDIgCuivt+i+k+WFpemqjOivgeegge+8jOWujOaIkOmqjOivgSAK5oCO5qC36L6T5YWl6aqM
+6K+B56CBIAoxLuaJk+W8gOaUr+S7mOWune+8jOi/m+WFpeiKnem6u+S/oeeUqOWIhiAKMi7ov5vl
+haXigJzkv6HnlKjnrqHnkIbigJ3vvIzngrnlh7vigJzkuKrkurrkv6Hmga8gLSDljZXkvY3pgq7n
+rrHigJ0gCjMu6YCJ5oup4oCc5Y2V5L2N6YKu566x4oCd77yM5aGr5YaZ6aqM6K+B56CBIArkuLrk
+u4DkuYjmiJHkvJrmlLbliLDov5nlsIHpgq7ku7YgCuaCqOWcqOiKnem6u+S/oeeUqOS4reeahCAi
+5L+h5oGv6KGl5YWoLeWNleS9jemCrueusSIg5Lit5aGr5YaZ5LqG5q2k55S15a2Q6YKu566x5L2c
+5Li65oKo55qE5Y2V5L2N6YKu566x77yMIOaIkeS7rOWPkemAgei/meWwgemCruS7tu+8jOS7peeh
+ruiupOaCqOeahOehruaYr+acrOWNleS9jemCrueuseeahOS4u+S6uuOAguWmguaenOaCqOayoeac
+ieS9v+eUqOiKnem6u+S/oeeUqO+8jOivt+W/veeVpeatpCDpgq7ku7bvvIzlj6/og73mmK/mnInk
+urrloavlhpnplJnkuoboh6rlt7HnmoTpgq7nrrHjgIIgCuatpOS4uuezu+e7n+mCruS7tu+8jOiv
+t+WLv+WbnuWkjSBDb3B5cmlnaHQg6Iqd6bq75L+h55SoIDIwMTYgQWxsIFJpZ2h0cyBSZXNlcnZl
+ZCA=
+
 

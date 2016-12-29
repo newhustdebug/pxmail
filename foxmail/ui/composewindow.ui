@@ -39,7 +39,7 @@
         <item>
          <widget class="QLineEdit" name="txtreceiver">
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(139, 139, 139);</string>
+           <string notr="true"/>
           </property>
          </widget>
         </item>
@@ -116,7 +116,7 @@ QPushButton::menu-indicator {
         <item>
          <widget class="QLineEdit" name="txtsubject">
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(139, 139, 139);</string>
+           <string notr="true"/>
           </property>
          </widget>
         </item>
@@ -1000,10 +1000,19 @@ QPushButton:pressed{
       </item>
       <item>
        <widget class="QTextEdit" name="textEdit">
+        <property name="minimumSize">
+         <size>
+          <width>916</width>
+          <height>452</height>
+         </size>
+        </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(139, 139, 139);</string>
+         <string notr="true"/>
         </property>
        </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_attach" native="true"/>
       </item>
      </layout>
     </item>
@@ -1031,7 +1040,6 @@ QPushButton:pressed{
    <addaction name="actionPicture"/>
    <addaction name="actionScreenCut"/>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
   <action name="actionSend">
    <property name="icon">
     <iconset>
