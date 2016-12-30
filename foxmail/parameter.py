@@ -1,5 +1,5 @@
 global username,password,pophost,smtphost,popport,smtpport,popssl,smtpssl
-global emails,cache_path,folder_path,temp_path,file_path,cathe_folder_path,draft_path,send_path,contact_path,delete_path
+global emails,cache_path,folder_path,attach_path,file_path,cathe_folder_path,draft_path,send_path,contact_path,delete_path
 global read_files,read_path
 global mails_number,force_refresh,step,message,receivers
 global error,opacity, new_trans

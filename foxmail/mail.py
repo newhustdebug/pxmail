@@ -203,14 +203,6 @@ class searchThread(QtCore.QThread):
 
 
 
-class refreshThread(QtCore.QThread):
-    trigger = QtCore.pyqtSignal()
-    def __init__(self,parent=None):
-        super(refreshThread, self).__init__(parent)
-        self.cache=MailCache()
-    def run(self):
-        gl.emails = self.cache.list_mail(gl.folder_path,False)
-        self.trigger.emit()
 
 
 
@@ -225,7 +217,7 @@ class MailCache():
 
     def __init__(self,):
         gl.cache_path = os.path.join('cache', gl.username)
-        gl.temp_path=os.path.join(gl.cache_path, 'attach')
+        gl.attach_path=os.path.join(gl.cache_path, 'attach')
 
 
         gl.draft_path=os.path.join(gl.cache_path, '草稿夹')
@@ -301,7 +293,6 @@ def delete_mail(index):
     ipop_backend.pass_(gl.password)
 
     ipop_backend.dele(len(gl.mails_number)-index)
-    print(index)
 
 
 
@@ -365,7 +356,7 @@ def get_info(msg, indent = 0):
     date=''
     body_image = ''
     html=''
-    filename=''
+    attachments=[]
     received=''
     if indent == 0:
         for header in ['From', 'Subject','Date','Received']:
@@ -385,10 +376,13 @@ def get_info(msg, indent = 0):
         charset = guess_charset(part)
         if filename:
             filename = decode_str(filename)
-            gl.attachment = part.get_payload(decode = True)
-            gl.file_path=os.path.join(gl.temp_path, filename)
-            fEx = open(gl.file_path, 'wb')
-            fEx.write(gl.attachment)
+            binary_data = part.get_payload(decode=True)
+            file_path=os.path.join(gl.attach_path, filename)
+            attachment = Attachment(filename, binary_data, file_path)
+            attachments.append(attachment)
+
+            fEx = open(file_path, 'wb')                 #写到temp文件夹里
+            fEx.write(binary_data)
             fEx.close()
 
         elif 'image/png' in content_type \
@@ -422,8 +416,17 @@ def get_info(msg, indent = 0):
         "html":html,
         "date":date,
         "received":received,
-        "filename":filename,
-        "body_image":body_image
+        "body_image":body_image,
+        "attachment":attachments
         }
 
 
+
+class Attachment(object):
+
+    def __init__(self, filename, binary_data, path='',content_type=None, content_disposition=None):
+        self.filename = filename
+        self.binary_data = binary_data
+        self.path=path
+        self.content_type = content_type
+        self.content_disposition = content_disposition

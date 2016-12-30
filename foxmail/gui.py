@@ -129,6 +129,7 @@ class ComposeWindow(QtWidgets.QMainWindow):
             self.config.set('mail', 'receiver', self.txtreceiver.text())
             self.config.set('mail', 'subject', self.txtsubject.text())
             self.config.set('mail', 'text', self.textEdit.document().toHtml())
+            self.config.set('mail', 'attachment', ','.join(self.fileName))
 
             ISOTIMEFORMAT='%Y-%m-%d %X'
             self.config.set('mail', 'time',time.strftime( ISOTIMEFORMAT, time.localtime()))
@@ -304,19 +305,18 @@ class ComposeWindow(QtWidgets.QMainWindow):
 
     #截屏
     def onScreenCut(self):
-        pass
-        # format = 'png'
-        # screen = QApplication.primaryScreen()
-        # if screen is not None:
-        #     self.originalPixmap = screen.grabWindow(0)
-        # else:
-        #     self.originalPixmap = QtGui.QPixmap()
-        #
-        # self.originalPixmap.save('utitled.png', format)
-        # filename='utitled.png'
-        # image = QtGui.QImage(filename)
-        # cursor = self.textEdit.textCursor()
-        # cursor.insertImage(image,filename)
+        format = 'png'
+        screen = QApplication.primaryScreen()
+        if screen is not None:
+            self.originalPixmap = screen.grabWindow(0)
+        else:
+            self.originalPixmap = QtGui.QPixmap()
+
+        self.originalPixmap.save('utitled.png', format)
+        filename='utitled.png'
+        image = QtGui.QImage(filename)
+        cursor = self.textEdit.textCursor()
+        cursor.insertImage(image,filename)
 
 
 
@@ -354,11 +354,6 @@ class ComposeWindow(QtWidgets.QMainWindow):
                 msg_attach.add_header('Content-Disposition', 'attachment', filename = basename)
                 gl.message.attach(msg_attach)
 
-
-                # att = MIMEText(open(file, 'rb').read(), 'base64', 'utf-8')
-                # att["Content-Type"] = 'application/octet-stream'
-                # att["Content-Disposition"] = 'attachment; filename='+file
-                # gl.message.attach(att)
         else:
             # gl.message = MIMEText(self.textEdit.toPlainText(), 'plain', 'utf-8')
             gl.message = MIMEText(self.textEdit.document().toHtml(), 'html', 'utf-8')
@@ -366,16 +361,18 @@ class ComposeWindow(QtWidgets.QMainWindow):
             gl.message['from'] = gl.username
             gl.message['date']=time.strftime('%a, %d %b %Y %H:%M:%S %z')
         gl.receivers=self.txtreceiver.text().split(';')
-        self.statusBar.showMessage("Sending...")
         self.send_thread.start()
         self.senddialog.exec_()
     #添加附件
-    def onAttachment(self):
 
-        fileName, filetype = QFileDialog.getOpenFileName(self,
-                                    "选取文件",
-                                    "C:/",
-                                    "All Files (*);;Text Files (*.txt)")   #设置文件扩展名过滤,注意用双分号间隔
+    def onAttachment(self,ReplyFile=None):
+        if ReplyFile:
+            fileName=ReplyFile
+        else:
+            fileName, filetype = QFileDialog.getOpenFileName(self,
+                                        "选取文件",
+                                        "C:/",
+                                        "All Files (*);;Text Files (*.txt)")   #设置文件扩展名过滤,注意用双分号间隔
 
         self.fileName.append(fileName)
 
@@ -394,7 +391,7 @@ class ComposeWindow(QtWidgets.QMainWindow):
         self.config.set('mail', 'receiver', self.txtreceiver.text())
         self.config.set('mail', 'subject', self.txtsubject.text())
         self.config.set('mail', 'text', self.textEdit.document().toHtml())
-
+        self.config.set('mail', 'attachment', ','.join(self.fileName))
         ISOTIMEFORMAT='%Y-%m-%d %X'
         self.config.set('mail', 'time',time.strftime( ISOTIMEFORMAT, time.localtime()))
 
@@ -423,6 +420,7 @@ class ComposeWindow(QtWidgets.QMainWindow):
         self.attachmentContextMenu = QtWidgets.QMenu(self)
         self.attachmentContextMenu.addAction(self.actionAttachmentOpen)
         self.attachmentContextMenu.addAction(self.actionAttachmentDelete)
+
     #按钮菜单选项
     def on_attachment_context_menu_selection(self):
 
@@ -520,7 +518,7 @@ class AccountDialog(QtWidgets.QMainWindow):
         self.labelmin.installEventFilter(self.minfilter)
         self.minfilter.trigger4.connect(self.onMinimum)
 
-
+        self.dragPosition=QtGui.QCursor.pos()
         self.hideManualSet()
         self.loading_thread = loadingThread()                               #加载登陆线程
         self.loading_thread.trigger1.connect(self.successed)
@@ -774,11 +772,8 @@ class Contact(QWidget):
         self.labelmin.installEventFilter(self.minfilter)
         self.minfilter.trigger4.connect(self.onMinimum)
 
-
+        self.dragPosition=QtGui.QCursor.pos()
         # self.InitSearchEdit()                                           #初始化搜索框
-
-
-
 
 
     #初始化工具按钮
@@ -791,27 +786,13 @@ class Contact(QWidget):
         self.ToolMenu = QMenu(self)
         self.ToolMenu.addAction(self.actionA)
         self.ToolMenu.addAction(self.actionB)
-
-        self.ToolMenu.hovered.connect(self.hoverAction)
         self.toolButton.setMenu(self.ToolMenu)
 
-    def hoverAction(self,row):
-        print(row)
-        print(row.text())
-    def test(self,row):
-        print(self.ToolMenu.menuAction().text())
-        print(self.ToolMenu.activeAction())
-        print(row)
 
     #导出通讯录
     def exportCsv(self):
         filename, filetype = QFileDialog.getSaveFileName(self,"导出通讯录",
                                         '.',"CSV (*.csv)" )
-
-        # filename = QtGui.QFileDialog.getSaveFileName(self,
-        #         "Saving current message in HTML format...", '.', "HTML (*.html *.htm)")
-        # if not filename:
-        #     return
 
         if not filename:
             return
@@ -1092,7 +1073,7 @@ class MainWindow(QtWidgets.QMainWindow,Ui_MainWindow):
         self.btnDelete.setEnabled(False)
         self.btnReply.setEnabled(False)
 
-        self.config=configparser.ConfigParser()
+        self.config=configparser.RawConfigParser()
         self.config.add_section('mail')
 
         self.InitSearchEdit()                                           #初始化搜索框
@@ -1109,11 +1090,7 @@ class MainWindow(QtWidgets.QMainWindow,Ui_MainWindow):
         self.emailPreview.customContextMenuRequested[QtCore.QPoint].connect(self.webviewMenu)
         # self.highlight = syntax_pars.PythonHighlighter(self.emailPreview.document())
 
-        self.attachdisplay.hide()                                           #隐藏附件标签
-        self.attachlabel.hide()
-
-        self.createContextMenu()                                                #为按钮创建菜单
-
+        self.dragPosition=QtGui.QCursor.pos()
 
         self.closefilter = Filter()                                                 #关闭
         self.labelclose.installEventFilter(self.closefilter)
@@ -1126,6 +1103,86 @@ class MainWindow(QtWidgets.QMainWindow,Ui_MainWindow):
         self.maxfilter=Filter()
         self.labelmax.installEventFilter(self.maxfilter)
         self.maxfilter.trigger4.connect(self.onMaxmum)
+
+        self.createAttachmentsMenuItems()                           #初始化按钮菜单
+
+
+    #创建附件菜单
+    def createAttachmentsMenuItems(self):
+        self.layout = QtWidgets.QHBoxLayout(self.widget_attach)
+        self.layout.setSpacing(0)
+        self.layout.setAlignment(QtCore.Qt.AlignTop)
+        self.actionAttachmentOpen = QtWidgets.QAction(QtGui.QIcon("ui/manwindow/file.png"),
+            "打开附件", self,
+            triggered=self.on_attachment_context_menu_selection)
+        self.actionAttachmentSave = QtWidgets.QAction(QtGui.QIcon("ui/manwindow/草稿.png"),
+            "另存为", self,
+            triggered=self.on_attachment_context_menu_selection)
+
+        self.attachmentContextMenu = QtWidgets.QMenu(self)
+        self.attachmentContextMenu.addAction(self.actionAttachmentOpen)
+        self.attachmentContextMenu.addAction(self.actionAttachmentSave)
+
+
+    #按钮菜单选项
+    def on_attachment_context_menu_selection(self):
+
+        action = self.sender()
+        widgets = self.widget_attach.children()
+
+        for widget in widgets:
+            if isinstance(widget, QtWidgets.QPushButton):
+                if widget.isDown():
+                    selected_button = widget
+                    break
+
+        if selected_button:
+            if action == self.actionAttachmentOpen:
+
+                self.openFile_handler(selected_button)
+            if action == self.actionAttachmentSave:
+                attachment = selected_button.attachment
+                if attachment:
+                    self.save_binary_file(fname=attachment.filename,
+                                          bytes=attachment.binary_data)
+    #保存为二进制文件
+    def save_binary_file(self,fname=None,bytes=None):
+        filename, filetype = QFileDialog.getSaveFileName(self,"另存为",
+                                        os.path.join("c：/", fname),'All Files (*)' )
+
+        if not filename:
+            return
+        qFile = QtCore.QFile(filename)
+        if not qFile.open(QtCore.QFile.WriteOnly | QtCore.QFile.ReadWrite):
+            QtWidgets.QMessageBox.warning(self, APPNAME,
+                    "无法创建文件: %s\n%s." % (filename, qFile.errorString()))
+            return
+        with open(filename, 'wb') as file_handle:
+            QtWidgets.QApplication.setOverrideCursor(Qt.WaitCursor)
+            file_handle.write(bytes)
+            QtWidgets.QApplication.restoreOverrideCursor()
+
+    #打开附件
+    def openFile_handler(self, widget=None):
+        target = self.sender()
+        if isinstance(target, QtWidgets.QPushButton):
+            button = target
+        else:
+            button = widget
+        if not button:
+            return
+
+        attachment_file_path = widget.attachment.path
+
+        #跨平台打开文件，支持MAC OS，Linux，Windows
+        if sys.platform.startswith('darwin'):
+            subprocess.call(('open', attachment_file_path))
+        elif os.name == 'nt':
+            os.startfile(attachment_file_path)                          ## only available on windowses
+        elif os.name == 'posix':
+            subprocess.call(('xdg-open', attachment_file_path))
+
+
 
     #Combobox显示
     def OnActivated(self, row):
@@ -1257,45 +1314,6 @@ class MainWindow(QtWidgets.QMainWindow,Ui_MainWindow):
         self.receivedialog.close()
 
 
-
-
-    #创建附件按钮菜单
-    def createContextMenu(self):
-        self.attachdisplay.customContextMenuRequested.connect(self.showContextMenu)
-        # 创建QMenu
-        self.contextMenu = QtWidgets.QMenu(self)
-        self.actionA = self.contextMenu.addAction(QtGui.QIcon("images/0.png"),u'|  默认程序打开')
-        self.actionB = self.contextMenu.addAction(QtGui.QIcon("images/0.png"),u'|  另存为')
-        # #添加二级菜单
-        # self.second = self.contextMenu.addMenu(QtGui.QIcon("images/0.png"),u"|  打开方式")
-        # self.actionD = self.second.addAction(QtGui.QIcon("images/0.png"),u'|  选择默认程序')
-
-        self.actionA.triggered.connect(self.openFile)
-        self.actionB.triggered.connect(self.save_binary_file)
-
-
-    #显示附件按钮菜单
-    def showContextMenu(self):
-        self.contextMenu.exec_(QtGui.QCursor.pos()) #在鼠标位置显示
-    #保存为二进制文件
-    def save_binary_file(self):
-        filename, filetype = QFileDialog.getSaveFileName(self,"另存为",
-                                        os.path.join("c：/", self.filename),'All Files (*)' )
-
-        if not filename:
-            return
-        qFile = QtCore.QFile(filename)
-        if not qFile.open(QtCore.QFile.WriteOnly | QtCore.QFile.ReadWrite):
-            QtWidgets.QMessageBox.warning(self, APPNAME,
-                    "无法创建文件: %s\n%s." % (filename, qFile.errorString()))
-            return
-        with open(filename, 'wb') as file_handle:
-            QtWidgets.QApplication.setOverrideCursor(Qt.WaitCursor)
-            file_handle.write(gl.attachment)
-            QtWidgets.QApplication.restoreOverrideCursor()
-        # self.statusBar().showMessage("Saved '%s'" % filename, 2000)
-
-
     #发送邮件
     def onComposeMail(self):
         self.compose = ComposeWindow()
@@ -1403,7 +1421,7 @@ class MainWindow(QtWidgets.QMainWindow,Ui_MainWindow):
 
 
 
-
+    #改变背景颜色
     def changeBackground(self):
         if self.background:
             self.emailPreview.setStyleSheet(u'background-color: rgb(255, 255, 255);')
@@ -1421,7 +1439,7 @@ class MainWindow(QtWidgets.QMainWindow,Ui_MainWindow):
         menu = QtWidgets.QMenu(self.emailPreview)
         menu.addAction(changeAction)
 
-        menu.exec_(self.pos())
+        menu.exec_(QtGui.QCursor.pos())
 
 
 
@@ -1443,6 +1461,8 @@ class MainWindow(QtWidgets.QMainWindow,Ui_MainWindow):
             self.compose.txtreceiver.setText(info["addr"])
             self.compose.textEdit.setDocument(document)
             self.compose.textEdit.setFocus()
+            for attatchment_path in self.attachments:
+                self.compose.onAttachment(attatchment_path)
         else :                                                                          #编辑功能
             self.compose = ComposeWindow()
             self.compose.show()
@@ -1467,6 +1487,8 @@ class MainWindow(QtWidgets.QMainWindow,Ui_MainWindow):
         self.compose.txtsubject.setText('转发：'+info["subject"])                    #显示主题，发信人，日期
         self.compose.textEdit.setDocument(document)
         self.compose.textEdit.setFocus()
+        for attatchment_path in self.attachments:
+            self.compose.onAttachment(attatchment_path)
 
     def makeFolder(self):
         item= QtWidgets.QTreeWidgetItem()
@@ -1551,6 +1573,7 @@ class MainWindow(QtWidgets.QMainWindow,Ui_MainWindow):
                 'subject':subject,
                 'receiver':self.config.get('mail', 'receiver'),
                 'text':self.config.get('mail', 'text'),
+                'attachment':self.config.get('mail','attachment').split(','),
                 'time':self.config.get('mail', 'time')
             }
 
@@ -1584,6 +1607,7 @@ class MainWindow(QtWidgets.QMainWindow,Ui_MainWindow):
         self.btnForward.setEnabled(True)                               #转发功能可用
         self.btnDelete.setEnabled(True)
         self.btnReply.setEnabled(True)
+        self.attachments=[]
         if  item.treeWidget().currentItem().parent():                        #假如有父亲节点，则选中相应邮件
 
             self.index=item.treeWidget().currentItem().data(0,1)               #将Item中的行号提取出来
@@ -1607,14 +1631,22 @@ class MainWindow(QtWidgets.QMainWindow,Ui_MainWindow):
 
                     self.emailPreview.setHtml(info["content"].replace('\n','<br>'))
 
-                if info["filename"]:
-                    self.filename=info["filename"]
-                    self.attachdisplay.setText(self.filename)
-                    self.attachdisplay.show()
-                    self.attachlabel.show()
-                else:
-                    self.attachdisplay.hide()
-                    self.attachlabel.hide()
+
+                for i in reversed(range(self.layout.count())):                  #清空附件栏
+                        self.layout.itemAt(i).widget().deleteLater()
+
+                if info["attachment"] and len(info["attachment"]):              #显示当前邮件附件
+                    for attachment in info["attachment"]:
+                        button = QtWidgets.QPushButton( None)
+                        button.setMenu(self.attachmentContextMenu)
+                        button.attachment = attachment
+                        button.setText(attachment.filename)
+                        button.setMaximumSize(200,40)
+                        button.setFocusPolicy(Qt.NoFocus)
+                        self.layout.addWidget(button)
+                        self.attachments.append(attachment.path)
+
+
 
                 self.subdisplay.setText(info["subject"])                    #显示主题，发信人，日期
                 self.fromdisplay.setText(info["addr"])
@@ -1646,15 +1678,20 @@ class MainWindow(QtWidgets.QMainWindow,Ui_MainWindow):
                     self.datedisplay.setText(each["time"])
 
 
+                    for i in reversed(range(self.layout.count())):                  #清空附件栏
+                        self.layout.itemAt(i).widget().deleteLater()
 
-    #跨平台打开文件，支持MAC OS，Linux，Windows
-    def openFile(self):
-        if sys.platform.startswith('darwin'):
-            subprocess.call(('open', gl.file_path))
-        elif os.name == 'nt':
-            os.startfile(gl.file_path)                          ## only available on windowses
-        elif os.name == 'posix':
-            subprocess.call(('xdg-open', gl.file_path))
+                    if each["attachment"] and len(each["attachment"]):              #显示当前邮件附件
+                        for attachment_path in each["attachment"]:
+                            button = QtWidgets.QPushButton( None)
+                            button.setMenu(self.attachmentContextMenu)
+
+                            button.setText(os.path.basename(attachment_path))
+                            button.setMaximumSize(200,40)
+                            button.setFocusPolicy(Qt.NoFocus)
+                            self.layout.addWidget(button)
+                            self.attachments.append(attachment_path)
+
 
     #收的邮件的内容
     def ReceivemailContent(self,index):
@@ -1693,9 +1730,10 @@ class MainWindow(QtWidgets.QMainWindow,Ui_MainWindow):
     def onDelete(self):
         if self.treeMailWidget.currentItem().text(0) ==u"收件夹":
             index = self.listEmails.currentItem().data(0,1)
+            print(index)
+            path=os.path.join(gl.cathe_folder_path,str(index+1)) +'.ml'
 
-            path=os.path.join(gl.cathe_folder_path,str(index)) +'.ml'
-
+            savePath=os.path.join(gl.delete_path, "%d"%(time.time()*1000)+'.ini')
 
             ret = QMessageBox.warning(self, "warning",
                     "确定删除邮件？",
@@ -1705,14 +1743,14 @@ class MainWindow(QtWidgets.QMainWindow,Ui_MainWindow):
                 return False
             elif ret == QMessageBox.Yes:
                 os.remove(path)                     #删邮件
-                delete_mail(index)
+                delete_mail(index)                                          #删除第几封
 
                 content,subject,addr,datestring=self.ReceivemailContent(index)      #并保存到已删除
                 self.config.set('mail', 'receiver', addr)
                 self.config.set('mail', 'subject', subject)
                 self.config.set('mail', 'text', content)
                 self.config.set('mail', 'time',datestring)
-                self.config.write(open(gl.delete_path, 'w'))
+                self.config.write(open(savePath, 'w'))
 
                 #删除完成以后重新加载一遍列表邮件
                 gl.emails = []
@@ -1743,9 +1781,6 @@ class MainWindow(QtWidgets.QMainWindow,Ui_MainWindow):
                 except:
                     os.remove(path)                                                     #失败了则强行删除
                 self.readFiles(self.currentPath)
-
-
-
 
 
     #邮件邮件菜单管理
@@ -1836,7 +1871,7 @@ class ReceiveDialog(QtWidgets.QDialog):
         self.minfilter = Filter()                                                 #最小化
         self.labelmin.installEventFilter(self.minfilter)
         self.minfilter.trigger4.connect(self.onMinimum)
-
+        self.dragPosition=QtGui.QCursor.pos()
     def closeEvent(self, QCloseEvent):
         self.triggerclose.emit()
 

@@ -190,7 +190,7 @@ class Ui_MainWindow(object):
 "\n"
 "background-color: #AAA;\n"
 "    color: #000;\n"
-"   /*border: 2px solid #555;*/\n"
+"\n"
 "\n"
 "")
         self.searchEdit.setText("")
@@ -216,6 +216,9 @@ class Ui_MainWindow(object):
         self.Xlabel.setAlignment(QtCore.Qt.AlignCenter)
         self.Xlabel.setObjectName("Xlabel")
         self.horizontalLayout_7.addWidget(self.Xlabel)
+        self.searchlabel.raise_()
+        self.Xlabel.raise_()
+        self.searchEdit.raise_()
         self.horizontalLayout_8.addWidget(self.frame_3)
         self.horizontalLayout_8.setStretch(0, 2)
         self.horizontalLayout_8.setStretch(1, 1)
@@ -292,6 +295,9 @@ class Ui_MainWindow(object):
         self.comboBox.addItem("")
         self.verticalLayout.addWidget(self.comboBox)
         self.listEmails = QtWidgets.QTreeWidget(self.centralwidget)
+        font = QtGui.QFont()
+        font.setPointSize(13)
+        self.listEmails.setFont(font)
         self.listEmails.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
         self.listEmails.setStyleSheet("")
         self.listEmails.setEditTriggers(QtWidgets.QAbstractItemView.DoubleClicked|QtWidgets.QAbstractItemView.EditKeyPressed)
@@ -346,6 +352,8 @@ class Ui_MainWindow(object):
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.frame)
+        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_3.setSpacing(0)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
@@ -395,40 +403,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.setStretch(0, 1)
         self.horizontalLayout_6.setStretch(1, 2)
         self.verticalLayout_3.addLayout(self.horizontalLayout_6)
-        self.horizontalLayout_9 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_9.setObjectName("horizontalLayout_9")
-        self.attachlabel = QtWidgets.QLabel(self.frame)
-        self.attachlabel.setMinimumSize(QtCore.QSize(99, 20))
-        self.attachlabel.setMaximumSize(QtCore.QSize(99, 20))
-        self.attachlabel.setObjectName("attachlabel")
-        self.horizontalLayout_9.addWidget(self.attachlabel)
-        self.attachdisplay = QtWidgets.QPushButton(self.frame)
-        self.attachdisplay.setMinimumSize(QtCore.QSize(395, 20))
-        self.attachdisplay.setMaximumSize(QtCore.QSize(395, 20))
-        self.attachdisplay.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
-        self.attachdisplay.setStyleSheet("QPushButton{\n"
-"\n"
-"border: none;\n"
-"\n"
-"}\n"
-"QPushButton:hover{\n"
-"  background-color: qconicalgradient(cx:0.5, cy:0.522909, angle:179.9, stop:0.494318 rgba(181, 225, 250, 255), stop:0.5 rgba(222, 242, 251, 255));\n"
-"\n"
-"}\n"
-"QPushButton:pressed{\n"
-"  background-color: qconicalgradient(cx:0.5, cy:0.522909, angle:179.9, stop:0.494318 rgba(134, 198, 233, 255), stop:0.5 rgba(206, 234, 248, 255));\n"
-" \n"
-"}\n"
-"")
-        self.attachdisplay.setText("")
-        icon12 = QtGui.QIcon()
-        icon12.addPixmap(QtGui.QPixmap("attachicon1.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.attachdisplay.setIcon(icon12)
-        self.attachdisplay.setObjectName("attachdisplay")
-        self.horizontalLayout_9.addWidget(self.attachdisplay)
-        self.horizontalLayout_9.setStretch(0, 1)
-        self.horizontalLayout_9.setStretch(1, 4)
-        self.verticalLayout_3.addLayout(self.horizontalLayout_9)
         self.verticalLayout_2.addWidget(self.frame)
         self.emailPreview = QtWebKitWidgets.QWebView(self.centralwidget)
         self.emailPreview.setMinimumSize(QtCore.QSize(0, 470))
@@ -438,6 +412,9 @@ class Ui_MainWindow(object):
         self.emailPreview.setUrl(QtCore.QUrl("about:blank"))
         self.emailPreview.setObjectName("emailPreview")
         self.verticalLayout_2.addWidget(self.emailPreview)
+        self.widget_attach = QtWidgets.QWidget(self.centralwidget)
+        self.widget_attach.setObjectName("widget_attach")
+        self.verticalLayout_2.addWidget(self.widget_attach)
         self.verticalLayout_2.setStretch(0, 1)
         self.verticalLayout_2.setStretch(1, 4)
         self.verticalLayout_2.setStretch(2, 20)
@@ -454,27 +431,27 @@ class Ui_MainWindow(object):
         self.actionCompose = QtWidgets.QAction(MainWindow)
         self.actionCompose.setCheckable(False)
         self.actionCompose.setChecked(False)
-        icon13 = QtGui.QIcon()
-        icon13.addPixmap(QtGui.QPixmap("send.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.actionCompose.setIcon(icon13)
+        icon12 = QtGui.QIcon()
+        icon12.addPixmap(QtGui.QPixmap("send.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.actionCompose.setIcon(icon12)
         self.actionCompose.setObjectName("actionCompose")
         self.actionRefresh = QtWidgets.QAction(MainWindow)
-        icon14 = QtGui.QIcon()
-        icon14.addPixmap(QtGui.QPixmap("1refresh_128px_1194515_easyicon.net.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.actionRefresh.setIcon(icon14)
+        icon13 = QtGui.QIcon()
+        icon13.addPixmap(QtGui.QPixmap("1refresh_128px_1194515_easyicon.net.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.actionRefresh.setIcon(icon13)
         self.actionRefresh.setObjectName("actionRefresh")
         self.actionContactList = QtWidgets.QAction(MainWindow)
-        icon15 = QtGui.QIcon()
-        icon15.addPixmap(QtGui.QPixmap("1point_list_128px_1190662_easyicon.net.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.actionContactList.setIcon(icon15)
+        icon14 = QtGui.QIcon()
+        icon14.addPixmap(QtGui.QPixmap("1point_list_128px_1190662_easyicon.net.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.actionContactList.setIcon(icon14)
         self.actionContactList.setObjectName("actionContactList")
         self.actionSearch = QtWidgets.QAction(MainWindow)
         self.actionSearch.setCheckable(True)
         self.actionSearch.setChecked(False)
         self.actionSearch.setEnabled(True)
-        icon16 = QtGui.QIcon()
-        icon16.addPixmap(QtGui.QPixmap("search.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.actionSearch.setIcon(icon16)
+        icon15 = QtGui.QIcon()
+        icon15.addPixmap(QtGui.QPixmap("search.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.actionSearch.setIcon(icon15)
         self.actionSearch.setObjectName("actionSearch")
 
         self.retranslateUi(MainWindow)
@@ -488,7 +465,7 @@ class Ui_MainWindow(object):
         self.contactlistButton.clicked.connect(MainWindow.onContactList)
         self.listEmails.itemClicked['QTreeWidgetItem*','int'].connect(MainWindow.onMailSelected)
         self.comboBox.activated['int'].connect(MainWindow.OnActivated)
-        self.attachdisplay.clicked.connect(MainWindow.openFile)
+        self.searchEdit.textChanged['QString'].connect(MainWindow.ontextChanged)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -518,7 +495,6 @@ class Ui_MainWindow(object):
         self.sublabel.setText(_translate("MainWindow", "主题："))
         self.fromlabel.setText(_translate("MainWindow", "发信人："))
         self.datelabel.setText(_translate("MainWindow", "日期："))
-        self.attachlabel.setText(_translate("MainWindow", "附件："))
         self.actionQuit.setText(_translate("MainWindow", "&Quit"))
         self.actionCompose.setText(_translate("MainWindow", "写邮件"))
         self.actionCompose.setToolTip(_translate("MainWindow", "Write new eMail"))
@@ -530,3 +506,5 @@ class Ui_MainWindow(object):
         self.actionSearch.setText(_translate("MainWindow", "查找"))
 
 from PyQt5 import QtWebKitWidgets
+# import resource_rc
+# import style_rc

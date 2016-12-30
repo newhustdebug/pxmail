@@ -658,7 +658,7 @@ color: #000;
        </layout>
       </item>
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,4,20">
+       <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,4,20,0">
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <property name="spacing">
@@ -805,7 +805,7 @@ color: #000;
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>329</width>
+                 <width>16777215</width>
                  <height>17</height>
                 </size>
                </property>
@@ -900,77 +900,6 @@ color: #000;
              </item>
             </layout>
            </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="1,4">
-             <property name="spacing">
-              <number>0</number>
-             </property>
-             <property name="sizeConstraint">
-              <enum>QLayout::SetMaximumSize</enum>
-             </property>
-             <item>
-              <widget class="QLabel" name="attachlabel">
-               <property name="minimumSize">
-                <size>
-                 <width>99</width>
-                 <height>20</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>99</width>
-                 <height>20</height>
-                </size>
-               </property>
-               <property name="text">
-                <string>附件：</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="attachdisplay">
-               <property name="minimumSize">
-                <size>
-                 <width>395</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>395</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="contextMenuPolicy">
-                <enum>Qt::CustomContextMenu</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QPushButton{
-
-border: none;
-
-}
-QPushButton:hover{
-  background-color: qconicalgradient(cx:0.5, cy:0.522909, angle:179.9, stop:0.494318 rgba(181, 225, 250, 255), stop:0.5 rgba(222, 242, 251, 255));
-
-}
-QPushButton:pressed{
-  background-color: qconicalgradient(cx:0.5, cy:0.522909, angle:179.9, stop:0.494318 rgba(134, 198, 233, 255), stop:0.5 rgba(206, 234, 248, 255));
- 
-}
-</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>attachicon1.png</normaloff>attachicon1.png</iconset>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
           </layout>
          </widget>
         </item>
@@ -1000,6 +929,9 @@ QPushButton:pressed{
            </url>
           </property>
          </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_attach" native="true"/>
         </item>
        </layout>
       </item>
@@ -1246,22 +1178,6 @@ QPushButton:pressed{
     <hint type="destinationlabel">
      <x>486</x>
      <y>90</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>attachdisplay</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>openFile()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1078</x>
-     <y>260</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>636</x>
-     <y>92</y>
     </hint>
    </hints>
   </connection>

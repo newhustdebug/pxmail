@@ -16,7 +16,7 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, QDAMAGES OR OTHER
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
@@ -629,19 +629,20 @@ QPushButton::menu-indicator {
 }
 
 
+
+
+QPushButton:checked{
+    background-color: #76797C;
+    border-color: #6A6969;
+}
+
 QComboBox
 {
     selection-background-color: #3daee9;
     border-style: solid;
     border: 1px solid #76797C;
     border-radius: 2px;
-    padding: 5px;
     min-width: 75px;
-}
-
-QPushButton:checked{
-    background-color: #76797C;
-    border-color: #6A6969;
 }
 
 QComboBox:hover,QPushButton:hover,QAbstractSpinBox:hover,QLineEdit:hover,QTextEdit:hover,QPlainTextEdit:hover,QAbstractView:hover,QTreeView:hover
@@ -680,14 +681,15 @@ QComboBox::drop-down
 
 QComboBox::down-arrow
 {
-    image: url(:/qss_icons/rc/down_arrow_disabled.png);
+    image: url(ui/Black/down_arrow_disabled.png);
 }
 
 QComboBox::down-arrow:on, QComboBox::down-arrow:hover,
 QComboBox::down-arrow:focus
 {
-    image: url(:/qss_icons/rc/down_arrow.png);
+    image: url(ui/Black/down_arrow.png);
 }
+
 
 QAbstractSpinBox {
     padding: 5px;
